@@ -604,7 +604,7 @@ The regression approach has proven to be significantly more effective than class
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/Team-Unthinkables/FinReport-Stock-Earnings.git
+   git clone https://github.com/Kanishk1420/FinReport-Explainable-Stock-Earnings-Forecasting-via-News-Factor.git
    cd FinReport
    ```
 
@@ -733,3 +733,6 @@ For any questions or feedback, please contact:
 
 **MD Azlan**  
 **azlan04.md@gmail.com**
+
+**Kingshuk Chatterjee**
+**kingshuk.chatterjee770@gmail.com**
