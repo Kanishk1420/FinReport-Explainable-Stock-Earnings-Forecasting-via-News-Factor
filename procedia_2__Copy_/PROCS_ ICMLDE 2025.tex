@@ -677,11 +677,11 @@ Individual factors are combined using empirically-determined weights based on th
 \text{profitability\_factor} & 0.15 \\ 
 \text{investment\_factor} & 0.20 \\ 
 \text{news\_effect\_factor} & 0.10 \\ 
-\text{event\_factor} & 0.15
+\text{event\_factor} & 0.25
 \end{bmatrix}
 \end{equation}
 
-The investment factor receives the highest weight (0.20) due to its strong predictive power for medium-term price movements, while valuation and news factors receive lower weights (0.10) reflecting their longer-term impact horizons.
+The event factor receives the highest weight (0.25) due to its strong predictive power for short-term price movements and immediate market reactions, followed by the investment factor (0.20) for medium-term price movements, while valuation and news factors receive lower weights (0.10) reflecting their longer-term impact horizons.
 
 \subsubsection{{Factor Enhancement Process}}
 Before computing the weighted sum, factors undergo the amplification enhancement process described in Section 3.2.6 to ensure adequate signal strength:
@@ -747,11 +747,11 @@ The FinReport system generates HTML-based reports designed specifically for maxi
 
 \subsection{Return Forecast Calculation}
 
-The return forecast is computed using a weighted \allowbreak combination of multiple factors.
+The return forecast is computed using a weighted \allowbreak combination of multiple factors, where the \textbf{event factor receives the highest weight (0.25)} due to its immediate impact on market sentiment and price movements.
 \begin{align}
 \mathbf{predicted\_return} &= 0.10 \times \mathbf{market\_factor} + 0.15 \times \mathbf{size\_factor} + 0.10 \times \mathbf{valuation\_factor} \nonumber \\
 &\quad + 0.10 \times \mathbf{profitability\_factor} + 0.20 \times \mathbf{investment\_factor} \nonumber \\
-&\quad + 0.10 \times \mathbf{news\_effect\_factor} + 0.25 \times \mathbf{event\_factor} + 0.15
+&\quad + 0.10 \times \mathbf{news\_effect\_factor} + \mathbf{0.25} \times \mathbf{event\_factor} + 0.15
 \end{align}
 
 
