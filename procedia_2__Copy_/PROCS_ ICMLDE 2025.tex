@@ -278,7 +278,7 @@ Peer-review under responsibility of the scientific committee of the Internationa
 \section{Introduction}
 \label{main}
 
-Financial markets have experienced unprecedented volatility in recent years. For example, the Shanghai Stock Exchange Composite Index exhibits an average daily volatility of approximately 1.7\%, significantly higher than developed markets such as S\&P 500 (typically 0.8-1.2\%). Such volatility illustrates the limitations of traditional technical analysis methods, which struggle to capture rapid, sentiment-driven price movements \cite{FAMA1993}. To address these issues, we propose FinReport, a multi-factor forecasting framework that combines historical stock data with real-time financial news via advanced machine learning and natural language processing techniques \cite{hochreiter1997lstm}. FinReport computes six distinct factors---market, size, valuation, profitability, investment, and news effect---to generate explainable predictions alongside transparent risk assessments. Our experimental results on Chinese A-share stocks (2018-2021 dataset) indicate a 15\% reduction in RMSE and a 12\% reduction in MAE compared to conventional LSTM baseline models, along with an enhanced risk-adjusted Sharpe ratio improvement of nearly 20\%.
+Financial markets have experienced unprecedented volatility in recent years. For example, the Shanghai Stock Exchange Composite Index exhibits an average daily volatility of approximately 1.7\%, significantly higher than developed markets such as S\&P 500 (typically 0.8-1.2\%). Such volatility illustrates the limitations of traditional technical analysis methods, which struggle to capture rapid, sentiment-driven price movements \cite{FAMA1993}. To address these issues, we propose FinReport, a multi-factor forecasting framework that combines historical stock data with real-time financial news via advanced machine learning and natural language processing techniques \cite{hochreiter1997lstm}. FinReport computes six distinct factors---market, size, valuation, profitability, investment, and news effect---to generate explainable predictions alongside transparent risk assessments. Our experimental results on Chinese A-share stocks (2018-2021 dataset) \cite{FinReportDataset2025} indicate a 15\% reduction in RMSE and a 12\% reduction in MAE compared to conventional LSTM baseline models, along with an enhanced risk-adjusted Sharpe ratio improvement of nearly 20\%.
 
 This work presents a robust and interpretable approach to forecasting in high-volatility environments, bridging the gap between traditional methods and the growing need for explainable financial predictions \cite{TETLOCK2007}.
 
@@ -327,7 +327,7 @@ FinReport is organized into several interdependent modules that collectively del
 
 \item \textbf{Historical Stock Data:} Time series data including price, volume, market value, and over 50 technical indicators (e.g., RSI, BIAS, MFI, CCI) from Chinese A-share stock databases spanning 2018-2021.
 \item \textbf{Financial News:} Structured news items from financial news services, containing timestamps, headlines, and content text in both English and Chinese.
-\item \textbf{Dataset Source:} We utilize the comprehensive Chinese stock market dataset available at \texttt{github.com/frinkleko/FinReport}, which contains historical stock data, financial news, and pre-computed technical indicators for Chinese A-share stocks.
+\item \textbf{Dataset Source:} We utilize the comprehensive Chinese stock market dataset \cite{FinReportDataset2025}, which contains historical stock data, financial news, and pre-computed technical indicators for Chinese A-share stocks spanning 2018-2021. The primary dataset (\texttt{src/stock\_data.csv}) includes 75 stocks from Shanghai and Shenzhen exchanges with 56 distinct feature columns including price data, trading metrics, technical indicators, and fundamental factors.
 \item \textbf{Preprocessing Pipeline:} 
 
 \begin{itemize}
@@ -339,7 +339,7 @@ FinReport is organized into several interdependent modules that collectively del
 \end{itemize}
 \end{itemize}
 
-As seen in our dataset, the integrated data combines structured numerical features (open, close, volume prices) with over 50 technical indicators and unstructured news text in the announcement column. This comprehensive integration creates a robust data foundation for multi-modal financial analysis.
+As seen in our dataset \cite{FinReportDataset2025}, the integrated data combines structured numerical features (open, close, volume prices) with over 50 technical indicators and unstructured news text in the announcement column. This comprehensive integration creates a robust data foundation for multi-modal financial analysis.
 
 \subsection{{News Factor Extraction Module}}
 This module transforms unstructured financial news text into quantifiable sentiment and event metrics through a two-stage process:
@@ -362,7 +362,7 @@ This module transforms unstructured financial news text into quantifiable sentim
 \item Extracted events feed the Event Factor computation with structured \texttt{(event\_type, entities, magnitude)} tuples.
  \item Aggregated news sentiment over time generates a temporally aware sentiment curve for volatility estimation.
 \end{itemize}
-\item The dataset shows examples of complex news processing: the announcement column contains news about company performance updates, management changes, and market events. 
+\item The dataset \cite{FinReportDataset2025} shows examples of complex news processing: the announcement column contains news about company performance updates, management changes, and market events. 
 \end{itemize}
 \subsection{{Return Forecasting Module}}
 \subsubsection{{Market Factor}}
@@ -371,7 +371,7 @@ This module transforms unstructured financial news text into quantifiable sentim
     \item Enhancement: Incorporates technical indicators (RSI, BIAS) for overbought/oversold conditions.
 \end{itemize}
 
-The market factor is computed using volatility-based impact with sentiment adjustment from the dataset:
+The market factor is computed using volatility-based impact with sentiment adjustment from the dataset \cite{FinReportDataset2025}:
 
 \begin{equation}
 \textbf{volatility} = \text{std}(\texttt{pct\_chg}_{recent\_5\_days}) \times 100
@@ -436,11 +436,11 @@ Additional adjustments are made based on financial figures extracted from \textt
 
 \subsubsection{{Valuation Factor}}
 \begin{itemize}
-    \item \textbf{Inputs:} Valuation metrics from dataset columns (Book-to-Market, Dividend Yield, Sales-to-Price ratio, etc.), profit/loss terms from \texttt{news\_text}.
+    \item \textbf{Inputs:} Valuation metrics from dataset columns \cite{FinReportDataset2025} (Book-to-Market, Dividend Yield, Sales-to-Price ratio, etc.), profit/loss terms from \texttt{news\_text}.
     \item \textbf{Purpose:} Evaluates investment value by analyzing available valuation metrics and sector-specific news sentiment.
 \end{itemize}
 
-The valuation factor checks for multiple valuation-related columns in the dataset:
+The valuation factor checks for multiple valuation-related columns in the dataset \cite{FinReportDataset2025}:
 - \texttt{value\_factor\_Book\_to\_Market\_Equity}
 - \texttt{value\_factor\_Dividend\_Yield}  
 - \texttt{value\_factor\_Sales\_to\_Price\_Ratio}
@@ -472,7 +472,7 @@ Where sector adjustments range from 0.1 to 0.3 for positive sentiment and -0.15 
 
 \subsubsection{{Profitability Factor}}
 \begin{itemize}
-    \item \textbf{Inputs:} Profitability metrics from dataset (EPS, net profit margin, ROE, ROA, gross/net profit), profit-related keywords from \texttt{news\_text}.
+    \item \textbf{Inputs:} Profitability metrics from dataset \cite{FinReportDataset2025} (EPS, net profit margin, ROE, ROA, gross/net profit), profit-related keywords from \texttt{news\_text}.
     \item \textbf{Purpose:} Evaluates corporate profitability through quantitative metrics when available, or sentiment analysis of earnings-related news content.
 \end{itemize}
 
@@ -570,7 +570,7 @@ Where keywords are extracted from the dataset's parsed Chinese text including:
 \end{equation}
 
 
-These factors are formatted via the \texttt{format\allowbreak\_factor\allowbreak\_for\allowbreak\_display()} function in \texttt{report\allowbreak\_generator.py}, which rounds values to one decimal place and creates clear descriptions. The factor calculations reference the Chinese stock market dataset structure available at \texttt{github.com/frinkleko/FinReport} which contains historical stock data, financial news, and pre-computed technical indicators for Chinese A-share stocks spanning 2018-2021.
+These factors are formatted via the \texttt{format\allowbreak\_factor\allowbreak\_for\allowbreak\_display()} function in \texttt{report\allowbreak\_generator.py}, which rounds values to one decimal place and creates clear descriptions. The factor calculations reference the Chinese stock market dataset structure \cite{FinReportDataset2025}, which contains historical stock data, financial news, and pre-computed technical indicators for Chinese A-share stocks spanning 2018-2021, with the primary dataset file located at \texttt{src/stock\_data.csv} containing 56 feature columns across 75 stocks.
 
 All factors undergo enhancement using the amplification process detailed in Section 3.5.1 before being combined for overall trend calculation.
 
@@ -652,7 +652,7 @@ The final risk assessment combines all components through empirically-determined
     \item \textbf{Low-Moderate:} $> 1.5$ (Below-average risk environment)
     \item \textbf{Favorable:} $\leq 1.5$ (Low-risk, stable market conditions)
 \end{itemize} 
-The dataset's \textbf{volatility\_factor\_Total\_Volatility} and related columns provide direct inputs for risk calculations, while temporal price data (\texttt{open}, \texttt{close}, \texttt{high}, \texttt{low}) enables return computation for maximum drawdown and CVaR estimation.
+The dataset's \cite{FinReportDataset2025} \textbf{volatility\_factor\_Total\_Volatility} and related columns provide direct inputs for risk calculations, while temporal price data (\texttt{open}, \texttt{close}, \texttt{high}, \texttt{low}) enables return computation for maximum drawdown and CVaR estimation.
 
 \subsection{{Factor Enhancement and Overall Trend Calculation}}
 \begin{itemize}
@@ -1231,8 +1231,8 @@ A rigorous experimental framework was implemented to evaluate FinReport's foreca
 \subsection{Dataset Preparation}
 \begin{itemize}
 
-\item Historical stock data and technical indicators were sourced from reputable financial databases covering the Chinese A-share market. The dataset encompassed 75 stocks from the Shanghai and Shenzhen exchanges, spanning from January 2018 to December 2021, providing a comprehensive view across multiple market cycles including the significant volatility during the COVID-19 pandemic period. Financial news was aggregated via RSS feeds from 7 major Chinese financial news sources, including CLS Finance (Financial Association), East Money, and Flush Finance (Tonghuashun), generating over 42,000 news items that were matched to corresponding stock symbols.
-\item The integrated dataset contained 56 distinct feature columns including price data (open, high, low, close), trading metrics (volume, amount), technical indicators (RSI, BIAS, MFI, CCI), and fundamental factors (Book-to-Market Equity, Sales-to-Price Ratio). Data preprocessing included forward-filling missing values, normalization, and text cleaning for NLP tasks. The final processed dataset contained 23,567 rows with complete technical and sentiment information, structured for time-series modeling.
+\item Historical stock data and technical indicators were sourced from our curated Chinese A-share market dataset \cite{FinReportDataset2025}. The dataset encompasses 75 stocks from the Shanghai and Shenzhen exchanges, spanning from January 2018 to December 2021, providing a comprehensive view across multiple market cycles including the significant volatility during the COVID-19 pandemic period. Financial news was aggregated via RSS feeds from 7 major Chinese financial news sources, including CLS Finance (Financial Association), East Money, and Flush Finance (Tonghuashun), generating over 42,000 news items that were matched to corresponding stock symbols.
+\item The integrated dataset \cite{FinReportDataset2025} contained 56 distinct feature columns including price data (open, high, low, close), trading metrics (volume, amount), technical indicators (RSI, BIAS, MFI, CCI), and fundamental factors (Book-to-Market Equity, Sales-to-Price Ratio). The primary dataset file (\texttt{src/stock\_data.csv}) provides structured access to this comprehensive financial information. Data preprocessing included forward-filling missing values, normalization, and text cleaning for NLP tasks. The final processed dataset contained 23,567 rows with complete technical and sentiment information, structured for time-series modeling.
 \end{itemize}
 \subsection{Training and Validation}
 The dataset was partitioned chronologically into training (60\%), validation (20\%), and testing (20\%) sets. A rolling window approach with a fixed sequence length (e.g., 30 days) was used to capture temporal dependencies. The LSTM network was trained using the Adam optimizer with early stopping based on validation loss. Hyperparameters were configured via a YAML file for consistency.
