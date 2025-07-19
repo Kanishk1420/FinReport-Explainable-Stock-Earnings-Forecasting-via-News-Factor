@@ -372,41 +372,45 @@ This module transforms unstructured news text into quantifiable sentiment and ev
 \subsection{{Return Forecasting Module}}
 \subsubsection{{Market Factor}}
 \begin{itemize}
-    \item Inputs: Recent volatility, positive/negative day ratio, and sentiment.
+    \item Inputs: \texttt{pct\_chg} (percentage change), volatility from \texttt{pct\_chg} series, sentiment from \texttt{news\_text}.
     \item Enhancement: Incorporates technical indicators (RSI, BIAS) for overbought/oversold conditions.
 \end{itemize}
 
-The market factor is computed using volatility-based impact with sentiment adjustment:
+The market factor is computed using volatility-based impact with sentiment adjustment from the dataset:
+
+\begin{equation}
+\textbf{volatility} = \text{std}(\texttt{pct\_chg}_{recent\_5\_days}) \times 100
+\end{equation}
 
 \begin{equation}
 \textbf{base\_impact} = 
 \begin{cases} 
--1.5 - (\textbf{volatility} - 4.0) \times 0.1, & \text{if volatility} > 4.0 \\
--0.7 - (\textbf{volatility} - 2.5) \times 0.3, & \text{if volatility} > 2.5 \\
-0.7 + \textbf{sentiment} \times 0.8, & \text{if positive\_days} > \text{negative\_days} \\
--0.2 + \textbf{sentiment} \times 0.6, & \text{otherwise}
+-1.5 - (\textbf{volatility} - 4.0) \times 0.1, & \text{if volatility} > 4.0\% \\
+-0.7 - (\textbf{volatility} - 2.5) \times 0.3, & \text{if volatility} > 2.5\% \\
+0.7 + \textbf{news\_sentiment} \times 0.8, & \text{if positive\_days} > \text{negative\_days} \\
+-0.2 + \textbf{news\_sentiment} \times 0.6, & \text{otherwise}
 \end{cases}
 \end{equation}
 
 \begin{equation}
-\textbf{Range: } -3.0 \leq \textbf{base\_impact} \leq +1.8
+\textbf{Range: } -3.0 \leq \textbf{market\_factor} \leq +1.8
 \end{equation}
 
-Where \textbf{volatility} is the standard deviation of recent price changes (5-day window), \textbf{sentiment} is derived from news analysis, and the factor is amplified by 1.5x for enhanced impact.
+Where \textbf{volatility} is computed from the dataset's \texttt{pct\_chg} column, \textbf{news\_sentiment} is derived from \texttt{news\_text}, and the factor is amplified by 1.5x for enhanced impact.
 
 \subsubsection{{Size Factor}}
 \begin{itemize}
-    \item Inputs: Market value differential, recent trends, financial impact mentions.
+    \item Inputs: \texttt{market\_value} differential from dataset, recent trends, financial impact mentions from \texttt{news\_text}.
 \end{itemize}
 
-The size factor evaluates market capitalization changes and financial impact:
+The size factor evaluates market capitalization changes using the dataset's \texttt{market\_value} column:
 
 \begin{equation}
-\textbf{diff\_ratio} = \frac{\textbf{latest\_market\_value} - \textbf{avg\_market\_value}}{\textbf{avg\_market\_value}}
+\textbf{diff\_ratio} = \frac{\texttt{market\_value}_{latest} - \texttt{market\_value}_{avg}}{\texttt{market\_value}_{avg}}
 \end{equation}
 
 \begin{equation}
-\textbf{base\_effect} = 
+\textbf{size\_effect} = 
 \begin{cases} 
 1.0 + \min(\textbf{diff\_ratio} \times 0.1, 0.5), & \text{if diff\_ratio} > 0.25 \\
 0.7 + \textbf{diff\_ratio} \times 0.5, & \text{if diff\_ratio} > 0.10 \\
@@ -418,10 +422,10 @@ The size factor evaluates market capitalization changes and financial impact:
 \end{equation}
 
 \begin{equation}
-\textbf{Range: } -1.5 \leq \textbf{base\_effect} \leq +1.5
+\textbf{Range: } -1.5 \leq \textbf{size\_effect} \leq +1.5
 \end{equation}
 
-Additional adjustments are made based on financial figures extracted from news (yi yuan, wan yuan mentions).
+Additional adjustments are made based on financial figures extracted from \texttt{news\_text} (yi yuan, wan yuan mentions).
 
 \subsubsection{{Valuation Factor}}
 \begin{itemize}
@@ -446,47 +450,53 @@ Where sector adjustments range from 0.1 to 0.3 for positive sentiment and -0.15 
 
 \subsubsection{{Profitability Factor}}
 \begin{itemize}
-    \item Inputs: Earnings, margins, profit-related news.
+    \item Inputs: Market value changes (\texttt{market\_value}), profit-related news keywords, earnings mentions from \texttt{news\_text}.
 \end{itemize}
 
-The profitability factor evaluates earnings changes and profit-related news mentions:
+The profitability factor evaluates market capitalization changes and profit-related news mentions:
 
 \begin{equation}
-\textbf{change\_pct} = \frac{\textbf{current\_value} - \textbf{previous\_value}}{\textbf{previous\_value}} \times 100
+\textbf{change\_pct} = \frac{\texttt{market\_value}_{current} - \texttt{market\_value}_{previous}}{\texttt{market\_value}_{previous}} \times 100
 \end{equation}
 
 \begin{equation}
 \textbf{profitability\_effect} = 
 \begin{cases} 
-\textbf{change\_pct} \times 0.05, & \text{if EPS/ROE data available} \\
--1.8, & \text{if news contains loss keywords (net loss, deficit)} \\
-\min(\sum \textbf{profit\_increases} / 20, 2.5), & \text{if profit increase mentioned} \\
--\min(\sum \textbf{profit\_decreases} / 20, 2.5), & \text{if profit decrease mentioned}
+\textbf{change\_pct} \times 0.05, & \text{if market value data available} \\
+& \text{from dataset} \\
+-1.8, & \text{if \texttt{news\_text} contains loss} \\
+& \text{keywords (\textit{kuisun}, \textit{jingkuisun}, \textit{chizi})} \\
+\min(\sum \textbf{profit\_keyword\_count} / 20, 2.5), & \text{if profit increase mentioned} \\
+& \text{(\textit{yingli}, \textit{zengzhang})} \\
+-\min(\sum \textbf{loss\_keyword\_count} / 20, 2.5), & \text{if profit decrease mentioned} \\
+& \text{(\textit{xiajiang}, \textit{jianshao})}
 \end{cases}
 \end{equation}
 
 \begin{equation}
-\textbf{Range: } -3.0 \leq \textbf{change\_pct} \times 0.05 \leq +3.0
+\textbf{Range: } -3.0 \leq \textbf{profitability\_effect} \leq +3.0
 \end{equation}
 
 
 \vspace{0.20 cm}
 \subsubsection{{Investment Factor}}
 \begin{itemize}
-    \item Inputs: Capital expenditure mentions, acquisition news, R\&D initiatives.
+    \item Inputs: Financial figures from \texttt{news\_text}, investment keywords in Chinese (touzi, shougou, yanfa), capital expenditure mentions.
 \end{itemize}
 
-The investment factor analyzes investment-related news and financial figures:
+The investment factor analyzes investment-related news and financial figures extracted from Chinese text:
 
 \begin{equation}
-\textbf{investment\_amounts} = \sum \textbf{financial\_figures\_from\_news}
+\textbf{investment\_amounts} = \sum \text{extract\_from\_news}(\texttt{news\_text}, \text{pattern: yi yuan, wan yuan})
 \end{equation}
+
+Where amounts in Chinese notation are converted: yi yuan (hundred millions) $\rightarrow$ billions, wan yuan (ten thousands) $\rightarrow$ millions.
 
 \begin{equation}
 \textbf{impact\_scale} = 
 \begin{cases} 
-\min(\textbf{investment\_amounts} / 10.0, 2.0), & \text{if amounts} > 1.0 \text{ billion} \\
-\textbf{sentiment} \times 1.5, & \text{if investment keywords detected} \\
+\min(\textbf{investment\_amounts} / 10.0, 2.0), & \text{if extracted amounts} > 1.0 \text{ billion yuan} \\
+\textbf{news\_sentiment} \times 1.5, & \text{if investment keywords (touzi, binggou) detected} \\
 0.0, & \text{otherwise}
 \end{cases}
 \end{equation}
@@ -494,48 +504,50 @@ The investment factor analyzes investment-related news and financial figures:
 \begin{equation}
 \textbf{investment\_effect} = \textbf{impact\_scale} \times 0.5 \times 
 \begin{cases} 
-1.0, & \text{if sentiment} > 0 \\
+1.0, & \text{if } \textbf{news\_sentiment} > 0 \\
 0.5, & \text{otherwise}
 \end{cases}
 \end{equation}
 
 \begin{equation}
-\textbf{Range: } -1.0 \leq \textbf{impact} \leq +1.5
+\textbf{Range: } -1.0 \leq \textbf{investment\_effect} \leq +1.5
 \end{equation}
-
-Where investment amounts are extracted from Chinese financial notation (yi yuan for billions, wan yuan for millions).
 
 \subsubsection{{News Effect Factor}}
 \begin{itemize}
-    \item Input: FinBERT sentiment score with content-specific adjustments.
+    \item Input: Processed \texttt{news\_text} with FinBERT sentiment analysis and keyword-based adjustments using Chinese financial vocabulary.
 \end{itemize}
 
-The news effect factor processes sentiment with domain-specific enhancements:
+The news effect factor processes sentiment with domain-specific enhancements using the Chinese financial news data:
 
 \begin{equation}
-\bm{\textbf{base\_sentiment} = \textbf{FinBERT\_score} \in [-1, +1]}
+\textbf{base\_sentiment} = \textbf{FinBERT\_score}(\texttt{news\_text}) \in [-1, +1]
 \end{equation}
 
 \begin{equation}
-\bm{\textbf{keyword\_sentiment} = \frac{\textbf{positive\_keywords} - \textbf{negative\_keywords}}{\textbf{positive\_keywords} + \textbf{negative\_keywords} + 1}}
+\textbf{keyword\_sentiment} = \frac{\textbf{positive\_keywords} - \textbf{negative\_keywords}}{\textbf{positive\_keywords} + \textbf{negative\_keywords} + 1}
+\end{equation}
+
+Where keywords are extracted from the dataset's parsed Chinese text including:
+\begin{itemize}
+    \item Positive: [zengzhang, yingli, shangsheng, huode, chenggong, tisheng, shouyi] (growth, profit, rise, gain, success, improvement, revenue)
+    \item Negative: [xiajiang, kuisun, jianshao, jinggao, zhaiwu, diaocha, weigui] (decline, loss, decrease, warning, debt, investigation, violation)
+\end{itemize}
+
+\begin{equation}
+\textbf{combined\_sentiment} = \frac{\textbf{base\_sentiment} + \textbf{keyword\_sentiment}}{2}
 \end{equation}
 
 \begin{equation}
-\bm{\textbf{combined\_sentiment} = \frac{\textbf{base\_sentiment} + \textbf{keyword\_sentiment}}{2}}
+\textbf{news\_effect} = \textbf{combined\_sentiment} \times 2.0 \text{ (amplification)}
 \end{equation}
 
 \begin{equation}
-\bm{\textbf{news\_effect} = \textbf{combined\_sentiment} \times 2.0 \text{ (amplification)}}
+\textbf{Range: } -2.0 \leq \textbf{news\_effect} \leq +2.0
 \end{equation}
 
-\begin{equation}
-\bm{\textbf{Range: } -2.0 \leq \textbf{value} \leq +2.0}
-\end{equation}
 
-Where positive keywords include ['profit', 'gain', 'increase', 'success'] and negative keywords include ['loss', 'decline', 'warning', 'debt'].
-
-
-These factors are formatted via the \texttt{format\allowbreak\_factor\allowbreak\_for\allowbreak\_display()} function in \texttt{report\allowbreak\_generator.py}, which rounds values to one decimal place and creates clear descriptions. The final display string follows the pattern.
+These factors are formatted via the \texttt{format\allowbreak\_factor\allowbreak\_for\allowbreak\_display()} function in \texttt{report\allowbreak\_generator.py}, which rounds values to one decimal place and creates clear descriptions. The factor calculations reference the Chinese stock market dataset structure available at \texttt{github.com/frinkleko/FinReport} which contains historical stock data, financial news, and pre-computed technical indicators for Chinese A-share stocks spanning 2018-2021.
 \vspace{0.15cm}
 \subsubsection{{Factor Amplification}}
 \begin{itemize}
@@ -1423,7 +1435,7 @@ FinReport successfully integrates technical indicators, financial news sentiment
 \vspace*{5pt}
 
 \bibliographystyle{unsrt}
-\bibliography{REFERENCES}
+\bibliography{References}
 
 % \section*{Acknowledgements}
 
