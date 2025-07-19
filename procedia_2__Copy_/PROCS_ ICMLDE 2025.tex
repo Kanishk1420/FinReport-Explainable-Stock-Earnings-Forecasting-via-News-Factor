@@ -327,7 +327,7 @@ FinReport is organized into several interdependent modules that collectively del
 
 \item \textbf{Historical Stock Data:} Time series data including price, volume, market value, and over 50 technical indicators (e.g., RSI, BIAS, MFI, CCI) from Chinese A-share stock databases spanning 2018-2021.
 \item \textbf{Financial News:} Structured news items from financial news services, containing timestamps, headlines, and content text in both English and Chinese.
-\item \textbf{Dataset Source:} We utilize the comprehensive Chinese stock market dataset \cite{FinReportDataset2025}, which contains historical stock data, financial news, and pre-computed technical indicators for Chinese A-share stocks spanning 2018-2021. The primary dataset (\texttt{src/stock\_data.csv}) includes 75 stocks from Shanghai and Shenzhen exchanges with 56 distinct feature columns including price data, trading metrics, technical indicators, and fundamental factors.
+\item \textbf{Dataset Source:} We utilize the comprehensive Chinese stock market dataset \cite{FinReportDataset2025}, which contains historical stock data, financial news, and pre-computed technical indicators for Chinese A-share stocks spanning 2018-2021. This curated financial dataset includes 75 stocks from Shanghai and Shenzhen exchanges with 56 distinct feature columns including price data, trading metrics, technical indicators, and fundamental factors.
 \item \textbf{Preprocessing Pipeline:} 
 
 \begin{itemize}
@@ -575,7 +575,7 @@ Where keywords are extracted from the dataset's parsed Chinese text including:
 \end{equation}
 
 
-These factors are formatted via the \texttt{format\allowbreak\_factor\allowbreak\_for\allowbreak\_display()} function in \texttt{report\allowbreak\_generator.py}, which rounds values to one decimal place and creates clear descriptions. The factor calculations reference the Chinese stock market dataset structure \cite{FinReportDataset2025}, which contains historical stock data, financial news, and pre-computed technical indicators for Chinese A-share stocks spanning 2018-2021, with the primary dataset file located at \texttt{src/stock\_data.csv} containing 56 feature columns across 75 stocks.
+These factors are formatted through our custom display formatting system, which rounds values to one decimal place and creates clear descriptions for interpretability. The factor calculations reference the Chinese stock market dataset structure \cite{FinReportDataset2025}, which contains historical stock data, financial news, and pre-computed technical indicators for Chinese A-share stocks spanning 2018-2021, with the main dataset providing structured access to 56 feature columns across 75 stocks.
 
 All factors undergo enhancement using the amplification process detailed in Section 3.5.1 before being combined for overall trend calculation.
 
@@ -1237,10 +1237,10 @@ A rigorous experimental framework was implemented to evaluate FinReport's foreca
 \begin{itemize}
 
 \item Historical stock data and technical indicators were sourced from our curated Chinese A-share market dataset \cite{FinReportDataset2025}. The dataset encompasses 75 stocks from the Shanghai and Shenzhen exchanges, spanning from January 2018 to December 2021, providing a comprehensive view across multiple market cycles including the significant volatility during the COVID-19 pandemic period. Financial news was aggregated via RSS feeds from 7 major Chinese financial news sources, including CLS Finance (Financial Association), East Money, and Flush Finance (Tonghuashun), generating over 42,000 news items that were matched to corresponding stock symbols.
-\item The integrated dataset \cite{FinReportDataset2025} contained 56 distinct feature columns including price data (open, high, low, close), trading metrics (volume, amount), technical indicators (RSI, BIAS, MFI, CCI), and fundamental factors (Book-to-Market Equity, Sales-to-Price Ratio). The primary dataset file (\texttt{src/stock\_data.csv}) provides structured access to this comprehensive financial information. Data preprocessing included forward-filling missing values, normalization, and text cleaning for NLP tasks. The final processed dataset contained 23,567 rows with complete technical and sentiment information, structured for time-series modeling.
+\item The integrated dataset \cite{FinReportDataset2025} contained 56 distinct feature columns including price data (open, high, low, close), trading metrics (volume, amount), technical indicators (RSI, BIAS, MFI, CCI), and fundamental factors (Book-to-Market Equity, Sales-to-Price Ratio). This structured financial dataset provides comprehensive access to all necessary information for our analysis. Data preprocessing included forward-filling missing values, normalization, and text cleaning for NLP tasks. The final processed dataset contained 23,567 rows with complete technical and sentiment information, structured for time-series modeling.
 \end{itemize}
 \subsection{Training and Validation}
-The dataset was partitioned chronologically into training (60\%), validation (20\%), and testing (20\%) sets. A rolling window approach with a fixed sequence length (e.g., 30 days) was used to capture temporal dependencies. The LSTM network was trained using the Adam optimizer with early stopping based on validation loss. Hyperparameters were configured via a YAML file for consistency.
+The dataset was partitioned chronologically into training (60\%), validation (20\%), and testing (20\%) sets. A rolling window approach with a fixed sequence length (e.g., 30 days) was used to capture temporal dependencies. The LSTM network was trained using the Adam optimizer with early stopping based on validation loss. Hyperparameters were systematically configured using standardized configuration management for experimental consistency.
 
 \text{1) Model Configuration:} An LSTM network implemented in PyTorch,
 with key hyperparameters optimized through grid search.
