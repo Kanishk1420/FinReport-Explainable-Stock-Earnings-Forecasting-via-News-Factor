@@ -1,0 +1,30 @@
+\begin{thebibliography}{1}
+
+\bibitem{FAMA19933}
+Eugene~F. Fama and Kenneth~R. French.
+\newblock Common risk factors in the returns on stocks and bonds.
+\newblock {\em Journal of Financial Economics}, 33(1):3--56, 1993.
+
+\bibitem{hochreiter1997lstm}
+Sepp Hochreiter and Jürgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural Computation}, 9(8):1735--1780, 11 1997.
+
+\bibitem{TETLOCK2007}
+PAUL~C. TETLOCK.
+\newblock Giving content to investor sentiment: The role of media in the stock
+  market.
+\newblock {\em The Journal of Finance}, 62(3):1139--1168, 2007.
+
+\bibitem{DBLP:journals/corr/abs-1908-10063}
+Dogu Araci.
+\newblock Finbert: Financial sentiment analysis with pre-trained language
+  models.
+\newblock {\em CoRR}, abs/1908.10063, 2019.
+
+\bibitem{BOLLERSLEV1986307}
+Tim Bollerslev.
+\newblock Generalized autoregressive conditional heteroskedasticity.
+\newblock {\em Journal of Econometrics}, 31(3):307--327, 1986.
+
+\end{thebibliography}
