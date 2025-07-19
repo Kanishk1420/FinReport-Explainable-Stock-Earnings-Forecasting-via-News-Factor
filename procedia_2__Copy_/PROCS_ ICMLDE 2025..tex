@@ -81,7 +81,7 @@
 \usepackage{amsmath,amssymb,amsfonts,bm}
 \usepackage{float}      % Required for [H] option
 \usepackage{placeins}   % Required for \FloatBarrier
-\usepackage{caption}    % Improves figure positioning
+% \usepackage{caption}    % Already loaded above with options
 \usepackage{booktabs}
 \usepackage{tabularx} % For the tabularx environment
 \usepackage{algorithm}
@@ -132,8 +132,8 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% The amssymb package provides various useful mathematical symbols
-
-\usepackage{amssymb}
+% (already loaded above)
+% \usepackage{amssymb}
 %% The amsthm package provides extended theorem environments
 %% \usepackage{amsthm}
 
@@ -217,11 +217,14 @@ Analyzing Model}
 
 
 \author[a]{Mukesh Kumar}
-\author[a]{Md Azlan}
-\author[a]{Kanishk}
-\author[a]{Kingshuk Chatterjee}
+\author[b]{Md Azlan}
+\author[c]{Kanishk}
+\author[d]{Kingshuk Chatterjee}
 
-\address[a]{Department of Computer Science and Engineering, Kalinga Institute of Industrial Technology, Bhubaneswar 751024, Odisha, India}
+\address[a]{School of Computer Engineering,Kalinga Institute of Industrial Technology-751024}
+\address[b]{School of Computer Engineering,Kalinga Institute of Industrial Technology-751024}
+\address[c]{School of Computer Engineering,Kalinga Institute of Industrial Technology-751024}
+\address[d]{School of Computer Engineering,Kalinga Institute of Industrial Technology-751024}
 
 
 
@@ -241,11 +244,15 @@ Financial forecasting, stock market prediction, multi-factor analysis, technical
 %% or \MSC[2008] code \sep code (2000 is the default)
 
 \end{keyword}
-\cortext[cor1]{Corresponding author. Tel.: +0-000-000-0000 ; fax: +0-000-000-0000.}
+\cortext[cor1]{Mukesh Kumar}
 \end{frontmatter}
 
+% Prevent vbox spacing issues
+\vspace{-2pt}
+\enlargethispage{5pt}
+
 %\correspondingauthor[*]{Corresponding author. Tel.: +0-000-000-0000 ; fax: +0-000-000-0000.}
-\email{author@institute.xxx}
+\email{mukesh.kumarfcs@kiit.ac.in}
 
 %%
 %% Start line numbering here if you want
@@ -255,6 +262,19 @@ Financial forecasting, stock market prediction, multi-factor analysis, technical
 %% main text
 
 %\enlargethispage{-7mm}
+
+% Copyright and publication information
+\vspace{12pt}
+\noindent\textbf{Mukesh Kumar}\\
+E-mail address: mukesh.kumarfcs@kiit.ac.in
+
+\vspace{6pt}
+\noindent 1877-0509 \copyright\ 2025 The Authors. Published by Elsevier B.V.\\
+This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)\\
+Peer-review under responsibility of the scientific committee of the International Conference on Machine Learning and Data Engineering.
+
+\vspace{12pt}
+
 \section{Introduction}
 \label{main}
 
@@ -291,7 +311,7 @@ Early stock market forecasting methods, including ARIMA and traditional technica
 
 \section{System Model And Proposed Mechanism}
 FinReport is organized into several interdependent modules that collectively deliver an explainable forecast:
-\begin{figure}[h] % 'h' places the image approximately here
+\begin{figure}[!ht] % 'ht' for better placement options
     \centering
     % Adjust width, height, scale, or keep aspect ratio
     \includegraphics[width=0.90\textwidth]{flowchart.jpg} % Adjust width
@@ -299,7 +319,7 @@ FinReport is organized into several interdependent modules that collectively del
     % \includegraphics[scale=0.5]{flowchart.png} % Scale image
     % \includegraphics[width=0.5\textwidth, height=5cm, keepaspectratio]{flowchart.png} % Keep aspect ratio
 
-    \caption{Code Structure and Workflow}
+    \caption{Proposed FinReport System Architecture}
     \label{fig:workflow_diagram}
 \end{figure}
 \subsection{{Data Integration Module}}
@@ -1076,7 +1096,7 @@ with key hyperparameters optimized through grid search.
 \item The final model architecture contained 361,345 trainable parameters. Dataset partitioning resulted in 11,347 samples for training and 2,836 samples for validation, with batch size fixed at 32 for both training and validation phases.
 \item Model reproducibility was ensured by setting a fixed random seed across NumPy, PyTorch, and data loaders, enabling consistent results across multiple training runs.
 \end{itemize}
-\begin{figure}[h] % 'h' places the image approximately here
+\begin{figure}[!ht] % Better placement options
     \centering
     % Adjust width, height, scale, or keep aspect ratio
     \includegraphics[width=0.80\textwidth]{Picture2.png} % Adjust width
@@ -1096,7 +1116,7 @@ The model demonstrates strong predictive capability across evaluated stocks, ind
 
 \definecolor{lightgreen}{RGB}{220, 235, 210} 
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \caption{\textbf{Model Performance Metrics and Interpretations}}
 \begin{tabular}{|l|c|l|}
@@ -1120,7 +1140,7 @@ In practical terms, these results demonstrate the model’s utility for real-wor
 \subsection{Stock-Specific Performance}
 Regression metrics reveal significant variation in predictive performance across stocks.
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \caption{\textbf{Top Performing Stocks ($R^2 > 0.98$)}}
 \renewcommand{\arraystretch}{1.4}
@@ -1139,7 +1159,7 @@ Regression metrics reveal significant variation in predictive performance across
 \end{table}
 
 These stocks are characterized by large market capitalization and strong technical indicator patterns.
-\begin{figure}[h] % 'h' places the image approximately here
+\begin{figure}[!ht] % Better placement options
     \centering
     % Adjust width, height, scale, or keep aspect ratio
     \includegraphics[width=0.80\textwidth]{Picture3.png} % Adjust width
@@ -1157,7 +1177,7 @@ As shown in Fig. 4, the predictions demonstrate a strong linear relationship wit
 
 \textbf{Challenging Prediction Cases:}
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \renewcommand{\arraystretch}{1.5} % Increase row height
 \centering
 \large % Make table font slightly larger
@@ -1182,7 +1202,7 @@ Stocks with poor predictive performance often exhibit one or more of the followi
 \subsection{Sector-Based Analysis}
 To examine sector-specific performance patterns, stocks were categorized into five primary sectors: Technology, Consumer, Financial, Industrial, and Real Estate. This classification followed standard Global Industry Classification Standard (GICS) sector definitions, with occasional adjustments for China-specific market characteristics. For each sector, performance metrics were aggregated using both simple averages and weighted averages based on market capitalization to avoid distortion from outlier stocks.
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \caption{\textbf{Sector-wise Average Performance Metrics}}
 \scalebox{1.2}{ % Increase size by 20%
@@ -1213,7 +1233,7 @@ The relationship between market capitalization and prediction accuracy was syste
 Additionally, advanced statistical evaluations such as ANOVA and regression diagnostics were performed to validate the significance of the variations observed across different tiers.
 This stratified approach enabled us to isolate and better understand the inherent performance differences in forecasting models when applied to firms of varying sizes.
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \caption{\textbf{Market Capitalization Impact on Prediction Accuracy}}
 \scalebox{1.2}{ % Scales the table to 120%
@@ -1249,7 +1269,7 @@ To quantify the relative influence of each forecasting factor, we employed a two
 
 
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
 \caption{\textbf{Factor Influence Analysis}}
 \renewcommand{\arraystretch}{1.3} % Increases row height
@@ -1301,6 +1321,8 @@ FinReport successfully integrates technical indicators, financial news sentiment
 % The contrarian nature of the News Effect Factor warrants deeper investigation through controlled experiments comparing predictive performance across different market regimes (bull, bear, and sideways). Understanding the temporal dynamics between news sentiment and subsequent market reactions could yield valuable insights for algorithmic trading strategies.
 % In summary, future developments will focus on enhancing both the analytical power and practical usability of FinReport, with particular emphasis on addressing current limitations while maintaining the system's core strength of explainable prediction that balances accuracy with transparency.
 
+% Add space to prevent vbox issues
+\vspace*{5pt}
 
 \bibliographystyle{unsrt}
 \bibliography{REFERENCES}
@@ -1395,6 +1417,10 @@ FinReport successfully integrates technical indicators, financial news sentiment
 % {\bf Title}&{\bf Reference style} \\[6pt]
 % PROCS  & 3 Vancouver Numbered
 % \end{tabular*}
+
+% Final spacing adjustment to prevent vbox issues
+\vfill
+\clearpage
 
 \end{document}
 
