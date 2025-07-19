@@ -441,18 +441,23 @@ Additional adjustments are made based on financial figures extracted from \textt
 \end{itemize}
 
 The valuation factor checks for multiple valuation-related columns in the dataset \cite{FinReportDataset2025}:
-- \texttt{value\_factor\_Book\_to\_Market\_Equity}
-- \texttt{value\_factor\_Dividend\_Yield}  
-- \texttt{value\_factor\_Sales\_to\_Price\_Ratio}
-- \texttt{value\_factor\_Assets\_to\_Market\_Equity}
+
+\begin{itemize}
+    \item \texttt{value\_factor\_Book\_to\_Market\_Equity}
+    \item \texttt{value\_factor\_Dividend\_Yield}  
+    \item \texttt{value\_factor\_Sales\_to\_Price\_Ratio}
+    \item \texttt{value\_factor\_Assets\_to\_Market\_Equity}
+\end{itemize}
 
 When valuation data is available, the factor calculates percentage changes from historical values. When unavailable, it relies on sector-specific sentiment analysis with different impact weights:
 
-\textbf{Sector Adjustments:}
-- Technology: ±0.3/0.2 for positive/negative sentiment
-- Pharmaceutical: ±0.2/0.3 
-- Financial: ±0.2/0.3
-- Energy: ±0.15/0.25
+\textbf{Sector-Specific Adjustments:}
+\begin{itemize}
+    \item \textbf{Technology:} $+0.3$ (positive sentiment) / $-0.2$ (negative sentiment)
+    \item \textbf{Pharmaceutical:} $+0.2$ (positive sentiment) / $-0.3$ (negative sentiment)
+    \item \textbf{Financial:} $+0.2$ (positive sentiment) / $-0.3$ (negative sentiment)
+    \item \textbf{Energy:} $+0.15$ (positive sentiment) / $-0.25$ (negative sentiment)
+\end{itemize}
 
 The factor also incorporates profit/loss keyword analysis and percentage change extraction from news text, using consistent base amplification.
 
