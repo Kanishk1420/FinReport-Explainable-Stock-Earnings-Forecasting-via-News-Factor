@@ -703,21 +703,21 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.t
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txr.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxptmr.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxr.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbi.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbi.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbi.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbmia.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbmia.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbmia.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbsyc.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbsyc.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbsyc.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbexa.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbexa.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbexa.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txb.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxptmb.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxb.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbi.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbi.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbi.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbmia.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbmia.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbmia.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbsyc.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbsyc.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbsyc.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbexa.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbexa.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbexa.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txbmi.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxbmi.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxptmbi.tfm
@@ -727,9 +727,6 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxb.
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txbmi.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxbmi.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxptmbi.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrb8t.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrb8t.vf
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrb8r.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txmi.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxmi.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxptmri.tfm
@@ -782,6 +779,9 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxb.
 INPUT .\PROCS_ ICMLDE 2025..bbl
 INPUT .\PROCS_ ICMLDE 2025..bbl
 INPUT PROCS_ ICMLDE 2025..bbl
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrr8t.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrr8t.vf
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
 INPUT PROCS_ ICMLDE 2025..aux
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\rtxb.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\rtxb.pfb
@@ -791,8 +791,6 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\rtx
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\rtxmi.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\rtxr.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\rtxr.pfb
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\txbex.pfb
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\txbex.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\txbsy.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\txbsy.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\txex.pfb
@@ -801,8 +799,6 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\txs
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\txsy.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\txsyc.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\txsyc.pfb
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrb8a.pfb
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrb8a.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrr8a.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrr8a.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvr8a.pfb

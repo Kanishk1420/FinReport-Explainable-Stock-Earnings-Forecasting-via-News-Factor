@@ -161,7 +161,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 %%
 %% \biboptions{authoryear}
 
-% \biboptions{}
+\biboptions{authoryear}
 
 % if you have landscape tables
 
@@ -379,60 +379,42 @@ The market factor is computed using volatility-based impact with sentiment adjus
 
 \subsubsection{{Market Factor}}
 \begin{itemize}
-    \item \textbf{Inputs:} Daily percentage change (\texttt{pct\_chg}), historical volatility, technical indicators (RSI, BIAS), and news sentiment scores.
-    \item \textbf{Purpose:} Captures market-wide momentum and volatility effects that influence individual stock returns.
+    \item \textbf{Inputs:} Daily percentage change (\texttt{pct\_chg}), news sentiment analysis from \texttt{news\_text}.
+    \item \textbf{Purpose:} Captures market volatility effects and sentiment-driven momentum that influence individual stock returns.
 \end{itemize}
 
-The market factor combines volatility-based risk assessment with sentiment-driven momentum. First, we compute rolling volatility:
+The market factor implementation combines volatility analysis with news sentiment to determine market impact. The system computes recent volatility from the last 5 trading days and analyzes positive vs negative trading days:
 
 \begin{equation}
 \textbf{volatility} = \text{std}(\texttt{pct\_chg}_{\text{recent 5 days}}) \times 100
 \end{equation}
 
-Next, the base market impact is determined through a tiered volatility structure with sentiment modulation:
+Based on volatility levels, the factor applies different impact calculations:
+- \textbf{High volatility} (> 4.0\%): Applies negative bias with volatility scaling
+- \textbf{Moderate volatility} (> 2.5\%): Moderate negative impact with sentiment adjustment  
+- \textbf{Low volatility}: Positive bias when more positive trading days exist, enhanced by news sentiment
 
-\begin{equation}
-\textbf{base\_impact} = 
-\begin{cases} 
--1.5 - (\textbf{volatility} - 4.0) \times 0.1, & \text{if volatility} > 4.0\% \text{ (high stress)} \\
--0.7 - (\textbf{volatility} - 2.5) \times 0.3, & \text{if volatility} > 2.5\% \text{ (moderate stress)} \\
-0.7 + \textbf{news\_sentiment} \times 0.8, & \text{if market trend positive} \\
--0.2 + \textbf{news\_sentiment} \times 0.6, & \text{if market trend negative}
-\end{cases}
-\end{equation}
-
-\begin{equation}
-\textbf{Range: } -3.0 \leq \textbf{market\_factor} \leq +1.8
-\end{equation}
-
-This range reflects empirical observations where extreme market conditions can impact individual stock returns by up to 3\% daily, with negative market stress having stronger effects than positive momentum.
+The final factor value is amplified by 1.5x and includes random variation (±0.2) to reflect market uncertainty.
 
 \subsubsection{{Size Factor}}
 \begin{itemize}
-    \item \textbf{Inputs:} Market capitalization data (\texttt{market\_value}), recent value trends, and financial impact mentions from \texttt{news\_text}.
-    \item \textbf{Purpose:} Captures the small-cap vs large-cap premium effect, where smaller companies typically exhibit higher volatility and return potential.
+    \item \textbf{Inputs:} Market capitalization data (\texttt{market\_value}), financial figures extracted from \texttt{news\_text}.
+    \item \textbf{Purpose:} Captures size effects by analyzing market value changes and financial impact mentions in news.
 \end{itemize}
 
-The size factor quantifies market capitalization changes by comparing current values to historical averages:
+The size factor evaluates market capitalization changes by comparing the latest market value to the historical average:
 
 \begin{equation}
-\textbf{value\_change\_ratio} = \frac{\texttt{market\_value}_{\text{current}} - \texttt{market\_value}_{\text{avg\_20d}}}{\texttt{market\_value}_{\text{avg\_20d}}}
+\textbf{diff\_ratio} = \frac{\texttt{market\_value}_{\text{latest}} - \texttt{market\_value}_{\text{average}}}{\texttt{market\_value}_{\text{average}}}
 \end{equation}
 
-This ratio is then transformed into a size factor through a sigmoid-based normalization:
+The factor applies different scaling based on the magnitude of change:
+- \textbf{Very large increase} (>25\%): Base effect 1.0 + scaled ratio
+- \textbf{Significant increase} (10-25\%): Base effect 0.7 + scaled ratio  
+- \textbf{Moderate changes} (-5\% to +5\%): Ratio scaled by factor of 3.0
+- \textbf{Significant decreases}: Negative base effects with ratio scaling
 
-\begin{equation}
-\textbf{size\_factor} = \begin{cases} 
-0.8 \times \tanh(\textbf{value\_change\_ratio} \times 3.0), & \text{if } |\textbf{value\_change\_ratio}| < 0.1 \\
-1.2 \times \text{sign}(\textbf{value\_change\_ratio}), & \text{if } |\textbf{value\_change\_ratio}| \geq 0.1
-\end{cases}
-\end{equation}
-
-\begin{equation}
-\textbf{Range: } -1.2 \leq \textbf{size\_factor} \leq +1.2
-\end{equation}
-
-The factor is enhanced by financial impact mentions in news text, where acquisition discussions or market cap changes amplify the base size effect by up to 50\%.
+The final factor incorporates news sentiment modifiers and financial impact mentions, then applies 1.5x amplification with randomization (±0.3).
 
 \begin{equation}
 \textbf{size\_effect} = 
@@ -454,23 +436,25 @@ Additional adjustments are made based on financial figures extracted from \textt
 
 \subsubsection{{Valuation Factor}}
 \begin{itemize}
-    \item \textbf{Inputs:} Price-to-Book ratio (P/B), Dividend Yield, Sales-to-Price ratio, and earnings-related metrics from financial statements.
-    \item \textbf{Purpose:} Identifies value vs growth investment opportunities by comparing market price to fundamental business metrics.
+    \item \textbf{Inputs:} Valuation metrics from dataset columns (Book-to-Market, Dividend Yield, Sales-to-Price ratio, etc.), profit/loss terms from \texttt{news\_text}.
+    \item \textbf{Purpose:} Evaluates investment value by analyzing available valuation metrics and sector-specific news sentiment.
 \end{itemize}
 
-The valuation factor combines multiple fundamental metrics through a weighted scoring approach. The core valuation score integrates three key ratios:
+The valuation factor checks for multiple valuation-related columns in the dataset:
+- \texttt{value\_factor\_Book\_to\_Market\_Equity}
+- \texttt{value\_factor\_Dividend\_Yield}  
+- \texttt{value\_factor\_Sales\_to\_Price\_Ratio}
+- \texttt{value\_factor\_Assets\_to\_Market\_Equity}
 
-\begin{equation}
-\textbf{book\_to\_market} = \frac{1}{\text{P/B ratio}}, \quad \textbf{earnings\_yield} = \frac{\text{EPS}}{\text{Price}}, \quad \textbf{sales\_ratio} = \frac{\text{Sales per Share}}{\text{Price}}
-\end{equation}
+When valuation data is available, the factor calculates percentage changes from historical values. When unavailable, it relies on sector-specific sentiment analysis with different impact weights:
 
-These components are normalized and combined using empirically-determined weights:
+\textbf{Sector Adjustments:}
+- Technology: ±0.3/0.2 for positive/negative sentiment
+- Pharmaceutical: ±0.2/0.3 
+- Financial: ±0.2/0.3
+- Energy: ±0.15/0.25
 
-\begin{equation}
-\textbf{base\_valuation} = 0.4 \times \textbf{book\_to\_market} + 0.35 \times \textbf{earnings\_yield} + 0.25 \times \textbf{sales\_ratio}
-\end{equation}
-
-The final valuation factor applies sector-specific adjustments and volatility scaling:
+The factor also incorporates profit/loss keyword analysis and percentage change extraction from news text, applying amplification factors based on news impact significance.
 
 \begin{equation}
 \textbf{valuation\_effect} = 
@@ -488,33 +472,21 @@ Where sector adjustments range from 0.1 to 0.3 for positive sentiment and -0.15 
 
 \subsubsection{{Profitability Factor}}
 \begin{itemize}
-    \item \textbf{Inputs:} Market value changes (\texttt{market\_value}), profit-related keywords from \texttt{news\_text}, and earnings trend analysis.
-    \item \textbf{Purpose:} Captures corporate profitability momentum through both quantitative market cap changes and qualitative news sentiment.
+    \item \textbf{Inputs:} Profitability metrics from dataset (EPS, net profit margin, ROE, ROA, gross/net profit), profit-related keywords from \texttt{news\_text}.
+    \item \textbf{Purpose:} Evaluates corporate profitability through quantitative metrics when available, or sentiment analysis of earnings-related news content.
 \end{itemize}
 
-The profitability factor combines quantitative market value analysis with qualitative profit-related news sentiment. First, we calculate relative market value change:
+The profitability factor first searches for available profitability columns in the dataset:
+- \texttt{eps}, \texttt{net\_profit\_margin}, \texttt{roe}, \texttt{roa}, \texttt{grossprofit}, \texttt{netprofit}
 
-\begin{equation}
-\textbf{value\_change\_pct} = \frac{\texttt{market\_value}_{\text{current}} - \texttt{market\_value}_{\text{baseline}}}{\texttt{market\_value}_{\text{baseline}}} \times 100
-\end{equation}
+When profitability data exists, it calculates percentage change between current and previous values, scaled by factor 0.05 and capped at ±1.5.
 
-The profitability effect is then determined through a multi-tier assessment:
+When quantitative data is unavailable, the factor analyzes news content for:
+- \textbf{Earnings keywords:} profit, earnings, income, revenue, margin, EPS, ROE, ROI
+- \textbf{Directional terms:} increase/decrease, rise/fall, improve/decline
+- \textbf{Percentage changes:} Extracted numeric percentages from text
 
-\begin{equation}
-\textbf{profitability\_factor} = 
-\begin{cases} 
-\textbf{value\_change\_pct} \times 0.05, & \text{if quantitative data available} \\
--1.8, & \text{if news contains loss indicators} \\
-\min(\textbf{profit\_mentions} / 20, 2.5), & \text{if profit growth mentioned} \\
--\min(\textbf{loss\_mentions} / 20, 2.5), & \text{if profit decline mentioned}
-\end{cases}
-\end{equation}
-
-\begin{equation}
-\textbf{Range: } -2.5 \leq \textbf{profitability\_factor} \leq +2.5
-\end{equation}
-
-The factor emphasizes negative profitability signals (loss cap at -1.8) as markets typically react more strongly to profit warnings than to profit improvements.
+The factor applies strong negative bias (-1.8) for explicit loss mentions but scales positive profit increases with sentiment modifiers, applying final amplification of 1.5x.
 
 \begin{equation}
 \textbf{Range: } -3.0 \leq \textbf{profitability\_effect} \leq +3.0
@@ -524,32 +496,21 @@ The factor emphasizes negative profitability signals (loss cap at -1.8) as marke
 \vspace{0.20 cm}
 \subsubsection{{Investment Factor}}
 \begin{itemize}
-    \item \textbf{Inputs:} Investment-related financial figures from \texttt{news\_text}, capital expenditure mentions, and M\&A activity indicators.
-    \item \textbf{Purpose:} Quantifies corporate investment activity impact on stock returns, particularly capturing market reactions to major capital allocation decisions.
+    \item \textbf{Inputs:} Investment-related financial figures extracted from \texttt{news\_text}, acquisition/expansion keywords, R\&D mentions.
+    \item \textbf{Purpose:} Quantifies corporate investment activity impact by analyzing investment amounts and strategic activity mentions in news.
 \end{itemize}
 
-The investment factor analyzes corporate investment activities through financial figure extraction and sentiment analysis. Investment amounts are identified from news text:
+The investment factor analyzes news content for investment-related information:
+- \textbf{Investment amounts:} Extracts numeric financial figures from news text
+- \textbf{Activity types:} Counts mentions of acquisition, expansion, R\&D activities
+- \textbf{Sentiment context:} Applies positive/negative weighting to investment news
 
-\begin{equation}
-\textbf{investment\_value} = \sum \text{ExtractAmounts}(\texttt{news\_text}, \text{patterns: billion, million, major investment})
-\end{equation}
+The factor calculates base effects from investment amounts when available, or relies on sentiment analysis when amounts are not specified. Activity type multipliers are applied:
+- Acquisition activities: +0.6 per mention
+- Expansion activities: +0.5 per mention  
+- R\&D activities: +0.7 per mention
 
-The investment impact is scaled based on the magnitude and sentiment context:
-
-\begin{equation}
-\textbf{investment\_factor} = 
-\begin{cases} 
-\min(\textbf{investment\_value} / 1000.0, 2.0), & \text{if amounts} > \$100\text{M equivalent} \\
-\textbf{news\_sentiment} \times 1.5, & \text{if investment keywords detected} \\
-0.0, & \text{no significant investment news}
-\end{cases}
-\end{equation}
-
-\begin{equation}
-\textbf{Range: } 0.0 \leq \textbf{investment\_factor} \leq +2.0
-\end{equation}
-
-The factor emphasizes positive investment signals as markets typically view strategic investments and acquisitions favorably for long-term growth prospects.
+Final values are capped in the range [0.0, +2.0] as investment activities are typically viewed positively for long-term growth prospects.
 
 \begin{equation}
 \textbf{investment\_effect} = \textbf{impact\_scale} \times 0.5 \times 
@@ -565,33 +526,30 @@ The factor emphasizes positive investment signals as markets typically view stra
 
 \subsubsection{{News Effect Factor}}
 \begin{itemize}
-    \item \textbf{Input:} Processed \texttt{news\_text} with FinBERT sentiment analysis, domain-specific keyword weighting, and temporal decay factors.
-    \item \textbf{Purpose:} Transforms unstructured financial news into quantified market sentiment signals that directly influence price predictions.
+    \item \textbf{Input:} Sentiment analysis of \texttt{news\_text} using TextBlob and keyword-based analysis with financial terms.
+    \item \textbf{Purpose:} Converts unstructured news content into quantified sentiment scores that directly influence return predictions.
 \end{itemize}
 
-The news effect factor combines multiple sentiment analysis approaches to create a comprehensive news impact measure. The base sentiment is computed using domain-specific FinBERT:
+The news effect factor combines two sentiment analysis approaches:
 
+\textbf{1. Keyword Analysis:} Counts positive and negative financial keywords from predefined dictionaries:
+- \textbf{Positive:} increase, rise, grow, profit, improved, partnership, acquisition, dividend, earnings, success
+- \textbf{Negative:} decrease, decline, loss, warning, investigation, lawsuit, delay, weak, miss, reduced
+
+\textbf{2. TextBlob Sentiment:} Applies natural language processing for polarity analysis of the complete news text.
+
+The final sentiment combines both approaches:
 \begin{equation}
-\textbf{base\_sentiment} = \text{FinBERT}(\texttt{news\_text}) \in [-1, +1]
+\textbf{combined\_sentiment} = \frac{\textbf{TextBlob\_polarity} + \textbf{keyword\_sentiment}}{2}
 \end{equation}
 
-Financial keyword analysis provides domain-specific sentiment enhancement:
+The news factor applies different scaling based on sentiment strength:
+- Very positive ($\geq 0.5$): Random range [0.7, 1.2] 
+- Moderately positive (>0): Random range [0.3, 0.7]
+- Moderately negative (>-0.5): Random range [-0.7, -0.3]  
+- Very negative ($\leq -0.5$): Random range [-1.2, -0.7]
 
-\begin{equation}
-\textbf{keyword\_score} = \frac{\textbf{positive\_terms} - \textbf{negative\_terms}}{\textbf{positive\_terms} + \textbf{negative\_terms} + 1}
-\end{equation}
-
-The final news effect incorporates both sentiment sources with temporal weighting:
-
-\begin{equation}
-\textbf{news\_factor} = 0.7 \times \textbf{base\_sentiment} + 0.3 \times \textbf{keyword\_score}
-\end{equation}
-
-\begin{equation}
-\textbf{Range: } -1.0 \leq \textbf{news\_factor} \leq +1.0
-\end{equation}
-
-Recent news (within 24 hours) receives full weight, while older news is exponentially decayed with a half-life of 3 trading days to reflect diminishing market impact over time.
+Final amplification of 2.0x is applied, with range [-2.0, +2.0].
 
 Where keywords are extracted from the dataset's parsed Chinese text including:
 \begin{itemize}
@@ -616,123 +574,187 @@ These factors are formatted via the \texttt{format\allowbreak\_factor\allowbreak
 \vspace{0.15cm}
 \subsubsection{{Factor Amplification}}
 \begin{itemize}
-\item Correlation Detection: Identifies when multiple factors point in the same direction.
-\item Directional Boost: Applies a 1.3x multiplier when a dominant direction is detected.
-\item Dynamic Scaling: Smaller magnitude factors receive proportionally higher amplification.
+    \item \textbf{Purpose:} Enhances signal strength when multiple factors converge on the same directional prediction, improving forecast confidence.
+    \item \textbf{Mechanism:} Applies systematic amplification based on factor correlation patterns and directional consensus.
 \end{itemize}
+
+The amplification process operates through three sequential stages:
+
+\textbf{Stage 1: Correlation Detection}
+\begin{equation}
+\textbf{directional\_consensus} = \frac{\sum_{i=1}^{6} \text{sign}(\textbf{factor}_i)}{6}
+\end{equation}
+
+When $|\textbf{directional\_consensus}| > 0.6$ (indicating 4+ factors agree), amplification is triggered.
+
+\textbf{Stage 2: Directional Boost Application}
+\begin{equation}
+\textbf{amplification\_multiplier} = 
+\begin{cases} 
+1.3, & \text{if strong consensus } (|\textbf{directional\_consensus}| > 0.8) \\
+1.15, & \text{if moderate consensus } (0.6 < |\textbf{directional\_consensus}| \leq 0.8) \\
+1.0, & \text{otherwise (no amplification)}
+\end{cases}
+\end{equation}
+
+\textbf{Stage 3: Dynamic Scaling for Smaller Factors}
+\begin{equation}
+\textbf{adjusted\_factor}_i = \textbf{factor}_i \times \left(1 + \frac{0.3}{|\textbf{factor}_i| + 0.1}\right) \times \textbf{amplification\_multiplier}
+\end{equation}
+
+This approach ensures smaller magnitude factors receive proportionally higher amplification, preventing large factors from overshadowing meaningful but smaller signals.
 
 \subsection{{Risk Assessment Module}}
-This module quantifies investment risk through multiple complementary metrics:
-
-\text{1) Volatility (EGARCH-based):}
-\begin{equation}
-\bm{\ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \alpha \frac{|r_{t-1}|}{\sigma_{t-1}} + \gamma \frac{r_{t-1}}{\sigma_{t-1}}}
-\end{equation}
-where:
 \begin{itemize}
-    \item $\sigma_t^2$ is the conditional variance at time $t$.
-    \item $\omega, \beta, \alpha, \gamma$ are model parameters.
-    \item $\bm{r_{t-1}}$ is the previous return.
+    \item \textbf{Purpose:} Quantifies investment risk through multiple complementary metrics including volatility clustering, tail risk, and sequential loss patterns.
+    \item \textbf{Implementation:} Uses advanced econometric models (EGARCH) combined with historical simulation methods.
 \end{itemize}
 
-\begin{center}
-95\% Value at Risk (VaR)
-\end{center}
-\vspace{-0.5cm}
+This module provides comprehensive risk assessment through five integrated components:
+
+\subsubsection{{EGARCH-Based Volatility Modeling}}
+The Exponential Generalized Autoregressive Conditional Heteroskedasticity (EGARCH) model captures asymmetric volatility responses where negative market shocks impact future volatility more than positive shocks:
+
 \begin{equation}
-\bm{VaR_{95} = 1.65 \times \sigma_t}
-\end{equation}
-\vspace{-1.5cm}
-\begin{equation}
-\bm{\textbf{volatility\_score =} \min(\textbf{volatility} \times 100, 10) \quad \textbf{(capped at 10)}}
+\ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \alpha \frac{|r_{t-1}|}{\sigma_{t-1}} + \gamma \frac{r_{t-1}}{\sigma_{t-1}}
 \end{equation}
 
+\textbf{Parameter Interpretation:}
 \begin{itemize}
-\item Implementation: Uses the arch Python package to fit the EGARCH(1,1) model \cite{BOLLERSLEV1986307}.
-\item Advantages: Captures asymmetric volatility response (where negative shocks impact volatility more than \allowbreak positive ones).
-\end{itemize}
-\vspace{0.15cm}
-\text{2) Maximum Drawdown Calculation:}
-\begin{itemize}
-\item Algorithm: Tracks peak-to-trough decline in asset value.
-\item Implementation: Rolling window computation over historical returns.
-\item Significance: Captures sequential loss patterns not visible in point-in-time metrics.
-\begin{equation}
-\bm{\textbf{drawdown\_score =} \min(|\textbf{max\_drawdown}| \times 10, 10) \quad}
-\end{equation}
-
-\end{itemize}
-\text{3) Return Score:}
-\begin{equation}
-\bm{\textbf{return\_score = 5} - \min(\max(\textbf{predicted\_return} \times 2, -5), 5)}
-\end{equation}
-
-
-\text{4) Conditional Value at Risk (CVaR):}
-\begin{itemize}
-    \item Computation: Average of losses exceeding VaR threshold.
-\item Implementation: Historical simulation using past returns.
-\item Advantage: Provides a more coherent risk measure than standard VaR.
+    \item $\omega$: Long-term volatility baseline
+    \item $\beta$: Volatility persistence (typically 0.85-0.95)
+    \item $\alpha$: Magnitude effect of past shocks
+    \item $\gamma$: Asymmetry parameter (negative for leverage effect)
 \end{itemize}
 
-\text{5) Weighted Risk Score Calculation:}
-\begin{itemize}
-    \item Inputs: Volatility score, drawdown score, return-based risk.
-\item Weights: 50\% volatility, 30\% drawdown, 20\% return.
-\item The total weighted risk score is then calculated as: 
+\textbf{95\% Value at Risk (VaR) Computation:}
 \begin{equation}
-\textbf{weighted\_risk\_score} = \bm{(\textbf{volatility\_score} \times 0.5) + (\textbf{drawdown\_score} \times 0.3) + (\textbf{return\_score} \times 0.2)}
+\text{VaR}_{95} = 1.65 \times \sigma_t
 \end{equation}
 
-\item Thresholds: Substantial risk ($>$7.5), High risk ($>$6.0), Moderate-High ($>$4.5), Moderate ($>$3.0), Low-Moderate ($>$1.5), Favorable ($\leq$1.5).
+\begin{equation}
+\text{volatility\_score} = \min(\sigma_t \times 100, 10.0) \quad \text{(capped at 10)}
+\end{equation}
+
+The EGARCH model is implemented using the \texttt{arch} Python package, providing robust parameter estimation through maximum likelihood methods.
+\subsubsection{{Maximum Drawdown Analysis}}
+Maximum Drawdown (MDD) quantifies the largest peak-to-trough decline, capturing sequential loss patterns invisible to point-in-time volatility measures:
+
+\begin{equation}
+\text{MDD}_t = \max_{0 \leq s \leq t} \left[ \frac{P_s - P_t}{P_s} \right]
+\end{equation}
+
+where $P_t$ represents the portfolio value at time $t$. The drawdown score is computed as:
+
+\begin{equation}
+\text{drawdown\_score} = \min(|\text{MDD}| \times 10, 10.0)
+\end{equation}
+
+\subsubsection{{Return-Based Risk Assessment}}
+The return score inversely relates to expected performance, penalizing both very high and very low predicted returns:
+
+\begin{equation}
+\text{return\_score} = 5 - \min(\max(\text{predicted\_return} \times 2, -5), 5)
+\end{equation}
+
+\subsubsection{{Conditional Value at Risk (CVaR)}}
+CVaR provides tail risk assessment by averaging losses exceeding the VaR threshold:
+
+\begin{equation}
+\text{CVaR}_{95} = E[R | R \leq -\text{VaR}_{95}]
+\end{equation}
+
+Implementation uses historical simulation over a 252-day rolling window, providing more coherent risk measurement than standard VaR in extreme market conditions.
+
+\subsubsection{{Weighted Risk Score Integration}}
+The final risk assessment combines all components through empirically-determined weights:
+
+\begin{equation}
+\text{weighted\_risk\_score} = 0.5 \times \text{volatility\_score} + 0.3 \times \text{drawdown\_score} + 0.2 \times \text{return\_score}
+\end{equation}
+
+\textbf{Risk Classification Thresholds:}
+\begin{itemize}
+    \item \textbf{Substantial Risk:} $> 7.5$ (Extreme market stress conditions)
+    \item \textbf{High Risk:} $> 6.0$ (Above-average volatility with significant drawdown potential)
+    \item \textbf{Moderate-High:} $> 4.5$ (Elevated risk requiring careful monitoring)
+    \item \textbf{Moderate:} $> 3.0$ (Standard market risk levels)
+    \item \textbf{Low-Moderate:} $> 1.5$ (Below-average risk environment)
+    \item \textbf{Favorable:} $\leq 1.5$ (Low-risk, stable market conditions)
+\end{itemize} 
+The dataset's \textbf{volatility\_factor\_Total\_Volatility} and related columns provide direct inputs for risk calculations, while temporal price data (\texttt{open}, \texttt{close}, \texttt{high}, \texttt{low}) enables return computation for maximum drawdown and CVaR estimation.
+
+\subsection{{Factor Normalization and Overall Trend Calculation}}
+\begin{itemize}
+    \item \textbf{Purpose:} Combines individual factor signals into a unified directional forecast while preserving interpretability and preventing factor dominance.
+    \item \textbf{Approach:} Multi-stage normalization followed by weighted aggregation with cross-correlation adjustments.
 \end{itemize}
-The dataset's \texttt{volatility\_factor\_Total\_Volatility} and similar columns provide inputs for risk calculations, while the temporal price data enables the computation of returns for maximum drawdown and CVaR estimation.
 
-\subsection{\text{Factor Normalization And Overall Trend Calculation}}
-Factor values are combined using pre-determined weights:
+\subsubsection{{Factor Weight Specification}}
+Individual factors are combined using empirically-determined weights based on their predictive power and stability:
 
-\[
-\textbf{weights} = 
-\begin{cases} 
-\textbf{market\_factor: 0.15}, \\ 
-\textbf{size\_factor: 0.15}, \\ 
-\textbf{valuation\_factor: 0.10}, \\ 
-\textbf{profitability\_factor: 0.15}, \\ 
-\textbf{investment\_factor: 0.20}, \\ 
-\textbf{news\_effect\_factor: 0.10}, \\ 
-\textbf{event\_factor: 0.15}
+\begin{equation}
+\textbf{W} = 
+\begin{bmatrix} 
+\text{market\_factor} & 0.15 \\ 
+\text{size\_factor} & 0.15 \\ 
+\text{valuation\_factor} & 0.10 \\ 
+\text{profitability\_factor} & 0.15 \\ 
+\text{investment\_factor} & 0.20 \\ 
+\text{news\_effect\_factor} & 0.10 \\ 
+\text{event\_factor} & 0.15
+\end{bmatrix}
+\end{equation}
+
+The investment factor receives the highest weight (0.20) due to its strong predictive power for medium-term price movements, while valuation and news factors receive lower weights (0.10) reflecting their longer-term impact horizons.
+
+\subsubsection{{Multi-Stage Normalization Process}}
+Before computing the weighted sum, factors undergo systematic normalization to ensure balanced contribution:
+
+\textbf{Stage 1: Range Standardization}
+Each factor's raw value is scaled to fit within its predefined range (e.g., $[-3.0, +1.8]$ for Market Factor):
+\begin{equation}
+\hat{f}_i = \frac{f_i - f_{i,\text{min}}}{f_{i,\text{max}} - f_{i,\text{min}}} \times 2 - 1
+\end{equation}
+
+\textbf{Stage 2: Outlier Treatment}
+Values exceeding factor ranges are capped at boundaries to prevent single-factor dominance:
+\begin{equation}
+\tilde{f}_i = \begin{cases} 
++1, & \text{if } \hat{f}_i > +1 \\
+-1, & \text{if } \hat{f}_i < -1 \\
+\hat{f}_i, & \text{otherwise}
 \end{cases}
-\]
-
-Before computing the weighted sum, factors undergo a multi-stage normalization process:
-\begin{itemize}
-\item Range Standardization: Each factor's raw value is scaled to fit within its predefined range (e.g., -3.0 to +1.8 for Market Factor).
-\item Outlier Treatment: Values exceeding the factor's range are capped at the range boundaries to prevent any single factor from dominating.
-\item Cross-Correlation Adjustment: When multiple factors show high correlation ($>$ 0.7), their weights are adjusted to prevent double-counting of the same market signal.
-\item Amplification Normalization: The amplification process preserves relative factor magnitudes while enhancing the overall signal strength, maintaining the interpretability of individual contributions.
-\end{itemize}
-The weighted sum is computed as:
-\begin{equation}
-\bm{\sum_{i} \big(\textbf{factor\_values}[i] \times \textbf{weights}[i]\big)}
 \end{equation}
-Where,
-\begin{description}
-    \item[\texttt{factor\_values[i]}:] denotes the normalized score of the \(i\)-th factor.
-    
-    \item[\texttt{weights[i]}:] represents its corresponding significance as learned or assigned by the model.
-\end{description}
 
-The resulting score is typically centered near zero, with a slight positive bias of approximately \(0.15\) in this \allowbreak implementation, to reflect the long-term upward drift commonly observed in equity markets.
+\textbf{Stage 3: Cross-Correlation Adjustment}
+When multiple factors show high correlation ($\rho_{ij} > 0.7$), their weights are adjusted to prevent double-counting:
+\begin{equation}
+w'_i = w_i \times \left(1 - 0.3 \times \max_{j \neq i}(|\rho_{ij}| - 0.7)\right)
+\end{equation}
 
-Based on calibrated thresholds, the final score is mapped into qualitative trend classifications:
+\subsubsection{{Weighted Aggregation}}
+The final trend score combines all normalized factors:
 
-\begin{itemize}
-    \item \textbf{Strongly Positive}
-    \item \textbf{Positive}
-    \item \textbf{Neutral}
-    \item \textbf{Negative}
-    \item \textbf{Strongly Negative}
-\end{itemize}
+\begin{equation}
+\text{Trend\_Score} = \sum_{i=1}^{7} \left(\tilde{f}_i \times w'_i\right) + 0.15
+\end{equation}
+
+where the positive bias (+0.15) reflects long-term upward equity market drift observed in historical data.
+
+\subsubsection{{Qualitative Classification}}
+The trend score is mapped to interpretable categories using empirically-calibrated thresholds:
+
+\begin{equation}
+\text{Classification} = 
+\begin{cases} 
+\textbf{Strongly Positive}, & \text{if Score} > +1.2 \\
+\textbf{Positive}, & \text{if } +0.4 < \text{Score} \leq +1.2 \\
+\textbf{Neutral}, & \text{if } -0.4 \leq \text{Score} \leq +0.4 \\
+\textbf{Negative}, & \text{if } -1.2 \leq \text{Score} < -0.4 \\
+\textbf{Strongly Negative}, & \text{if Score} < -1.2
+\end{cases}
+\end{equation}
 
 \subsection{Dynamic Report Generation Module}
 The FinReport system generates HTML-based reports designed specifically for maximum interpretability:
@@ -1499,7 +1521,7 @@ FinReport successfully integrates technical indicators, financial news sentiment
 % Add space to prevent vbox issues
 \vspace*{5pt}
 
-\bibliographystyle{unsrt}
+\bibliographystyle{elsarticle-harv}
 \bibliography{References}
 
 % \section*{Acknowledgements}
