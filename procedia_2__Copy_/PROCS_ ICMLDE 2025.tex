@@ -571,38 +571,8 @@ Where keywords are extracted from the dataset's parsed Chinese text including:
 
 
 These factors are formatted via the \texttt{format\allowbreak\_factor\allowbreak\_for\allowbreak\_display()} function in \texttt{report\allowbreak\_generator.py}, which rounds values to one decimal place and creates clear descriptions. The factor calculations reference the Chinese stock market dataset structure available at \texttt{github.com/frinkleko/FinReport} which contains historical stock data, financial news, and pre-computed technical indicators for Chinese A-share stocks spanning 2018-2021.
-\vspace{0.15cm}
-\subsubsection{{Factor Amplification}}
-\begin{itemize}
-    \item \textbf{Purpose:} Enhances signal strength by applying consistent amplification to ensure factor values are of sufficient magnitude for meaningful predictions.
-    \item \textbf{Mechanism:} Uses simple multiplicative amplification with directional trend consideration and controlled randomization.
-\end{itemize}
 
-The amplification process employs a straightforward approach with the following steps:
-
-\textbf{Base Amplification:}
-A fixed multiplier of 2.5 is applied to all factor values to ensure adequate signal strength:
-\begin{equation}
-\textbf{amplified\_factor}_i = \textbf{factor}_i \times 2.5
-\end{equation}
-
-\textbf{Directional Enhancement:}
-When factors align with the overall market trend (determined by counting factors with positive vs. negative values), an additional 1.3x boost is applied:
-\begin{equation}
-\textbf{trend\_multiplier} = 
-\begin{cases} 
-1.3, & \text{if factor direction matches dominant trend} \\
-1.0, & \text{otherwise}
-\end{cases}
-\end{equation}
-
-\textbf{Final Adjustment:}
-Randomization (0.9 to 1.1) and value capping ensure realistic and bounded results:
-\begin{equation}
-\textbf{final\_factor}_i = \text{clamp}\left(\textbf{amplified\_factor}_i \times \textbf{trend\_multiplier} \times \text{random}(0.9, 1.1), -5.0, 5.0\right)
-\end{equation}
-
-This simplified approach provides consistent amplification without requiring complex consensus calculations, while maintaining interpretability and computational efficiency.
+All factors undergo enhancement using the amplification process detailed in Section 3.5.1 before being combined for overall trend calculation.
 
 \subsection{{Risk Assessment Module}}
 \begin{itemize}
@@ -684,10 +654,10 @@ The final risk assessment combines all components through empirically-determined
 \end{itemize} 
 The dataset's \textbf{volatility\_factor\_Total\_Volatility} and related columns provide direct inputs for risk calculations, while temporal price data (\texttt{open}, \texttt{close}, \texttt{high}, \texttt{low}) enables return computation for maximum drawdown and CVaR estimation.
 
-\subsection{{Factor Normalization and Overall Trend Calculation}}
+\subsection{{Factor Enhancement and Overall Trend Calculation}}
 \begin{itemize}
-    \item \textbf{Purpose:} Combines individual factor signals into a unified directional forecast while preserving interpretability and preventing factor dominance.
-    \item \textbf{Approach:} Multi-stage normalization followed by weighted aggregation with cross-correlation adjustments.
+    \item \textbf{Purpose:} Combines individual factor signals into a unified directional forecast while preserving interpretability through consistent amplification.
+    \item \textbf{Approach:} Multi-stage amplification followed by weighted aggregation using the enhancement mechanism described in Section 3.2.6.
 \end{itemize}
 
 \subsubsection{{Factor Weight Specification}}
@@ -708,39 +678,39 @@ Individual factors are combined using empirically-determined weights based on th
 
 The investment factor receives the highest weight (0.20) due to its strong predictive power for medium-term price movements, while valuation and news factors receive lower weights (0.10) reflecting their longer-term impact horizons.
 
-\subsubsection{{Multi-Stage Normalization Process}}
-Before computing the weighted sum, factors undergo systematic normalization to ensure balanced contribution:
+\subsubsection{{Factor Enhancement Process}}
+Before computing the weighted sum, factors undergo the amplification enhancement process described in Section 3.2.6 to ensure adequate signal strength:
 
-\textbf{Stage 1: Range Standardization}
-Each factor's raw value is scaled to fit within its predefined range (e.g., $[-3.0, +1.8]$ for Market Factor):
+\textbf{Base Amplification:}
+All factor values are enhanced using a fixed 2.5x multiplier to ensure meaningful signal strength:
 \begin{equation}
-\hat{f}_i = \frac{f_i - f_{i,\text{min}}}{f_{i,\text{max}} - f_{i,\text{min}}} \times 2 - 1
+\textbf{enhanced\_factor}_i = \textbf{factor}_i \times 2.5
 \end{equation}
 
-\textbf{Stage 2: Outlier Treatment}
-Values exceeding factor ranges are capped at boundaries to prevent single-factor dominance:
+\textbf{Trend-Based Enhancement:}
+When factors align with the overall market direction (determined by counting positive vs. negative factor values), additional amplification is applied:
 \begin{equation}
-\tilde{f}_i = \begin{cases} 
-+1, & \text{if } \hat{f}_i > +1 \\
--1, & \text{if } \hat{f}_i < -1 \\
-\hat{f}_i, & \text{otherwise}
+\textbf{trend\_multiplier} = 
+\begin{cases} 
+1.3, & \text{if factor direction matches dominant trend} \\
+1.0, & \text{otherwise}
 \end{cases}
 \end{equation}
 
-\textbf{Stage 3: Cross-Correlation Adjustment}
-When multiple factors show high correlation ($\rho_{ij} > 0.7$), their weights are adjusted to prevent double-counting:
+\textbf{Final Processing:}
+Randomization (0.9 to 1.1 multiplier) and value capping ensure realistic bounds while preserving directional signals:
 \begin{equation}
-w'_i = w_i \times \left(1 - 0.3 \times \max_{j \neq i}(|\rho_{ij}| - 0.7)\right)
+\tilde{f}_i = \text{clamp}\left(\textbf{enhanced\_factor}_i \times \textbf{trend\_multiplier} \times \text{random}(0.9, 1.1), -5.0, 5.0\right)
 \end{equation}
 
 \subsubsection{{Weighted Aggregation}}
-The final trend score combines all normalized factors:
+The final trend score combines all enhanced factors using the original factor weights:
 
 \begin{equation}
-\text{Trend\_Score} = \sum_{i=1}^{7} \left(\tilde{f}_i \times w'_i\right) + 0.15
+\text{Trend\_Score} = \sum_{i=1}^{7} \left(\tilde{f}_i \times w_i\right) + 0.15
 \end{equation}
 
-where the positive bias (+0.15) reflects long-term upward equity market drift observed in historical data.
+where the positive bias (+0.15) reflects long-term upward equity market drift observed in historical data, and $w_i$ are the original factor weights defined above.
 
 \subsubsection{{Qualitative Classification}}
 The trend score is mapped to interpretable categories using empirically-calibrated thresholds:
