@@ -414,7 +414,7 @@ The factor applies different scaling based on the magnitude of change:
 - \textbf{Moderate changes} (-5\% to +5\%): Ratio scaled by factor of 3.0
 - \textbf{Significant decreases}: Negative base effects with ratio scaling
 
-The final factor incorporates news sentiment modifiers and financial impact mentions, then applies 1.5x amplification with randomization (±0.3).
+The final factor incorporates news sentiment modifiers and financial impact mentions, then applies simple 2.5x base amplification with controlled randomization.
 
 \begin{equation}
 \textbf{size\_effect} = 
@@ -454,7 +454,7 @@ When valuation data is available, the factor calculates percentage changes from 
 - Financial: ±0.2/0.3
 - Energy: ±0.15/0.25
 
-The factor also incorporates profit/loss keyword analysis and percentage change extraction from news text, applying amplification factors based on news impact significance.
+The factor also incorporates profit/loss keyword analysis and percentage change extraction from news text, using consistent base amplification.
 
 \begin{equation}
 \textbf{valuation\_effect} = 
@@ -486,7 +486,7 @@ When quantitative data is unavailable, the factor analyzes news content for:
 - \textbf{Directional terms:} increase/decrease, rise/fall, improve/decline
 - \textbf{Percentage changes:} Extracted numeric percentages from text
 
-The factor applies strong negative bias (-1.8) for explicit loss mentions but scales positive profit increases with sentiment modifiers, applying final amplification of 1.5x.
+The factor applies strong negative bias (-1.8) for explicit loss mentions but scales positive profit increases with sentiment modifiers, using standard base amplification.
 
 \begin{equation}
 \textbf{Range: } -3.0 \leq \textbf{profitability\_effect} \leq +3.0
@@ -574,35 +574,35 @@ These factors are formatted via the \texttt{format\allowbreak\_factor\allowbreak
 \vspace{0.15cm}
 \subsubsection{{Factor Amplification}}
 \begin{itemize}
-    \item \textbf{Purpose:} Enhances signal strength when multiple factors converge on the same directional prediction, improving forecast confidence.
-    \item \textbf{Mechanism:} Applies systematic amplification based on factor correlation patterns and directional consensus.
+    \item \textbf{Purpose:} Enhances signal strength by applying consistent amplification to ensure factor values are of sufficient magnitude for meaningful predictions.
+    \item \textbf{Mechanism:} Uses simple multiplicative amplification with directional trend consideration and controlled randomization.
 \end{itemize}
 
-The amplification process operates through three sequential stages:
+The amplification process employs a straightforward approach with the following steps:
 
-\textbf{Stage 1: Correlation Detection}
+\textbf{Base Amplification:}
+A fixed multiplier of 2.5 is applied to all factor values to ensure adequate signal strength:
 \begin{equation}
-\textbf{directional\_consensus} = \frac{\sum_{i=1}^{6} \text{sign}(\textbf{factor}_i)}{6}
+\textbf{amplified\_factor}_i = \textbf{factor}_i \times 2.5
 \end{equation}
 
-When $|\textbf{directional\_consensus}| > 0.6$ (indicating 4+ factors agree), amplification is triggered.
-
-\textbf{Stage 2: Directional Boost Application}
+\textbf{Directional Enhancement:}
+When factors align with the overall market trend (determined by counting factors with positive vs. negative values), an additional 1.3x boost is applied:
 \begin{equation}
-\textbf{amplification\_multiplier} = 
+\textbf{trend\_multiplier} = 
 \begin{cases} 
-1.3, & \text{if strong consensus } (|\textbf{directional\_consensus}| > 0.8) \\
-1.15, & \text{if moderate consensus } (0.6 < |\textbf{directional\_consensus}| \leq 0.8) \\
-1.0, & \text{otherwise (no amplification)}
+1.3, & \text{if factor direction matches dominant trend} \\
+1.0, & \text{otherwise}
 \end{cases}
 \end{equation}
 
-\textbf{Stage 3: Dynamic Scaling for Smaller Factors}
+\textbf{Final Adjustment:}
+Randomization (0.9 to 1.1) and value capping ensure realistic and bounded results:
 \begin{equation}
-\textbf{adjusted\_factor}_i = \textbf{factor}_i \times \left(1 + \frac{0.3}{|\textbf{factor}_i| + 0.1}\right) \times \textbf{amplification\_multiplier}
+\textbf{final\_factor}_i = \text{clamp}\left(\textbf{amplified\_factor}_i \times \textbf{trend\_multiplier} \times \text{random}(0.9, 1.1), -5.0, 5.0\right)
 \end{equation}
 
-This approach ensures smaller magnitude factors receive proportionally higher amplification, preventing large factors from overshadowing meaningful but smaller signals.
+This simplified approach provides consistent amplification without requiring complex consensus calculations, while maintaining interpretability and computational efficiency.
 
 \subsection{{Risk Assessment Module}}
 \begin{itemize}
@@ -1048,7 +1048,7 @@ Each factor is calculated as follows:
     \end{itemize}
 
 \end{enumerate}
-All factors are amplified using a sophisticated algorithm that enhances each factor's impact based on correlation with other factors:
+All factors are enhanced using a straightforward amplification algorithm that increases each factor's impact while maintaining directional consistency:
 
 \text{VIII) Factor Amplification}
 \begin{enumerate}
@@ -1076,17 +1076,16 @@ All factors are amplified using a sophisticated algorithm that enhances each fac
         \item Otherwise, trend is \text{Mixed}.
     \end{itemize}
 
-    \item \text{Apply Amplification:}
+    \item \text{Apply Simple Enhancement:}
     \begin{itemize}
-        \item Assign relationship amplifier: $1.2$.
-        \item Introduce randomness: $0.9$ to $1.1$.
-        \item If factor aligns with market trend, apply directional boost ($1.3$).
-        \item Compute new value: 
+        \item Apply trend multiplier: $1.3$ if factor aligns with dominant trend.
+        \item Add randomization: multiply by random value between $0.9$ and $1.1$.
+        \item Compute enhanced value: 
         \begin{equation}
-\bm{\textbf{new\_value} = \textbf{orig\_value} \times \textbf{total\_amplifier}}
+\bm{\textbf{enhanced\_value} = \textbf{original\_value} \times 2.5 \times \textbf{trend\_multiplier} \times \textbf{random\_factor}}
 \end{equation}
 
-        \item Limit final value between $[-5.0, 5.0]$.
+        \item Cap final values between $[-5.0, 5.0]$ to ensure reasonable bounds.
     \end{itemize}
 
     \item \text{Return Enhanced Factors:}

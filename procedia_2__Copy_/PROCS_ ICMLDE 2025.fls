@@ -1,7 +1,7 @@
 PWD c:\Users\KIIT\Pictures\Screenshots\Machine Learning Applications\Self\FinReport\FinReport\procedia_2__Copy_
 INPUT C:\Users\KIIT\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\KIIT\Pictures\Screenshots\Machine Learning Applications\Self\FinReport\FinReport\procedia_2__Copy_\PROCS_ ICMLDE 2025..tex
-OUTPUT PROCS_ ICMLDE 2025..log
+INPUT c:\Users\KIIT\Pictures\Screenshots\Machine Learning Applications\Self\FinReport\FinReport\procedia_2__Copy_\PROCS_ ICMLDE 2025.tex
+OUTPUT PROCS_ ICMLDE 2025.log
 INPUT .\elsarticle.cls
 INPUT elsarticle.cls
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\txfonts\txfonts.sty
@@ -35,12 +35,12 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upsy.fd
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upsy.fd
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upsy.fd
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
-INPUT .\PROCS_ ICMLDE 2025..spl
-INPUT .\PROCS_ ICMLDE 2025..spl
-INPUT PROCS_ ICMLDE 2025..spl
+INPUT .\PROCS_ ICMLDE 2025.spl
+INPUT .\PROCS_ ICMLDE 2025.spl
+INPUT PROCS_ ICMLDE 2025.spl
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\natbib\natbib.sty
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\natbib\natbib.sty
-OUTPUT PROCS_ ICMLDE 2025..spl
+OUTPUT PROCS_ ICMLDE 2025.spl
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifvtex.sty
@@ -413,10 +413,10 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\t1ptm.fd
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\t1ptm.fd
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\t1ptm.fd
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8t.tfm
-INPUT .\PROCS_ ICMLDE 2025..aux
-INPUT .\PROCS_ ICMLDE 2025..aux
-INPUT PROCS_ ICMLDE 2025..aux
-OUTPUT PROCS_ ICMLDE 2025..aux
+INPUT .\PROCS_ ICMLDE 2025.aux
+INPUT .\PROCS_ ICMLDE 2025.aux
+INPUT PROCS_ ICMLDE 2025.aux
+OUTPUT PROCS_ ICMLDE 2025.aux
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\txfonts\omltxmi.fd
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\txfonts\omltxmi.fd
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\txfonts\omltxmi.fd
@@ -446,7 +446,7 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
-OUTPUT PROCS_ ICMLDE 2025..pdf
+OUTPUT PROCS_ ICMLDE 2025.pdf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8t.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txr.tfm
@@ -776,10 +776,10 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxb.
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txb.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxptmb.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxb.tfm
-INPUT .\PROCS_ ICMLDE 2025..bbl
-INPUT .\PROCS_ ICMLDE 2025..bbl
-INPUT PROCS_ ICMLDE 2025..bbl
-INPUT PROCS_ ICMLDE 2025..aux
+INPUT .\PROCS_ ICMLDE 2025.bbl
+INPUT .\PROCS_ ICMLDE 2025.bbl
+INPUT PROCS_ ICMLDE 2025.bbl
+INPUT PROCS_ ICMLDE 2025.aux
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\rtxb.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\rtxb.pfb
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\type1\public\txfonts\rtxbmi.pfb

@@ -1,13 +1,13 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: PROCS_ ICMLDE 2025..aux
+The top-level auxiliary file: PROCS_ ICMLDE 2025.aux
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 The style file: elsarticle-num.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: REFERENCES.bib
 You've used 4 entries,
             2952 wiz_defined-function locations,
-            699 strings with 5637 characters,
+            699 strings with 5635 characters,
 and the built_in function-call counts, 1128 in all, are:
 = -- 115
 > -- 22
