@@ -161,7 +161,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 %%
 %% \biboptions{authoryear}
 
-\biboptions{authoryear}
+\biboptions{numbers}
 
 % if you have landscape tables
 
@@ -278,7 +278,7 @@ Peer-review under responsibility of the scientific committee of the Internationa
 \section{Introduction}
 \label{main}
 
-Financial markets have experienced unprecedented volatility in recent years. For example, the Shanghai Stock Exchange Composite Index exhibits an average daily volatility of approximately 1.7\%, significantly higher than developed markets such as S\&P 500 (typically 0.8-1.2\%). Such volatility illustrates the limitations of traditional technical analysis methods, which struggle to capture rapid, sentiment-driven price movements \cite{FAMA19933}. To address these issues, we propose FinReport, a multi-factor forecasting framework that combines historical stock data with real-time financial news via advanced machine learning and natural language processing techniques \cite{hochreiter1997lstm}. FinReport computes six distinct factors---market, size, valuation, profitability, investment, and news effect---to generate explainable predictions alongside transparent risk assessments. Our experimental results on Chinese A-share stocks (2018-2021 dataset) indicate a 15\% reduction in RMSE and a 12\% reduction in MAE compared to conventional LSTM baseline models, along with an enhanced risk-adjusted Sharpe ratio improvement of nearly 20\%.
+Financial markets have experienced unprecedented volatility in recent years. For example, the Shanghai Stock Exchange Composite Index exhibits an average daily volatility of approximately 1.7\%, significantly higher than developed markets such as S\&P 500 (typically 0.8-1.2\%). Such volatility illustrates the limitations of traditional technical analysis methods, which struggle to capture rapid, sentiment-driven price movements \cite{FAMA1993}. To address these issues, we propose FinReport, a multi-factor forecasting framework that combines historical stock data with real-time financial news via advanced machine learning and natural language processing techniques \cite{hochreiter1997lstm}. FinReport computes six distinct factors---market, size, valuation, profitability, investment, and news effect---to generate explainable predictions alongside transparent risk assessments. Our experimental results on Chinese A-share stocks (2018-2021 dataset) indicate a 15\% reduction in RMSE and a 12\% reduction in MAE compared to conventional LSTM baseline models, along with an enhanced risk-adjusted Sharpe ratio improvement of nearly 20\%.
 
 This work presents a robust and interpretable approach to forecasting in high-volatility environments, bridging the gap between traditional methods and the growing need for explainable financial predictions \cite{TETLOCK2007}.
 
@@ -307,7 +307,7 @@ This work presents a robust and interpretable approach to forecasting in high-vo
 
 \section{Literature Review}
 
-Early stock market forecasting methods, including ARIMA and traditional technical indicators (e.g., Moving Averages and RSI), often underperformed during periods of extreme volatility with typical RMSE values exceeding 0.05 for daily returns. Ensemble methods and classical multi-factor models such as those proposed by Fama and French improved predictive performance by incorporating market risk, size, and value; however, these methods largely ignored qualitative inputs. Recent work has integrated alternative data sources, such as financial news sentiment using FinBERT \cite{DBLP:journals/corr/abs-1908-10063} and event extraction using natural language processing frameworks, leading to improvements of up to 12\% in prediction error. Additionally, LSTM networks have been widely adopted for their capability to capture long-term dependencies, although challenges regarding interpretability remain. The literature increasingly advocates for explainable models that combine structured numerical data with unstructured text analysis, setting the stage for FinReport’s factor-based approach to transparent and robust financial forecasting.
+Early stock market forecasting methods, including ARIMA and traditional technical indicators (e.g., Moving Averages and RSI), often underperformed during periods of extreme volatility with typical RMSE values exceeding 0.05 for daily returns. Ensemble methods and classical multi-factor models such as those proposed by Fama and French improved predictive performance by incorporating market risk, size, and value; however, these methods largely ignored qualitative inputs. Recent work has integrated alternative data sources, such as financial news sentiment using FinBERT \cite{Araci2019} and event extraction using natural language processing frameworks, leading to improvements of up to 12\% in prediction error. Additionally, LSTM networks have been widely adopted for their capability to capture long-term dependencies, although challenges regarding interpretability remain. The literature increasingly advocates for explainable models that combine structured numerical data with unstructured text analysis, setting the stage for FinReport’s factor-based approach to transparent and robust financial forecasting.
 
 \section{System Model And Proposed Mechanism}
 FinReport is organized into several interdependent modules that collectively deliver an explainable forecast:
@@ -1521,8 +1521,8 @@ FinReport successfully integrates technical indicators, financial news sentiment
 % Add space to prevent vbox issues
 \vspace*{5pt}
 
-\bibliographystyle{elsarticle-harv}
-\bibliography{References}
+\bibliographystyle{elsarticle-num}
+\bibliography{REFERENCES}
 
 % \section*{Acknowledgements}
 
