@@ -1343,8 +1343,8 @@ The analysis reveals 5 stocks achieving exceptional performance with R² > 0.98,
     \caption{Overall Statistics}
     \label{fig:Return Forecast Calculation}
 \end{figure}
-\newpage
-As shown in Fig. 4, the predictions demonstrate a strong linear relationship with actual values (r = 0.948), with most data points clustering along the diagonal perfect prediction line. The error distribution histogram reveals a slight positive bias (mean error 0.109), but 76\% of errors fall within the +/-0.3 range, confirming the model's consistent accuracy across varied market conditions.
+
+As shown in Fig. 3, the predictions demonstrate a strong linear relationship with actual values (r = 0.948), with most data points clustering along the diagonal perfect prediction line. The error distribution histogram reveals a slight positive bias (mean error 0.109), but 76\% of errors fall within the +/-0.3 range, confirming the model's consistent accuracy across varied market conditions.
 
 \textbf{Performance Distribution Analysis:} The comprehensive analysis of 70 stocks reveals a trimodal distribution pattern. High performers (R² > 0.9) constitute 12.9\% of stocks with valid R² values, including standouts like 000333.SZ (R² = 0.994), 600519.SH (R² = 0.992), and 002352.SZ (R² = 0.990). Moderate performers (R² = 0.6-0.9) represent 54.8\% of the sample, while challenging cases (R² < 0.6) account for 32.3\%. Notably, the presence of 29 stocks with missing R² values highlights potential data quality challenges that may affect overall model evaluation reliability.
 
@@ -1403,7 +1403,7 @@ To examine sector-specific performance patterns, stocks were categorized into fi
 Statistical significance was evaluated using ANOVA tests to confirm that the observed inter-sector differences in R\textsuperscript{2} values were not attributable to random variation (p $<$ 0.01). Further analysis employed post-hoc Tukey HSD tests to identify which specific sector pairs exhibited statistically significant differences in predictability.
 
 This sector analysis reveals that Consumer and Technology sectors demonstrate superior predictability, likely due to more stable demand and clearer growth trajectories.
-As evident from the distribution of colored points in Fig. 4 (top), stocks from Consumer and Technology sectors (shown in blue and green) cluster more tightly around the perfect prediction line compared to Real Estate stocks (shown in orange).
+As evident from the distribution of colored points in Fig. 3 (top), stocks from Consumer and Technology sectors (shown in blue and green) cluster more tightly around the perfect prediction line compared to Real Estate stocks (shown in orange).
 
 \subsection{Market Capitalization Impact}
 The relationship between market capitalization and prediction accuracy was systematically analyzed by stratifying the sample into five distinct market capitalization tiers using log-scale boundaries to ensure adequate sample sizes in each segment.
@@ -1478,7 +1478,7 @@ The News Effect Factor demonstrated a remarkable consistency across analysed sto
 \textbf{Error Pattern Analysis:} Detailed examination of the regression results reveals distinct error magnitude clusters. Ultra-low error stocks (MSE < 0.005) include only 3 securities: 000333.SZ (0.004), 600519.SH (0.005), and 002352.SZ (0.005), representing just 4.3\% of the sample. The majority of stocks (65.7\%) fall within the moderate error range (0.005-0.100 MSE), while high-error stocks (MSE > 0.100) constitute 30% of the dataset, with extreme outliers like 002385.SZ (MSE = 1.297) and 601727.SH (MSE = 1.246) requiring specialized handling in portfolio applications.
 
 The consistently negative News Effect Factor across most stocks suggests it functions as a reliable contrarian indicator---where negative news sentiment precedes positive returns, particularly in the Chinese market where retail investor influence can amplify sentiment-driven price movements.
-The consistent performance of top stocks shown in Fig. 4 corresponds to securities where the News Effect Factor demonstrated the strongest contrarian signal.
+The consistent performance of top stocks shown in Fig. 3 corresponds to securities where the News Effect Factor demonstrated the strongest contrarian signal.
 
 \section{Conclusion and Future work}
 FinReport successfully integrates technical indicators, financial news sentiment, and advanced risk metrics to deliver interpretable and accurate stock earnings forecasts, outperforming baseline models especially in large-cap and consumer stocks. Future enhancements will focus on incorporating advanced Large Language Models for improved news analysis, dynamic factor weighting, and intelligent report generation, alongside scalability and regulatory compliance improvements. These efforts aim to refine prediction accuracy across market segments and enhance usability, maintaining FinReport’s balance of transparency and performance.
