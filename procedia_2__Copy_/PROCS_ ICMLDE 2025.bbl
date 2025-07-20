@@ -84,6 +84,39 @@ M.~T. Ribeiro, S.~Singh, C.~Guestrin, Why should i trust you?: Explaining the
 D.~Araci, Finbert: Financial sentiment analysis with pre-trained language
   models, CoRR abs/1908.10063 (2019).
 
+\bibitem{Carhart1997}
+M.~M. Carhart, On persistence in mutual fund performance, The Journal of
+  Finance 52~(1) (1997) 57--82.
+
+\bibitem{Banz1981}
+R.~W. Banz, The relationship between return and market value of common stocks,
+  Journal of Financial Economics 9~(1) (1981) 3--18.
+
+\bibitem{Rosenberg1985}
+B.~Rosenberg, K.~Reid, R.~Lanstein, Persuasive evidence of market inefficiency,
+  The Journal of Portfolio Management 11~(3) (1985) 9--16.
+
+\bibitem{Daniel1998}
+K.~Daniel, S.~Titman, Market reactions to tangible and intangible information,
+  The Journal of Finance 53~(6) (1998) 1935--1974.
+
+\bibitem{Campbell2001}
+J.~Y. Campbell, M.~Lettau, B.~G. Malkiel, Y.~Xu, Have individual stocks become
+  more volatile? an empirical exploration of idiosyncratic risk, The Journal of
+  Finance 56~(1) (2001) 1--43.
+
+\bibitem{Murphy1999}
+J.~J. Murphy, Technical analysis of the financial markets: A comprehensive
+  guide to trading methods and applications (1999).
+
+\bibitem{Wilder1978}
+J.~W. Wilder, New concepts in technical trading systems, Trend Research (1978).
+
+\bibitem{Lo2004}
+A.~W. Lo, The adaptive markets hypothesis: Market efficiency from an
+  evolutionary perspective, The Journal of Portfolio Management 30~(5) (2004)
+  15--29.
+
 \bibitem{Bollerslev1986}
 T.~Bollerslev, Generalized autoregressive conditional heteroskedasticity,
   Journal of Econometrics 31~(3) (1986) 307--327.
@@ -97,5 +130,57 @@ X.~Ding, Y.~Zhang, T.~Liu, J.~Duan, Deep learning for event-driven stock
 T.~Loughran, B.~McDonald, When is a liability not a liability? textual
   analysis, dictionaries, and 10-ks, The Journal of Finance 66~(1) (2011)
   35--65.
+
+\bibitem{Harvey2016}
+C.~R. Harvey, Y.~Liu, H.~Zhu, ... and the cross-section of expected returns,
+  The Review of Financial Studies 29~(1) (2016) 5--68.
+
+\bibitem{Devlin2019}
+J.~Devlin, M.-W. Chang, K.~Lee, K.~Toutanova, Bert: Pre-training of deep
+  bidirectional transformers for language understanding, Proceedings of the
+  2019 Conference of the North American Chapter of the Association for
+  Computational Linguistics (2019) 4171--4186.
+
+\bibitem{Gardner2018}
+M.~Gardner, J.~Grus, M.~Neumann, O.~Tafjord, P.~Dasigi, N.~F. Liu, M.~Peters,
+  M.~Schmitz, L.~S. Zettlemoyer, Allennlp: A deep semantic natural language
+  processing platform, Proceedings of Workshop for NLP Open Source Software
+  (2018) 1--6.
+
+\bibitem{Shi2017}
+P.~Shi, J.~Lin, Simple bert models for relation extraction and semantic role
+  labeling, arXiv preprint arXiv:1904.05255 (2019).
+
+\bibitem{Jegadeesh1993}
+N.~Jegadeesh, S.~Titman, Returns to buying winners and selling losers:
+  Implications for stock market efficiency, The Journal of Finance 48~(1)
+  (1993) 65--91.
+
+\bibitem{Fama1965}
+E.~F. Fama, The behavior of stock-market prices, The Journal of Business 38~(1)
+  (1965) 34--105.
+
+\bibitem{Glosten1993}
+L.~R. Glosten, R.~Jagannathan, D.~E. Runkle, On the relation between the
+  expected value and the volatility of the nominal excess return on stocks, The
+  Journal of Finance 48~(5) (1993) 1779--1801.
+
+\bibitem{Zhang2006}
+L.~Zhang, The value premium, The Journal of Finance 60~(1) (2005) 67--103.
+
+\bibitem{Loria2019}
+S.~Loria, Textblob: Simplified text processing (2019).
+
+\bibitem{Jorion2001}
+P.~Jorion, Value at risk: The new benchmark for managing financial risk (2001).
+
+\bibitem{Rockafellar2000}
+R.~T. Rockafellar, S.~Uryasev, Optimization of conditional value-at-risk,
+  Journal of Risk 2 (2000) 21--41.
+
+\bibitem{Black1976}
+F.~Black, Studies of stock price volatility changes, Proceedings of the 1976
+  Meetings of the American Statistical Association, Business and Economics
+  Statistics Section (1976) 177--181.
 
 \end{thebibliography}
