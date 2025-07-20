@@ -313,7 +313,7 @@ This work presents a robust and interpretable approach to forecasting in high-vo
 
 \section{Literature Review}
 
-Early stock market forecasting methods, including ARIMA and traditional technical indicators (e.g., Moving Averages and RSI), often underperformed during periods of extreme volatility with typical RMSE values exceeding 0.05 for daily returns. Ensemble methods and classical multi-factor models such as those proposed by Fama and French improved predictive performance by incorporating market risk, size, and value; however, these methods largely ignored qualitative inputs. Recent work has integrated alternative data sources, such as financial news sentiment using FinBERT \cite{Araci2019} and event extraction using natural language processing frameworks, leading to improvements of up to 12\% in prediction error. Additionally, LSTM networks have been widely adopted for their capability to capture long-term dependencies, although challenges regarding interpretability remain. The literature increasingly advocates for explainable models that combine structured numerical data with unstructured text analysis, setting the stage for FinReport’s factor-based approach to transparent and robust financial forecasting.
+Early stock market forecasting methods, including ARIMA \cite{Box1970} and traditional technical indicators (e.g., Moving Averages and RSI \cite{Wilder1978}), often underperformed during periods of extreme volatility with typical RMSE values exceeding 0.05 for daily returns \cite{Poon2003}. Ensemble methods and classical multi-factor models such as those proposed by Fama and French \cite{FAMA1993} improved predictive performance by incorporating market risk, size, and value; however, these methods largely ignored qualitative inputs \cite{Malkiel2003}. Recent work has integrated alternative data sources, such as financial news sentiment using FinBERT \cite{Araci2019} and event extraction using natural language processing frameworks \cite{Loughran2011}, leading to improvements of up to 12\% in prediction error \cite{Ding2015}. Additionally, LSTM networks \cite{hochreiter1997lstm,Fischer2018} have been widely adopted for their capability to capture long-term dependencies, although challenges regarding interpretability remain \cite{Ribeiro2016}. The literature increasingly advocates for explainable models that combine structured numerical data with unstructured text analysis, setting the stage for FinReport’s factor-based approach to transparent and robust financial forecasting.
 
 \section{System Model And Proposed Mechanism}
 
@@ -600,7 +600,7 @@ The implementation combines two complementary sentiment analysis methodologies:
 - \textbf{Positive indicators:} increase, rise, grow, profit, improved, partnership, acquisition, dividend, earnings, success
 - \textbf{Negative indicators:} decrease, decline, loss, warning, investigation, lawsuit, delay, weak, miss, reduced
 
-\textbf{2. Advanced NLP Processing:} Employs TextBlob sentiment analysis for comprehensive polarity assessment of complete news content, addressing contextual nuances that pure keyword approaches might miss.
+\textbf{2. Advanced NLP Processing:} Employs TextBlob \cite{Loria2019} sentiment analysis for comprehensive polarity assessment of complete news content, addressing contextual nuances that pure keyword approaches might miss.
 
 The sentiment integration follows established practices in combining multiple sentiment measures:
 \begin{equation}
@@ -673,7 +673,7 @@ Volatility scoring incorporates bounds to prevent extreme values from distorting
 \text{volatility\_score} = \min(\sigma_t \times 100, 10.0) \quad \text{(capped at 10)}
 \end{equation}
 
-Implementation utilizes the \texttt{arch} Python package for robust maximum likelihood parameter estimation, ensuring numerical stability and convergence across different market conditions.
+Implementation utilizes the \texttt{arch} Python package \cite{Sheppard2020} for robust maximum likelihood parameter estimation, ensuring numerical stability and convergence across different market conditions.
 
 \subsubsection{{Maximum Drawdown Analysis}}
 
@@ -1361,9 +1361,9 @@ A rigorous experimental framework was implemented to evaluate FinReport's foreca
 \item The integrated dataset \cite{FinReportDataset2025} contained 56 distinct feature columns including price data (open, high, low, close), trading metrics (volume, amount), technical indicators (RSI, BIAS, MFI, CCI), and fundamental factors (Book-to-Market Equity, Sales-to-Price Ratio). This structured financial dataset provides comprehensive access to all necessary information for our analysis. Data preprocessing included forward-filling missing values, normalization, and text cleaning for NLP tasks. The final processed dataset contained 23,567 rows with complete technical and sentiment information, structured for time-series modeling.
 \end{itemize}
 \subsection{Training and Validation}
-The dataset was partitioned chronologically into training (60\%), validation (20\%), and testing (20\%) sets. A rolling window approach with a fixed sequence length (e.g., 30 days) was used to capture temporal dependencies. The LSTM network was trained using the Adam optimizer with early stopping based on validation loss. Hyperparameters were systematically configured using standardized configuration management for experimental consistency.
+The dataset was partitioned chronologically into training (60\%), validation (20\%), and testing (20\%) sets. A rolling window approach with a fixed sequence length (e.g., 30 days) was used to capture temporal dependencies. The LSTM network was trained using the Adam optimizer \cite{Kingma2015} with early stopping based on validation loss. Hyperparameters were systematically configured using standardized configuration management for experimental consistency.
 
-\text{1) Model Configuration:} An LSTM network implemented in PyTorch \cite{hochreiter1997lstm},
+\text{1) Model Configuration:} An LSTM network implemented in PyTorch \cite{Paszke2019,hochreiter1997lstm},
 with key hyperparameters optimized through grid search.
 \begin{itemize}
     \item Input size: 59 (matching feature dimensions)
@@ -1382,11 +1382,11 @@ with key hyperparameters optimized through grid search.
 
 \text{Training Process:}
 \begin{itemize}
-    \item The model was trained using the Adam optimizer with an initial learning rate of 0.001 and implemented with an adaptive learning rate reduction strategy. As shown in Fig. 2, the model experienced rapid initial learning, with training loss dropping significantly from 0.139 to 0.029 within the first four epochs.
+    \item The model was trained using the Adam optimizer \cite{Kingma2015} with an initial learning rate of 0.001 and implemented with an adaptive learning rate reduction strategy. As shown in Fig. 2, the model experienced rapid initial learning, with training loss dropping significantly from 0.139 to 0.029 within the first four epochs.
 \item The learning rate scheduler monitored validation loss and reduced the learning rate by a factor of 0.5 when performance plateaued, resulting in three distinct learning rate reductions (from 0.001 to 0.0005 at epoch 6, to 0.00025 at epoch 11, and finally to 0.000125 at epoch 19). This scheduling technique proved crucial for fine-tuning model parameters and avoiding local minima, as evidenced by the validation loss improvements following each rate reduction.
 \item Early stopping was implemented with a patience parameter of 7 epochs, triggering termination at epoch 22 when validation performance failed to improve. The model achieved its best validation loss of 0.000217 at epoch 15. The entire training process completed in 268.61 seconds on CPU hardware.
 \item The final model architecture contained 361,345 trainable parameters. Dataset partitioning resulted in 11,347 samples for training and 2,836 samples for validation, with batch size fixed at 32 for both training and validation phases.
-\item Model reproducibility was ensured by setting a fixed random seed across NumPy, PyTorch, and data loaders, enabling consistent results across multiple training runs.
+\item Model reproducibility was ensured by setting a fixed random seed across NumPy \cite{Harris2020}, PyTorch \cite{Paszke2019}, and data loaders, enabling consistent results across multiple training runs.
 \end{itemize}
 \begin{figure}[!ht] % Better placement options
     \centering
@@ -1496,7 +1496,7 @@ Stocks with poor predictive performance often exhibit one or more of the followi
 
 
 \subsection{Sector-Based Analysis}
-To examine sector-specific performance patterns, stocks were categorized into five primary sectors: Technology, Consumer, Financial, Industrial, and Real Estate. This classification followed standard Global Industry Classification Standard (GICS) sector definitions \cite{FAMA1993}, with occasional adjustments for China-specific market characteristics. For each sector, performance metrics were aggregated using both simple averages and weighted averages based on market capitalization to avoid distortion from outlier stocks.
+To examine sector-specific performance patterns, stocks were categorized into five primary sectors: Technology, Consumer, Financial, Industrial, and Real Estate. This classification followed standard Global Industry Classification Standard (GICS) sector definitions \cite{MSCI2018}, with occasional adjustments for China-specific market characteristics. For each sector, performance metrics were aggregated using both simple averages and weighted averages based on market capitalization to avoid distortion from outlier stocks.
 
 \begin{table}[!ht]
 \centering
@@ -1519,7 +1519,7 @@ Real Estate & 0.106 & 0.316 & 0.297 & 0.591 & 600340.SH, 000002.SZ \\
 
 
 
-Statistical significance was evaluated using ANOVA tests \cite{Box1970} to confirm that the observed inter-sector differences in R\textsuperscript{2} values were not attributable to random variation (p $<$ 0.01). Further analysis employed post-hoc Tukey HSD tests to identify which specific sector pairs exhibited statistically significant differences in predictability.
+Statistical significance was evaluated using ANOVA tests \cite{Box1970} to confirm that the observed inter-sector differences in R\textsuperscript{2} values were not attributable to random variation (p $<$ 0.01). Further analysis employed post-hoc Tukey HSD tests \cite{Tukey1949} to identify which specific sector pairs exhibited statistically significant differences in predictability.
 
 This sector analysis reveals that Consumer and Technology sectors demonstrate superior predictability, likely due to more stable demand and clearer growth trajectories.
 As evident from the distribution of colored points in Fig. 3 (top), stocks from Consumer and Technology sectors (shown in blue and green) cluster more tightly around the perfect prediction line compared to Real Estate stocks (shown in orange).
@@ -1547,7 +1547,7 @@ Micro       & 0.238 & 0.459 & 0.421 & 0.298 \\
 }
 \end{table}
 
-The observed monotonic relationship between market capitalization and prediction accuracy was validated through rigorous statistical testing. Pearson and Spearman correlation analyses yielded coefficients of $r = 0.78$ and $\rho = 0.81$, respectively (both $p < 0.001$), confirming the statistical significance of this relationship.
+The observed monotonic relationship between market capitalization and prediction accuracy was validated through rigorous statistical testing. Pearson \cite{Pearson1895} and Spearman \cite{Spearman1904} correlation analyses yielded coefficients of $r = 0.78$ and $\rho = 0.81$, respectively (both $p < 0.001$), confirming the statistical significance of this relationship.
 
 To isolate market capitalization effects from potential confounding variables, a hierarchical regression analysis was conducted \cite{Chen2015}, controlling for sector, trading volume, and price volatility. Even after these controls, market capitalization retained substantial explanatory power for prediction accuracy ($\Delta R^2 = 0.23$, $p < 0.001$), confirming the robustness of this relationship.
 

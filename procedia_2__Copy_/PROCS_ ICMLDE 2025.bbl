@@ -80,9 +80,22 @@ M.~T. Ribeiro, S.~Singh, C.~Guestrin, Why should i trust you?: Explaining the
   International Conference on Knowledge Discovery and Data Mining (2016)
   1135--1144.
 
+\bibitem{Wilder1978}
+J.~W. Wilder, New concepts in technical trading systems, Trend Research (1978).
+
 \bibitem{Araci2019}
 D.~Araci, Finbert: Financial sentiment analysis with pre-trained language
   models, CoRR abs/1908.10063 (2019).
+
+\bibitem{Loughran2011}
+T.~Loughran, B.~McDonald, When is a liability not a liability? textual
+  analysis, dictionaries, and 10-ks, The Journal of Finance 66~(1) (2011)
+  35--65.
+
+\bibitem{Ding2015}
+X.~Ding, Y.~Zhang, T.~Liu, J.~Duan, Deep learning for event-driven stock
+  prediction, Proceedings of the 24th International Conference on Artificial
+  Intelligence (2015) 2327--2333.
 
 \bibitem{Carhart1997}
 M.~M. Carhart, On persistence in mutual fund performance, The Journal of
@@ -110,9 +123,6 @@ J.~J. Murphy, Technical Analysis of the Financial Markets: A Comprehensive
   Guide to Trading Methods and Applications, New York Institute of Finance,
   1999.
 
-\bibitem{Wilder1978}
-J.~W. Wilder, New concepts in technical trading systems, Trend Research (1978).
-
 \bibitem{Lo2004}
 A.~W. Lo, The adaptive markets hypothesis: Market efficiency from an
   evolutionary perspective, The Journal of Portfolio Management 30~(5) (2004)
@@ -121,16 +131,6 @@ A.~W. Lo, The adaptive markets hypothesis: Market efficiency from an
 \bibitem{Bollerslev1986}
 T.~Bollerslev, Generalized autoregressive conditional heteroskedasticity,
   Journal of Econometrics 31~(3) (1986) 307--327.
-
-\bibitem{Ding2015}
-X.~Ding, Y.~Zhang, T.~Liu, J.~Duan, Deep learning for event-driven stock
-  prediction, Proceedings of the 24th International Conference on Artificial
-  Intelligence (2015) 2327--2333.
-
-\bibitem{Loughran2011}
-T.~Loughran, B.~McDonald, When is a liability not a liability? textual
-  analysis, dictionaries, and 10-ks, The Journal of Finance 66~(1) (2011)
-  35--65.
 
 \bibitem{Harvey2016}
 C.~R. Harvey, Y.~Liu, H.~Zhu, ... and the cross-section of expected returns,
@@ -196,6 +196,10 @@ F.~Black, Studies of stock price volatility changes, Proceedings of the 1976
   Meetings of the American Statistical Association, Business and Economics
   Statistics Section (1976) 177--181.
 
+\bibitem{Sheppard2020}
+K.~Sheppard, arch: Arch and garch models in python, Journal of Open Source
+  Software 5~(55) (2020) 2815.
+
 \bibitem{Ball1968}
 R.~Ball, P.~Brown, An empirical evaluation of accounting income numbers,
   Journal of Accounting Research 6~(2) (1968) 159--178.
@@ -203,6 +207,25 @@ R.~Ball, P.~Brown, An empirical evaluation of accounting income numbers,
 \bibitem{Fama1995}
 E.~F. Fama, K.~R. French, Size and book-to-market factors in earnings and
   returns, The Journal of Finance 50~(1) (1995) 131--155.
+
+\bibitem{Kingma2015}
+D.~P. Kingma, J.~Ba, Adam: A method for stochastic optimization, arXiv preprint
+  arXiv:1412.6980 (2015).
+
+\bibitem{Paszke2019}
+A.~Paszke, S.~Gross, F.~Massa, A.~Lerer, J.~Bradbury, G.~Chanan, T.~Killeen,
+  Z.~Lin, N.~Gimelshein, L.~Antiga, A.~Desmaison, A.~Kopf, E.~Yang, Z.~DeVito,
+  M.~Raison, A.~Tejani, S.~Chilamkurthy, B.~Steiner, L.~Fang, J.~Bai,
+  S.~Chintala, Pytorch: An imperative style, high-performance deep learning
+  library, Advances in Neural Information Processing Systems 32 (2019).
+
+\bibitem{Harris2020}
+C.~R. Harris, K.~J. Millman, S.~J. van~der Walt, R.~Gommers, P.~Virtanen,
+  D.~Cournapeau, E.~Wieser, J.~Taylor, S.~Berg, N.~J. Smith, R.~Kern, M.~Picus,
+  S.~Hoyer, M.~H. van Kerkwijk, M.~Brett, A.~Haldane, J.~F. del Río, M.~Wiebe,
+  P.~Peterson, P.~Gérard-Marchant, K.~Sheppard, T.~Reddy, W.~Weckesser,
+  H.~Abbasi, C.~Gohlke, T.~E. Oliphant, Array programming with numpy, Nature
+  585~(7825) (2020) 357--362.
 
 \bibitem{Shah2019}
 D.~Shah, H.~Isah, F.~Zulkernine, Stock market analysis: A review and taxonomy
@@ -213,5 +236,22 @@ D.~Shah, H.~Isah, F.~Zulkernine, Stock market analysis: A review and taxonomy
 O.~B. Sezer, M.~U. Gudelek, A.~M. Ozbayoglu, Financial time series forecasting
   with deep learning: A systematic literature review: 2005--2019, Applied Soft
   Computing 90 (2020) 106181.
+
+\bibitem{MSCI2018}
+MSCI, S.~D.~J. Indices, Global industry classification standard (gics)
+  methodology, MSCI Inc. and S\&P Global Market Intelligence, effective August
+  2018 (2018).
+
+\bibitem{Tukey1949}
+J.~W. Tukey, Comparing individual means in the analysis of variance, Biometrics
+  5~(2) (1949) 99--114.
+
+\bibitem{Pearson1895}
+K.~Pearson, Notes on regression and inheritance in the case of two parents,
+  Proceedings of the Royal Society of London 58 (1895) 240--242.
+
+\bibitem{Spearman1904}
+C.~Spearman, The proof and measurement of association between two things, The
+  American Journal of Psychology 15~(1) (1904) 72--101.
 
 \end{thebibliography}
