@@ -867,7 +867,7 @@ The comprehensive reporting approach successfully addresses the fundamental chal
 
 \subsection{Return Forecast Calculation}
 
-The return forecast is computed using a weighted \allowbreak combination of multiple factors, where the \textbf{event factor receives the highest weight (0.25)} due to its immediate impact on market sentiment and price movements.
+The return forecast is computed using a weighted \allowbreak combination of multiple factors \cite{FAMA1993}, where the \textbf{event factor receives the highest weight (0.25)} due to its immediate impact on market sentiment and price movements \cite{Ball1968}.
 \begin{align}
 \mathbf{predicted\_return} &= 0.10 \times \mathbf{market\_factor} + 0.15 \times \mathbf{size\_factor} + 0.10 \times \mathbf{valuation\_factor} \nonumber \\
 &\quad + 0.10 \times \mathbf{profitability\_factor} + 0.20 \times \mathbf{investment\_factor} \nonumber \\
@@ -875,14 +875,14 @@ The return forecast is computed using a weighted \allowbreak combination of mult
 \end{align}
 
 
-Each factor is calculated as follows:
+Each factor is calculated as follows \cite{Carhart1997}:
 
 \vspace{0.10cm}
 \text{I) Market Factor}
 \begin{enumerate}
     \item \text{Extract Recent Volatility:}
     \begin{itemize}
-        \item Compute standard deviation of \texttt{pct\_chg} over the last 5 days.
+        \item Compute standard deviation of \texttt{pct\_chg} over the last 5 days \cite{Engle1982}.
         \item Multiply by 100 to get volatility.
     \end{itemize}
     \vspace{0.40cm}
@@ -893,7 +893,7 @@ Each factor is calculated as follows:
 
     \item \text{Perform Sentiment Analysis:}
     \begin{itemize}
-        \item Compute sentiment score from \texttt{news\_text}.
+        \item Compute sentiment score from \texttt{news\_text} \cite{TETLOCK2007}.
     \end{itemize}
 
     \item \text{Determine Base Impact:}
@@ -906,8 +906,8 @@ Each factor is calculated as follows:
 
     \item \text{Enhance with Technical Indicators (RSI):}
     \begin{itemize}
-        \item If RSI $> 70$, reduce impact (overbought condition).
-        \item If RSI $< 30$, increase impact (oversold condition).
+        \item If RSI $> 70$, reduce impact (overbought condition) \cite{Wilder1978}.
+        \item If RSI $< 30$, increase impact (oversold condition) \cite{Wilder1978}.
     \end{itemize}
 
     \item \text{Return Final Market Factor:}
@@ -915,7 +915,7 @@ Each factor is calculated as follows:
         \item Multiply final impact by $1.5$ for amplification.
     \end{itemize}
 \end{enumerate}
-\text{II) Size Factor}
+\text{II) Size Factor} \cite{Banz1981}
 \begin{enumerate}
     \item \text{Compute Size Change Percentage:}
     \begin{itemize}
@@ -930,7 +930,7 @@ Each factor is calculated as follows:
 
     \item \text{Extract Financial Impact from News:}
     \begin{itemize}
-        \item Analyze \texttt{news\_text} for financial figures.
+        \item Analyze \texttt{news\_text} for financial figures \cite{Loughran2011}.
     \end{itemize}
 
 \item \text{Determine Base Effect Based on Market Value Change:}
@@ -949,12 +949,12 @@ Each factor is calculated as follows:
         \item Multiply the computed effect by $1.5$ for amplification.
     \end{itemize}
 \end{enumerate}
-\text{III) Profitability Factor}
+\text{III) Profitability Factor} \cite{Zhang2006}
 \begin{enumerate}
     \item \text{Identify Profitability Metrics:}
     \begin{itemize}
         \item Define key financial metrics: 
-        \{EPS, Net Profit Margin, ROE, ROA, Gross Profit, Net Profit\}.
+        \{EPS, Net Profit Margin, ROE, ROA, Gross Profit, Net Profit\} \cite{Fama1995}.
         \item Identify available metrics in the dataset.
     \end{itemize}
 
@@ -983,7 +983,7 @@ Each factor is calculated as follows:
         \item Multiply the computed effect by $1.5$ for amplification.
     \end{itemize}
 \end{enumerate}
-\text{IV) Valuation Factor}
+\text{IV) Valuation Factor} \cite{Rosenberg1985}
 \begin{enumerate}
     \item \text{Identify Valuation Metrics:}
     \begin{itemize}
@@ -994,7 +994,7 @@ Each factor is calculated as follows:
 
     \item \text{Analyze News Sentiment and Sector:}
     \begin{itemize}
-        \item Perform \text{sentiment analysis} on \texttt{news\_text}.
+        \item Perform \text{sentiment analysis} on \texttt{news\_text} \cite{TETLOCK2007}.
         \item Identify the \text{sector} associated with the company.
     \end{itemize}
 
@@ -1016,7 +1016,7 @@ Each factor is calculated as follows:
 
     \item \text{Return Final Valuation Factor.}
 \end{enumerate}
-\text{V) Investment Factor}
+\text{V) Investment Factor} \cite{Daniel1998}
 \begin{enumerate}
     \item \text{Extract Investment Amount from News:}
     \begin{itemize}
@@ -1061,7 +1061,7 @@ Each factor is calculated as follows:
     \item \text{Return Final Investment Factor.}
 
 \end{enumerate}
-\text{VI) News Effect Factor}
+\text{VI) News Effect Factor} \cite{TETLOCK2007}
 \begin{enumerate}
     \item \text{Determine Base Effect from Sentiment Score:}
     \begin{itemize}
@@ -1108,7 +1108,7 @@ Each factor is calculated as follows:
         \item Multiply the computed effect by $2.0$ to enhance the impact.
     \end{itemize}
 \end{enumerate}
-\text{VII) Event Factor}
+\text{VII) Event Factor} \cite{Ball1968}
 \begin{enumerate}
     \item \text{Define Event Keywords:}
     \begin{itemize}
@@ -1143,9 +1143,9 @@ Each factor is calculated as follows:
     \end{itemize}
 
 \end{enumerate}
-All factors are enhanced using a straightforward amplification algorithm that increases each factor's impact while maintaining directional consistency:
+All factors are enhanced using a straightforward amplification algorithm \cite{Harvey2016} that increases each factor's impact while maintaining directional consistency:
 
-\text{VIII) Factor Amplification}
+\text{VIII) Factor Amplification} \cite{Harvey2016}
 \begin{enumerate}
     \item \text{Extract Factor Values:}
     \begin{itemize}
@@ -1190,7 +1190,7 @@ All factors are enhanced using a straightforward amplification algorithm that in
 
 \end{enumerate}
 \subsection{Risk Assessment Methodology}
-The risk assessment uses a sophisticated approach combining multiple risk metrics.
+The risk assessment uses a sophisticated approach combining multiple risk metrics \cite{Jorion2001}.
 \begin{enumerate}
     \item \text{Extract Risk Metrics:}
     \begin{itemize}
@@ -1231,7 +1231,7 @@ The risk assessment uses a sophisticated approach combining multiple risk metric
 
 Individual risk metrics are calculated as follows:
 
-\text{1) Volatility (EGARCH-based):}
+\text{1) Volatility (EGARCH-based):} \cite{Nelson1991}
 \begin{equation}
 \ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \alpha \frac{|r_{t-1}|}{\sigma_{t-1}} + \gamma \frac{r_{t-1}}{\sigma_{t-1}}
 \end{equation}
@@ -1243,7 +1243,7 @@ where:
     \item $r_{t-1}$ is the previous return.
 \end{itemize}
 
-\text{Value at Risk (VaR) is calculated using the 95\% confidence level based on historical simulation method.}
+\text{Value at Risk (VaR) is calculated using the 95\% confidence level based on historical simulation method} \cite{Jorion2001}.
 
 \text{2) Maximum Drawdown:}
 \begin{algorithm}
@@ -1303,7 +1303,7 @@ where:
 \end{algorithm}
 
 \subsection{Overall Trend Classification \& Summary Text Generation}
-The overall trend is determined using a weighted function of all factor values.
+The overall trend is determined using a weighted function of all factor values \cite{Carhart1997}.
 
 
 \begin{algorithm}
