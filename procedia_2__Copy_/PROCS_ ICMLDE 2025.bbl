@@ -15,11 +15,11 @@ S.~Hochreiter, J.~Schmidhuber, Long short-term memory, Neural Computation 9~(8)
 
 \bibitem{FinReportDataset2025}
 Kanishk1420, Finreport: Explainable stock earnings forecasting via news factor
-  - chinese a-share stock dataset,
+  - chinese a-share stock dataset, Available at:
   \url{https://github.com/Kanishk1420/FinReport-Explainable-Stock-Earnings-Forecasting-via-News-Factor},
   dataset contains historical stock data (2018-2021), financial news, and
   pre-computed technical indicators for Chinese A-share stocks. Primary dataset
-  file: src/stock\_data.csv (2025).
+  file: \texttt{src/stock\_data.csv} (2025).
 
 \bibitem{TETLOCK2007}
 P.~C. Tetlock, Giving content to investor sentiment: The role of media in the
