@@ -738,6 +738,7 @@ INPUT .\Picture2.png
 INPUT .\Picture2.png
 INPUT .\Picture2.png
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
 INPUT .\Picture3.png
 INPUT .\Picture3.png
 INPUT .\Picture3.png
@@ -747,12 +748,8 @@ INPUT .\Picture3.png
 INPUT .\Picture3.png
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txmi.vf
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxmi.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxptmri.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txr.vf
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxptmr.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxr.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txr.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txmi.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txsy.tfm
