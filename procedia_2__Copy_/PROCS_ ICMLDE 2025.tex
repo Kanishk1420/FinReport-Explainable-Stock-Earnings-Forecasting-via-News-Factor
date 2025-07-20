@@ -432,9 +432,14 @@ The market factor combines volatility analysis with news sentiment following est
 \end{equation}
 
 The implementation incorporates regime-dependent behavior documented in volatility literature \cite{Glosten1993}, where different volatility levels trigger different market responses:
-- \textbf{High volatility regime} (> 4.0\%): Applies negative bias reflecting flight-to-quality effects
-- \textbf{Moderate volatility regime} (> 2.5\%): Moderate negative impact with sentiment adjustment  
-- \textbf{Low volatility regime}: Positive bias when more positive trading days exist, enhanced by news sentiment
+
+\begin{itemize}
+    \item \textbf{High volatility regime} (> 4.0\%): Applies negative bias reflecting flight-to-quality effects and risk aversion behavior during market stress periods
+    
+    \item \textbf{Moderate volatility regime} (> 2.5\%): Moderate negative impact with sentiment adjustment, reflecting mixed market signals and uncertainty  
+    
+    \item \textbf{Low volatility regime}: Positive bias when more positive trading days exist, enhanced by news sentiment and reflecting stable market conditions conducive to growth
+\end{itemize}
 
 The factor incorporates amplification (1.5x) and controlled randomization (±0.2) to reflect documented market uncertainty and microstructure noise \cite{Campbell2001}.
 
@@ -532,20 +537,26 @@ The profitability factor extends established research on earnings quality and pr
 \end{itemize}
 
 The implementation systematically searches for available profitability indicators:
-- \texttt{eps} (earnings per share - fundamental profitability measure)
-- \texttt{net\_profit\_margin} (operational efficiency indicator)
-- \texttt{roe} (return on equity - shareholder value creation)
-- \texttt{roa} (return on assets - asset utilization efficiency)
-- \texttt{grossprofit}/\texttt{netprofit} (absolute profitability measures)
 
-When quantitative profitability data exists, the factor calculates percentage changes between current and previous values, scaled appropriately and bounded to prevent extreme outliers from dominating the analysis:
+\begin{itemize}
+    \item \texttt{eps}: Earnings per share - fundamental profitability measure reflecting per-share earning capacity
+    \item \texttt{net\_profit\_margin}: Operational efficiency indicator measuring net profitability relative to revenue
+    \item \texttt{roe}: Return on equity - shareholder value creation metric indicating management effectiveness
+    \item \texttt{roa}: Return on assets - asset utilization efficiency measure reflecting operational performance
+    \item \texttt{grossprofit}/\texttt{netprofit}: Absolute profitability measures providing direct earnings assessment
+\end{itemize}
 
-When quantitative data is unavailable, the factor employs advanced text analysis for:
-- \textbf{Earnings keywords:} profit, earnings, income, revenue, margin, EPS, ROE, ROI
-- \textbf{Directional indicators:} increase/decrease, rise/fall, improve/decline patterns
-- \textbf{Quantitative extraction:} Numeric percentage changes extracted from textual content
+\textbf{Quantitative Processing:} When quantitative profitability data exists, the factor calculates percentage changes between current and previous values, scaled appropriately and bounded to prevent extreme outliers from dominating the analysis.
 
-The factor applies asymmetric treatment reflecting the documented asymmetry in how positive and negative earnings news affects stock prices, with strong negative bias (-1.8) for explicit loss mentions but scaled positive adjustments for profit increases.
+\textbf{Textual Analysis Framework:} When quantitative data is unavailable, the factor employs advanced text analysis incorporating:
+
+\begin{itemize}
+    \item \textbf{Earnings keywords:} profit, earnings, income, revenue, margin, EPS, ROE, ROI - capturing direct profitability mentions
+    \item \textbf{Directional indicators:} increase/decrease, rise/fall, improve/decline patterns - identifying performance trends
+    \item \textbf{Quantitative extraction:} Numeric percentage changes extracted from textual content - preserving specific performance metrics
+\end{itemize}
+
+\textbf{Asymmetric Impact Modeling:} The factor applies asymmetric treatment reflecting the documented asymmetry in how positive and negative earnings news affects stock prices \cite{Kothari2009}, with strong negative bias (-1.8) for explicit loss mentions but scaled positive adjustments for profit increases.
 
 \subsubsection{{Investment Factor}}
 
