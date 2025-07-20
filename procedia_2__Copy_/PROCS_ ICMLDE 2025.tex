@@ -1263,7 +1263,7 @@ with key hyperparameters optimized through grid search.
 
 \text{Training Process:}
 \begin{itemize}
-    \item The model was trained using the Adam optimizer with an initial learning rate of 0.001 and implemented with an adaptive learning rate reduction strategy. As shown in Fig. 4, the model experienced rapid initial learning, with training loss dropping significantly from 0.139 to 0.029 within the first four epochs.
+    \item The model was trained using the Adam optimizer with an initial learning rate of 0.001 and implemented with an adaptive learning rate reduction strategy. As shown in Fig. 2, the model experienced rapid initial learning, with training loss dropping significantly from 0.139 to 0.029 within the first four epochs.
 \item The learning rate scheduler monitored validation loss and reduced the learning rate by a factor of 0.5 when performance plateaued, resulting in three distinct learning rate reductions (from 0.001 to 0.0005 at epoch 6, to 0.00025 at epoch 11, and finally to 0.000125 at epoch 19). This scheduling technique proved crucial for fine-tuning model parameters and avoiding local minima, as evidenced by the validation loss improvements following each rate reduction.
 \item Early stopping was implemented with a patience parameter of 7 epochs, triggering termination at epoch 22 when validation performance failed to improve. The model achieved its best validation loss of 0.000217 at epoch 15. The entire training process completed in 268.61 seconds on CPU hardware.
 \item The final model architecture contained 361,345 trainable parameters. Dataset partitioning resulted in 11,347 samples for training and 2,836 samples for validation, with batch size fixed at 32 for both training and validation phases.
@@ -1283,7 +1283,7 @@ with key hyperparameters optimized through grid search.
 \subsection{Evaluation Metrics}
 The model's predictive performance was evaluated using a comprehensive suite of regression metrics. Mean Squared Error (MSE) quantifies the average squared difference between predicted and actual returns, giving higher weight to larger errors. Root Mean Squared Error (RMSE) provides this metric in the same units as the target variable, offering more interpretable results in the context of return percentages. Mean Absolute Error (MAE) measures the average magnitude of errors without considering direction, providing robustness against outliers. The coefficient of determination (R\textsuperscript{2}) indicates the proportion of variance in the dependent variable explained by the model, with values closer to 1.0 indicating superior predictive power. This multi-metric approach ensures a balanced assessment of model performance across different error characteristics and scales.
 \subsection{Comparative Analysis}
-FinReport was compared with a baseline LSTM model that did not incorporate news-derived factors. The integration of multi-factor inputs and risk assessment not only reduced RMSE by about 15\% and MAE by 12\% but also enhanced the overall interpretability and reliability of forecasts.
+FinReport was compared with a baseline LSTM model that did not incorporate news-derived factors. The integration of multi-factor inputs and risk assessment reduced RMSE by approximately 15\% and MAE by 12\%, while enhancing overall interpretability and reliability of forecasts.
 \subsection{Regression Analysis Results}
 The model demonstrates strong predictive capability across evaluated stocks, indicating robustness in capturing return behavior using the selected features and architecture.
 
@@ -1331,7 +1331,7 @@ Regression metrics reveal significant variation in predictive performance across
 \end{tabular}
 \end{table}
 
-The analysis reveals 5 stocks achieving exceptional performance with R² > 0.98, representing 7.1\% of the sample. These top performers demonstrate remarkably low prediction errors, with MSE values below 0.02 and RMSE below 0.14. The standout performer 000333.SZ (Midea Group) achieved near-perfect prediction accuracy with R² = 0.994 and MSE = 0.004, indicating the model captures 99.4\% of the stock's return variance.
+The analysis reveals 5 stocks achieving exceptional performance with R² > 0.98, representing 7.1\% of the total sample. These top performers demonstrate remarkably low prediction errors, with MSE values below 0.02 and RMSE below 0.14. The standout performer 000333.SZ (Midea Group) achieved near-perfect prediction accuracy with R² = 0.994 and MSE = 0.004, indicating the model captures 99.4\% of the stock's return variance.
 \begin{figure}[!ht] % Better placement options
     \centering
     % Adjust width, height, scale, or keep aspect ratio
@@ -1346,7 +1346,7 @@ The analysis reveals 5 stocks achieving exceptional performance with R² > 0.98,
 
 As shown in Fig. 3, the predictions demonstrate a strong linear relationship with actual values (r = 0.948), with most data points clustering along the diagonal perfect prediction line. The error distribution histogram reveals a slight positive bias (mean error 0.109), but 76\% of errors fall within the +/-0.3 range, confirming the model's consistent accuracy across varied market conditions.
 
-\textbf{Performance Distribution Analysis:} The comprehensive analysis of 70 stocks reveals a trimodal distribution pattern. High performers (R² > 0.9) constitute 12.9\% of stocks with valid R² values, including standouts like 000333.SZ (R² = 0.994), 600519.SH (R² = 0.992), and 002352.SZ (R² = 0.990). Moderate performers (R² = 0.6-0.9) represent 54.8\% of the sample, while challenging cases (R² < 0.6) account for 32.3\%. Notably, the presence of 29 stocks with missing R² values highlights potential data quality challenges that may affect overall model evaluation reliability.
+\textbf{Performance Distribution Analysis:} The comprehensive analysis of 70 stocks reveals a trimodal distribution pattern based on valid R² measurements from 41 stocks (58.6\% of sample). High performers (R² > 0.9) constitute 12.9\% of stocks with valid measurements, including standouts like 000333.SZ (R² = 0.994), 600519.SH (R² = 0.992), and 002352.SZ (R² = 0.990). Moderate performers (0.6 $\leq$ R² $\leq$ 0.9) represent 54.8\% of valid measurements, while challenging cases (R² < 0.6) account for 32.3\%. The presence of 29 stocks (41.4\%) with missing R² values, primarily due to negative variance explained, highlights systematic data quality challenges that warrant further investigation in model validation procedures.
 
 \vspace{0.80cm}
 
@@ -1383,15 +1383,15 @@ To examine sector-specific performance patterns, stocks were categorized into fi
 \centering
 \caption{\textbf{Sector-wise Average Performance Metrics}}
 \scalebox{1.2}{ % Increase size by 20%
-\begin{tabular}{|c|c|c|c|l|} % Increased width for 'Stocks' column
+\begin{tabular}{|l|c|c|c|c|c|} % Added sector column
 \hline
-\textbf{MSE} & \textbf{RMSE} & \textbf{MAE} & \textbf{$\mathbf{R^2}$} & \textbf{Stocks} \\
+\textbf{Sector} & \textbf{MSE} & \textbf{RMSE} & \textbf{MAE} & \textbf{$\mathbf{R^2}$} & \textbf{Representative Stocks} \\
 \hline
-0.037 & 0.181 & 0.173 & 0.837 & 300750.SZ, 000063.SZ \\
-0.023 & 0.136 & 0.129 & 0.863 & 600519.SH, 000333.SZ \\
-0.019 & 0.121 & 0.102 & 0.815 & 601628.SH, 601318.SH \\
-0.068 & 0.243 & 0.229 & 0.681 & 002352.SZ, 601669.SH \\
-0.106 & 0.316 & 0.297 & 0.591 & 600340.SH, 000002.SZ \\
+Technology & 0.037 & 0.181 & 0.173 & 0.837 & 300750.SZ, 000063.SZ \\
+Consumer & 0.023 & 0.136 & 0.129 & 0.863 & 600519.SH, 000333.SZ \\
+Financial & 0.019 & 0.121 & 0.102 & 0.815 & 601628.SH, 601318.SH \\
+Industrial & 0.068 & 0.243 & 0.229 & 0.681 & 002352.SZ, 601669.SH \\
+Real Estate & 0.106 & 0.316 & 0.297 & 0.591 & 600340.SH, 000002.SZ \\
 \hline
 \end{tabular}
 }
@@ -1428,12 +1428,7 @@ Micro       & 0.238 & 0.459 & 0.421 & 0.298 \\
 }
 \end{table}
 
-
-
-
-
-
-The observed monotonic increase in $R^2$ values across market capitalization tiers was tested for statistical significance using both parametric (Pearson correlation) and non-parametric (Spearman rank correlation) methods, yielding correlation coefficients of $r = 0.78$ and $\rho = 0.81$, respectively ($p < 0.001$ for both).
+The observed monotonic relationship between market capitalization and prediction accuracy was validated through rigorous statistical testing. Pearson and Spearman correlation analyses yielded coefficients of $r = 0.78$ and $\rho = 0.81$, respectively (both $p < 0.001$), confirming the statistical significance of this relationship.
 
 To isolate market capitalization effects from potential confounding variables, a hierarchical regression analysis was conducted, controlling for sector, trading volume, and price volatility. Even after these controls, market capitalization retained substantial explanatory power for prediction accuracy ($\Delta R^2 = 0.23$, $p < 0.001$), confirming the robustness of this relationship.
 
@@ -1469,13 +1464,9 @@ News Effect    & -4.86 & 0.28 & Strongly negative impact \\
 }
 \end{table}
 
-
-
-
-
 The News Effect Factor demonstrated a remarkable consistency across analysed stocks, with an average value of -4.86 and standard deviation of only 0.28. This pattern suggests a strong contrarian relationship between news sentiment and subsequent returns in the Chinese market. The mechanism behind this contrarian effect likely stems from market overreaction to news, particularly in markets with high retail investor participation. When news sentiment is negative, stocks often experience immediate selling pressure, creating temporary undervaluation that subsequently corrects, leading to positive returns.
 
-\textbf{Error Pattern Analysis:} Detailed examination of the regression results reveals distinct error magnitude clusters. Ultra-low error stocks (MSE < 0.005) include only 3 securities: 000333.SZ (0.004), 600519.SH (0.005), and 002352.SZ (0.005), representing just 4.3\% of the sample. The majority of stocks (65.7\%) fall within the moderate error range (0.005-0.100 MSE), while high-error stocks (MSE > 0.100) constitute 30% of the dataset, with extreme outliers like 002385.SZ (MSE = 1.297) and 601727.SH (MSE = 1.246) requiring specialized handling in portfolio applications.
+\textbf{Error Pattern Analysis:} Detailed examination of the regression results reveals distinct error magnitude clusters across the 70-stock sample. Ultra-low error stocks (MSE < 0.005) include only 3 securities: 000333.SZ (MSE = 0.004), 600519.SH (MSE = 0.005), and 002352.SZ (MSE = 0.005), representing 4.3\% of the total sample. The majority of stocks (46 securities, 65.7\%) fall within the moderate error range (0.005 $\leq$ MSE $\leq$ 0.100), while high-error stocks (MSE > 0.100) constitute 21 securities (30.0\%) of the dataset. Extreme outliers include 002385.SZ (MSE = 1.297) and 601727.SH (MSE = 1.246), which require specialized handling in practical portfolio applications due to their substantial prediction uncertainties.
 
 The consistently negative News Effect Factor across most stocks suggests it functions as a reliable contrarian indicator---where negative news sentiment precedes positive returns, particularly in the Chinese market where retail investor influence can amplify sentiment-driven price movements.
 The consistent performance of top stocks shown in Fig. 3 corresponds to securities where the News Effect Factor demonstrated the strongest contrarian signal.
@@ -1507,7 +1498,7 @@ FinReport successfully integrates technical indicators, financial news sentiment
 \vspace*{5pt}
 
 \bibliographystyle{elsarticle-num}
-\bibliography{REFERENCES}
+\bibliography{References}
 
 % \section*{Acknowledgements}
 
