@@ -1,17 +1,61 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
+\bibitem{Poon2003}
+S.-H. Poon, C.~W.~J. Granger, Forecasting volatility in financial markets: A
+  review, Journal of Economic Literature 41~(2) (2003) 478--539.
+
+\bibitem{Chen2015}
+K.~Chen, L.-A. Zhou, Y.~Wang, Stock return predictability and the adaptive
+  markets hypothesis: Evidence from century-long us data, Journal of Empirical
+  Finance 31 (2015) 94--108.
+
+\bibitem{Box1970}
+G.~E.~P. Box, G.~M. Jenkins, Time series analysis: Forecasting and control, San
+  Francisco: Holden-Day (1970).
+
 \bibitem{FAMA1993}
 E.~F. Fama, K.~R. French, Common risk factors in the returns on stocks and
   bonds, Journal of Financial Economics 33~(1) (1993) 3--56.
 
+\bibitem{Malkiel2003}
+B.~G. Malkiel, The efficient market hypothesis and its critics, Journal of
+  Economic Perspectives 17~(1) (2003) 59--82.
+
+\bibitem{Sharpe1964}
+W.~F. Sharpe, Capital asset prices: A theory of market equilibrium under
+  conditions of risk, The Journal of Finance 19~(3) (1964) 425--442.
+
 \bibitem{hochreiter1997lstm}
 S.~Hochreiter, J.~Schmidhuber, Long short-term memory, Neural Computation 9~(8)
   (1997) 1735--1780.
+
+\bibitem{Bao2017}
+W.~Bao, J.~Yue, Y.~Rao, A deep learning framework for financial time series
+  using stacked autoencoders and long-short term memory, PLoS ONE 12~(7) (2017)
+  e0180944.
+
+\bibitem{Schumaker2009}
+R.~P. Schumaker, H.~Chen, Textual analysis of stock market prediction using
+  breaking financial news: The azfin text system, ACM Transactions on
+  Information Systems 27~(2) (2009) 1--19.
+
+\bibitem{Xing2018}
+F.~Z. Xing, E.~Cambria, R.~E. Welsch, Natural language based financial
+  forecasting: a survey, Artificial Intelligence Review 50~(1) (2018) 49--73.
+
+\bibitem{Nelson1991}
+D.~B. Nelson, Conditional heteroskedasticity in asset returns: A new approach,
+  Econometrica 59~(2) (1991) 347--370.
+
+\bibitem{Engle1982}
+R.~F. Engle, Autoregressive conditional heteroscedasticity with estimates of
+  the variance of united kingdom inflation, Econometrica 50~(4) (1982)
+  987--1007.
 
 \bibitem{FinReportDataset2025}
 Kanishk1420, Finreport: Explainable stock earnings forecasting via news factor
@@ -21,12 +65,37 @@ Kanishk1420, Finreport: Explainable stock earnings forecasting via news factor
   pre-computed technical indicators for Chinese A-share stocks. Primary dataset
   file: \texttt{src/stock\_data.csv} (2025).
 
+\bibitem{Fischer2018}
+T.~Fischer, C.~Krauss, Deep learning with long short-term memory networks for
+  financial market predictions, European Journal of Operational Research
+  270~(2) (2018) 654--669.
+
 \bibitem{TETLOCK2007}
 P.~C. Tetlock, Giving content to investor sentiment: The role of media in the
   stock market, The Journal of Finance 62~(3) (2007) 1139--1168.
 
+\bibitem{Ribeiro2016}
+M.~T. Ribeiro, S.~Singh, C.~Guestrin, Why should i trust you?: Explaining the
+  predictions of any classifier, Proceedings of the 22nd ACM SIGKDD
+  International Conference on Knowledge Discovery and Data Mining (2016)
+  1135--1144.
+
 \bibitem{Araci2019}
 D.~Araci, Finbert: Financial sentiment analysis with pre-trained language
   models, CoRR abs/1908.10063 (2019).
+
+\bibitem{Bollerslev1986}
+T.~Bollerslev, Generalized autoregressive conditional heteroskedasticity,
+  Journal of Econometrics 31~(3) (1986) 307--327.
+
+\bibitem{Ding2015}
+X.~Ding, Y.~Zhang, T.~Liu, J.~Duan, Deep learning for event-driven stock
+  prediction, Proceedings of the 24th International Conference on Artificial
+  Intelligence (2015) 2327--2333.
+
+\bibitem{Loughran2011}
+T.~Loughran, B.~McDonald, When is a liability not a liability? textual
+  analysis, dictionaries, and 10-ks, The Journal of Finance 66~(1) (2011)
+  35--65.
 
 \end{thebibliography}
