@@ -1110,24 +1110,21 @@ The risk assessment uses a sophisticated approach combining multiple risk metric
     \end{itemize}
 
 \end{enumerate}
-\vspace{1.5cm}
+
 Individual risk metrics are calculated as follows:
-\vspace{0.10cm}
 
 \text{1) Volatility (EGARCH-based):}
 \begin{equation}
-\bm{\ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \alpha \frac{|r_{t-1}|}{\sigma_{t-1}} + \gamma \frac{r_{t-1}}{\sigma_{t-1}}}
+\ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \alpha \frac{|r_{t-1}|}{\sigma_{t-1}} + \gamma \frac{r_{t-1}}{\sigma_{t-1}}
 \end{equation}
 where:
 \begin{itemize}
     \item $\sigma_t^2$ is the conditional variance at time $t$.
     \item $\omega, \beta, \alpha, \gamma$ are model parameters.
-    \item $\bm{r_{t-1}}$ is the previous return.
+    \item $r_{t-1}$ is the previous return.
 \end{itemize}
 
-\begin{center}
-95\% Value at Risk (VaR)
-\end{center}
+\text{Value at Risk (VaR) is calculated using the 95\% confidence level based on historical simulation method.}
 
 \text{2) Maximum Drawdown:}
 \begin{algorithm}
