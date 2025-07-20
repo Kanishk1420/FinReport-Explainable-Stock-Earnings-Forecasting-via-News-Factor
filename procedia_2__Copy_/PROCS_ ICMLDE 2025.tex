@@ -610,16 +610,21 @@ The sentiment integration follows established practices in combining multiple se
 \end{equation}
 
 Sentiment-dependent scaling reflects documented non-linear relationships between sentiment strength and market response:
-- Very positive ($\geq 0.5$): Enhanced positive range [0.7, 1.2] 
-- Moderately positive (>0): Standard positive range [0.3, 0.7]
-- Moderately negative (>-0.5): Standard negative range [-0.7, -0.3]  
-- Very negative ($\leq -0.5$): Enhanced negative range [-1.2, -0.7]
+
+\begin{itemize}
+    \item \textbf{Very positive} ($\geq 0.5$): Enhanced positive range [0.7, 1.2] reflecting strong optimism effects
+    \item \textbf{Moderately positive} (>0): Standard positive range [0.3, 0.7] for typical positive sentiment
+    \item \textbf{Moderately negative} (>-0.5): Standard negative range [-0.7, -0.3] for mild pessimism
+    \item \textbf{Very negative} ($\leq -0.5$): Enhanced negative range [-1.2, -0.7] capturing strong negative reactions
+\end{itemize}
 
 Final amplification (2.0x) ensures adequate signal strength while maintaining interpretable bounds [-2.0, +2.0].
 
-For Chinese market adaptation, the system incorporates culturally specific keywords:
-- \textbf{Positive Chinese terms:} zengzhang (growth), yingli (profit), shangsheng (rise), huode (gain), chenggong (success), tisheng (improvement), shouyi (revenue)
-- \textbf{Negative Chinese terms:} xiajiang (decline), kuisun (loss), jianshao (decrease), jinggao (warning), zhaiwu (debt), diaocha (investigation), weigui (violation)
+\textbf{Chinese Market Adaptation:} The system incorporates culturally specific keywords for enhanced market relevance:
+
+\textbf{Positive Chinese Terms:} zengzhang (growth), yingli (profit), shangsheng (rise), huode (gain), chenggong (success), tisheng (improvement), shouyi (revenue)
+
+\textbf{Negative Chinese Terms:} xiajiang (decline), kuisun (loss), jianshao (decrease), jinggao (warning), zhaiwu (debt), diaocha (investigation), weigui (violation)
 
 \begin{equation}
 \textbf{news\_effect} = \textbf{combined\_sentiment} \times 2.0 \text{ (amplification)}
