@@ -1289,21 +1289,21 @@ The model demonstrates strong predictive capability across evaluated stocks, ind
 
 \definecolor{lightgreen}{RGB}{220, 235, 210} 
 
-\begin{table}[!ht]
+\begin{table*}[!ht]
 \centering
 \caption{\textbf{Model Performance Metrics and Interpretations}}
 \begin{tabular}{|l|c|l|}
 \hline
 \textbf{Metric} & \textbf{Value} & \textbf{Interpretation} \\
 \hline
-MSE         & 0.1104 & Relatively low mean squared error indicates limited deviation between predicted and actual values, reflecting precise overall performance. \\
-RMSE        & 0.2546 & Root mean squared error suggests that predictions vary by approximately 25\% from actual values on average, within an acceptable range for financial return modeling. \\
-MAE         & 0.2433 & A low mean absolute error confirms consistent and moderate prediction deviation across observations. \\
-$R^2$       & 0.5515 & The model explains 55.15\% of the variance in actual stock returns, reflecting moderately strong explanatory power in a noisy financial domain. \\
-Correlation & 0.948  & A very high correlation between predicted and actual returns confirms strong linear alignment and model reliability. \\
+MSE         & 0.1104 & \begin{minipage}[t]{8cm}Relatively low mean squared error indicates limited deviation between predicted and actual values, reflecting precise overall performance.\end{minipage} \\[2ex]
+RMSE        & 0.2546 & \begin{minipage}[t]{8cm}Root mean squared error suggests that predictions vary by approximately 25\% from actual values on average, within an acceptable range for financial return modeling.\end{minipage} \\[2ex]
+MAE         & 0.2433 & \begin{minipage}[t]{8cm}A low mean absolute error confirms consistent and moderate prediction deviation across observations.\end{minipage} \\[2ex]
+$R^2$       & 0.5515 & \begin{minipage}[t]{8cm}The model explains 55.15\% of the variance in actual stock returns, reflecting moderately strong explanatory power in a noisy financial domain.\end{minipage} \\[2ex]
+Correlation & 0.948  & \begin{minipage}[t]{8cm}A very high correlation between predicted and actual returns confirms strong linear alignment and model reliability.\end{minipage} \\[2ex]
 \hline
 \end{tabular}
-\end{table}
+\end{table*}
 
 The error distribution analysis reveals a slight positive bias, with the mean prediction error recorded at 0.109. This suggests a minor tendency to slightly overestimate returns. Notably, approximately 76\% of prediction errors fall within the +/-0.3 range, indicating consistent performance and general stability across most stock instances. 
 
