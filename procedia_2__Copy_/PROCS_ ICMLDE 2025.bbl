@@ -106,8 +106,9 @@ J.~Y. Campbell, M.~Lettau, B.~G. Malkiel, Y.~Xu, Have individual stocks become
   Finance 56~(1) (2001) 1--43.
 
 \bibitem{Murphy1999}
-J.~J. Murphy, Technical analysis of the financial markets: A comprehensive
-  guide to trading methods and applications (1999).
+J.~J. Murphy, Technical Analysis of the Financial Markets: A Comprehensive
+  Guide to Trading Methods and Applications, New York Institute of Finance,
+  1999.
 
 \bibitem{Wilder1978}
 J.~W. Wilder, New concepts in technical trading systems, Trend Research (1978).
@@ -173,10 +174,13 @@ B.~Graham, D.~L. Dodd, Security Analysis: Sixth Edition, Foreword by Warren
 L.~Zhang, The value premium, The Journal of Finance 60~(1) (2005) 67--103.
 
 \bibitem{Loria2019}
-S.~Loria, Textblob: Simplified text processing (2019).
+S.~Loria, Textblob: Simplified text processing,
+  \url{https://textblob.readthedocs.io/}, python library for processing textual
+  data (2019).
 
 \bibitem{Jorion2001}
-P.~Jorion, Value at risk: The new benchmark for managing financial risk (2001).
+P.~Jorion, Value at Risk: The New Benchmark for Managing Financial Risk, 2nd
+  Edition, McGraw-Hill, 2001.
 
 \bibitem{Rockafellar2000}
 R.~T. Rockafellar, S.~Uryasev, Optimization of conditional value-at-risk,
