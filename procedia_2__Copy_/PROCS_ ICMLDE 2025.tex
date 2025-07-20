@@ -478,19 +478,41 @@ The valuation factor implementation extends traditional value investing principl
     \item \textbf{Theoretical Foundation:} Evaluates investment value through systematic analysis of quantitative valuation metrics when available, or sector-specific news sentiment analysis when quantitative data is incomplete, addressing the documented value premium in equity markets \cite{FAMA1993}.
 \end{itemize}
 
-The valuation factor systematically processes multiple valuation-related indicators following established practices in value investing research:
-- \texttt{value\_factor\_Book\_to\_Market\_Equity} (fundamental value indicator)
-- \texttt{value\_factor\_Dividend\_Yield} (income-based valuation)
-- \texttt{value\_factor\_Sales\_to\_Price\_Ratio} (revenue-based valuation)  
-- \texttt{value\_factor\_Assets\_to\_Market\_Equity} (asset-based valuation)
+The valuation factor systematically processes multiple valuation-related indicators following established practices in value investing research \cite{Graham2003}:
 
-When quantitative data is available, the factor calculates percentage changes from historical values. When unavailable, it employs sector-specific sentiment analysis with differential impact weights based on industry characteristics:
+\begin{itemize}
+    \item \texttt{value\_factor\_Book\_to\_Market\_Equity}: Fundamental value indicator measuring asset backing relative to market valuation
+    \item \texttt{value\_factor\_Dividend\_Yield}: Income-based valuation metric reflecting dividend policy and shareholder returns
+    \item \texttt{value\_factor\_Sales\_to\_Price\_Ratio}: Revenue-based valuation indicator assessing operational efficiency relative to market price
+    \item \texttt{value\_factor\_Assets\_to\_Market\_Equity}: Asset-based valuation measure evaluating tangible asset backing
+\end{itemize}
 
-\textbf{Sector-Specific Adjustments:}
-- \textbf{Technology:} Higher positive sensitivity (+0.3) reflecting growth premium, moderate negative sensitivity (-0.2)
-- \textbf{Pharmaceutical:} Moderate positive sensitivity (+0.2), higher negative sensitivity (-0.3) reflecting regulatory risk
-- \textbf{Financial:} Balanced sensitivity (±0.2-0.3) reflecting regulatory environment
-- \textbf{Energy:} Lower sensitivity (±0.15-0.25) reflecting commodity price dominance
+\textbf{Quantitative Processing:} When historical quantitative data is available, the factor calculates percentage changes from baseline values using time-series analysis. When data is unavailable or incomplete, the system employs sector-specific sentiment analysis with differential impact weights calibrated to industry characteristics.
+
+\textbf{Sector-Specific Sensitivity Adjustments:}
+\begin{itemize}
+    \item \textbf{Technology Sector:} 
+    \begin{itemize}
+        \item Positive sensitivity: +0.3 (reflecting growth premium and innovation potential)
+        \item Negative sensitivity: -0.2 (moderate downside due to volatility tolerance)
+    \end{itemize}
+    
+    \item \textbf{Pharmaceutical Sector:}
+    \begin{itemize}
+        \item Positive sensitivity: +0.2 (moderate upside reflecting defensive characteristics)
+        \item Negative sensitivity: -0.3 (higher downside reflecting regulatory and R\&D risks)
+    \end{itemize}
+    
+    \item \textbf{Financial Sector:}
+    \begin{itemize}
+        \item Balanced sensitivity: ±0.2 to 0.3 (reflecting regulatory environment and interest rate sensitivity)
+    \end{itemize}
+    
+    \item \textbf{Energy Sector:}
+    \begin{itemize}
+        \item Lower sensitivity: ±0.15 to 0.25 (reflecting commodity price dominance over company-specific factors)
+    \end{itemize}
+\end{itemize}
 
 \begin{equation}
 \textbf{valuation\_effect} = 

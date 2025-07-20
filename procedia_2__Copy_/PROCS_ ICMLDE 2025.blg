@@ -8,45 +8,45 @@ Database file #1: References.bib
 Warning--empty journal in Murphy1999
 Warning--empty journal in Loria2019
 Warning--empty journal in Jorion2001
-You've used 40 entries,
+You've used 41 entries,
             2952 wiz_defined-function locations,
-            943 strings with 11552 characters,
-and the built_in function-call counts, 10746 in all, are:
-= -- 1065
-> -- 286
-< -- 0
-+ -- 122
-- -- 82
-* -- 739
-:= -- 1488
-add.period$ -- 40
-call.type$ -- 40
-change.case$ -- 41
-chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 302
-empty$ -- 1230
-format.name$ -- 104
-if$ -- 2756
+            950 strings with 11693 characters,
+and the built_in function-call counts, 11078 in all, are:
+= -- 1095
+> -- 296
+< -- 3
++ -- 125
+- -- 84
+* -- 753
+:= -- 1523
+add.period$ -- 41
+call.type$ -- 41
+change.case$ -- 43
+chr.to.int$ -- 9
+cite$ -- 44
+duplicate$ -- 317
+empty$ -- 1269
+format.name$ -- 107
+if$ -- 2851
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 39
-newline$ -- 128
-num.names$ -- 40
-pop$ -- 211
+int.to.str$ -- 41
+missing$ -- 41
+newline$ -- 131
+num.names$ -- 41
+pop$ -- 225
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 711
+skip$ -- 737
 stack$ -- 0
-substring$ -- 729
-swap$ -- 40
+substring$ -- 735
+swap$ -- 45
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 103
-width$ -- 42
-write$ -- 321
+while$ -- 105
+width$ -- 43
+write$ -- 329
 (There were 3 warnings)
