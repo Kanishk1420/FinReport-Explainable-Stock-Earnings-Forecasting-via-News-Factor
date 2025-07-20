@@ -204,4 +204,14 @@ R.~Ball, P.~Brown, An empirical evaluation of accounting income numbers,
 E.~F. Fama, K.~R. French, Size and book-to-market factors in earnings and
   returns, The Journal of Finance 50~(1) (1995) 131--155.
 
+\bibitem{Shah2019}
+D.~Shah, H.~Isah, F.~Zulkernine, Stock market analysis: A review and taxonomy
+  of prediction techniques, International Journal of Financial Studies 7~(2)
+  (2019) 26.
+
+\bibitem{Sezer2020}
+O.~B. Sezer, M.~U. Gudelek, A.~M. Ozbayoglu, Financial time series forecasting
+  with deep learning: A systematic literature review: 2005--2019, Applied Soft
+  Computing 90 (2020) 106181.
+
 \end{thebibliography}

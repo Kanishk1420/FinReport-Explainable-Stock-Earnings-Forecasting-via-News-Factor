@@ -1363,7 +1363,7 @@ A rigorous experimental framework was implemented to evaluate FinReport's foreca
 \subsection{Training and Validation}
 The dataset was partitioned chronologically into training (60\%), validation (20\%), and testing (20\%) sets. A rolling window approach with a fixed sequence length (e.g., 30 days) was used to capture temporal dependencies. The LSTM network was trained using the Adam optimizer with early stopping based on validation loss. Hyperparameters were systematically configured using standardized configuration management for experimental consistency.
 
-\text{1) Model Configuration:} An LSTM network implemented in PyTorch,
+\text{1) Model Configuration:} An LSTM network implemented in PyTorch \cite{hochreiter1997lstm},
 with key hyperparameters optimized through grid search.
 \begin{itemize}
     \item Input size: 59 (matching feature dimensions)
@@ -1376,9 +1376,9 @@ with key hyperparameters optimized through grid search.
 \item Loss function: Mean Squared Error (MSE)
 \end{itemize}
 
-\text{2) News Factor Extraction:} Employed FinBERT for \allowbreak sentiment, scoring and AllenNLP for event extraction, with daily aggregation. The FinBERT model was fine-tuned on a Chinese financial corpus to improve sentiment classification accuracy from 76.3\% to 83.2\% for domain-specific texts.
+\text{2) News Factor Extraction:} Employed FinBERT \cite{Araci2019} for \allowbreak sentiment, scoring and AllenNLP \cite{Gardner2018} for event extraction, with daily aggregation. The FinBERT model was fine-tuned on a Chinese financial corpus to improve sentiment classification accuracy from 76.3\% to 83.2\% for domain-specific texts.
 
-\text{3) Risk Assessment:} Used an EGARCH model to estimate volatility, alongside historical simulations for maximum drawdown and CVaR calculations. The EGARCH(1,1) specification was optimized with parameters $\omega = -0.012$, $\alpha = 0.149$, $\gamma = -0.087$, and $\beta = 0.987$, capturing the asymmetric volatility response characteristic of Chinese markets.
+\text{3) Risk Assessment:} Used an EGARCH model \cite{Nelson1991} to estimate volatility, alongside historical simulations for maximum drawdown and CVaR calculations \cite{Rockafellar2000}. The EGARCH(1,1) specification was optimized with parameters $\omega = -0.012$, $\alpha = 0.149$, $\gamma = -0.087$, and $\beta = 0.987$, capturing the asymmetric volatility response characteristic of Chinese markets.
 
 \text{Training Process:}
 \begin{itemize}
@@ -1400,9 +1400,9 @@ with key hyperparameters optimized through grid search.
     \label{fig:learning_curve}
 \end{figure}
 \subsection{Evaluation Metrics}
-The model's predictive performance was evaluated using a comprehensive suite of regression metrics. Mean Squared Error (MSE) quantifies the average squared difference between predicted and actual returns, giving higher weight to larger errors. Root Mean Squared Error (RMSE) provides this metric in the same units as the target variable, offering more interpretable results in the context of return percentages. Mean Absolute Error (MAE) measures the average magnitude of errors without considering direction, providing robustness against outliers. The coefficient of determination (R\textsuperscript{2}) indicates the proportion of variance in the dependent variable explained by the model, with values closer to 1.0 indicating superior predictive power. This multi-metric approach ensures a balanced assessment of model performance across different error characteristics and scales.
+The model's predictive performance was evaluated using a comprehensive suite of regression metrics \cite{Shah2019}. Mean Squared Error (MSE) quantifies the average squared difference between predicted and actual returns, giving higher weight to larger errors. Root Mean Squared Error (RMSE) provides this metric in the same units as the target variable, offering more interpretable results in the context of return percentages. Mean Absolute Error (MAE) measures the average magnitude of errors without considering direction, providing robustness against outliers. The coefficient of determination (R\textsuperscript{2}) indicates the proportion of variance in the dependent variable explained by the model, with values closer to 1.0 indicating superior predictive power. This multi-metric approach ensures a balanced assessment of model performance across different error characteristics and scales.
 \subsection{Comparative Analysis}
-FinReport was compared with a baseline LSTM model that did not incorporate news-derived factors. The integration of multi-factor inputs and risk assessment reduced RMSE by approximately 15\% and MAE by 12\%, while enhancing overall interpretability and reliability of forecasts.
+FinReport was compared with a baseline LSTM model that did not incorporate news-derived factors. The integration of multi-factor inputs and risk assessment reduced RMSE by approximately 15\% and MAE by 12\%, while enhancing overall interpretability and reliability of forecasts \cite{Fischer2018, Sezer2020}.
 \subsection{Regression Analysis Results}
 The model demonstrates strong predictive capability across evaluated stocks, indicating robustness in capturing return behavior using the selected features and architecture.
 
@@ -1519,7 +1519,7 @@ Real Estate & 0.106 & 0.316 & 0.297 & 0.591 & 600340.SH, 000002.SZ \\
 
 
 
-Statistical significance was evaluated using ANOVA tests to confirm that the observed inter-sector differences in R\textsuperscript{2} values were not attributable to random variation (p $<$ 0.01). Further analysis employed post-hoc Tukey HSD tests to identify which specific sector pairs exhibited statistically significant differences in predictability.
+Statistical significance was evaluated using ANOVA tests \cite{Box1970} to confirm that the observed inter-sector differences in R\textsuperscript{2} values were not attributable to random variation (p $<$ 0.01). Further analysis employed post-hoc Tukey HSD tests to identify which specific sector pairs exhibited statistically significant differences in predictability.
 
 This sector analysis reveals that Consumer and Technology sectors demonstrate superior predictability, likely due to more stable demand and clearer growth trajectories.
 As evident from the distribution of colored points in Fig. 3 (top), stocks from Consumer and Technology sectors (shown in blue and green) cluster more tightly around the perfect prediction line compared to Real Estate stocks (shown in orange).
@@ -1552,7 +1552,7 @@ The observed monotonic relationship between market capitalization and prediction
 To isolate market capitalization effects from potential confounding variables, a hierarchical regression analysis was conducted, controlling for sector, trading volume, and price volatility. Even after these controls, market capitalization retained substantial explanatory power for prediction accuracy ($\Delta R^2 = 0.23$, $p < 0.001$), confirming the robustness of this relationship.
 
 
-This pattern confirms that prediction accuracy significantly improves as market capitalization increases, with ultra-large-cap stocks showing nearly triple the R\textsuperscript{2} values of micro-cap stocks. The theoretical foundation for this effect likely stems from the Enhanced Efficiency Hypothesis, which suggests that larger companies experience more efficient price discovery due to greater analyst coverage, institutional investor participation, and liquidity.
+This pattern confirms that prediction accuracy significantly improves as market capitalization increases, with ultra-large-cap stocks showing nearly triple the R\textsuperscript{2} values of micro-cap stocks. The theoretical foundation for this effect likely stems from the Enhanced Efficiency Hypothesis \cite{Malkiel2003}, which suggests that larger companies experience more efficient price discovery due to greater analyst coverage, institutional investor participation, and liquidity.
 
 \textbf{Specific Market Cap Examples:} From the dataset, ultra-large-cap performers like 000333.SZ (Midea Group, R² = 0.994) and 600519.SH (Kweichow Moutai, R² = 0.992) demonstrate exceptional predictability with MSE values below 0.005. In contrast, smaller-cap stocks such as 002385.SZ show significantly higher prediction errors (MSE = 1.297) and missing R² values, consistent with the market cap hypothesis.
 
@@ -1583,7 +1583,7 @@ News Effect    & -4.86 & 0.28 & Strongly negative impact \\
 }
 \end{table}
 
-The News Effect Factor demonstrated a remarkable consistency across analysed stocks, with an average value of -4.86 and standard deviation of only 0.28. This pattern suggests a strong contrarian relationship between news sentiment and subsequent returns in the Chinese market. The mechanism behind this contrarian effect likely stems from market overreaction to news, particularly in markets with high retail investor participation. When news sentiment is negative, stocks often experience immediate selling pressure, creating temporary undervaluation that subsequently corrects, leading to positive returns.
+The News Effect Factor demonstrated a remarkable consistency across analysed stocks, with an average value of -4.86 and standard deviation of only 0.28. This pattern suggests a strong contrarian relationship between news sentiment and subsequent returns in the Chinese market. The mechanism behind this contrarian effect likely stems from market overreaction to news \cite{TETLOCK2007}, particularly in markets with high retail investor participation. When news sentiment is negative, stocks often experience immediate selling pressure, creating temporary undervaluation that subsequently corrects, leading to positive returns.
 
 \textbf{Error Pattern Analysis:} Detailed examination of the regression results reveals distinct error magnitude clusters across the 70-stock sample. Ultra-low error stocks (MSE < 0.005) include only 3 securities: 000333.SZ (MSE = 0.004), 600519.SH (MSE = 0.005), and 002352.SZ (MSE = 0.005), representing 4.3\% of the total sample. The majority of stocks (46 securities, 65.7\%) fall within the moderate error range (0.005 $\leq$ MSE $\leq$ 0.100), while high-error stocks (MSE > 0.100) constitute 21 securities (30.0\%) of the dataset. Extreme outliers include 002385.SZ (MSE = 1.297) and 601727.SH (MSE = 1.246), which require specialized handling in practical portfolio applications due to their substantial prediction uncertainties.
 
@@ -1591,7 +1591,11 @@ The consistently negative News Effect Factor across most stocks suggests it func
 The consistent performance of top stocks shown in Fig. 3 corresponds to securities where the News Effect Factor demonstrated the strongest contrarian signal.
 
 \section{Conclusion and Future work}
-FinReport successfully integrates technical indicators, financial news sentiment, and advanced risk metrics to deliver interpretable and accurate stock earnings forecasts, outperforming baseline models especially in large-cap and consumer stocks. Future enhancements will focus on incorporating advanced Large Language Models for improved news analysis, dynamic factor weighting, and intelligent report generation, alongside scalability and regulatory compliance improvements. These efforts aim to refine prediction accuracy across market segments and enhance usability, maintaining FinReport’s balance of transparency and performance.
+FinReport successfully integrates technical indicators, financial news sentiment, and advanced risk metrics to deliver interpretable and accurate stock earnings forecasts, outperforming baseline models especially in large-cap and consumer stocks \cite{Fischer2018, Bao2017}. The system demonstrates strong predictive capability with R² of 0.5515 and correlation of 0.948, indicating substantial explanatory power for stock return variance \cite{Sezer2020}. 
+
+The news sentiment analysis using FinBERT \cite{Araci2019} revealed a consistent contrarian effect across Chinese markets, where negative sentiment precedes positive returns, supporting behavioral finance theories of market overreaction \cite{TETLOCK2007}. Risk assessment integration using EGARCH volatility modeling \cite{Nelson1991} and CVaR calculations \cite{Rockafellar2000} provides comprehensive risk-adjusted forecasting capabilities.
+
+Future enhancements will focus on incorporating advanced Large Language Models \cite{Devlin2019} for improved news analysis, dynamic factor weighting, and intelligent report generation, alongside scalability and regulatory compliance improvements. These efforts aim to refine prediction accuracy across market segments and enhance usability, maintaining FinReport’s balance of transparency and performance.
 
 
 % \section{Future Work}
