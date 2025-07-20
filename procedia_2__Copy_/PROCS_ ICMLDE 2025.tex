@@ -426,13 +426,11 @@ The market factor implementation draws from established research on systematic r
 \end{itemize}
 
 The market factor combines volatility analysis with news sentiment following established practices in behavioral finance \cite{Daniel1998}. The system computes recent volatility from the last 5 trading days using standard deviation measures, incorporating the documented volatility clustering effects in financial markets \cite{Engle1982}:
-
+\vspace{-0.5cm}
 \begin{equation}
 \textbf{volatility} = \text{std}(\texttt{pct\_chg}_{\text{recent 5 days}}) \times 100
 \end{equation}
-
 The implementation incorporates regime-dependent behavior documented in volatility literature \cite{Glosten1993}, where different volatility levels trigger different market responses:
-
 \begin{itemize}
     \item \textbf{High volatility regime} (> 4.0\%): Applies negative bias reflecting flight-to-quality effects and risk aversion behavior during market stress periods
     
@@ -493,7 +491,7 @@ The valuation factor systematically processes multiple valuation-related indicat
 \end{itemize}
 
 \textbf{Quantitative Processing:} When historical quantitative data is available, the factor calculates percentage changes from baseline values using time-series analysis. When data is unavailable or incomplete, the system employs sector-specific sentiment analysis with differential impact weights calibrated to industry characteristics.
-
+\vspace{0.2cm}
 \textbf{Sector-Specific Sensitivity Adjustments:}
 \begin{itemize}
     \item \textbf{Technology Sector:} 
@@ -516,9 +514,9 @@ The valuation factor systematically processes multiple valuation-related indicat
     \item \textbf{Energy Sector:}
     \begin{itemize}
         \item Lower sensitivity: ±0.15 to 0.25 (reflecting commodity price dominance over company-specific factors)
+        \vspace{-0.6cm}
     \end{itemize}
 \end{itemize}
-
 \begin{equation}
 \textbf{valuation\_effect} = 
 \begin{cases} 
@@ -578,7 +576,7 @@ Activity type multipliers reflect empirically documented differential market res
 - R\&D activities: +0.7 per mention (innovation premium, particularly relevant for technology sectors)
 
 Final values are bounded in the range [0.0, +2.0] reflecting the generally positive long-term market perception of investment activities, while acknowledging potential negative reactions to poorly executed investments.
-
+\vspace{-0.3cm}
 \begin{equation}
 \textbf{investment\_effect} = \textbf{impact\_scale} \times 0.5 \times 
 \begin{cases} 
@@ -606,8 +604,9 @@ The implementation combines two complementary sentiment analysis methodologies:
 
 The sentiment integration follows established practices in combining multiple sentiment measures:
 \begin{equation}
-\textbf{combined\_sentiment} = \frac{\textbf{TextBlob\_polarity} + \textbf{keyword\_sentiment}}{2}
+    \textbf{combined\_sentiment} = \frac{\textbf{TextBlob\_polarity} + \textbf{keyword\_sentiment}}{2}
 \end{equation}
+\vspace{0.2cm}
 
 Sentiment-dependent scaling reflects documented non-linear relationships between sentiment strength and market response:
 
@@ -625,7 +624,7 @@ Final amplification (2.0x) ensures adequate signal strength while maintaining in
 \textbf{Positive Chinese Terms:} zengzhang (growth), yingli (profit), shangsheng (rise), huode (gain), chenggong (success), tisheng (improvement), shouyi (revenue)
 
 \textbf{Negative Chinese Terms:} xiajiang (decline), kuisun (loss), jianshao (decrease), jinggao (warning), zhaiwu (debt), diaocha (investigation), weigui (violation)
-
+\vspace{-0.1cm}
 \begin{equation}
 \textbf{news\_effect} = \textbf{combined\_sentiment} \times 2.0 \text{ (amplification)}
 \end{equation}
@@ -650,7 +649,7 @@ The comprehensive risk assessment framework integrates five specialized componen
 The implementation employs the Exponential Generalized Autoregressive Conditional Heteroskedasticity (EGARCH) model \cite{Nelson1991} to capture the asymmetric volatility responses documented extensively in financial literature, where negative market shocks impact future volatility more severely than positive shocks of equivalent magnitude \cite{Black1976}.
 
 The EGARCH specification addresses key limitations of standard GARCH models by allowing for asymmetric responses and ensuring non-negativity constraints through logarithmic parameterization:
-
+\vspace{-0.4cm}
 \begin{equation}
 \ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \alpha \frac{|r_{t-1}|}{\sigma_{t-1}} + \gamma \frac{r_{t-1}}{\sigma_{t-1}}
 \end{equation}
@@ -664,11 +663,12 @@ The EGARCH specification addresses key limitations of standard GARCH models by a
 \end{itemize}
 
 The 95\% Value at Risk computation follows standard risk management practices:
+\vspace{-0.4cm}
 \begin{equation}
 \text{VaR}_{95} = 1.65 \times \sigma_t
 \end{equation}
-
 Volatility scoring incorporates bounds to prevent extreme values from distorting risk assessments:
+\vspace{-0.4cm}
 \begin{equation}
 \text{volatility\_score} = \min(\sigma_t \times 100, 10.0) \quad \text{(capped at 10)}
 \end{equation}
@@ -690,15 +690,16 @@ where $P_t$ represents the portfolio value at time $t$. The drawdown score trans
 \end{equation}
 
 This metric proves particularly valuable for identifying securities prone to sustained declining trends, complementing volatility measures that may not capture the persistence of negative performance periods.
+\vspace{1cm}
 
 \subsubsection{{Return-Based Risk Assessment}}
 
 The return score component implements an innovative approach that penalizes both extremely high and extremely low predicted returns, addressing the empirical observation that extreme return predictions often coincide with elevated risk levels \cite{Harvey2016}:
 
+\vspace{-0.1cm}
 \begin{equation}
 \text{return\_score} = 5 - \min(\max(\text{predicted\_return} \times 2, -5), 5)
 \end{equation}
-
 This specification reflects the theoretical understanding that both very high expected returns and very low expected returns typically indicate elevated uncertainty and potential risk factors that traditional volatility measures might not capture.
 
 \subsubsection{{Conditional Value at Risk (CVaR) Implementation}}
@@ -1246,7 +1247,8 @@ where:
 \text{Value at Risk (VaR) is calculated using the 95\% confidence level based on historical simulation method} \cite{Jorion2001}.
 
 \text{2) Maximum Drawdown:}
-\begin{algorithm}
+\vspace{-0.3cm}
+\begin{algorithm}[H]
 \caption{Maximum Drawdown}
 \label{alg:max_drawdown}
 \begin{algorithmic}[1]
@@ -1268,10 +1270,9 @@ where:
 \end{algorithmic}
 \end{algorithm}
 
-\vspace{1cm}
-
+\vspace{-0.3cm}
 \text{3) Conditional Value at Risk:}
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{Conditional Value at Risk (CVaR)}
 \label{alg:cvar}
 \begin{algorithmic}[1]
@@ -1285,8 +1286,9 @@ where:
 \end{algorithmic}
 \end{algorithm}
 
+\vspace{-0.5cm}
 \text{4) Risk-Adjusted Ratio:}
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{Risk-Adjusted Ratio}
 \label{alg:integrated_risk}
 \begin{algorithmic}[1]
@@ -1306,7 +1308,8 @@ where:
 The overall trend is determined using a weighted function of all factor values \cite{Carhart1997}.
 
 \text{5) Overall Market Trend Determination:}
-\begin{algorithm}
+\vspace{0.2cm}
+\begin{algorithm}[H]
 \caption{Overall Market Trend}
 \label{alg:market_trend}
 \begin{algorithmic}[1]
@@ -1347,7 +1350,7 @@ The overall trend is determined using a weighted function of all factor values \
 
 \end{algorithmic}
 \end{algorithm}
-
+\vspace{0.5cm}
 \section{Experimental Setup and Evaluation}
 A rigorous experimental framework was implemented to evaluate FinReport's forecasting accuracy and risk assessment capabilities.
 
@@ -1464,7 +1467,7 @@ As shown in Fig. 3, the predictions demonstrate a strong linear relationship wit
 
 \textbf{Performance Distribution Analysis:} The comprehensive analysis of 70 stocks reveals a trimodal distribution pattern based on valid R² measurements from 41 stocks (58.6\% of sample). High performers (R² > 0.9) constitute 12.9\% of stocks with valid measurements, including standouts like 000333.SZ (R² = 0.994), 600519.SH (R² = 0.992), and 002352.SZ (R² = 0.990). Moderate performers (0.6 $\leq$ R² $\leq$ 0.9) represent 54.8\% of valid measurements, while challenging cases (R² < 0.6) account for 32.3\%. The presence of 29 stocks (41.4\%) with missing R² values, primarily due to negative variance explained, highlights systematic data quality challenges that warrant further investigation in model validation procedures.
 
-\vspace{0.80cm}
+\vspace{0.3cm}
 
 \textbf{Challenging Prediction Cases:}
 
