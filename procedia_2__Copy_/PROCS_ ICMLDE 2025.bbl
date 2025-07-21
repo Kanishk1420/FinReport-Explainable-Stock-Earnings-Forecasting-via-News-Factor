@@ -158,19 +158,6 @@ N.~Jegadeesh, S.~Titman, Returns to buying winners and selling losers:
   Implications for stock market efficiency, The Journal of Finance 48~(1)
   (1993) 65--91.
 
-\bibitem{Fama1965}
-E.~F. Fama, The behavior of stock-market prices, The Journal of Business 38~(1)
-  (1965) 34--105.
-
-\bibitem{Glosten1993}
-L.~R. Glosten, R.~Jagannathan, D.~E. Runkle, On the relation between the
-  expected value and the volatility of the nominal excess return on stocks, The
-  Journal of Finance 48~(5) (1993) 1779--1801.
-
-\bibitem{Graham2003}
-B.~Graham, D.~L. Dodd, Security Analysis: Sixth Edition, Foreword by Warren
-  Buffett, 6th Edition, McGraw-Hill Education, 2008.
-
 \bibitem{Zhang2006}
 L.~Zhang, The value premium, The Journal of Finance 60~(1) (2005) 67--103.
 
@@ -192,18 +179,9 @@ P.~Jorion, Value at Risk: The New Benchmark for Managing Financial Risk, 2nd
 R.~T. Rockafellar, S.~Uryasev, Optimization of conditional value-at-risk,
   Journal of Risk 2 (2000) 21--41.
 
-\bibitem{Black1976}
-F.~Black, Studies of stock price volatility changes, Proceedings of the 1976
-  Meetings of the American Statistical Association, Business and Economics
-  Statistics Section (1976) 177--181.
-
-\bibitem{Bollerslev1986}
-T.~Bollerslev, Generalized autoregressive conditional heteroskedasticity,
-  Journal of Econometrics 31~(3) (1986) 307--327.
-
-\bibitem{Sheppard2020}
-K.~Sheppard, arch: Arch and garch models in python, Journal of Open Source
-  Software 5~(55) (2020) 2815.
+\bibitem{Fama1965}
+E.~F. Fama, The behavior of stock-market prices, The Journal of Business 38~(1)
+  (1965) 34--105.
 
 \bibitem{Ball1968}
 R.~Ball, P.~Brown, An empirical evaluation of accounting income numbers,
@@ -241,6 +219,11 @@ D.~Shah, H.~Isah, F.~Zulkernine, Stock market analysis: A review and taxonomy
 O.~B. Sezer, M.~U. Gudelek, A.~M. Ozbayoglu, Financial time series forecasting
   with deep learning: A systematic literature review: 2005--2019, Applied Soft
   Computing 90 (2020) 106181.
+
+\bibitem{Black1976}
+F.~Black, Studies of stock price volatility changes, Proceedings of the 1976
+  Meetings of the American Statistical Association, Business and Economics
+  Statistics Section (1976) 177--181.
 
 \bibitem{MSCI2018}
 MSCI, S.~D.~J. Indices, Global industry classification standard (gics)

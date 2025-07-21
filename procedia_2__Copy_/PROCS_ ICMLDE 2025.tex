@@ -315,19 +315,15 @@ Early forecasting methods like ARIMA \cite{Box1970} and technical indicators \ci
 
 \section{System Model And Proposed Mechanism}
 
+
 FinReport integrates traditional financial theory with modern computational techniques, combining quantitative factor models \cite{FAMA1993,Carhart1997} with news sentiment analysis \cite{TETLOCK2007,Xing2018}. Extending established multi-factor models \cite{Banz1981,Rosenberg1985}, the framework incorporates real-time news sentiment and event extraction to capture behavioral market dynamics \cite{Daniel1998,Campbell2001}.
 
 The system follows a modular design \cite{Fischer2018} with five interconnected modules: (1) Data Integration for preprocessing, (2) News Factor Extraction using NLP techniques, (3) Return Forecasting with enhanced multi-factor models, (4) Risk Assessment using econometric methods, and (5) Dynamic Report Generation. This approach addresses traditional technical analysis limitations \cite{Murphy1999,Wilder1978} through a unified framework adapting to different market regimes \cite{Lo2004}.
 
-FinReport modules collectively deliver explainable forecasts:
-\begin{figure}[!ht] % 'ht' for better placement options
+FinReport modules collectively deliver explainable forecasts.
+\begin{figure}[!ht]
     \centering
-    % Adjust width, height, scale, or keep aspect ratio
-    \includegraphics[width=0.90\textwidth]{flowchart.jpg} % Adjust width
-    % \includegraphics[height=3cm]{flowchart.png} % Adjust height
-    % \includegraphics[scale=0.5]{flowchart.png} % Scale image
-    % \includegraphics[width=0.5\textwidth, height=5cm, keepaspectratio]{flowchart.png} % Keep aspect ratio
-
+    \includegraphics[width=0.70\textwidth]{flowchart.jpg}
     \caption{Proposed FinReport System Architecture (adapted from \cite{Li2024})}
     \label{fig:workflow_diagram}
 \end{figure}
@@ -366,194 +362,48 @@ Transforms unstructured news text into quantifiable sentiment metrics \cite{TETL
 \item \textbf{Temporal Integration:} Daily aggregation of multiple news items employs recency and relevance weighting schemes that account for the documented decay patterns in news impact on stock prices \cite{TETLOCK2007}. Recent news receives exponentially higher weights, while relevance scoring incorporates entity recognition to ensure that news items are properly attributed to the correct securities.
 \end{itemize}
 
-\item \textbf{Integration with Forecasting Architecture:} The module provides structured interfaces to the return forecasting system, ensuring that extracted sentiment and event information can be systematically incorporated into the multi-factor framework:
+\item \textbf{Architecture Integration:} Direct interfaces to forecasting system with structured \texttt{(event\_type, entities, magnitude)} tuples for Event Factor computation and temporal sentiment curves for volatility estimation.
 
-\begin{itemize}
-\item \textbf{Sentiment Score Transmission:} Processed sentiment scores are systematically transmitted to the Market Factor and News Effect Factor computation functions, maintaining data lineage and enabling sensitivity analysis of news impact on final predictions.
-
-\item \textbf{Structured Event Processing:} Extracted events are formatted as structured \texttt{(event\_type, entities, magnitude)} tuples that feed directly into the Event Factor computation, enabling systematic categorization and weighting of different event types based on their historical market impact.
-
-\item \textbf{Temporal Sentiment Curves:} Aggregated news sentiment over time generates temporally aware sentiment trajectories that support volatility estimation and regime change detection, complementing traditional price-based volatility measures with forward-looking sentiment indicators.
+\item \textbf{Chinese Market Adaptation:} Bilingual text processing addressing Chinese disclosure practices \cite{FinReportDataset2025}.
 \end{itemize}
-
-\item \textbf{Chinese Market Specialization:} The system incorporates specific adaptations for Chinese financial markets, including processing of both English and Chinese text sources. The announcement column processing addresses unique characteristics of Chinese corporate disclosure practices and regulatory requirements, ensuring that cultural and linguistic nuances are properly captured in the sentiment analysis \cite{FinReportDataset2025}.
-\end{itemize}
-
-This comprehensive approach to news factor extraction addresses the documented challenges in financial text analysis while providing the systematic framework necessary for integration with quantitative factor models, bridging the gap between qualitative information processing and quantitative financial modeling \cite{Harvey2016}.
 \subsection{{Return Forecasting Module}}
 
-The return forecasting module implements an enhanced multi-factor model that extends traditional approaches \cite{FAMA1993,Carhart1997} by integrating news sentiment and event-driven factors. This methodology addresses the documented limitations of purely quantitative models \cite{Harvey2016} while maintaining the theoretical foundation established by decades of empirical asset pricing research \cite{Banz1981,Rosenberg1985}.
-
-The framework incorporates six fundamental factors that capture different aspects of cross-sectional return variation, following the established tradition in academic finance while extending it to incorporate alternative data sources. Each factor is designed to capture specific market phenomena documented in the literature, from size effects \cite{Banz1981} to momentum patterns \cite{Jegadeesh1993}, while incorporating news-based information that has been shown to have predictive power \cite{TETLOCK2007}.
+The return forecasting module implements an enhanced multi-factor model extending traditional approaches \cite{FAMA1993,Carhart1997} by integrating news sentiment and event-driven factors \cite{Harvey2016,TETLOCK2007}. The framework incorporates six factors capturing cross-sectional return variation from size effects \cite{Banz1981} to momentum patterns \cite{Jegadeesh1993}.
 
 \subsubsection{{Market Factor}}
 
-The market factor implementation draws from established research on systematic risk and market-wide sentiment effects \cite{Fama1965,Campbell2001}, incorporating both traditional volatility measures and news-based sentiment indicators to capture the multidimensional nature of market risk.
+Combines traditional volatility measures with news-based sentiment indicators following behavioral finance principles \cite{Daniel1998,Campbell2001}:
 
-\begin{itemize}
-    \item \textbf{Input Variables:} Daily percentage change (\texttt{pct\_chg}) following standard conventions in academic finance, volatility estimation from recent trading sessions, and news sentiment analysis from contemporaneous \texttt{news\_text} following methodologies established in \cite{TETLOCK2007}.
-    \item \textbf{Theoretical Foundation:} The factor captures market volatility effects and sentiment-driven momentum that influence individual stock returns beyond their fundamental values, addressing the documented relationship between market volatility and cross-sectional return dispersion \cite{Campbell2001}.
-\end{itemize}
-
-The market factor combines volatility analysis with news sentiment following established practices in behavioral finance \cite{Daniel1998}. The system computes recent volatility from the last 5 trading days using standard deviation measures, incorporating the documented volatility clustering effects in financial markets \cite{Engle1982}:
-\vspace{-0.5cm}
 \begin{equation}
 \textbf{volatility} = \text{std}(\texttt{pct\_chg}_{\text{recent 5 days}}) \times 100
 \end{equation}
-The implementation incorporates regime-dependent behavior documented in volatility literature \cite{Glosten1993}, where different volatility levels trigger different market responses:
-\begin{itemize}
-    \item \textbf{High volatility regime} (> 4.0\%): Applies negative bias reflecting flight-to-quality effects and risk aversion behavior during market stress periods
-    
-    \item \textbf{Moderate volatility regime} (> 2.5\%): Moderate negative impact with sentiment adjustment, reflecting mixed market signals and uncertainty  
-    
-    \item \textbf{Low volatility regime}: Positive bias when more positive trading days exist, enhanced by news sentiment and reflecting stable market conditions conducive to growth
-\end{itemize}
 
-The factor incorporates amplification (1.5x) and controlled randomization (±0.2) to reflect documented market uncertainty and microstructure noise \cite{Campbell2001}.
+Regime-dependent behavior:
+\begin{itemize}
+    \item \textbf{High volatility} (> 4.0\%): Negative bias reflecting flight-to-quality effects
+    \item \textbf{Moderate volatility} (> 2.5\%): Moderate negative impact with sentiment adjustment  
+    \item \textbf{Low volatility}: Positive bias enhanced by news sentiment
+\end{itemize}
 
 \subsubsection{{Size Factor}}
 
-The size factor builds upon seminal research demonstrating persistent size effects in equity returns \cite{Banz1981}, while extending traditional approaches by incorporating news-based information about corporate financial impact and market perception.
-
-\begin{itemize}
-    \item \textbf{Input Variables:} Market capitalization data (\texttt{market\_value}) processed following standard methodologies in size effect research, and financial impact figures extracted from \texttt{news\_text} using advanced NLP techniques \cite{Loughran2011}.
-    \item \textbf{Economic Rationale:} Captures size effects through systematic analysis of market value changes and financial impact mentions in news, addressing both the direct size effect and the information environment differences between large and small firms \cite{Banz1981}.
-\end{itemize}
-
-The size factor evaluates market capitalization changes by comparing recent market values to historical averages, incorporating established methodologies from size effect research:
+Extends size effect research \cite{Banz1981} incorporating financial impact extracted from news using NLP techniques \cite{Loughran2011}:
 
 \begin{equation}
 \textbf{diff\_ratio} = \frac{\texttt{market\_value}_{\text{latest}} - \texttt{market\_value}_{\text{average}}}{\texttt{market\_value}_{\text{average}}}
 \end{equation}
 
-The factor applies theoretically motivated scaling based on the magnitude of change, reflecting non-linear relationships documented in size effect literature:
-
-\begin{equation}
-\textbf{size\_effect} = 
-\begin{cases} 
-1.0 + \min(\textbf{diff\_ratio} \times 0.1, 0.5), & \text{if diff\_ratio} > 0.25 \\
-0.7 + \textbf{diff\_ratio} \times 0.5, & \text{if diff\_ratio} > 0.10 \\
-0.5 + \textbf{diff\_ratio} \times 0.5, & \text{if diff\_ratio} > 0.05 \\
-\textbf{diff\_ratio} \times 3.0, & \text{if } -0.05 < \textbf{diff\_ratio} \leq 0.05 \\
--0.5 + \textbf{diff\_ratio} \times 2.0, & \text{if diff\_ratio} > -0.10 \\
--1.0 + \max(\textbf{diff\_ratio} \times 0.1, -0.5), & \text{otherwise}
-\end{cases}
-\end{equation}
-
-Additional adjustments incorporate financial figures extracted from news text, addressing the information content of corporate announcements about significant financial transactions \cite{Daniel1998}.
-
 \subsubsection{{Valuation Factor}}
 
-The valuation factor implementation extends traditional value investing principles \cite{Rosenberg1985} by incorporating both quantitative valuation metrics and qualitative news sentiment related to corporate value assessments.
-
-\begin{itemize}
-    \item \textbf{Input Variables:} Comprehensive valuation metrics from the dataset \cite{FinReportDataset2025} including Book-to-Market, Dividend Yield, Sales-to-Price ratio, and Assets-to-Market Equity, supplemented by profit/loss terminology extracted from \texttt{news\_text} following established practices in textual analysis \cite{Loughran2011}.
-    \item \textbf{Theoretical Foundation:} Evaluates investment value through systematic analysis of quantitative valuation metrics when available, or sector-specific news sentiment analysis when quantitative data is incomplete, addressing the documented value premium in equity markets \cite{FAMA1993}.
-\end{itemize}
-
-The valuation factor systematically processes multiple valuation-related indicators following established practices in value investing research \cite{Graham2003}:
-
-\begin{itemize}
-    \item \texttt{value\_factor\_Book\_to\_Market\_Equity}: Fundamental value indicator measuring asset backing relative to market valuation
-    \item \texttt{value\_factor\_Dividend\_Yield}: Income-based valuation metric reflecting dividend policy and shareholder returns
-    \item \texttt{value\_factor\_Sales\_to\_Price\_Ratio}: Revenue-based valuation indicator assessing operational efficiency relative to market price
-    \item \texttt{value\_factor\_Assets\_to\_Market\_Equity}: Asset-based valuation measure evaluating tangible asset backing
-\end{itemize}
-
-\textbf{Quantitative Processing:} When historical quantitative data is available, the factor calculates percentage changes from baseline values using time-series analysis. When data is unavailable or incomplete, the system employs sector-specific sentiment analysis with differential impact weights calibrated to industry characteristics.
-\vspace{0.2cm}
-\textbf{Sector-Specific Sensitivity Adjustments:}
-\begin{itemize}
-    \item \textbf{Technology Sector:} 
-    \begin{itemize}
-        \item Positive sensitivity: +0.3 (reflecting growth premium and innovation potential)
-        \item Negative sensitivity: -0.2 (moderate downside due to volatility tolerance)
-    \end{itemize}
-    
-    \item \textbf{Pharmaceutical Sector:}
-    \begin{itemize}
-        \item Positive sensitivity: +0.2 (moderate upside reflecting defensive characteristics)
-        \item Negative sensitivity: -0.3 (higher downside reflecting regulatory and R\&D risks)
-    \end{itemize}
-    
-    \item \textbf{Financial Sector:}
-    \begin{itemize}
-        \item Balanced sensitivity: ±0.2 to 0.3 (reflecting regulatory environment and interest rate sensitivity)
-    \end{itemize}
-    
-    \item \textbf{Energy Sector:}
-    \begin{itemize}
-        \item Lower sensitivity: ±0.15 to 0.25 (reflecting commodity price dominance over company-specific factors)
-        \vspace{-0.6cm}
-    \end{itemize}
-\end{itemize}
-\begin{equation}
-\textbf{valuation\_effect} = 
-\begin{cases} 
-\textbf{diff\_ratio} \times 0.25, & \text{if valuation columns available} \\
-\textbf{sector\_adjustment} \times \textbf{sentiment}, & \text{based on news analysis}
-\end{cases}
-\end{equation}
+Extends value investing principles \cite{Rosenberg1985,FAMA1993} incorporating quantitative metrics (Book-to-Market, Dividend Yield, Sales-to-Price) and news sentiment \cite{Loughran2011}. Applies sector-specific adjustments: Technology (+0.3/-0.2), Pharmaceutical (+0.2/-0.3), Financial (±0.2-0.3).
 
 \subsubsection{{Profitability Factor}}
 
-The profitability factor extends established research on earnings quality and profitability effects in equity pricing \cite{Zhang2006} by incorporating both quantitative profitability metrics and qualitative earnings-related news sentiment.
-
-\begin{itemize}
-    \item \textbf{Input Variables:} Comprehensive profitability metrics from the dataset \cite{FinReportDataset2025} including EPS, net profit margin, ROE, ROA, gross profit, and net profit, supplemented by profit-related keywords extracted from \texttt{news\_text} using established financial textual analysis methodologies \cite{Loughran2011}.
-    \item \textbf{Economic Foundation:} Evaluates corporate profitability through systematic analysis of quantitative metrics when available, or sentiment analysis of earnings-related news content when quantitative data is incomplete, addressing the documented relationship between profitability and future stock returns \cite{Zhang2006}.
-\end{itemize}
-
-The implementation systematically searches for available profitability indicators:
-
-\begin{itemize}
-    \item \texttt{eps}: Earnings per share - fundamental profitability measure reflecting per-share earning capacity
-    \item \texttt{net\_profit\_margin}: Operational efficiency indicator measuring net profitability relative to revenue
-    \item \texttt{roe}: Return on equity - shareholder value creation metric indicating management effectiveness
-    \item \texttt{roa}: Return on assets - asset utilization efficiency measure reflecting operational performance
-    \item \texttt{grossprofit}/\texttt{netprofit}: Absolute profitability measures providing direct earnings assessment
-\end{itemize}
-
-\textbf{Quantitative Processing:} When quantitative profitability data exists, the factor calculates percentage changes between current and previous values, scaled appropriately and bounded to prevent extreme outliers from dominating the analysis.
-
-\textbf{Textual Analysis Framework:} When quantitative data is unavailable, the factor employs advanced text analysis incorporating:
-
-\begin{itemize}
-    \item \textbf{Earnings keywords:} profit, earnings, income, revenue, margin, EPS, ROE, ROI - capturing direct profitability mentions
-    \item \textbf{Directional indicators:} increase/decrease, rise/fall, improve/decline patterns - identifying performance trends
-    \item \textbf{Quantitative extraction:} Numeric percentage changes extracted from textual content - preserving specific performance metrics
-\end{itemize}
-
-\textbf{Asymmetric Impact Modeling:} The factor applies asymmetric treatment reflecting the documented asymmetry in how positive and negative earnings news affects stock prices \cite{Kothari2009}, with strong negative bias (-1.8) for explicit loss mentions but scaled positive adjustments for profit increases.
+Incorporates earnings quality effects \cite{Zhang2006} using EPS, ROE, ROA, and profit margins with textual analysis of earnings keywords. Applies asymmetric treatment with negative bias (-1.8) for losses and scaled positive adjustments \cite{Kothari2009}.
 
 \subsubsection{{Investment Factor}}
 
-The investment factor captures corporate investment activity effects documented in research on investment-based asset pricing \cite{Daniel1998}, focusing on how investment announcements and capital allocation decisions influence market perceptions.
-
-\begin{itemize}
-    \item \textbf{Input Variables:} Investment-related financial figures systematically extracted from \texttt{news\_text}, acquisition and expansion keyword analysis, and research \& development activity mentions following established practices in event-driven investment research.
-    \item \textbf{Economic Rationale:} Quantifies corporate investment activity impact through systematic analysis of investment amounts and strategic activity mentions, addressing the documented relationship between corporate investment decisions and future returns \cite{Daniel1998}.
-\end{itemize}
-
-The factor implements comprehensive analysis of investment-related information:
-- \textbf{Investment amounts:} Numeric financial figures extracted from news text with currency recognition
-- \textbf{Activity categorization:} Systematic classification of acquisition, expansion, and R\&D activities
-- \textbf{Sentiment contextualization:} Positive/negative weighting applied to investment announcements
-
-Activity type multipliers reflect empirically documented differential market responses:
-- Acquisition activities: +0.6 per mention (reflecting consolidation benefits)
-- Expansion activities: +0.5 per mention (organic growth premium)
-- R\&D activities: +0.7 per mention (innovation premium, particularly relevant for technology sectors)
-
-Final values are bounded in the range [0.0, +2.0] reflecting the generally positive long-term market perception of investment activities, while acknowledging potential negative reactions to poorly executed investments.
-\vspace{-0.3cm}
-\begin{equation}
-\textbf{investment\_effect} = \textbf{impact\_scale} \times 0.5 \times 
-\begin{cases} 
-1.0, & \text{if } \textbf{news\_sentiment} > 0 \\
-0.5, & \text{otherwise}
-\end{cases}
-\end{equation}
+Captures investment activity effects \cite{Daniel1998} through investment amounts and activity classification (acquisition +0.6, expansion +0.5, R\&D +0.7) bounded in [0.0, +2.0].
 
 \subsubsection{{News Effect Factor}}
 
@@ -567,8 +417,10 @@ The news effect factor provides direct quantification of news sentiment impact, 
 The implementation combines two complementary sentiment analysis methodologies:
 
 \textbf{1. Keyword-Based Analysis:} Utilizes curated financial keyword dictionaries with demonstrated predictive power:
-- \textbf{Positive indicators:} increase, rise, grow, profit, improved, partnership, acquisition, dividend, earnings, success
-- \textbf{Negative indicators:} decrease, decline, loss, warning, investigation, lawsuit, delay, weak, miss, reduced
+\begin{itemize}
+\item \textbf{Positive indicators:} increase, rise, grow, profit, improved, partnership, acquisition, dividend, earnings, success
+\item \textbf{Negative indicators:} decrease, decline, loss, warning, investigation, lawsuit, delay, weak, miss, reduced
+\end{itemize}
 
 \textbf{2. Advanced NLP Processing:} Employs TextBlob \cite{Loria2019} sentiment analysis for comprehensive polarity assessment of complete news content, addressing contextual nuances that pure keyword approaches might miss.
 
@@ -603,123 +455,31 @@ These factor implementations collectively address the multidimensional nature of
 
 \subsection{{Risk Assessment Module}}
 
-The risk assessment module implements a comprehensive framework that addresses fundamental limitations of traditional single-metric risk measures by integrating multiple complementary risk indicators \cite{Jorion2001,Rockafellar2000}. This approach builds upon established research in financial risk management while incorporating modern econometric techniques for volatility modeling and tail risk assessment.
-
-The module addresses the well-documented inadequacies of variance-based risk measures during periods of market stress by implementing a multi-dimensional risk framework that captures volatility clustering \cite{Engle1982}, tail risk characteristics \cite{Rockafellar2000}, and sequential loss patterns through maximum drawdown analysis \cite{Jorion2001}. This comprehensive approach ensures robust risk assessment across different market conditions and investment horizons.
+Implements multi-dimensional risk framework addressing traditional variance-based limitations \cite{Jorion2001,Rockafellar2000}:
 
 \begin{itemize}
-    \item \textbf{Methodological Foundation:} The implementation quantifies investment risk through multiple complementary metrics including EGARCH-based volatility modeling \cite{Nelson1991}, Conditional Value at Risk estimation \cite{Rockafellar2000}, and maximum drawdown analysis following established practices in quantitative risk management \cite{Jorion2001}.
-    \item \textbf{Technical Implementation:} Advanced econometric models are combined with historical simulation methods to provide forward-looking risk assessments that capture both systematic and idiosyncratic risk components, addressing the documented limitations of backward-looking risk measures \cite{Campbell2001}.
+\item \textbf{EGARCH Volatility:} Asymmetric volatility responses with 95\% VaR = 1.65$\sigma_t$
+
+\item \textbf{Maximum Drawdown:} $\text{MDD}_t = \max_{0 \leq s \leq t} [(P_s - P_t)/P_s]$
+
+\item \textbf{CVaR:} Tail risk assessment $E[R | R \leq -\text{VaR}_{95}]$
 \end{itemize}
 
-The comprehensive risk assessment framework integrates five specialized components designed to capture different aspects of financial risk:
+\textbf{Integrated Risk Score:} $0.5 \times \text{volatility} + 0.3 \times \text{drawdown} + 0.2 \times \text{return}$
 
-\subsubsection{{EGARCH-Based Volatility Modeling}}
-
-The implementation employs the Exponential Generalized Autoregressive Conditional Heteroskedasticity (EGARCH) model \cite{Nelson1991} to capture the asymmetric volatility responses documented extensively in financial literature, where negative market shocks impact future volatility more severely than positive shocks of equivalent magnitude \cite{Black1976}.
-
-The EGARCH specification addresses key limitations of standard GARCH models by allowing for asymmetric responses and ensuring non-negativity constraints through logarithmic parameterization:
-\vspace{-0.4cm}
-\begin{equation}
-\ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \alpha \frac{|r_{t-1}|}{\sigma_{t-1}} + \gamma \frac{r_{t-1}}{\sigma_{t-1}}
-\end{equation}
-
-\textbf{Parameter Interpretation and Economic Significance:}
+\textbf{Risk Classifications:}
 \begin{itemize}
-    \item $\omega$: Long-term volatility baseline reflecting unconditional variance
-    \item $\beta$: Volatility persistence parameter (typically 0.85-0.95 in equity markets) \cite{Bollerslev1986}
-    \item $\alpha$: Magnitude effect capturing the impact of shock size on future volatility
-    \item $\gamma$: Asymmetry parameter (negative for leverage effect) capturing differential responses to positive vs. negative shocks \cite{Black1976}
+\item Substantial >7.5
+\item High >6.0  
+\item Moderate-High >4.5
+\item Moderate >3.0
+\item Low-Moderate >1.5
+\item Favorable $\leq 1.5$
 \end{itemize}
-
-The 95\% Value at Risk computation follows standard risk management practices:
-\vspace{-0.4cm}
-\begin{equation}
-\text{VaR}_{95} = 1.65 \times \sigma_t
-\end{equation}
-Volatility scoring incorporates bounds to prevent extreme values from distorting risk assessments:
-\vspace{-0.4cm}
-\begin{equation}
-\text{volatility\_score} = \min(\sigma_t \times 100, 10.0) \quad \text{(capped at 10)}
-\end{equation}
-
-Implementation utilizes the \texttt{arch} Python package \cite{Sheppard2020} for robust maximum likelihood parameter estimation, ensuring numerical stability and convergence across different market conditions.
-
-\subsubsection{{Maximum Drawdown Analysis}}
-
-Maximum Drawdown (MDD) analysis captures sequential loss patterns that are invisible to point-in-time volatility measures, addressing a fundamental limitation of variance-based risk metrics \cite{Jorion2001}. This approach is particularly relevant for equity investments where sustained declining trends can occur independently of daily volatility levels.
-
-The mathematical formulation captures the largest peak-to-trough decline over the analysis period:
-\begin{equation}
-\text{MDD}_t = \max_{0 \leq s \leq t} \left[ \frac{P_s - P_t}{P_s} \right]
-\end{equation}
-
-where $P_t$ represents the portfolio value at time $t$. The drawdown score transformation ensures comparability across different securities while maintaining sensitivity to tail risks:
-\begin{equation}
-\text{drawdown\_score} = \min(|\text{MDD}| \times 10, 10.0)
-\end{equation}
-
-This metric proves particularly valuable for identifying securities prone to sustained declining trends, complementing volatility measures that may not capture the persistence of negative performance periods.
-\vspace{1cm}
-
-\subsubsection{{Return-Based Risk Assessment}}
-
-The return score component implements an innovative approach that penalizes both extremely high and extremely low predicted returns, addressing the empirical observation that extreme return predictions often coincide with elevated risk levels \cite{Harvey2016}:
-
-\vspace{-0.1cm}
-\begin{equation}
-\text{return\_score} = 5 - \min(\max(\text{predicted\_return} \times 2, -5), 5)
-\end{equation}
-This specification reflects the theoretical understanding that both very high expected returns and very low expected returns typically indicate elevated uncertainty and potential risk factors that traditional volatility measures might not capture.
-
-\subsubsection{{Conditional Value at Risk (CVaR) Implementation}}
-
-CVaR provides superior tail risk assessment compared to standard VaR by averaging losses that exceed the VaR threshold, addressing the documented inadequacies of VaR during extreme market conditions \cite{Rockafellar2000}:
-
-\begin{equation}
-\text{CVaR}_{95} = E[R | R \leq -\text{VaR}_{95}]
-\end{equation}
-
-The implementation employs historical simulation over a 252-day rolling window, providing more coherent risk measurement than parametric approaches during periods of market stress. This approach has been demonstrated to provide superior risk assessment in emerging markets where distributional assumptions may not hold \cite{Jorion2001}.
-
-\subsubsection{{Integrated Risk Score Computation}}
-
-The final risk assessment combines all components through empirically-determined weights that reflect their relative importance and complementary nature:
-
-\begin{equation}
-\text{weighted\_risk\_score} = 0.5 \times \text{volatility\_score} + 0.3 \times \text{drawdown\_score} + 0.2 \times \text{return\_score}
-\end{equation}
-
-The weight allocation reflects the documented importance of volatility as the primary risk factor (50\% weight), while acknowledging the significant contribution of drawdown patterns (30\%) and return-based risk indicators (20\%) in providing comprehensive risk assessment.
-
-\textbf{Risk Classification Framework:}
-The classification system employs empirically calibrated thresholds based on historical market behavior:
-\begin{itemize}
-    \vspace{0.5cm}
-    \item \textbf{Substantial Risk:} $> 7.5$ (Extreme market stress conditions requiring immediate attention)
-    \item \textbf{High Risk:} $> 6.0$ (Above-average volatility with significant drawdown potential)
-    \item \textbf{Moderate-High:} $> 4.5$ (Elevated risk requiring careful monitoring and position sizing)
-    \item \textbf{Moderate:} $> 3.0$ (Standard market risk levels typical of equity investments)
-    \item \textbf{Low-Moderate:} $> 1.5$ (Below-average risk environment suitable for standard allocation)
-    \item \textbf{Favorable:} $\leq 1.5$ (Low-risk, stable market conditions conducive to higher allocation)
-\end{itemize} 
-
-The risk assessment system directly interfaces with the dataset structure \cite{FinReportDataset2025}, utilizing the \textbf{volatility\_factor\_Total\_Volatility} column and related volatility indicators, while temporal price data (\texttt{open}, \texttt{close}, \texttt{high}, \texttt{low}) enables comprehensive return computation for maximum drawdown and CVaR estimation. This integration ensures that risk assessments are grounded in both theoretical frameworks and practical data availability constraints.
 
 \subsection{{Factor Enhancement and Overall Trend Calculation}}
 
-The factor enhancement methodology addresses a fundamental challenge in multi-factor models: combining individual factor signals with different scales and volatilities into a unified directional forecast while preserving interpretability \cite{Harvey2016,Carhart1997}. This approach builds upon established practices in factor model construction while incorporating novel amplification techniques designed to enhance signal strength without losing the economic interpretability that is crucial for practical investment applications.
-
-The implementation follows established principles from academic factor research \cite{FAMA1993} while addressing practical challenges that arise when incorporating alternative data sources such as news sentiment. The enhancement process ensures that factors with inherently smaller magnitudes (such as news sentiment scores) receive appropriate weighting relative to factors with naturally larger scales (such as financial ratios), preventing scale-dependent biases from affecting the final predictions.
-
-\begin{itemize}
-    \item \textbf{Methodological Foundation:} The system combines individual factor signals into a unified directional forecast through multi-stage amplification followed by weighted aggregation, addressing the scale heterogeneity problem common in multi-factor models that incorporate diverse data sources \cite{Harvey2016}.
-    \item \textbf{Interpretability Preservation:} The enhancement mechanism maintains factor interpretability through consistent amplification rules while preventing any single factor from dominating the final prediction, ensuring that the resulting forecasts remain economically meaningful and actionable for investment decision-making \cite{Ribeiro2016}.
-\end{itemize}
-
-\subsubsection{{Factor Weight Specification}}
-
-The factor weighting scheme reflects empirical evidence regarding the relative predictive power and persistence of different factor categories, drawing from extensive backtesting and academic research on factor effectiveness \cite{Carhart1997,Harvey2016}:
+Combines individual factor signals through multi-stage amplification and weighted aggregation addressing scale heterogeneity \cite{Harvey2016,FAMA1993}:
 
 \begin{equation}
 \textbf{W} = 
@@ -734,104 +494,25 @@ The factor weighting scheme reflects empirical evidence regarding the relative p
 \end{bmatrix}
 \end{equation}
 
-The weighting structure reflects empirically observed relationships between factor types and their predictive horizons:
+Event factor receives highest weight (0.25) due to strong short-term predictive power \cite{Ding2015,Daniel1998}, Investment factor (0.20) for medium-term impact, Market/Size/Profitability factors (0.15) for balanced weighting \cite{FAMA1993,Carhart1997}.
 
-\begin{itemize}
-    \item \textbf{Event factor (0.25):} Receives the highest weight due to documented strong predictive power for short-term price movements and immediate market reactions following corporate announcements \cite{Ding2015,Daniel1998}.
-    
-    \item \textbf{Investment factor (0.20):} Substantial weight reflecting medium-term predictive power of corporate investment decisions on stock performance \cite{Daniel1998}.
-    
-    \item \textbf{Market, Size, Profitability factors (0.15 each):} Balanced weighting consistent with established multi-factor models \cite{FAMA1993,Carhart1997}.
-    
-    \item \textbf{Valuation and News factors (0.10 each):} Lower weights reflecting their longer-term impact horizons and higher noise levels, consistent with academic findings on value effects and sentiment persistence \cite{Rosenberg1985,TETLOCK2007}.
-\end{itemize}
+\subsubsection{{Enhancement Process}}
 
-\subsubsection{{Factor Enhancement Process}}
-
-The enhancement process implements a systematic approach to signal amplification that addresses the heterogeneity problem inherent in multi-factor models incorporating diverse data sources \cite{Harvey2016}:
-
-\textbf{Base Amplification:}
-All factor values undergo uniform enhancement using a theoretically motivated multiplier that ensures adequate signal strength while preventing saturation:
-\begin{equation}
-\textbf{enhanced\_factor}_i = \textbf{factor}_i \times 2.5
-\end{equation}
-
-This base amplification reflects empirical calibration designed to bring factor magnitudes into ranges where they can meaningfully contribute to the final prediction without overwhelming the integration process.
-
-\textbf{Trend-Based Enhancement:}
-Additional amplification is applied when individual factors align with the overall market direction, reflecting the documented tendency for factor effects to strengthen during periods of broad market agreement \cite{Lo2004}:
-
-\begin{equation}
-\textbf{trend\_multiplier} = 
-\begin{cases} 
-1.3, & \text{if factor direction matches dominant trend} \\
-1.0, & \text{otherwise}
-\end{cases}
-\end{equation}
-
-The dominant trend determination follows majority voting among factor signs, ensuring that amplification occurs only when there is broad consensus among different information sources.
-
-\textbf{Final Processing:}
-Controlled randomization and value capping ensure realistic bounds while preserving directional signals, addressing the need to prevent extreme factor values from dominating predictions while maintaining economic meaningfulness:
-
-\begin{equation}
-\tilde{f}_i = \text{clamp}\left(\textbf{enhanced\_factor}_i \times \textbf{trend\_multiplier} \times \text{random}(0.9, 1.1), -5.0, 5.0\right)
-\end{equation}
-
-The randomization component (0.9 to 1.1 multiplier) reflects the inherent uncertainty in factor estimation and helps prevent false precision in final predictions.
+Base amplification: $\textbf{enhanced\_factor}_i = \textbf{factor}_i \times 2.5$
+Trend-based enhancement: $1.3\times$ when factor aligns with dominant trend \cite{Lo2004}
+Final bounded processing: $\tilde{f}_i = \text{clamp}(\text{factor} \times \text{multiplier} \times \text{random}(0.9,1.1), -5.0, 5.0)$
 
 \subsubsection{{Weighted Aggregation}}
-
-The final trend score computation integrates all enhanced factors using the empirically determined weights while incorporating a systematic positive bias that reflects long-term equity market characteristics \cite{Fama1965}:
 
 \begin{equation}
 \text{Trend\_Score} = \sum_{i=1}^{7} \left(\tilde{f}_i \times w_i\right) + 0.15
 \end{equation}
 
-The positive bias term (+0.15) incorporates the documented long-term upward drift in equity markets \cite{Fama1965}, ensuring that the neutral case corresponds to market-like returns rather than zero returns, which is more realistic for equity investment applications.
-
-\subsubsection{{Qualitative Classification}}
-
-The trend score mapping employs empirically calibrated thresholds that translate quantitative scores into interpretable investment guidance \cite{Ribeiro2016}:
-
-\begin{equation}
-\text{Classification} = 
-\begin{cases} 
-\textbf{Strongly Positive}, & \text{if Score} > +1.2 \\
-\textbf{Positive}, & \text{if } +0.4 < \text{Score} \leq +1.2 \\
-\textbf{Neutral}, & \text{if } -0.4 \leq \text{Score} \leq +0.4 \\
-\textbf{Negative}, & \text{if } -1.2 \leq \text{Score} < -0.4 \\
-\textbf{Strongly Negative}, & \text{if Score} < -1.2
-\end{cases}
-\end{equation}
-
-These thresholds have been empirically calibrated through backtesting to provide meaningful differentiation between different levels of investment attractiveness while maintaining sensitivity to genuine signal differences. The classification system ensures that investment recommendations are grounded in statistically significant differences rather than noise, supporting practical decision-making processes.
-
-This comprehensive factor enhancement and aggregation framework successfully bridges the gap between sophisticated quantitative analysis and practical investment implementation, providing both the analytical rigor required for academic validation and the interpretability necessary for real-world application \cite{Harvey2016,Ribeiro2016}.
+Positive bias (+0.15) reflects long-term equity market upward drift \cite{Fama1965}. Classification: Strongly Positive >+1.2, Positive +0.4 to +1.2, Neutral -0.4 to +0.4, Negative -1.2 to -0.4, Strongly Negative <-1.2.
 
 \subsection{Dynamic Report Generation Module}
 
-The dynamic report generation module addresses the critical challenge of translating complex quantitative analyses into actionable investment insights \cite{Ribeiro2016}. This component represents a significant advancement in explainable AI for finance, providing systematic approaches to communicate sophisticated analytical results in formats accessible to both technical and non-technical stakeholders while maintaining the precision required for investment decision-making.
-
-The module design follows established principles in information visualization and explainable AI \cite{Ribeiro2016}, incorporating domain-specific adaptations for financial reporting that address the unique requirements of investment analysis. The implementation ensures that complex multi-factor analyses are presented through intuitive visual hierarchies and natural language explanations that preserve the analytical rigor while enhancing interpretability.
-
-The FinReport system generates comprehensive HTML-based reports specifically optimized for financial decision-making contexts:
-
-\begin{itemize}
-    \item \textbf{Hierarchical Information Architecture:} The report structure implements a systematic top-down information hierarchy following established practices in financial communication, placing the most critical insights (overall trend assessment and executive summary) at the primary level, followed by detailed factor-specific analyses and comprehensive risk metrics. This approach ensures that decision-makers can efficiently access information at their required level of detail \cite{Jorion2001}.
-
-    \item \textbf{Cultural Adaptation in Visual Design:} The color-coding system implements a deliberate inversion of Western color conventions to align with Chinese market cultural context, where red represents prosperity and upward movement while green indicates decline. This cultural adaptation reflects the system's specialization for Chinese equity markets and ensures that visual communications align with local market conventions and user expectations \cite{FinReportDataset2025}.
-
-    \item \textbf{Precision Control and False Accuracy Prevention:} All numerical displays implement consistent rounding to one decimal place, preventing false precision from influencing decision-making processes while maintaining visual uniformity throughout the report. This approach addresses documented biases in financial decision-making where excessive precision can create misleading confidence in uncertain estimates \cite{Harvey2016}.
-
-    \item \textbf{Natural Language Generation:} The system employs sophisticated template-based natural language generation with contextual adaptation, utilizing diverse pre-configured language templates for each factor category and risk level. Template selection incorporates both quantitative factor magnitude and directional information to provide natural language explanations that convey both statistical significance and economic interpretation \cite{Loughran2011}.
-
-    \item \textbf{Consistency Validation:} Comprehensive consistency checks ensure alignment between factor-level descriptions and overall trend assessments, preventing contradictory messaging that could compromise decision-making confidence. The validation system includes cross-factor consistency checks and trend-alignment verification to maintain coherent narrative structure throughout the report.
-
-    \item \textbf{Multi-Stakeholder Accessibility:} The reporting framework accommodates different user sophistication levels through layered detail presentation, enabling both quantitative analysts and portfolio managers to extract relevant insights at appropriate levels of technical detail. This multi-level approach ensures broad organizational utility while maintaining analytical precision for technical users.
-\end{itemize}
-
-The comprehensive reporting approach successfully addresses the fundamental challenge in quantitative finance of maintaining both analytical sophistication and practical usability. By systematically translating complex multi-factor analyses into structured, interpretable insights, the system enables evidence-based investment decision-making while preserving the transparency necessary for risk management and regulatory compliance. This approach represents a significant advancement in making quantitative investment analysis accessible and actionable for practical investment applications \cite{Harvey2016,Ribeiro2016}.
+Translates quantitative analyses into actionable insights using hierarchical information architecture, cultural adaptation (red=prosperity, green=decline for Chinese markets), precision control (one decimal), natural language generation with template-based explanations, and multi-stakeholder accessibility \cite{Ribeiro2016,Harvey2016}.
 
 \vspace{0.10cm}
 \section{Algorithm}
