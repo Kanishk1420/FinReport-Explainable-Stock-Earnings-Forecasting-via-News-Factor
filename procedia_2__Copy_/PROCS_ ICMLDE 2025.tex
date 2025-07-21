@@ -1003,59 +1003,21 @@ The overall trend is determined using a weighted function of all factor values \
 \end{algorithm}
 \vspace{0.5cm}
 \section{Experimental Setup and Evaluation}
-A rigorous experimental framework was implemented to evaluate FinReport's forecasting accuracy and risk assessment capabilities.
 
-\subsection{Dataset Preparation}
-\begin{itemize}
+\subsection{Dataset and Configuration}
+The evaluation utilized a comprehensive Chinese A-share dataset \cite{FinReportDataset2025} covering 75 stocks from Shanghai and Shenzhen exchanges (January 2018 - December 2021). The dataset included 56 feature columns encompassing price data, technical indicators (RSI, BIAS, MFI, CCI), and fundamental factors, complemented by 42,000+ financial news items from 7 major Chinese sources. After preprocessing, 23,567 samples with complete information were used for time-series modeling.
 
-\item Historical stock data and technical indicators were sourced from our curated Chinese A-share market dataset \cite{FinReportDataset2025}. The dataset encompasses 75 stocks from the Shanghai and Shenzhen exchanges, spanning from January 2018 to December 2021, providing a comprehensive view across multiple market cycles including the significant volatility during the COVID-19 pandemic period. Financial news was aggregated via RSS feeds from 7 major Chinese financial news sources, including CLS Finance (Financial Association), East Money, and Flush Finance (Tonghuashun), generating over 42,000 news items that were matched to corresponding stock symbols.
-\item The integrated dataset \cite{FinReportDataset2025} contained 56 distinct feature columns including price data (open, high, low, close), trading metrics (volume, amount), technical indicators (RSI, BIAS, MFI, CCI), and fundamental factors (Book-to-Market Equity, Sales-to-Price Ratio). This structured financial dataset provides comprehensive access to all necessary information for our analysis. Data preprocessing included forward-filling missing values, normalization, and text cleaning for NLP tasks. The final processed dataset contained 23,567 rows with complete technical and sentiment information, structured for time-series modeling.
-\end{itemize}
-\subsection{Training and Validation}
-The dataset was partitioned chronologically into training (60\%), validation (20\%), and testing (20\%) sets. A rolling window approach with a fixed sequence length (e.g., 30 days) was used to capture temporal dependencies. The LSTM network was trained using the Adam optimizer \cite{Kingma2015} with early stopping based on validation loss. Hyperparameters were systematically configured using standardized configuration management for experimental consistency.
+\textbf{Model Configuration:} LSTM network in PyTorch \cite{Paszke2019} with optimized hyperparameters: 128 hidden units, 3 layers, 0.2 dropout, sequence length 10, Adam optimizer \cite{Kingma2015} with 0.001 learning rate and MSE loss. FinBERT \cite{Araci2019} achieved 83.2\% sentiment accuracy on Chinese financial texts. EGARCH(1,1) model \cite{Nelson1991} with parameters $\omega = -0.012$, $\alpha = 0.149$, $\gamma = -0.087$, $\beta = 0.987$ for volatility estimation.
 
-\text{1) Model Configuration:} An LSTM network implemented in PyTorch \cite{Paszke2019,hochreiter1997lstm},
-with key hyperparameters optimized through grid search.
-\begin{itemize}
-    \item Input size: 59 (matching feature dimensions)
-\item Hidden size: 128 (optimal from hyperparameter search)
-\item Number of layers: 3 (optimal from hyperparameter search)
-\item Dropout rate: 0.2 (optimal for regularization)
-\item Batch size: 32
-\item Sequence length: 10 (optimal from temporal analysis)
-\item Learning rate: 0.001 (with adaptive scheduling)
-\item Loss function: Mean Squared Error (MSE)
-\end{itemize}
-
-\text{2) News Factor Extraction:} Employed FinBERT \cite{Araci2019} for \allowbreak sentiment, scoring and AllenNLP \cite{Gardner2018} for event extraction, with daily aggregation. The FinBERT model was fine-tuned on a Chinese financial corpus to improve sentiment classification accuracy from 76.3\% to 83.2\% for domain-specific texts.
-
-\text{3) Risk Assessment:} Used an EGARCH model \cite{Nelson1991} to estimate volatility, alongside historical simulations for maximum drawdown and CVaR calculations \cite{Rockafellar2000}. The EGARCH(1,1) specification was optimized with parameters $\omega = -0.012$, $\alpha = 0.149$, $\gamma = -0.087$, and $\beta = 0.987$, capturing the asymmetric volatility response characteristic of Chinese markets.
-
-\text{Training Process:}
-\begin{itemize}
-    \item The model was trained using the Adam optimizer \cite{Kingma2015} with an initial learning rate of 0.001 and implemented with an adaptive learning rate reduction strategy. As shown in Fig. 2, the model experienced rapid initial learning, with training loss dropping significantly from 0.139 to 0.029 within the first four epochs.
-\item The learning rate scheduler monitored validation loss and reduced the learning rate by a factor of 0.5 when performance plateaued, resulting in three distinct learning rate reductions (from 0.001 to 0.0005 at epoch 6, to 0.00025 at epoch 11, and finally to 0.000125 at epoch 19). This scheduling technique proved crucial for fine-tuning model parameters and avoiding local minima, as evidenced by the validation loss improvements following each rate reduction.
-\item Early stopping was implemented with a patience parameter of 7 epochs, triggering termination at epoch 22 when validation performance failed to improve. The model achieved its best validation loss of 0.000217 at epoch 15. The entire training process completed in 268.61 seconds on CPU hardware.
-\item The final model architecture contained 361,345 trainable parameters. Dataset partitioning resulted in 11,347 samples for training and 2,836 samples for validation, with batch size fixed at 32 for both training and validation phases.
-\item Model reproducibility was ensured by setting a fixed random seed across NumPy \cite{Harris2020}, PyTorch \cite{Paszke2019}, and data loaders, enabling consistent results across multiple training runs.
-\end{itemize}
-\begin{figure}[!ht] % Better placement options
+\begin{figure}[!ht]
     \centering
-    % Adjust width, height, scale, or keep aspect ratio
-    \includegraphics[width=0.80\textwidth]{Picture2.png} % Adjust width
-    % \includegraphics[height=3cm]{flowchart.png} % Adjust height
-    % \includegraphics[scale=0.5]{flowchart.png} % Scale image
-    % \includegraphics[width=0.5\textwidth, height=5cm, keepaspectratio]{flowchart.png} % Keep aspect ratio
-
+    \includegraphics[width=0.80\textwidth]{Picture2.png}
     \caption{Rapid Initial Learning}
     \label{fig:learning_curve}
 \end{figure}
-\subsection{Evaluation Metrics}
-The model's predictive performance was evaluated using a comprehensive suite of regression metrics \cite{Shah2019}. Mean Squared Error (MSE) quantifies the average squared difference between predicted and actual returns, giving higher weight to larger errors. Root Mean Squared Error (RMSE) provides this metric in the same units as the target variable, offering more interpretable results in the context of return percentages. Mean Absolute Error (MAE) measures the average magnitude of errors without considering direction, providing robustness against outliers. The coefficient of determination (R\textsuperscript{2}) indicates the proportion of variance in the dependent variable explained by the model, with values closer to 1.0 indicating superior predictive power. This multi-metric approach ensures a balanced assessment of model performance across different error characteristics and scales.
-\subsection{Comparative Analysis}
-FinReport was compared with a baseline LSTM model that did not incorporate news-derived factors. The integration of multi-factor inputs and risk assessment reduced RMSE by approximately 15\% and MAE by 12\%, while enhancing overall interpretability and reliability of forecasts \cite{Fischer2018, Sezer2020}.
-\subsection{Regression Analysis Results}
-The model demonstrates strong predictive capability across evaluated stocks, indicating robustness in capturing return behavior using the selected features and architecture \cite{Fischer2018, Bao2017}.
+
+\subsection{Performance Results}
+FinReport achieved superior performance compared to baseline LSTM models, reducing RMSE by 15\% and MAE by 12\% \cite{Fischer2018, Sezer2020}.
 
 \definecolor{lightgreen}{RGB}{220, 235, 210} 
 
@@ -1080,8 +1042,8 @@ The error distribution analysis reveals a slight positive bias, with the mean pr
 In practical terms, these results demonstrate the model’s utility for real-world applications such as portfolio allocation, trend forecasting, and quantitative screening. Despite market noise and inherent volatility, the model maintains a high degree of alignment with actual movements, validating its predictive structure and feature selection.
 
 
-\subsection{Stock-Specific Performance}
-Regression metrics reveal significant variation in predictive performance across 70 analyzed stocks, with R² values ranging from exceptional (-3.985 for 601727.SH indicating severe model failure) to outstanding (0.994 for 000333.SZ) \cite{Fischer2018, Sezer2020}.
+\subsection{Stock-Specific Analysis}
+Performance varied significantly across 70 stocks, with exceptional performers achieving R² > 0.98:
 
 \begin{table}[!ht]
 \centering
@@ -1176,9 +1138,7 @@ This sector analysis reveals that Consumer and Technology sectors demonstrate su
 As evident from the distribution of colored points in Fig. 3 (top), stocks from Consumer and Technology sectors (shown in blue and green) cluster more tightly around the perfect prediction line compared to Real Estate stocks (shown in orange).
 
 \subsection{Market Capitalization Impact}
-The relationship between market capitalization and prediction accuracy was systematically analyzed by stratifying the sample into five distinct market capitalization tiers using log-scale boundaries to ensure adequate sample sizes in each segment.
-Additionally, advanced statistical evaluations such as ANOVA and regression diagnostics were performed to validate the significance of the variations observed across different tiers.
-This stratified approach enabled us to isolate and better understand the inherent performance differences in forecasting models when applied to firms of varying sizes.
+Performance improved monotonically with market size, stratified across five capitalization tiers:
 
 \begin{table}[!ht]
 \centering
@@ -1198,19 +1158,10 @@ Micro       & 0.238 & 0.459 & 0.421 & 0.298 \\
 }
 \end{table}
 
-The observed monotonic relationship between market capitalization and prediction accuracy was validated through rigorous statistical testing. Pearson \cite{Pearson1895} and Spearman \cite{Spearman1904} correlation analyses yielded coefficients of $r = 0.78$ and $\rho = 0.81$, respectively (both $p < 0.001$), confirming the statistical significance of this relationship.
-
-To isolate market capitalization effects from potential confounding variables, a hierarchical regression analysis was conducted \cite{Chen2015}, controlling for sector, trading volume, and price volatility. Even after these controls, market capitalization retained substantial explanatory power for prediction accuracy ($\Delta R^2 = 0.23$, $p < 0.001$), confirming the robustness of this relationship.
-
-
-This pattern confirms that prediction accuracy significantly improves as market capitalization increases, with ultra-large-cap stocks showing nearly triple the R\textsuperscript{2} values of micro-cap stocks. The theoretical foundation for this effect likely stems from the Enhanced Efficiency Hypothesis \cite{Malkiel2003}, which suggests that larger companies experience more efficient price discovery due to greater analyst coverage, institutional investor participation, and liquidity.
-
-\textbf{Specific Market Cap Examples:} From the dataset, ultra-large-cap performers like 000333.SZ (Midea Group, R² = 0.994) and 600519.SH (Kweichow Moutai, R² = 0.992) demonstrate exceptional predictability with MSE values below 0.005. In contrast, smaller-cap stocks such as 002385.SZ show significantly higher prediction errors (MSE = 1.297) and missing R² values, consistent with the market cap hypothesis.
-
-The varying dispersion of prediction errors visible in Fig. 3 (bottom left) correlates strongly with market capitalization tiers, with larger-cap stocks showing markedly lower error variances.
+Strong correlations confirmed the market cap-accuracy relationship (Pearson r=0.78, Spearman $\rho$=0.81, p<0.001). Hierarchical regression controlling for sector, volume, and volatility retained market cap significance ($\Delta$R²=0.23, p<0.001). Ultra-large-cap stocks like 000333.SZ (R²=0.994) and 600519.SH (R²=0.992) demonstrated exceptional predictability versus smaller-cap stocks like 002385.SZ (MSE=1.297).
 
 \subsection{Factor Influence Analysis}
-To quantify the relative influence of each forecasting factor, we employed a two-stage analytical approach \cite{FAMA1993}. First, descriptive statistics including mean impact, standard deviation, and distribution characteristics were calculated for each factor across the full sample of stocks. Second, a standardized regression analysis was conducted where actual returns were regressed against each individual factor score.
+Standardized regression analysis quantified relative factor impacts across all stocks:
 
 
 
@@ -1234,12 +1185,9 @@ News Effect    & -4.86 & 0.28 & Strongly negative impact \\
 }
 \end{table}
 
-The News Effect Factor demonstrated a remarkable consistency across analysed stocks, with an average value of -4.86 and standard deviation of only 0.28. This pattern suggests a strong contrarian relationship between news sentiment and subsequent returns in the Chinese market. The mechanism behind this contrarian effect likely stems from market overreaction to news \cite{TETLOCK2007}, particularly in markets with high retail investor participation. When news sentiment is negative, stocks often experience immediate selling pressure, creating temporary undervaluation that subsequently corrects, leading to positive returns.
+News Effect Factor showed remarkable consistency (-4.86±0.28), indicating strong contrarian market behavior where negative sentiment precedes positive returns \cite{TETLOCK2007}. 
 
-\textbf{Error Pattern Analysis:} Detailed examination of the regression results reveals distinct error magnitude clusters across the 70-stock sample. Ultra-low error stocks (MSE < 0.005) include only 3 securities: 000333.SZ (MSE = 0.004), 600519.SH (MSE = 0.005), and 002352.SZ (MSE = 0.005), representing 4.3\% of the total sample. The majority of stocks (46 securities, 65.7\%) fall within the moderate error range (0.005 $\leq$ MSE $\leq$ 0.100), while high-error stocks (MSE > 0.100) constitute 21 securities (30.0\%) of the dataset. Extreme outliers include 002385.SZ (MSE = 1.297) and 601727.SH (MSE = 1.246), which require specialized handling in practical portfolio applications due to their substantial prediction uncertainties.
-
-The consistently negative News Effect Factor across most stocks suggests it functions as a reliable contrarian indicator---where negative news sentiment precedes positive returns, particularly in the Chinese market where retail investor influence can amplify sentiment-driven price movements.
-The consistent performance of top stocks shown in Fig. 3 corresponds to securities where the News Effect Factor demonstrated the strongest contrarian signal.
+\textbf{Error Distribution:} 3 ultra-low error stocks (MSE < 0.005, 4.3\%), 46 moderate error stocks (0.005 $\leq$ MSE $\leq$ 0.100, 65.7\%), and 21 high-error stocks (MSE > 0.100, 30.0\%) with extreme outliers 002385.SZ (MSE = 1.297) and 601727.SH (MSE = 1.246).
 
 \section{Conclusion and Future work}
 FinReport successfully integrates technical indicators, financial news sentiment, and advanced risk metrics to deliver interpretable and accurate stock earnings forecasts, outperforming baseline models especially in large-cap and consumer stocks \cite{Fischer2018, Bao2017}. The system demonstrates strong predictive capability with R² of 0.5515 and correlation of 0.948, indicating substantial explanatory power for stock return variance \cite{Sezer2020}. 
@@ -1272,7 +1220,7 @@ Future enhancements will focus on incorporating advanced Large Language Models \
 \vspace*{-3pt}
 
 \bibliographystyle{elsarticle-num}
-\bibliography{References}
+\bibliography{REFERENCES}
 
 % \section*{Acknowledgements}
 

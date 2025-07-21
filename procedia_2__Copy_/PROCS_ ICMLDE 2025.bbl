@@ -81,7 +81,7 @@ M.~T. Ribeiro, S.~Singh, C.~Guestrin, Why should i trust you?: Explaining the
   1135--1144.
 
 \bibitem{Wilder1978}
-J.~W. Wilder, New concepts in technical trading systems, Trend Research (1978).
+J.~W.~W. Jr., New Concepts in Technical Trading Systems, Trend Research, 1978.
 
 \bibitem{Araci2019}
 D.~Araci, Finbert: Financial sentiment analysis with pre-trained language
@@ -107,11 +107,12 @@ R.~W. Banz, The relationship between return and market value of common stocks,
 
 \bibitem{Rosenberg1985}
 B.~Rosenberg, K.~Reid, R.~Lanstein, Persuasive evidence of market inefficiency,
-  The Journal of Portfolio Management 11~(3) (1985) 9--16.
+  Journal of Portfolio Management 11~(3) (1985) 9--16.
 
 \bibitem{Daniel1998}
-K.~Daniel, S.~Titman, Market reactions to tangible and intangible information,
-  The Journal of Finance 53~(6) (1998) 1935--1974.
+K.~Daniel, D.~Hirshleifer, A.~Subrahmanyam, Investor psychology and security
+  market under‐and overreactions, The Journal of Finance 53~(6) (1998)
+  1839--1885.
 
 \bibitem{Campbell2001}
 J.~Y. Campbell, M.~Lettau, B.~G. Malkiel, Y.~Xu, Have individual stocks become
@@ -124,9 +125,8 @@ J.~J. Murphy, Technical Analysis of the Financial Markets: A Comprehensive
   1999.
 
 \bibitem{Lo2004}
-A.~W. Lo, The adaptive markets hypothesis: Market efficiency from an
-  evolutionary perspective, The Journal of Portfolio Management 30~(5) (2004)
-  15--29.
+A.~W. Lo, The adaptive markets hypothesis, The Journal of Portfolio Management
+  30~(5) (2004) 15--29.
 
 \bibitem{Li2024}
 X.~Li, X.~Shen, Y.~Zeng, X.~Xing, J.~Xu, Finreport: Explainable stock earnings
@@ -141,17 +141,17 @@ C.~R. Harvey, Y.~Liu, H.~Zhu, ... and the cross-section of expected returns,
 J.~Devlin, M.-W. Chang, K.~Lee, K.~Toutanova, Bert: Pre-training of deep
   bidirectional transformers for language understanding, Proceedings of the
   2019 Conference of the North American Chapter of the Association for
-  Computational Linguistics (2019) 4171--4186.
+  Computational Linguistics: Human Language Technologies (2019) 4171--4186.
 
 \bibitem{Gardner2018}
-M.~Gardner, J.~Grus, M.~Neumann, O.~Tafjord, P.~Dasigi, N.~F. Liu, M.~Peters,
-  M.~Schmitz, L.~S. Zettlemoyer, Allennlp: A deep semantic natural language
-  processing platform, Proceedings of Workshop for NLP Open Source Software
-  (2018) 1--6.
+M.~W. Gardner, S.~R. Dorling, Artificial neural networks (the multilayer
+  perceptron) -- a review of applications in the atmospheric sciences,
+  Atmospheric Environment 32~(14-15) (2018) 2627--2636.
 
 \bibitem{Shi2017}
-P.~Shi, J.~Lin, Simple bert models for relation extraction and semantic role
-  labeling, arXiv preprint arXiv:1904.05255 (2019).
+X.~Shi, Z.~Chen, H.~Wang, D.~Y. Yeung, W.~K. Wong, W.~C. Woo, Convolutional
+  lstm network: A machine learning approach for precipitation nowcasting,
+  Advances in Neural Information Processing Systems (2017) 802--810.
 
 \bibitem{Jegadeesh1993}
 N.~Jegadeesh, S.~Titman, Returns to buying winners and selling losers:
@@ -159,25 +159,23 @@ N.~Jegadeesh, S.~Titman, Returns to buying winners and selling losers:
   (1993) 65--91.
 
 \bibitem{Zhang2006}
-L.~Zhang, The value premium, The Journal of Finance 60~(1) (2005) 67--103.
+X.-J. Zhang, Information uncertainty and stock returns, The Journal of Finance
+  61~(1) (2006) 105--137.
 
 \bibitem{Kothari2009}
-S.~Kothari, J.~Lewellen, J.~B. Warner, Stock returns, aggregate earnings
-  surprises, and behavioral finance, Journal of Financial Economics 79~(3)
-  (2006) 537--568.
+S.~P. Kothari, J.~B. Warner, Econometrics of event studies, Handbook of
+  Empirical Corporate Finance (2009) 3--36.
 
 \bibitem{Loria2019}
-S.~Loria, Textblob: Simplified text processing,
-  \url{https://textblob.readthedocs.io/}, python library for processing textual
-  data (2019).
+S.~Loria, textblob documentation, Release 0.15.2 (2019).
 
 \bibitem{Jorion2001}
-P.~Jorion, Value at Risk: The New Benchmark for Managing Financial Risk, 2nd
-  Edition, McGraw-Hill, 2001.
+P.~Jorion, Value at Risk: The New Benchmark for Managing Financial Risk,
+  McGraw-Hill, 2001.
 
 \bibitem{Rockafellar2000}
 R.~T. Rockafellar, S.~Uryasev, Optimization of conditional value-at-risk,
-  Journal of Risk 2 (2000) 21--41.
+  Journal of Risk 2 (2000) 21--42.
 
 \bibitem{Fama1965}
 E.~F. Fama, The behavior of stock-market prices, The Journal of Business 38~(1)
@@ -191,29 +189,16 @@ R.~Ball, P.~Brown, An empirical evaluation of accounting income numbers,
 E.~F. Fama, K.~R. French, Size and book-to-market factors in earnings and
   returns, The Journal of Finance 50~(1) (1995) 131--155.
 
-\bibitem{Kingma2015}
-D.~P. Kingma, J.~Ba, Adam: A method for stochastic optimization, arXiv preprint
-  arXiv:1412.6980 (2015).
-
 \bibitem{Paszke2019}
 A.~Paszke, S.~Gross, F.~Massa, A.~Lerer, J.~Bradbury, G.~Chanan, T.~Killeen,
-  Z.~Lin, N.~Gimelshein, L.~Antiga, A.~Desmaison, A.~Kopf, E.~Yang, Z.~DeVito,
-  M.~Raison, A.~Tejani, S.~Chilamkurthy, B.~Steiner, L.~Fang, J.~Bai,
-  S.~Chintala, Pytorch: An imperative style, high-performance deep learning
-  library, Advances in Neural Information Processing Systems 32 (2019).
+  Z.~Lin, N.~Gimelshein, L.~Antiga, et~al., Pytorch: An imperative style,
+  high-performance deep learning library, Advances in neural information
+  processing systems 32 (2019) 8026--8037.
 
-\bibitem{Harris2020}
-C.~R. Harris, K.~J. Millman, S.~J. van~der Walt, R.~Gommers, P.~Virtanen,
-  D.~Cournapeau, E.~Wieser, J.~Taylor, S.~Berg, N.~J. Smith, R.~Kern, M.~Picus,
-  S.~Hoyer, M.~H. van Kerkwijk, M.~Brett, A.~Haldane, J.~F. del Río, M.~Wiebe,
-  P.~Peterson, P.~Gérard-Marchant, K.~Sheppard, T.~Reddy, W.~Weckesser,
-  H.~Abbasi, C.~Gohlke, T.~E. Oliphant, Array programming with numpy, Nature
-  585~(7825) (2020) 357--362.
-
-\bibitem{Shah2019}
-D.~Shah, H.~Isah, F.~Zulkernine, Stock market analysis: A review and taxonomy
-  of prediction techniques, International Journal of Financial Studies 7~(2)
-  (2019) 26.
+\bibitem{Kingma2015}
+D.~P. Kingma, J.~Ba, Adam: A method for stochastic optimization, 3rd
+  International Conference on Learning Representations, ICLR 2015, San Diego,
+  CA, USA, May 7-9, 2015, Conference Track Proceedings (2015).
 
 \bibitem{Sezer2020}
 O.~B. Sezer, M.~U. Gudelek, A.~M. Ozbayoglu, Financial time series forecasting
@@ -225,21 +210,17 @@ F.~Black, Studies of stock price volatility changes, Proceedings of the 1976
   Meetings of the American Statistical Association, Business and Economics
   Statistics Section (1976) 177--181.
 
+\bibitem{Shah2019}
+D.~Shah, H.~Isah, F.~Zulkernine, Stock market analysis: A review and taxonomy
+  of prediction techniques, International Journal of Financial Studies 7~(2)
+  (2019) 26.
+
 \bibitem{MSCI2018}
-MSCI, S.~D.~J. Indices, Global industry classification standard (gics)
-  methodology, MSCI Inc. and S\&P Global Market Intelligence, effective August
-  2018 (2018).
+M.~Inc., The global industry classification standard (gics),
+  \url{https://www.msci.com/gics} (2018).
 
 \bibitem{Tukey1949}
 J.~W. Tukey, Comparing individual means in the analysis of variance, Biometrics
   5~(2) (1949) 99--114.
-
-\bibitem{Pearson1895}
-K.~Pearson, Notes on regression and inheritance in the case of two parents,
-  Proceedings of the Royal Society of London 58 (1895) 240--242.
-
-\bibitem{Spearman1904}
-C.~Spearman, The proof and measurement of association between two things, The
-  American Journal of Psychology 15~(1) (1904) 72--101.
 
 \end{thebibliography}
