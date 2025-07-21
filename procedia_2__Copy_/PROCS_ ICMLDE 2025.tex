@@ -404,7 +404,13 @@ Incorporates earnings quality effects \cite{Zhang2006} using EPS, ROE, ROA, and 
 \subsubsection{{Investment Factor}}
 
 Captures investment activity effects \cite{Daniel1998} through investment amounts and activity classification (acquisition +0.6, expansion +0.5, R\&D +0.7) bounded in [0.0, +2.0].
-
+\begin{equation}
+\textbf{investment\_effect} = \textbf{impact\_scale} \times 0.5 \times 
+\begin{cases} 
+1.0, & \text{if } \textbf{news\_sentiment} > 0 \\
+0.5, & \text{otherwise}
+\end{cases}
+\end{equation}
 \subsubsection{{News Effect Factor}}
 
 The news effect factor provides direct quantification of news sentiment impact, building upon established research demonstrating the predictive power of news sentiment for stock returns \cite{TETLOCK2007,Schumaker2009}.
