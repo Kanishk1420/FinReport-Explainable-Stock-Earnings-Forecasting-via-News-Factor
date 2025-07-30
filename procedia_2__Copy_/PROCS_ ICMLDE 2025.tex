@@ -280,9 +280,9 @@ Peer-review under responsibility of the scientific committee of the Internationa
 \section{Introduction}
 \label{main}
 
-Financial markets exhibit unprecedented volatility, with emerging markets like the Shanghai Stock Exchange showing daily volatility of 1.7\% versus 0.8-1.2\% for developed markets \cite{Poon2003,Chen2015}. Traditional econometric models such as ARIMA \cite{Box1970} struggle to capture sentiment-driven price movements and complex market interdependencies \cite{FAMA1993,Malkiel2003}. The efficient market hypothesis faces challenges from documented predictable patterns and behavioral factors \cite{Sharpe1964,Chen2015}.
+Financial markets exhibit unprecedented volatility, with emerging markets like the Shanghai Stock Exchange showing daily volatility of 1.7\% versus 0.8-1.2\% for developed markets. Traditional econometric models such as ARIMA \cite{Box1970} struggle to capture sentiment-driven price movements and complex market interdependencies \cite{FAMA1993}. The efficient market hypothesis faces challenges from documented predictable patterns and behavioral factors.
 
-We propose FinReport, a multi-factor framework integrating historical stock data with financial news via machine learning and NLP techniques \cite{hochreiter1997lstm,Bao2017}. Unlike traditional quantitative approaches, FinReport leverages structured numerical and unstructured textual data for enhanced prediction accuracy \cite{Schumaker2009,Xing2018}. The framework computes six factors (market, size, valuation, profitability, investment, and news effect) for explainable predictions with EGARCH-based risk assessment \cite{Nelson1991,Engle1982}.
+We propose FinReport, a multi-factor framework integrating historical stock data with financial news via machine learning and NLP techniques \cite{Bao2017}. Unlike traditional quantitative approaches, FinReport leverages structured numerical and unstructured textual data for enhanced prediction accuracy. The framework computes six factors (market, size, valuation, profitability, investment, and news effect) for explainable predictions with EGARCH-based risk assessment \cite{Nelson1991}.
 
 Experimental results on Chinese A-share stocks (2018-2021) \cite{FinReportDataset2025} demonstrate 15\% RMSE reduction, 12\% MAE reduction versus LSTM baselines \cite{Fischer2018}, and 20\% Sharpe ratio improvement. This work bridges traditional econometric methods with explainable AI \cite{TETLOCK2007,Ribeiro2016}, advancing computational finance through interpretable sentiment-quantitative integration.
 
@@ -311,11 +311,11 @@ Experimental results on Chinese A-share stocks (2018-2021) \cite{FinReportDatase
 
 \section{Literature Review}
 
-Early forecasting methods like ARIMA \cite{Box1970} and technical indicators \cite{Wilder1978} underperformed with RMSE exceeding 0.05 during volatile periods \cite{Poon2003}. Multi-factor models by Fama and French \cite{FAMA1993} improved performance but ignored qualitative inputs \cite{Malkiel2003}. LSTM networks \cite{hochreiter1997lstm,Fischer2018} capture long-term dependencies. Recent work integrates financial news sentiment using FinBERT \cite{Araci2019} and NLP frameworks \cite{Loughran2011}, showing 12\% prediction improvement \cite{Ding2015}. However, traditional approaches lack interpretability \cite{Ribeiro2016}, motivating explainable AI frameworks combining structured numerical with unstructured text analysis.  The literature increasingly advocates for explainable models that combine structured numerical data with unstructured text analysis, setting the stage for FinReport’s factor-based approach to transparent and robust financial forecasting.
+Early forecasting methods like ARIMA \cite{Box1970} underperformed with RMSE exceeding 0.05 during volatile periods. Multi-factor models by Fama and French \cite{FAMA1993} improved performance but ignored qualitative inputs. LSTM networks \cite{Fischer2018} capture long-term dependencies. Recent work integrates financial news sentiment using FinBERT \cite{Araci2019} and NLP frameworks \cite{Loughran2011}, showing 12\% prediction improvement. However, traditional approaches lack interpretability \cite{Ribeiro2016}, motivating explainable AI frameworks combining structured numerical with unstructured text analysis.  The literature increasingly advocates for explainable models that combine structured numerical data with unstructured text analysis, setting the stage for FinReport’s factor-based approach to transparent and robust financial forecasting.
 
 \section{System Model And Proposed Mechanism}
 
-FinReport integrates traditional multi-factor models \cite{FAMA1993,Carhart1997} with real-time news sentiment analysis \cite{TETLOCK2007,Xing2018}, extending established financial theory to capture behavioral market dynamics \cite{Daniel1998,Campbell2001}. The system employs a modular design with five interconnected components: (1) Data Integration, (2) News Factor Extraction, (3) Return Forecasting, (4) Risk Assessment, and (5) Dynamic Report Generation \cite{Fischer2018}.
+FinReport integrates traditional multi-factor models \cite{FAMA1993,Carhart1997} with real-time news sentiment analysis \cite{TETLOCK2007}, extending established financial theory to capture behavioral market dynamics \cite{Daniel1998}. The system employs a modular design with five interconnected components: (1) Data Integration, (2) News Factor Extraction, (3) Return Forecasting, (4) Risk Assessment, and (5) Dynamic Report Generation \cite{Fischer2018}.
 
 \begin{figure}[!ht]
     \centering
@@ -329,13 +329,13 @@ FinReport integrates traditional multi-factor models \cite{FAMA1993,Carhart1997}
 Processes multi-modal financial data combining structured metrics with unstructured news text \cite{Harvey2016}:
 \begin{itemize}
 \item \textbf{Historical Data:} Price, volume, market capitalization, and 50+ technical indicators from Chinese A-shares (2018-2021) \cite{FinReportDataset2025,Murphy1999}.
-\item \textbf{News Processing:} Bilingual NLP pipelines for English/Chinese financial news \cite{Loughran2011,Xing2018}.
+\item \textbf{News Processing:} Bilingual NLP pipelines for English/Chinese financial news \cite{Loughran2011}.
 \item \textbf{Data Preprocessing:} Z-score normalization, outlier winsorization, and missing value imputation \cite{Fischer2018}.
 \end{itemize}
 
 \subsection{{News Factor Extraction Module}}
 
-Converts unstructured news into quantifiable sentiment metrics through two main components \cite{TETLOCK2007,Schumaker2009}:
+Converts unstructured news into quantifiable sentiment metrics through two main components \cite{TETLOCK2007}:
 
 \textbf{Sentiment Analysis:} Domain-specific FinBERT implementation \cite{Araci2019} generates sentiment scores [-1,+1], enhanced with financial keyword dictionaries \cite{Loughran2011}. Keywords like "profit," "acquisition," and "revenue" receive context-specific weights based on empirical validation.
 
@@ -355,7 +355,7 @@ Implements enhanced multi-factor model with six factors capturing cross-sectiona
 
 \textbf{Profitability Factor:} EPS, ROE, ROA analysis with asymmetric treatment for losses and earnings keyword analysis \cite{Zhang2006,Kothari2009}.
 
-\textbf{Investment Factor:} Activity classification (acquisition, expansion, R\&D) with sentiment-based conditional scaling \cite{Daniel1998,Ball1968}.
+\textbf{Investment Factor:} Activity classification (acquisition, expansion, R\&D) with sentiment-based conditional scaling \cite{Daniel1998}.
 
 \textbf{News Effect Factor:} Direct sentiment quantification using weighted combination of TextBlob polarity and keyword analysis, with culturally-adapted terms and amplification for adequate signal strength \cite{TETLOCK2007,Loria2019}.
 
@@ -365,7 +365,7 @@ Implements multi-dimensional risk framework addressing traditional variance-base
 
 \subsection{{Factor Enhancement and Overall Trend Calculation}}
 
-Combines individual factor signals through multi-stage amplification and weighted aggregation addressing scale heterogeneity \cite{Harvey2016,FAMA1993}. The weighting scheme assigns highest priority to event factors (0.25) due to strong short-term predictive power \cite{Ding2015,Daniel1998}, followed by investment factors (0.20) for medium-term impact, with balanced weighting for market, size, and profitability factors following established multi-factor model conventions \cite{FAMA1993,Carhart1997}.
+Combines individual factor signals through multi-stage amplification and weighted aggregation addressing scale heterogeneity \cite{Harvey2016,FAMA1993}. The weighting scheme assigns highest priority to event factors (0.25) due to strong short-term predictive power \cite{Daniel1998}, followed by investment factors (0.20) for medium-term impact, with balanced weighting for market, size, and profitability factors following established multi-factor model conventions \cite{FAMA1993,Carhart1997}.
 
 \subsubsection{{Enhancement Process}}
 
@@ -382,7 +382,7 @@ Translates quantitative analyses into actionable insights using hierarchical inf
 \section{Algorithm}
 
 \subsection{Return Forecast Calculation}
-The return forecast is computed using a weighted combination of multiple factors \cite{FAMA1993}, where the \textbf{event factor receives the highest weight (0.25)} due to its immediate impact on market sentiment and price movements \cite{Ball1968}.
+The return forecast is computed using a weighted combination of multiple factors \cite{FAMA1993}, where the \textbf{event factor receives the highest weight (0.25)} due to its immediate impact on market sentiment and price movements.
 \begin{align}
 \mathbf{predicted\_return} &= 0.10 \times \mathbf{market\_factor} + 0.15 \times \mathbf{size\_factor} + 0.10 \times \mathbf{valuation\_factor} \nonumber \\
 &\quad + 0.10 \times \mathbf{profitability\_factor} + 0.20 \times \mathbf{investment\_factor} \nonumber \\
