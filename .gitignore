@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ... existing content ...
+
+# Research paper files
+procedia_2__Copy_/
+*.tex
+*.bib
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+
+# LaTeX temporary files
+*.fls
+*.fdb_latexmk
+*.synctex.gz
