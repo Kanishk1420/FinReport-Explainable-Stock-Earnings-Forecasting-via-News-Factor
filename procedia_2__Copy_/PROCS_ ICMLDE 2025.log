@@ -1,9 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  30 JUL 2025 22:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  30 JUL 2025 22:19
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**"./PROCS_ ICMLDE 2025.tex"
-(PROCS_ ICMLDE 2025.tex
+**"c:/Users/KIIT/Pictures/Screenshots/Machine Learning Applications/Self/FinReport/FinReport/procedia_2__Copy_/PROCS_ ICMLDE 2025.tex"
+(c:/Users/KIIT/Pictures/Screenshots/Machine Learning Applications/Self/FinReport/FinReport/procedia_2__Copy_/PROCS_ ICMLDE 2025.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (elsarticle.cls
@@ -25,27 +26,20 @@ File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen141
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cf
-g
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen142
@@ -53,15 +47,11 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\pifont.sty
 Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
 LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
-
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upzd.fd
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
-
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upsy.fd
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
 \c@tnote=\count195
@@ -91,9 +81,7 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \belowlistskipiv=\skip59
 \abovelistskipv=\skip60
 \belowlistskipv=\skip61
-
-(PROCS_ ICMLDE 2025.spl)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+ (PROCS_ ICMLDE 2025.spl) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip62
 \bibsep=\skip63
@@ -103,14 +91,11 @@ LaTeX Info: Redefining \cite on input line 694.
 \splwrite=\write3
 \openout3 = `"PROCS_ ICMLDE 2025.spl"'.
 
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
 \Gm@cnth=\count268
@@ -125,11 +110,9 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layouthoffset=\dimen153
 \Gm@layoutvoffset=\dimen154
 \Gm@dimlist=\toks20
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 \appnamewidth=\dimen155
-
-(framed.sty
+ (framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip64
 \fb@frw=\dimen156
@@ -140,8 +123,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \tempbox=\box55
 \defbox=\box56
 \defboxdimen=\dimen160
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\txfonts.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\txfonts.sty
 Package: txfonts 2008/01/22 v3.2.1
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -218,8 +200,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
 LaTeX Font Info:    Redeclaring math symbol \mathsterling on input line 164.
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 591.
 LaTeX Info: Redefining \not on input line 1043.
-)
-(ecrc.sty
+) (ecrc.sty
 Package: ecrc 2011/05/07 v1.2a ecrc
 \dummylogowidth=\dimen161
 \tempdimen=\dimen162
@@ -237,16 +218,13 @@ Already applied: [0000/00/00] Make \[ robust on input line 62.
 Applying: [2015/01/01] Make \] robust on input line 74.
 LaTeX Info: Redefining \] on input line 75.
 Already applied: [0000/00/00] Make \] robust on input line 83.
-)))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+))) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks21
 \inpenc@posthook=\toks22
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks23
 LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 59.
@@ -273,26 +251,20 @@ LaTeX Font Info:    Redeclaring math symbol \blacksquare on input line 48.
 LaTeX Font Info:    Redeclaring math symbol \centerdot on input line 49.
 LaTeX Font Info:    Redeclaring math symbol \blacklozenge on input line 51.
 LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 52.
-
 LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 56
-.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 56.
 LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 57.
 LaTeX Font Info:    Redeclaring math symbol \Vdash on input line 58.
 LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 59.
 LaTeX Font Info:    Redeclaring math symbol \vDash on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \twoheadrightarrow on input line 61
-.
+LaTeX Font Info:    Redeclaring math symbol \twoheadrightarrow on input line 61.
 LaTeX Font Info:    Redeclaring math symbol \twoheadleftarrow on input line 62.
-
 LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 63.
 LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 64.
-
 LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 65.
 LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 66.
 LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 67.
 LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 69.
-
 LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 70.
 LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 71.
 LaTeX Font Info:    Redeclaring math symbol \rightarrowtail on input line 72.
@@ -301,8 +273,7 @@ LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 74.
 LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 75.
 LaTeX Font Info:    Redeclaring math symbol \Lsh on input line 76.
 LaTeX Font Info:    Redeclaring math symbol \Rsh on input line 77.
-LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 
-79.
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 79.
 LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 80.
 LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 81.
 LaTeX Font Info:    Redeclaring math symbol \circeq on input line 82.
@@ -334,12 +305,9 @@ LaTeX Font Info:    Redeclaring math symbol \geqslant on input line 108.
 LaTeX Font Info:    Redeclaring math symbol \gtrless on input line 109.
 LaTeX Font Info:    Redeclaring math symbol \bigstar on input line 117.
 LaTeX Font Info:    Redeclaring math symbol \between on input line 118.
-LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 11
-9.
-LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 1
-20.
-LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 12
-1.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 119.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 120.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 121.
 LaTeX Font Info:    Redeclaring math symbol \vartriangle on input line 122.
 LaTeX Font Info:    Redeclaring math symbol \blacktriangle on input line 123.
 LaTeX Font Info:    Redeclaring math symbol \triangledown on input line 124.
@@ -366,7 +334,6 @@ LaTeX Font Info:    Redeclaring math symbol \curlywedge on input line 148.
 LaTeX Font Info:    Redeclaring math symbol \curlyvee on input line 149.
 LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 150.
 LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 151.
-
 LaTeX Font Info:    Redeclaring math symbol \subseteqq on input line 152.
 LaTeX Font Info:    Redeclaring math symbol \supseteqq on input line 153.
 LaTeX Font Info:    Redeclaring math symbol \bumpeq on input line 154.
@@ -435,10 +402,8 @@ LaTeX Font Info:    Redeclaring math symbol \nvdash on input line 219.
 LaTeX Font Info:    Redeclaring math symbol \nVdash on input line 220.
 LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 221.
 LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 222.
-LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 223
-.
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 223.
 LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 224.
-
 LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 225.
 LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 226.
 LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 227.
@@ -446,9 +411,7 @@ LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 228.
 LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 229.
 LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 230.
 LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 231.
-
 LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 232.
-
 LaTeX Font Info:    Redeclaring math symbol \divideontimes on input line 233.
 LaTeX Font Info:    Redeclaring math symbol \varnothing on input line 234.
 LaTeX Font Info:    Redeclaring math symbol \nexists on input line 235.
@@ -473,14 +436,12 @@ LaTeX Font Info:    Redeclaring math symbol \succapprox on input line 255.
 LaTeX Font Info:    Redeclaring math symbol \precapprox on input line 256.
 LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 257.
 LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 258.
-
 LaTeX Font Info:    Redeclaring math symbol \digamma on input line 259.
 LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 260.
 LaTeX Font Info:    Redeclaring math symbol \Bbbk on input line 261.
 LaTeX Font Info:    Redeclaring math symbol \hslash on input line 262.
 LaTeX Font Info:    Redeclaring math symbol \backepsilon on input line 265.
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \c@tracingmulticols=\count271
 \mult@box=\box57
@@ -549,16 +510,13 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \mult@nat@firstbox=\box101
 \colbreak@box=\box102
 \mc@col@check@num=\count280
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
 Package xcolor Info: Model `RGB' extended on input line 1366.
@@ -570,8 +528,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 ) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen173
 \ar@mcellbox=\box103
@@ -584,14 +541,11 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \everycr=\toks25
 \minrowclearance=\skip70
 \rownum=\count281
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/cellspace\cellspace.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/cellspace\cellspace.sty
 Package: cellspace 2022/01/04 v1.9.0 Spacing table cells (JN)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count282
 \calc@Bcount=\count283
@@ -603,12 +557,9 @@ LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count284
 \calc@Cskip=\skip73
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
 \XKV@toks=\toks26
 \XKV@tempa@toks=\toks27
 )
@@ -637,50 +588,39 @@ Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
 \c@LT@tables=\count289
 \c@LT@chunks=\count290
 \LT@p@ftn=\toks28
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tipa\tipa.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tipa\tipa.sty
 Package: tipa 2002/08/08 TIPA version 1.1
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tipa\t3enc.def
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tipa\t3enc.def
 File: t3enc.def 2001/12/31 T3 encoding
 Now handling font encoding T3 ...
 ... no UTF-8 mapping file for font encoding T3
-LaTeX Font Info:    Trying to load font information for OT1+txss on input line 
-357.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txss.fd
+LaTeX Font Info:    Trying to load font information for OT1+txss on input line 357.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txss.fd
 File: ot1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
 (Font)              scaled to size 9.49997pt on input line 357.
 )
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 1
-12.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txr.fd
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 112.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
-)))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+))) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip78
 
 For additional information on amsmath, use the `?' option.
 (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks29
 \ex@=\dimen182
-))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen183
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count291
@@ -730,24 +670,20 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks33
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
 Package: pdfpages 2025/03/12 v0.6f Insert pages of external PDF documents (AM)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
 \ESO@tempdima=\dimen191
 \ESO@tempdimb=\dimen192
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count303
 )
 \AM@pagewidth=\dimen193
 \AM@pageheight=\dimen194
 \AM@fboxrule=\dimen195
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
 File: pppdftex.def 2025/03/12 v0.6f Pdfpages driver for pdfTeX (AM)
 )
 \pdfpages@includegraphics@status=\count304
@@ -758,13 +694,11 @@ File: pppdftex.def 2025/03/12 v0.6f Pdfpages driver for pdfTeX (AM)
 \AM@lof@heading=\toks36
 \c@AM@survey=\count306
 \AM@templatesizebox=\box113
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/mdwtools\footnote.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/mdwtools\footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box114
 \fn@width=\dimen196
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks37
 \thm@bodyfont=\toks38
@@ -777,26 +711,22 @@ Package: amsthm 2020/05/29 v2.20.6
 \dth@everypar=\toks42
 LaTeX Info: Redefining \qed on input line 273.
 LaTeX Info: Redefining \textsquare on input line 427.
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\rotating.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 \c@r@tfl@t=\count307
 \rotFPtop=\skip84
 \rotFPbot=\skip85
 \rot@float@box=\box115
 \rot@mess@toks=\toks43
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip86
 \multirow@cntb=\count308
 \multirow@dima=\skip87
 \bigstrutjot=\dimen197
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen198
 \captionmargin=\dimen199
@@ -807,71 +737,48 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@parindent=\dimen260
 \caption@hangindent=\dimen261
 Package caption Info: elsarticle document class detected.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-elsartic
-le.sto
-File: caption-elsarticle.sto 2020/08/22 v2.0 Adaption of the caption package to
- the elsarticle document class (AR)
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-elsarticle.sto
+File: caption-elsarticle.sto 2020/08/22 v2.0 Adaption of the caption package to the elsarticle document class (AR)
 ))
 \c@caption@flags=\count309
 \c@continuedfloat=\count310
 Package caption Info: longtable package is loaded.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
 Package: relsize 2013/03/29 ver 4.1
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.st
-y
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinek
-eys.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.st
-y
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.
-sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro.
-sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 ) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitl
-estring.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count311
@@ -883,13 +790,11 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count314
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -903,21 +808,16 @@ Package hyperref Info: Backreferencing OFF on input line 4201.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks OFF on input line 4454.
 \c@Hy@tempcnt=\count315
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4786.
 \XeTeXLinkMargin=\dimen263
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.
-sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count316
 \Field@Width=\dimen264
@@ -929,8 +829,7 @@ Package hyperref Info: backreferencing OFF on input line 6080.
 Package hyperref Info: Link coloring OFF on input line 6085.
 Package hyperref Info: Link coloring with OCG OFF on input line 6090.
 Package hyperref Info: PDF/A mode OFF on input line 6095.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
@@ -939,41 +838,27 @@ package with kernel methods
 \c@Hfootnote=\count319
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2023-11-26 v7.01g Hyperref driver for pdfTeX
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
-kage
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
 \Fld@listcount=\count320
 \c@bookmark@seq@number=\count321
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfile
-check.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniqueco
-unter.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-84.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
 \Hy@SectionHShift=\skip88
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 61.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3ke
-ys2e.sty
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2024-01-04 L3 programming layer (loader) 
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
-ex.def
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count322
 \l__pdf_internal_box=\box116
@@ -984,15 +869,12 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count323
 \l__lipsum_a_int=\count324
 \l__lipsum_b_int=\count325
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2024/01/07 v24.1 The Babel package
 \babel@savecnt=\count326
 \U@D=\dimen266
 \l@unhyphenated=\language79
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count327
 
@@ -1000,11 +882,8 @@ Package: babel 2024/01/07 v24.1 The Babel package
 * Local config file bblopts.cfg used
 *
 (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ld
-f
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
@@ -1012,32 +891,24 @@ Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
 (babel)             (\language73). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 (babel)             (\language73). Reported on input line 108.
-))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-
-english.tex
+)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+txr on input line 11
-2.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\t1txr.fd
+LaTeX Font Info:    Trying to load font information for T1+txr on input line 112.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\t1txr.fd
 File: t1txr.fd 2000/12/15 v3.1
-))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
 \wrapoverhang=\dimen267
 \WF@size=\dimen268
 \c@WF@wrappedlines=\count328
 \WF@box=\box117
 \WF@everypar=\toks44
 Package: wrapfig 2003/01/31  v 3.6
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/blindtext\blindtext.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/blindtext\blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 \c@blindtext=\count329
@@ -1058,21 +929,13 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \c@blind@randommax=\count344
 \c@blind@pangramcount=\count345
 \c@blind@pangrammax=\count346
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/stackengine\stackengine.
-sty
-Package: stackengine 2021/07/22 v4.11\ Stacking text and objects in convenient 
-ways
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/listofitems\listofitems.
-sty
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/listofitems\listofitem
-s.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/stackengine\stackengine.sty
+Package: stackengine 2021/07/22 v4.11\ Stacking text and objects in convenient ways
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/listofitems\listofitems.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/listofitems\listofitems.tex
 \loi_cnt_foreach_nest=\count347
 \loi_nestcnt=\count348
 )
-Package: listofitems 2024/03/09 v1.65 Grab items in lists using user-specified 
-sep char (CT)
+Package: listofitems 2024/03/09 v1.65 Grab items in lists using user-specified sep char (CT)
 )
 \c@@stackindex=\count349
 \@boxshift=\skip89
@@ -1086,8 +949,7 @@ sep char (CT)
 \stackedbox=\box122
 \@centerbox=\box123
 \c@ROWcellindex@=\count350
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tabulary\tabulary.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tabulary\tabulary.sty
 Package: tabulary 2024/06/04 v0.11 tabulary package (DPC)
 
 
@@ -1104,8 +966,7 @@ LaTeX Warning: You have requested, on input line 20, version
 \TY@tablewidth=\dimen272
 ) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\times.sty
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen273
 \lightrulewidth=\dimen274
@@ -1124,46 +985,22 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count354
 \@lastruleclass=\count355
 \@thisrulewidth=\dimen285
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/chemformula\chemformula.
-sty
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.s
-ty
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-
-common.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/chemformula\chemformula.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
 \pgfutil@everybye=\toks45
 \pgfutil@tempdima=\dimen286
 \pgfutil@tempdimb=\dimen287
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-
-latex.def
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
 \pgfutil@abb=\box124
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.c
-ode.tex
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.s
-ty
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.s
-ty
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
-.code.tex
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.
-code.tex
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks46
 \pgfkeys@temptoks=\toks47
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeysl
-ibraryfiltered.code.tex
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks48
 ))
 \pgf@x=\dimen288
@@ -1186,76 +1023,32 @@ ibraryfiltered.code.tex
 \t@pgf@tokb=\toks50
 \t@pgf@tokc=\toks51
 \pgf@sys@id@count=\count360
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cf
-g
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-pdftex.def
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
--pdftex.def
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
--common-pdf.def
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
-)))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
-softpath.code.tex
+))) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfsyssoftpath@smallbuffer@items=\count361
 \pgfsyssoftpath@bigbuffer@items=\count362
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
-protocol.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-.code.tex
+)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.
-tex
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.c
-ode.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser
-.code.tex
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
 \pgfmath@dimen=\dimen298
 \pgfmath@count=\count363
 \pgfmath@box=\box125
 \pgfmath@toks=\toks52
 \pgfmath@stack@operand=\toks53
 \pgfmath@stack@operation=\toks54
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
-ons.code.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
-ons.basic.code.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
-ons.trigonometric.code.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
-ons.random.code.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
-ons.comparison.code.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
-ons.base.code.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
-ons.round.code.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
-ons.misc.code.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
-ons.integerarithmetics.code.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.c
-ode.tex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.
-code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count364
-))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.t
-ex)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-points.code.tex
+)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen299
 \pgf@picmaxx=\dimen300
@@ -1271,130 +1064,75 @@ File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yy=\dimen310
 \pgf@zx=\dimen311
 \pgf@zy=\dimen312
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-pathconstruct.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@path@lastx=\dimen313
 \pgf@path@lasty=\dimen314
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-pathusage.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@shorten@end@additional=\dimen315
 \pgf@shorten@start@additional=\dimen316
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-scopes.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box126
 \pgf@hbox=\box127
 \pgf@layerbox@main=\box128
 \pgf@picture@serial@count=\count365
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-graphicstate.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen317
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-transformations.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@pt@x=\dimen318
 \pgf@pt@y=\dimen319
 \pgf@pt@temp=\dimen320
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-quick.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-objects.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-pathprocessing.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-arrows.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowsep=\dimen321
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-shade.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen322
 \pgf@sys@shading@range@num=\count366
 \pgf@shadingcount=\count367
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-image.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-external.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfexternal@startupbox=\box129
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-layers.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-transparency.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-patterns.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
-rdf.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodules
-hapes.code.tex
+))) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfnodeparttextbox=\box130
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulep
-lot.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcom
-p-version-0-65.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
 \pgf@nodesepstart=\dimen323
 \pgf@nodesepend=\dimen324
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcom
-p-version-1-18.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
-))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.st
-y
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.
-code.tex))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.
-tex))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.c
-ode.tex
+)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen325
 \pgffor@skip=\dimen326
 \pgffor@stack=\toks55
 \pgffor@toks=\toks56
-))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
-\tikz.code.tex
+)) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
-ryplothandlers.code.tex
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@plot@mark@count=\count368
 \pgfplotmarksize=\dimen327
@@ -1415,30 +1153,20 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikznumberofchildren=\count370
 \tikznumberofcurrentchild=\count371
 \tikz@fig@count=\count372
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulem
-atrix.code.tex
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfmatrixcurrentrow=\count373
 \pgfmatrixcurrentcolumn=\count374
 \pgf@matrix@numberofcolumns=\count375
 )
 \tikz@expandcount=\count376
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
-/libraries\tikzlibrarytopaths.code.tex
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xfrac\xfrac.s
-ty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+))) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xfrac\xfrac.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse
-.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
 Package: xparse 2023-10-10 L3 Experimental document command parser
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xtemplate\xte
-mplate.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xtemplate\xtemplate.sty
 Package: xtemplate 2023-10-10 L3 Experimental prototype document functions
 \l__xtemplate_tmp_dim=\dimen336
 \l__xtemplate_tmp_int=\count377
@@ -1459,23 +1187,19 @@ Package: xfrac 2023-10-10 L3 Experimental split-level fractions
 Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
 (xtemplate)             line 80.
 
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/units\nicefrac.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/units\nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \L@UnitsRaiseDisplaystyle=\skip94
 \L@UnitsRaiseTextstyle=\skip95
 \L@UnitsRaiseScriptstyle=\skip96
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
-ryarrows.meta.code.tex
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowinset=\dimen342
 \pgfarrowlength=\dimen343
 \pgfarrowwidth=\dimen344
 \pgfarrowlinewidth=\dimen345
 )
-Package: chemformula 2022/01/23 v4.17 typeset chemical compounds and reactions 
-(CN)
+Package: chemformula 2022/01/23 v4.17 typeset chemical compounds and reactions (CN)
 \l__chemformula_tmpa_dim=\dimen346
 \l__chemformula_tmpb_dim=\dimen347
 \l__chemformula_tmpc_dim=\dimen348
@@ -1523,23 +1247,17 @@ Package: chemformula 2022/01/23 v4.17 typeset chemical compounds and reactions
 \l__chemformula_subscript_box=\box142
 \l__chemformula_plus_space_skip=\skip100
 \l__chemformula_minus_space_skip=\skip101
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/mathalpha\mathalfa.sty)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/mathalpha\mathalpha.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/mathalpha\mathalfa.sty) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/mathalpha\mathalpha.sty
 Package: mathalpha 2025/01/17 - 1.145mathalpha (License LPPL) Michael Sharpe
-
-`mathalpha' v1.145, 2025/01/17, a renaming of mathalfa (msharpe)
+ `mathalpha' v1.145, 2025/01/17, a renaming of mathalfa (msharpe)
 LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 568.
 LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `bold'
-(Font)                  U/BOONDOX-cal/m/n --> U/BOONDOX-cal/b/n on input line 5
-70.
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\eucal.sty
+(Font)                  U/BOONDOX-cal/m/n --> U/BOONDOX-cal/b/n on input line 570.
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\eucal.sty
 Package: eucal 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
 Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \CenteringLeftskip=\skip102
 \RaggedLeftLeftskip=\skip103
@@ -1555,8 +1273,7 @@ Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \RaggedLeftParindent=\skip113
 \RaggedRightParindent=\skip114
 \JustifyingParindent=\skip115
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
 Package: bm 2023/07/08 v1.2f Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup10
 \symboldletters=\mathgroup11
@@ -1565,19 +1282,16 @@ Package: bm 2023/07/08 v1.2f Bold Symbol Support (DPC/FMi)
 Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count383
 \float@exts=\toks57
 \float@box=\box143
 \@float@everytoks=\toks58
 \@floatcapt=\box144
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
 Package: placeins 2005/04/18  v 2.2
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
 \TX@col@width=\dimen377
 \TX@old@table=\dimen378
@@ -1586,19 +1300,13 @@ Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
 \TX@delta=\dimen381
 \TX@cols=\count384
 \TX@ftn=\toks59
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.sty
-Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
-nment
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
 \@float@every@algorithm=\toks60
 \c@algorithm=\count385
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudoco
-de.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudocode.sty
 Package: algpseudocode 
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithmic
-x.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
@@ -1614,19 +1322,13 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip118
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
 Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
 Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.st
-y
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.sty
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
 \collectedbox=\box145
 )
@@ -1635,8 +1337,7 @@ Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
 \tc@urx=\dimen384
 \tc@ury=\dimen385
 Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
 File: tc-pdftex.def 2025/02/26 v2.3 Clipping driver for pdftex
 ))
 \adjbox@Width=\dimen386
@@ -1647,8 +1348,7 @@ File: tc-pdftex.def 2025/02/26 v2.3 Clipping driver for pdftex
 \adjbox@pheight=\dimen391
 \adjbox@pdepth=\dimen392
 \adjbox@ptotalheight=\dimen393
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
 \c@checkoddpage=\count393
 ) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
@@ -1662,8 +1362,7 @@ Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks61
 \verbatim@line=\toks62
 \verbatim@in@stream=\read4
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count395
 \lst@gtempboxa=\box147
 \lst@token=\toks63
@@ -1676,39 +1375,30 @@ Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
 \lst@newlines=\count399
 \lst@lineno=\count400
 \lst@maxwidth=\dimen399
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 \c@lstnumber=\count401
 \lst@skipnumbers=\count402
 \lst@framebox=\box148
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
 Package: listings 2023/02/27 1.9 (Carsten Heinz)
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 18
-2.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 182.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
-(PROCS_ ICMLDE 2025.aux)
+) (PROCS_ ICMLDE 2025.aux)
 \openout1 = `"PROCS_ ICMLDE 2025.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 182.
-LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
-182.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omltxmi.fd
+LaTeX Font Info:    Trying to load font information for OML+txmi on input line 182.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 182.
 LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 182.
-LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 
-182.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omstxsy.fd
+LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 182.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 182.
@@ -1719,26 +1409,20 @@ LaTeX Font Info:    ... okay on input line 182.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 182.
 LaTeX Font Info:    ... okay on input line 182.
 LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 182.
-LaTeX Font Info:    Trying to load font information for OMX+txex on input line 
-182.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omxtxex.fd
+LaTeX Font Info:    Trying to load font information for OMX+txex on input line 182.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 182.
 LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 182.
-LaTeX Font Info:    Trying to load font information for U+txexa on input line 1
-82.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxexa.fd
+LaTeX Font Info:    Trying to load font information for U+txexa on input line 182.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 182.
 LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 182.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 18
-2.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tipa\t3cmr.fd
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 182.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tipa\t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
 LaTeX Font Info:    ... okay on input line 182.
@@ -1746,9 +1430,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 182.
 LaTeX Font Info:    ... okay on input line 182.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 182.
 LaTeX Font Info:    ... okay on input line 182.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
-i
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count403
 \scratchdimen=\dimen400
@@ -1761,15 +1443,10 @@ i
 \MPnumerator=\count407
 \makeMPintoPDFobject=\count408
 \everyMPtoPDFconversion=\toks65
-)
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
-se.sty
+) (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cf
-g
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 *geometry* driver: auto-detecting
@@ -1810,13 +1487,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 
 (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nome
-tadata.sty
-Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
-F (HO)
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF (HO)
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
@@ -1829,65 +1502,50 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 182.
 \c@lstlisting=\count409
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 2
-35.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxmia.fd
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 235.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 235
-.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+LaTeX Font Info:    Trying to load font information for U+msa on input line 235.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 235
-.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+LaTeX Font Info:    Trying to load font information for U+msb on input line 235.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 2
-35.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsyc.fd
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 235.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-36.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 236.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    Calculating math sizes for size <13> on input line 250.
 
 Underfull \hbox (badness 4805) in paragraph at lines 250--250
- []\T1/ptm/m/n/13 Mukesh Kumar$[]$, Md Azlan$[]$, Kanishk$[]$, King-shuk Chatte
-rjee$[]$ 
+ []\T1/ptm/m/n/13 Mukesh Kumar$[]$, Md Azlan$[]$, Kanishk$[]$, King-shuk Chatterjee$[]$ 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 250--250
- []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing,Kalinga In-sti-tute of
- In-dus-trial Technology-751024 
+ []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing,Kalinga In-sti-tute of In-dus-trial Technology-751024 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 250--250
- []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing,Kalinga In-sti-tute of
- In-dus-trial Technology-751024 
+ []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing,Kalinga In-sti-tute of In-dus-trial Technology-751024 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 250--250
- []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing,Kalinga In-sti-tute of
- In-dus-trial Technology-751024 
+ []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing,Kalinga In-sti-tute of In-dus-trial Technology-751024 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 250--250
- []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing,Kalinga In-sti-tute of
- In-dus-trial Technology-751024 
+ []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing,Kalinga In-sti-tute of In-dus-trial Technology-751024 
  []
 
 
@@ -1898,10 +1556,8 @@ File: elsevier-logo-3p.pdf Graphic file (type pdf)
 <use elsevier-logo-3p.pdf>
 Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 284.
 (pdftex.def)             Requested size: 54.0819pt x 59.74303pt.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 28
-4.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 284.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 <SDlogo-3p.pdf, id=15, 96.36pt x 13.04875pt>
@@ -1937,9 +1593,7 @@ Overfull \vbox (53.55399pt too high) has occurred while \output is active []
 
 Overfull \vbox (35.42392pt too high) has occurred while \output is active []
 
-
-[1{C:/Users/KIIT/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/KII
-T/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+ [1{C:/Users/KIIT/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
  <./elsevier-logo-3p.pdf> <./SDlogo-3p.pdf> <./Procs.pdf>]
 <flowchart.jpg, id=75, 4336.2pt x 1573.88pt>
@@ -1949,170 +1603,158 @@ Package pdftex.def Info: flowchart.jpg  used on input line 322.
 (pdftex.def)             Requested size: 458.638pt x 166.45103pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 323--323
- []\T1/ptm/m/n/8 Figure 1: |Pro-posed Fin-Re-port Sys-tem Ar-chi-tec-ture (adap
-ted from [[]])| 
+ []\T1/ptm/m/n/8 Figure 1: |Pro-posed Fin-Re-port Sys-tem Ar-chi-tec-ture (adapted from [[]])| 
  []
 
-[2 <./flowchart.jpg>] [3]
-Underfull \vbox (badness 1394) has occurred while \output is active []
+[2 <./flowchart.jpg>] [3] [4]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 412.
 
- [4]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 422.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1565) has occurred while \output is active []
 
  [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 478.
+ (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
+[]  \T1/pcr/m/n/10 profitability (0.15), investment (0.20), news_effect (0.10), event
+ []
 
- [6]
-<Picture2.png, id=240, 867.24pt x 578.16pt>
+<Picture2.png, id=232, 867.24pt x 578.16pt>
 File: Picture2.png Graphic file (type png)
 <use Picture2.png>
-Package pdftex.def Info: Picture2.png  used on input line 531.
+Package pdftex.def Info: Picture2.png  used on input line 513.
 (pdftex.def)             Requested size: 374.40143pt x 249.60083pt.
 
-Underfull \hbox (badness 1275) in paragraph at lines 531--532
+Underfull \hbox (badness 1275) in paragraph at lines 513--514
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
+Underfull \hbox (badness 10000) in paragraph at lines 514--514
  []\T1/ptm/m/n/8 Figure 2: |Rapid Ini-tial Learn-ing| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--543
- []\T1/ptm/m/n/8 Table 1: |\T1/ptm/b/n/8 Model Per-for-mance Met-rics and In-te
-r-pre-ta-tions| 
+Underfull \hbox (badness 10000) in paragraph at lines 525--525
+ []\T1/ptm/m/n/8 Table 1: |\T1/ptm/b/n/8 Model Per-for-mance Met-rics and In-ter-pre-ta-tions| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--548
+Underfull \hbox (badness 10000) in paragraph at lines 530--530
 []\T1/ptm/m/n/10 Relatively low mean squared er-ror in-di-cates lim-ited
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--548
-\T1/ptm/m/n/10 de-vi-a-tion be-tween pre-dicted and ac-tual val-ues, re-flect-i
-ng
+Underfull \hbox (badness 10000) in paragraph at lines 530--530
+\T1/ptm/m/n/10 de-vi-a-tion be-tween pre-dicted and ac-tual val-ues, re-flect-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--549
+Underfull \hbox (badness 10000) in paragraph at lines 531--531
 []\T1/ptm/m/n/10 Root mean squared er-ror sug-gests that pre-dic-tions vary
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--549
+Underfull \hbox (badness 10000) in paragraph at lines 531--531
 \T1/ptm/m/n/10 by ap-prox-i-mately 25% from ac-tual val-ues on av-er-age,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
+Underfull \hbox (badness 10000) in paragraph at lines 532--532
 []\T1/ptm/m/n/10 A low mean ab-so-lute er-ror con-firms con-sis-tent and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--551
+Underfull \hbox (badness 10000) in paragraph at lines 533--533
 []\T1/ptm/m/n/10 The model ex-plains 55.15% of the vari-ance in ac-tual
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--551
+Underfull \hbox (badness 10000) in paragraph at lines 533--533
 \T1/ptm/m/n/10 stock re-turns, re-flect-ing mod-er-ately strong ex-plana-tory
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 552--552
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
 []\T1/ptm/m/n/10 A very high cor-re-la-tion be-tween pre-dicted and ac-tual
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 552--552
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
 \T1/ptm/m/n/10 re-turns con-firms strong lin-ear align-ment and model
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 544--555
+Underfull \hbox (badness 3407) in paragraph at lines 526--537
+ [][] 
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 549--549
+ []\T1/ptm/m/n/8 Table 2: |\T1/ptm/b/n/8 Top Per-form-ing Stocks (R$[]$ > 0.98)| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--563
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 567--567
- []\T1/ptm/m/n/8 Table 2: |\T1/ptm/b/n/8 Top Per-form-ing Stocks (R$[]$ > 0.98)
-| 
- []
+Underfull \vbox (badness 3058) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 570--581
- [][] 
- []
-
-<Picture3.png, id=243, 457.929pt x 356.094pt>
+ [7 <./Picture2.png>]
+<Picture3.png, id=254, 457.929pt x 356.094pt>
 File: Picture3.png Graphic file (type png)
 <use Picture3.png>
-Package pdftex.def Info: Picture3.png  used on input line 587.
+Package pdftex.def Info: Picture3.png  used on input line 569.
 (pdftex.def)             Requested size: 374.40143pt x 291.15132pt.
 
-Underfull \hbox (badness 1275) in paragraph at lines 587--591
+Underfull \hbox (badness 1275) in paragraph at lines 569--573
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--592
+Underfull \hbox (badness 10000) in paragraph at lines 574--574
  []\T1/ptm/m/n/8 Figure 3: |Over-all Statis-tics| 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
- []\T1/ptm/m/n/8 Table 3: |\T1/ptm/b/n/8 Poorly Per-form-ing Pre-dic-tion Sam-p
-les| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 590--590
+ []\T1/ptm/m/n/8 Table 3: |\T1/ptm/b/n/8 Poorly Per-form-ing Pre-dic-tion Sam-ples| 
  []
 
 
-Underfull \hbox (badness 6741) in paragraph at lines 609--618
+Underfull \hbox (badness 6741) in paragraph at lines 591--600
+ [][] 
+ []
+
+[8 <./Picture3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 610--610
+ []\T1/ptm/m/n/8 Table 4: |\T1/ptm/b/n/8 Sector-wise Av-er-age Per-for-mance Met-rics| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--636
+ []\T1/ptm/m/n/8 Table 5: |\T1/ptm/b/n/8 Mar-ket Cap-i-tal-iza-tion Im-pact on Pre-dic-tion Ac-cu-racy| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--650
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 628--628
- []\T1/ptm/m/n/8 Table 4: |\T1/ptm/b/n/8 Sector-wise Av-er-age Per-for-mance Me
-t-rics| 
- []
-
-[8 <./Picture2.png>]
-Underfull \vbox (badness 1895) has occurred while \output is active []
-
- [9 <./Picture3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 654--654
- []\T1/ptm/m/n/8 Table 5: |\T1/ptm/b/n/8 Mar-ket Cap-i-tal-iza-tion Im-pact on 
-Pre-dic-tion Ac-cu-racy| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 667--668
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 678--678
+Underfull \hbox (badness 10000) in paragraph at lines 660--660
  []\T1/ptm/m/n/8 Table 6: |\T1/ptm/b/n/8 Fac-tor In-flu-ence Anal-y-sis| 
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 693--694
+Underfull \hbox (badness 1776) in paragraph at lines 675--676
  [][] 
  []
 
-[10] (PROCS_ ICMLDE 2025.bbl
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 66
-.
-
-(C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-[11]) [12] (PROCS_ ICMLDE 2025.aux)
+[9] (PROCS_ ICMLDE 2025.bbl [10]) [11] (PROCS_ ICMLDE 2025.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -2120,26 +1762,16 @@ L3 programming layer <2024-01-04>
  ) 
 Here is how much of TeX's memory you used:
  34097 strings out of 474486
- 631653 string characters out of 5744227
- 1948542 words of memory out of 5000000
- 55560 multiletter control sequences out of 15000+600000
- 684113 words of font info for 250 fonts, out of 8000000 for 9000
+ 631951 string characters out of 5744227
+ 1946542 words of memory out of 5000000
+ 55558 multiletter control sequences out of 15000+600000
+ 684734 words of font info for 252 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,117p,1116b,734s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxb.
-pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtx
-mi.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/
-rtxr.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfont
-s/txsy.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfo
-nts/txsyc.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/cour
-ier/ucrr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/hel
-vetic/uhvr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/t
-imes/utmb8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ti
-mes/utmr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/tim
-es/utmri8a.pfb>
-Output written on "PROCS_ ICMLDE 2025.pdf" (12 pages, 1979721 bytes).
+ 99i,14n,117p,1802b,666s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxb.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "PROCS_ ICMLDE 2025.pdf" (11 pages, 1983564 bytes).
 PDF statistics:
- 376 PDF objects out of 1000 (max. 8388607)
- 102 named destinations out of 1000 (max. 500000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 101 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

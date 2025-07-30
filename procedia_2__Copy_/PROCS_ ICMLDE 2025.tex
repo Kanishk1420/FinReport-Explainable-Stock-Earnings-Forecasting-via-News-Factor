@@ -389,17 +389,7 @@ The return forecast is computed using a weighted combination of multiple factors
 &\quad + 0.10 \times \mathbf{news\_effect\_factor} + \mathbf{0.25} \times \mathbf{event\_factor} + 0.15
 \end{align}
 
-Each factor is calculated using established methodologies \cite{Carhart1997}:
-\begin{itemize}
-\item \textbf{Market Factor} \cite{FAMA1993}: Analysis based on volatility, price trends, sentiment, and technical indicators (RSI) to determine market impact with high volatility adjustments and overbought/oversold conditions.
-\item \textbf{Size Factor} \cite{Banz1981}: Company size classification using market capitalization and total assets, with sentiment-adjusted effects that amplify small-cap volatility compared to large-cap stability.
-\item \textbf{Profitability Factor} \cite{Zhang2006}: Standard profitability metrics (ROA, ROE, profit margins) analysis with sentiment-based adjustments and earnings-related news amplification.
-\item \textbf{Valuation Factor} \cite{Rosenberg1985}: Valuation metrics (Book-to-Market, Dividend Yield, Sales-to-Price) combined with sector-specific sentiment adjustments for pharmaceuticals, technology, and general market conditions.
-\item \textbf{Investment Factor} \cite{Daniel1998}: Investment amount extraction and type analysis (M\&A, expansion, R\&D) with size-based effects and activity-based modifications.
-\item \textbf{News Effect Factor} \cite{TETLOCK2007}: Sentiment score analysis with content-specific adjustments for earnings, guidance, management changes, and regulatory issues, amplified by 2.0x multiplier.
-\item \textbf{Event Factor} \cite{Ball1968}: Positive and negative event keyword counting with financial impact extraction and directional effect computation.
-\item \textbf{Factor Amplification} \cite{Harvey2016}: Systematic enhancement using 2.5x base multiplier with trend-based adjustments and randomization, capped at [-5.0, 5.0] bounds.
-\end{itemize}
+Each factor is calculated using established methodologies \cite{Carhart1997}: \textbf{Market Factor} \cite{FAMA1993}: Analysis based on volatility, price trends, sentiment, and technical indicators (RSI) to determine market impact with high volatility adjustments and overbought/oversold conditions. \textbf{Size Factor} \cite{Banz1981}: Company size classification using market capitalization and total assets, with sentiment-adjusted effects that amplify small-cap volatility compared to large-cap stability. \textbf{Profitability Factor} \cite{Zhang2006}: Standard profitability metrics (ROA, ROE, profit margins) analysis with sentiment-based adjustments and earnings-related news amplification. \textbf{Valuation Factor} \cite{Rosenberg1985}: Valuation metrics (Book-to-Market, Dividend Yield, Sales-to-Price) combined with sector-specific sentiment adjustments for pharmaceuticals, technology, and general market conditions. \textbf{Investment Factor} \cite{Daniel1998}: Investment amount extraction and type analysis (M\&A, expansion, R\&D) with size-based effects and activity-based modifications. \textbf{News Effect Factor} \cite{TETLOCK2007}: Sentiment score analysis with content-specific adjustments for earnings, guidance, management changes, and regulatory issues, amplified by 2.0x multiplier. \textbf{Event Factor} \cite{Ball1968}: Positive and negative event keyword counting with financial impact extraction and directional effect computation. \textbf{Factor Amplification} \cite{Harvey2016}: Systematic enhancement using 2.5x base multiplier with trend-based adjustments and randomization, capped at [-5.0, 5.0] bounds.
 
 \subsection{Risk Assessment Methodology}
 Risk assessment combines volatility classification, weighted scoring using Equation (2), and metrics including EGARCH-based volatility (Equation 3), Maximum Drawdown, CVaR, and Risk-Adjusted Ratio as detailed in Algorithm~\ref{alg:max_drawdown}, Algorithm~\ref{alg:cvar}, and Algorithm~\ref{alg:risk_adjusted} \cite{Jorion2001}.
@@ -482,43 +472,35 @@ Overall trend determination uses weighted factor aggregation as shown in Algorit
 \caption{Overall Market Trend}
 \label{alg:market_trend}
 \begin{algorithmic}[1]
-    \Require Factor values dictionary $F$
-    \Ensure Overall market trend classification
+    \Require Factor values $F$
+    \Ensure Market trend classification
     
-    \State Define weights: $W = \{$market: 0.15, size: 0.15, valuation: 0.10,
-    \State \hspace{15mm} profitability: 0.15, investment: 0.20,
-    \State \hspace{15mm} news\_effect: 0.10, event: 0.15$\}$
-
-    \State Initialize $S_{\text{weighted}} \gets 0$, $S_{\text{weights}} \gets 0$
+    \State Define weights $W$ for factors: \texttt{market (0.15), size (0.15), valuation (0.10),}
+    \Statex \hspace{8mm} \texttt{profitability (0.15), investment (0.20), news\_effect (0.10), event (0.15)}
     
-    \For{each factor $f$ in $W$}
+    \State $S_w \gets 0$, $W_s \gets 0$
+    \For{each $f \in W$}
         \If{$f \in F$ and $F[f] \neq \text{None}$}
-            \State $S_{\text{weighted}} \gets S_{\text{weighted}} + F[f] \cdot W[f]$
-            \State $S_{\text{weights}} \gets S_{\text{weights}} + W[f]$
+            \State $S_w \gets S_w + F[f] \cdot W[f]$
+            \State $W_s \gets W_s + W[f]$
         \EndIf
     \EndFor
-
-    \If{$0 < S_{\text{weights}} < 1.0$}
-        \State Normalize: $S_{\text{weighted}} \gets S_{\text{weighted}} / S_{\text{weights}}$
-    \EndIf
     
-    \State Add positive bias: $S_{\text{weighted}} \gets S_{\text{weighted}} + 0.15$
+    \If{$0 < W_s < 1$} \State $S_w \gets S_w / W_s$ \EndIf
+    \State $S_w \gets S_w + 0.15$ \Comment{Positive bias}
 
-    \If{$S_{\text{weighted}} \geq 0.6$}
-        \State \Return "Strongly Positive"
-    \ElsIf{$S_{\text{weighted}} \geq 0.15$}
-        \State \Return "Positive"  
-    \ElsIf{$S_{\text{weighted}} \geq -0.15$}
-        \State \Return "Neutral"
-    \ElsIf{$S_{\text{weighted}} \geq -0.6$}
-        \State \Return "Negative"
-    \Else
-        \State \Return "Strongly Negative"
-    \EndIf
+    \State \Return classification based on $S_w$: 
+    \Statex \hspace{4mm} $\geq 0.6$: \texttt{"Strongly Positive"}, 
+    $\geq 0.15$: \texttt{"Positive"},
+    \Statex \hspace{4mm} $\geq -0.15$: \texttt{"Neutral"},
+    $\geq -0.6$: \texttt{"Negative"}, else: \texttt{"Strongly Negative"}
 \end{algorithmic}
 \end{algorithm}
 
+\vspace{0.5cm}
 \section{Result Analysis}
+
+%\subsection{Dataset and Configuration}
 This section deals with analysis of results.
 The evaluation utilized a comprehensive Chinese A-share dataset \cite{FinReportDataset2025} covering 75 stocks from Shanghai and Shenzhen exchanges (January 2018 - December 2021). 
 
