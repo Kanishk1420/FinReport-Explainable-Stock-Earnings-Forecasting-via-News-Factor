@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  30 JUL 2025 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  30 JUL 2025 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1757,16 +1757,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 1079--1080
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1091--1091
+Underfull \hbox (badness 10000) in paragraph at lines 1090--1090
  []\T1/ptm/m/n/8 Table 6: |\T1/ptm/b/n/8 Fac-tor In-flu-ence Anal-y-sis| 
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 1106--1107
+Underfull \hbox (badness 1776) in paragraph at lines 1105--1106
  [][] 
  []
 
-(PROCS_ ICMLDE 2025.bbl [16] [17]) [18] (PROCS_ ICMLDE 2025.aux)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16] (PROCS_ ICMLDE 2025.bbl [17]) [18] (PROCS_ ICMLDE 2025.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1776,14 +1779,14 @@ Here is how much of TeX's memory you used:
  34186 strings out of 474486
  632894 string characters out of 5744227
  1946542 words of memory out of 5000000
- 55581 multiletter control sequences out of 15000+600000
+ 55582 multiletter control sequences out of 15000+600000
  689941 words of font info for 266 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,117p,1222b,702s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,14n,117p,1222b,696s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxb.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxbmi.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txbsy.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "PROCS_ ICMLDE 2025.pdf" (18 pages, 2016105 bytes).
+Output written on "PROCS_ ICMLDE 2025.pdf" (18 pages, 2015349 bytes).
 PDF statistics:
- 497 PDF objects out of 1000 (max. 8388607)
- 161 named destinations out of 1000 (max. 500000)
+ 496 PDF objects out of 1000 (max. 8388607)
+ 160 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

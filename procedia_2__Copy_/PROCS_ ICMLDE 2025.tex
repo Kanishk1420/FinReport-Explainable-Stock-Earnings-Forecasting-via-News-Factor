@@ -1081,12 +1081,11 @@ Micro       & 0.238 & 0.459 & 0.421 & 0.298 \\
 
 % Strong correlations confirmed the market cap-accuracy relationship (Pearson r=0.78, Spearman $\rho$=0.81, p<0.001). Hierarchical regression controlling for sector, volume, and volatility retained market cap significance ($\Delta$R²=0.23, p<0.001). Ultra-large-cap stocks like 000333.SZ (R²=0.994) and 600519.SH (R²=0.992) demonstrated exceptional predictability versus smaller-cap stocks like 002385.SZ (MSE=1.297).
 
+\FloatBarrier
 \subsection{Factor Influence Analysis}
 Standardized regression analysis quantified relative factor impacts across all stocks:
 
-
-
-\begin{table}[!ht]
+\begin{table}[H]
 \centering
 \caption{\textbf{Factor Influence Analysis}}
 \renewcommand{\arraystretch}{1.3} % Increases row height
@@ -1110,37 +1109,9 @@ News Effect Factor showed remarkable consistency (-4.86±0.28), indicating stron
 
 \textbf{Error Distribution:} 3 ultra-low error stocks (MSE < 0.005, 4.3\%), 46 moderate error stocks (0.005 $\leq$ MSE $\leq$ 0.100, 65.7\%), and 21 high-error stocks (MSE > 0.100, 30.0\%) with extreme outliers 002385.SZ (MSE = 1.297) and 601727.SH (MSE = 1.246).
 
-\section{Conclusion and Future work}
-% FinReport successfully integrates technical indicators, financial news sentiment, and advanced risk metrics to deliver interpretable and accurate stock earnings forecasts, outperforming baseline models especially in large-cap and consumer stocks. The system demonstrates strong predictive capability with R² of 0.5515 and correlation of 0.948, indicating substantial explanatory power for stock return variance . 
-
-The news sentiment analysis using FinBERT revealed a consistent contrarian effect across Chinese markets, where negative sentiment precedes positive returns, supporting behavioral finance theories of market overreaction . Risk assessment integration using EGARCH volatility modeling and CVaR calculations  provides comprehensive risk-adjusted forecasting capabilities.
-
-Future enhancements will focus on incorporating advanced Large Language Models  for improved news analysis, dynamic factor weighting, and intelligent report generation, alongside scalability and regulatory compliance improvements. 
-
-% These efforts aim to refine prediction accuracy across market segments and enhance usability, maintaining FinReport’s balance of transparency and performance.
-
-
-% \section{Future Work}
-% Future research will focus on integrating advanced Large Language Models (LLMs) into the FinReport system to further enhance its analytical and forecasting capabilities. Specifically, we plan to implement a three-tier LLM integration strategy:
-% \begin{itemize}
-%     \item \textbf{Enhanced News Processing:} Replace the current FinBERT/AllenNLP pipeline with a fine-tuned domain-specific LLM (e.g., GPT-4 or similar) that can perform more sophisticated news analysis. Initial experiments suggest this could improve sentiment classification accuracy by 7-9\% and enable more nuanced event extraction, particularly for complex corporate actions and regulatory developments. The LLM would be fine-tuned on a curated dataset of 50,000+ Chinese financial news items with expert-annotated sentiment and event labels.
-% \item \textbf{Dynamic Factor Weighting:} Develop an adaptive mechanism where an LLM analyzes market conditions and recent performance to dynamically adjust factor weights in real-time. This would address the sector-specific performance variations identified in our evaluation by creating customized factor models that optimize for particular market segments or conditions. The system would incorporate feedback loops to continuously refine these weightings based on prediction accuracy.
-% \item \textbf{Intelligent Report Generation:} Implement an LLM-powered natural language generation module that produces contextual explanations of forecasts, highlighting key drivers and potential risks in accessible language. This would enhance the current HTML report with narrative elements that explain not just what the prediction is, but why it was made and what factors most influenced it.
-% \end{itemize}
-% To address the market capitalization bias, we will develop specialized models for different market cap tiers, with customized feature sets and factor calculations optimized for each segment. This approach will be particularly focused on improving performance for small and micro-cap stocks, where our current model shows the greatest limitations.
-
-% Additionally, we plan to explore real-world deployment considerations including:
-% \begin{itemize}
-%     \item \textbf{Scalability Optimization:} Implement parallel processing and selective feature computation to enable real-time processing of news and market data for hundreds of stocks simultaneously.
-% \item \textbf{Regulatory Compliance Framework:} Develop explicit documentation and explainability features to satisfy financial regulatory requirements in various jurisdictions, particularly focusing on China's evolving AI regulatory landscape.
-% \item \textbf{Practical Application Interfaces:} Create API access and dashboard integrations for portfolio management systems, allowing seamless incorporation of FinReport predictions into existing investment workflows.
-% \item \textbf{Customized Risk Preferences:} Implement user-specific risk tolerance settings that adjust report generation.
-% \end{itemize}
-% The contrarian nature of the News Effect Factor warrants deeper investigation through controlled experiments comparing predictive performance across different market regimes (bull, bear, and sideways). Understanding the temporal dynamics between news sentiment and subsequent market reactions could yield valuable insights for algorithmic trading strategies.
-% In summary, future developments will focus on enhancing both the analytical power and practical usability of FinReport, with particular emphasis on addressing current limitations while maintaining the system's core strength of explainable prediction that balances accuracy with transparency.
-
+\FloatBarrier
 % Add space to prevent vbox issues
-\vspace*{-3pt}
+\vspace*{-3pt} 
 
 \bibliographystyle{elsarticle-num}
 \bibliography{REFERENCES}
