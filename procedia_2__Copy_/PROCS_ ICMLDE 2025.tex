@@ -315,110 +315,49 @@ Early forecasting methods like ARIMA \cite{Box1970} and technical indicators \ci
 
 \section{System Model And Proposed Mechanism}
 
+FinReport integrates traditional multi-factor models \cite{FAMA1993,Carhart1997} with real-time news sentiment analysis \cite{TETLOCK2007,Xing2018}, extending established financial theory to capture behavioral market dynamics \cite{Daniel1998,Campbell2001}. The system employs a modular design with five interconnected components: (1) Data Integration, (2) News Factor Extraction, (3) Return Forecasting, (4) Risk Assessment, and (5) Dynamic Report Generation \cite{Fischer2018}.
 
-FinReport integrates traditional financial theory with modern computational techniques, combining quantitative factor models \cite{FAMA1993,Carhart1997} with news sentiment analysis \cite{TETLOCK2007,Xing2018}. Extending established multi-factor models \cite{Banz1981,Rosenberg1985}, the framework incorporates real-time news sentiment and event extraction to capture behavioral market dynamics \cite{Daniel1998,Campbell2001}.
-
-The system follows a modular design \cite{Fischer2018} with five interconnected modules: (1) Data Integration for preprocessing, (2) News Factor Extraction using NLP techniques, (3) Return Forecasting with enhanced multi-factor models, (4) Risk Assessment using econometric methods, and (5) Dynamic Report Generation. This approach addresses traditional technical analysis limitations \cite{Murphy1999,Wilder1978} through a unified framework adapting to different market regimes \cite{Lo2004}.
-
-FinReport modules collectively deliver explainable forecasts.
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.98\textwidth]{flowchart.jpg}
     \caption{Proposed FinReport System Architecture (adapted from \cite{Li2024})}
     \label{fig:workflow_diagram}
 \end{figure}
+
 \subsection{{Data Integration Module}}
 
-The system processes multi-modal data combining structured financial metrics with unstructured news text \cite{Harvey2016,Campbell2001}:
-
+Processes multi-modal financial data combining structured metrics with unstructured news text \cite{Harvey2016}:
 \begin{itemize}
-
-\item \textbf{Historical Data:} Price, volume, market value, and 50+ technical indicators \cite{Murphy1999,Wilder1978} from Chinese A-shares (2018-2021) \cite{FinReportDataset2025}.
-
-\item \textbf{News Integration:} Financial news processing with NLP pipelines for English/Chinese content \cite{Loughran2011,Xing2018}.
-
-\item \textbf{Preprocessing:} Forward-filling for missing values, Z-score normalization, winsorization for outliers, regex-based text cleaning, and technical indicator standardization \cite{Fischer2018,Harvey2016}.
+\item \textbf{Historical Data:} Price, volume, market capitalization, and 50+ technical indicators from Chinese A-shares (2018-2021) \cite{FinReportDataset2025,Murphy1999}.
+\item \textbf{News Processing:} Bilingual NLP pipelines for English/Chinese financial news \cite{Loughran2011,Xing2018}.
+\item \textbf{Data Preprocessing:} Z-score normalization, outlier winsorization, and missing value imputation \cite{Fischer2018}.
 \end{itemize}
+
 \subsection{{News Factor Extraction Module}}
 
-Transforms unstructured news text into quantifiable sentiment metrics \cite{TETLOCK2007,Schumaker2009} through:
+Converts unstructured news into quantifiable sentiment metrics through two main components \cite{TETLOCK2007,Schumaker2009}:
 
-\begin{itemize}
-\item \textbf{Advanced Sentiment Analysis Pipeline:} The sentiment analysis component implements state-of-the-art techniques specifically adapted for financial text analysis, addressing the unique challenges of financial language where sentiment can be highly context-dependent \cite{Loughran2011}:
+\textbf{Sentiment Analysis:} Domain-specific FinBERT implementation \cite{Araci2019} generates sentiment scores [-1,+1], enhanced with financial keyword dictionaries \cite{Loughran2011}. Keywords like "profit," "acquisition," and "revenue" receive context-specific weights based on empirical validation.
 
-\begin{itemize}
-\item \textbf{FinBERT Implementation:} Integration of the domain-specific BERT model pre-trained on extensive financial corpora \cite{Araci2019,Devlin2019} produces raw sentiment scores in the range $[-1, +1]$, where -1 indicates highly negative sentiment and +1 indicates highly positive sentiment. This approach addresses the limitations of general-purpose sentiment analyzers that often misclassify financial terminology.
+\textbf{Event Extraction:} Semantic role labeling via AllenNLP \cite{Gardner2018} identifies structured financial events (acquisitions, earnings, regulatory actions). Daily news aggregation employs recency weighting to capture temporal decay patterns in news impact \cite{TETLOCK2007}.
 
-\item \textbf{Domain-Specific Sentiment Augmentation:} Core sentiment scores are systematically enhanced through financial keyword analysis incorporating established financial dictionaries \cite{Loughran2011}. Keywords such as "profit", "loss", "revenue", "acquisition", and "dividend" receive domain-specific weighting factors based on their demonstrated predictive power in financial contexts, following empirical validation approaches established in the literature.
-\end{itemize}
+\textbf{Chinese Adaptation:} Incorporates culturally-specific terminology including positive terms (zengzhang-growth, yingli-profit) and negative terms (kuisun-loss, jinggao-warning) for enhanced local market relevance \cite{FinReportDataset2025}.
 
-\item \textbf{Structured Event Extraction Engine:} The event extraction component employs modern semantic role labeling techniques to identify and categorize financial events that have demonstrated market impact in academic studies \cite{Ding2015,Daniel1998}:
-
-\begin{itemize}
-\item \textbf{Semantic Role Labeling (SRL):} Implementation of the AllenNLP framework \cite{Gardner2018,Shi2017} enables identification of grammatical relationships through subject-verb-object pattern recognition. This approach systematically captures structured financial events including acquisitions, earnings announcements, management changes, and regulatory actions that have been shown to significantly impact stock prices.
-
-\item \textbf{Financial Keyword Enhancement:} Domain-specific keyword dictionaries improve event recognition accuracy by incorporating finance-specific terminology validated through extensive backtesting. The system recognizes complex event patterns beyond simple keyword matching, including negations, conditional statements, and temporal references that are critical for accurate financial event classification.
-
-\item \textbf{Temporal Integration:} Daily aggregation of multiple news items employs recency and relevance weighting schemes that account for the documented decay patterns in news impact on stock prices \cite{TETLOCK2007}. Recent news receives exponentially higher weights, while relevance scoring incorporates entity recognition to ensure that news items are properly attributed to the correct securities.
-\end{itemize}
-
-\item \textbf{Architecture Integration:} Direct interfaces to forecasting system with structured \texttt{(event\_type, entities, magnitude)} tuples for Event Factor computation and temporal sentiment curves for volatility estimation.
-
-\item \textbf{Chinese Market Adaptation:} Bilingual text processing addressing Chinese disclosure practices \cite{FinReportDataset2025}.
-\end{itemize}
 \subsection{{Return Forecasting Module}}
 
-The return forecasting module implements an enhanced multi-factor model extending traditional approaches \cite{FAMA1993,Carhart1997} by integrating news sentiment and event-driven factors \cite{Harvey2016,TETLOCK2007}. The framework incorporates six factors capturing cross-sectional return variation from size effects \cite{Banz1981} to momentum patterns \cite{Jegadeesh1993}.
+Implements enhanced multi-factor model with six factors capturing cross-sectional return variation \cite{FAMA1993,Harvey2016}:
 
-\subsubsection{{Market Factor}}
+\textbf{Market Factor:} Combines volatility measures using rolling standard deviation with news sentiment, implementing regime-dependent behavior for high/low volatility periods \cite{Bollerslev1986,French1987}.
 
-Combines traditional volatility measures with news-based sentiment indicators following behavioral finance principles \cite{Daniel1998,Campbell2001}. Volatility is calculated using rolling standard deviation of percentage changes over recent trading days, following established GARCH methodologies \cite{Bollerslev1986,Engle1982}. The framework implements regime-dependent behavior with negative bias for high volatility periods reflecting flight-to-quality effects and positive bias for low volatility enhanced by news sentiment \cite{French1987}.
+\textbf{Size Factor:} Market capitalization changes relative to historical averages, enhanced with news-extracted financial impact through keyword recognition \cite{Banz1981,Loughran2011}.
 
-\subsubsection{{Size Factor}}
+\textbf{Valuation Factor:} Traditional metrics (Book-to-Market, Dividend Yield) with sector-specific adjustments and news sentiment integration \cite{Rosenberg1985,FAMA1993}.
 
-Extends size effect research \cite{Banz1981} by incorporating financial impact extracted from news using NLP techniques \cite{Loughran2011}. The size factor employs market capitalization changes relative to historical averages, following established methodologies in asset pricing literature \cite{FAMA1993}. News impact is quantified through financial keyword extraction and entity recognition to capture market value fluctuations driven by sentiment \cite{Xing2018}.
+\textbf{Profitability Factor:} EPS, ROE, ROA analysis with asymmetric treatment for losses and earnings keyword analysis \cite{Zhang2006,Kothari2009}.
 
-\subsubsection{{Valuation Factor}}
+\textbf{Investment Factor:} Activity classification (acquisition, expansion, R\&D) with sentiment-based conditional scaling \cite{Daniel1998,Ball1968}.
 
-Extends value investing principles \cite{Rosenberg1985,FAMA1993} incorporating quantitative metrics (Book-to-Market, Dividend Yield, Sales-to-Price) and news sentiment \cite{Loughran2011}. Applies sector-specific adjustments: Technology (+0.3/-0.2), Pharmaceutical (+0.2/-0.3), Financial (±0.2-0.3).
-
-\subsubsection{{Profitability Factor}}
-
-Incorporates earnings quality effects \cite{Zhang2006} using EPS, ROE, ROA, and profit margins with textual analysis of earnings keywords. Applies asymmetric treatment with negative bias (-1.8) for losses and scaled positive adjustments \cite{Kothari2009}.
-
-\subsubsection{{Investment Factor}}
-
-Captures investment activity effects \cite{Daniel1998} through investment amounts and activity classification with sector-specific weightings for acquisition, expansion, and R\&D activities \cite{Kothari2009}. The factor implementation incorporates conditional scaling based on news sentiment polarity, following established practices in event-driven asset pricing models \cite{Ball1968}.
-\subsubsection{{News Effect Factor}}
-
-The news effect factor provides direct quantification of news sentiment impact, building upon established research demonstrating the predictive power of news sentiment for stock returns \cite{TETLOCK2007,Schumaker2009}.
-
-\begin{itemize}
-    \item \textbf{Input Processing:} Comprehensive sentiment analysis of \texttt{news\_text} using both rule-based approaches (TextBlob \cite{Loria2019}) and keyword-based analysis with financial term dictionaries \cite{Loughran2011}.
-    \item \textbf{Methodological Foundation:} Converts unstructured news content into quantified sentiment scores through validated NLP techniques, addressing the documented challenges in financial text analysis while maintaining interpretability of results.
-\end{itemize}
-
-The implementation combines two complementary sentiment analysis methodologies:
-
-\textbf{1. Keyword-Based Analysis:} Utilizes curated financial keyword dictionaries with demonstrated predictive power:
-\begin{itemize}
-\item \textbf{Positive indicators:} increase, rise, grow, profit, improved, partnership, acquisition, dividend, earnings, success
-\item \textbf{Negative indicators:} decrease, decline, loss, warning, investigation, lawsuit, delay, weak, miss, reduced
-\end{itemize}
-
-\textbf{2. Advanced NLP Processing:} Employs TextBlob \cite{Loria2019} sentiment analysis for comprehensive polarity assessment of complete news content, addressing contextual nuances that pure keyword approaches might miss.
-
-The sentiment integration follows established practices in combining multiple sentiment measures \cite{Loughran2011,TETLOCK2007}. The methodology implements weighted averaging of TextBlob polarity scores and keyword-based sentiment analysis, with sentiment-dependent scaling reflecting documented non-linear relationships between sentiment strength and market response \cite{Daniel1998}. Final amplification ensures adequate signal strength while maintaining interpretable bounds.
-
-\textbf{Chinese Market Adaptation:} The system incorporates culturally specific keywords for enhanced market relevance:
-
-\textbf{Positive Chinese Terms:} zengzhang (growth), yingli (profit), shangsheng (rise), huode (gain), chenggong (success), tisheng (improvement), shouyi (revenue)
-
-\textbf{Negative Chinese Terms:} xiajiang (decline), kuisun (loss), jianshao (decrease), jinggao (warning), zhaiwu (debt), diaocha (investigation), weigui (violation)
-
-The news effect factor employs multiplicative amplification to ensure adequate signal strength while maintaining bounded interpretability, following established practices in sentiment-based financial modeling \cite{TETLOCK2007,Schumaker2009}.
-
-These factor implementations collectively address the multidimensional nature of equity return prediction while maintaining theoretical grounding in established academic research. The integration of traditional quantitative factors with news-based qualitative information represents a significant advancement in multi-factor modeling capabilities, particularly relevant for emerging markets where information asymmetries and sentiment effects may be more pronounced \cite{Harvey2016}.
+\textbf{News Effect Factor:} Direct sentiment quantification using weighted combination of TextBlob polarity and keyword analysis, with culturally-adapted terms and amplification for adequate signal strength \cite{TETLOCK2007,Loria2019}.
 
 \subsection{{Risk Assessment Module}}
 
