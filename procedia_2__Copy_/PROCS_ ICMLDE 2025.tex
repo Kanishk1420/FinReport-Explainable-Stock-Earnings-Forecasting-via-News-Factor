@@ -372,26 +372,11 @@ The return forecasting module implements an enhanced multi-factor model extendin
 
 \subsubsection{{Market Factor}}
 
-Combines traditional volatility measures with news-based sentiment indicators following behavioral finance principles \cite{Daniel1998,Campbell2001}:
-
-\begin{equation}
-\textbf{volatility} = \text{std}(\texttt{pct\_chg}_{\text{recent 5 days}}) \times 100
-\end{equation}
-
-Regime-dependent behavior:
-\begin{itemize}
-    \item \textbf{High volatility} (> 4.0\%): Negative bias reflecting flight-to-quality effects
-    \item \textbf{Moderate volatility} (> 2.5\%): Moderate negative impact with sentiment adjustment  
-    \item \textbf{Low volatility}: Positive bias enhanced by news sentiment
-\end{itemize}
+Combines traditional volatility measures with news-based sentiment indicators following behavioral finance principles \cite{Daniel1998,Campbell2001}. Volatility is calculated using rolling standard deviation of percentage changes over recent trading days, following established GARCH methodologies \cite{Bollerslev1986,Engle1982}. The framework implements regime-dependent behavior with negative bias for high volatility periods reflecting flight-to-quality effects and positive bias for low volatility enhanced by news sentiment \cite{French1987}.
 
 \subsubsection{{Size Factor}}
 
-Extends size effect research \cite{Banz1981} incorporating financial impact extracted from news using NLP techniques \cite{Loughran2011}:
-
-\begin{equation}
-\textbf{diff\_ratio} = \frac{\texttt{market\_value}_{\text{latest}} - \texttt{market\_value}_{\text{average}}}{\texttt{market\_value}_{\text{average}}}
-\end{equation}
+Extends size effect research \cite{Banz1981} by incorporating financial impact extracted from news using NLP techniques \cite{Loughran2011}. The size factor employs market capitalization changes relative to historical averages, following established methodologies in asset pricing literature \cite{FAMA1993}. News impact is quantified through financial keyword extraction and entity recognition to capture market value fluctuations driven by sentiment \cite{Xing2018}.
 
 \subsubsection{{Valuation Factor}}
 
@@ -403,14 +388,7 @@ Incorporates earnings quality effects \cite{Zhang2006} using EPS, ROE, ROA, and 
 
 \subsubsection{{Investment Factor}}
 
-Captures investment activity effects \cite{Daniel1998} through investment amounts and activity classification (acquisition +0.6, expansion +0.5, R\&D +0.7) bounded in [0.0, +2.0].
-\begin{equation}
-\textbf{investment\_effect} = \textbf{impact\_scale} \times 0.5 \times 
-\begin{cases} 
-1.0, & \text{if } \textbf{news\_sentiment} > 0 \\
-0.5, & \text{otherwise}
-\end{cases}
-\end{equation}
+Captures investment activity effects \cite{Daniel1998} through investment amounts and activity classification with sector-specific weightings for acquisition, expansion, and R\&D activities \cite{Kothari2009}. The factor implementation incorporates conditional scaling based on news sentiment polarity, following established practices in event-driven asset pricing models \cite{Ball1968}.
 \subsubsection{{News Effect Factor}}
 
 The news effect factor provides direct quantification of news sentiment impact, building upon established research demonstrating the predictive power of news sentiment for stock returns \cite{TETLOCK2007,Schumaker2009}.
@@ -430,91 +408,33 @@ The implementation combines two complementary sentiment analysis methodologies:
 
 \textbf{2. Advanced NLP Processing:} Employs TextBlob \cite{Loria2019} sentiment analysis for comprehensive polarity assessment of complete news content, addressing contextual nuances that pure keyword approaches might miss.
 
-The sentiment integration follows established practices in combining multiple sentiment measures:
-\begin{equation}
-    \textbf{combined\_sentiment} = \frac{\textbf{TextBlob\_polarity} + \textbf{keyword\_sentiment}}{2}
-\end{equation}
-\vspace{0.2cm}
-
-Sentiment-dependent scaling reflects documented non-linear relationships between sentiment strength and market response:
-
-\begin{itemize}
-    \item \textbf{Very positive} ($\geq 0.5$): Enhanced positive range [0.7, 1.2] reflecting strong optimism effects
-    \item \textbf{Moderately positive} (>0): Standard positive range [0.3, 0.7] for typical positive sentiment
-    \item \textbf{Moderately negative} (>-0.5): Standard negative range [-0.7, -0.3] for mild pessimism
-    \item \textbf{Very negative} ($\leq -0.5$): Enhanced negative range [-1.2, -0.7] capturing strong negative reactions
-\end{itemize}
-
-Final amplification (2.0x) ensures adequate signal strength while maintaining interpretable bounds [-2.0, +2.0].
+The sentiment integration follows established practices in combining multiple sentiment measures \cite{Loughran2011,TETLOCK2007}. The methodology implements weighted averaging of TextBlob polarity scores and keyword-based sentiment analysis, with sentiment-dependent scaling reflecting documented non-linear relationships between sentiment strength and market response \cite{Daniel1998}. Final amplification ensures adequate signal strength while maintaining interpretable bounds.
 
 \textbf{Chinese Market Adaptation:} The system incorporates culturally specific keywords for enhanced market relevance:
 
 \textbf{Positive Chinese Terms:} zengzhang (growth), yingli (profit), shangsheng (rise), huode (gain), chenggong (success), tisheng (improvement), shouyi (revenue)
 
 \textbf{Negative Chinese Terms:} xiajiang (decline), kuisun (loss), jianshao (decrease), jinggao (warning), zhaiwu (debt), diaocha (investigation), weigui (violation)
-\vspace{-0.1cm}
-\begin{equation}
-\textbf{news\_effect} = \textbf{combined\_sentiment} \times 2.0 \text{ (amplification)}
-\end{equation}
+
+The news effect factor employs multiplicative amplification to ensure adequate signal strength while maintaining bounded interpretability, following established practices in sentiment-based financial modeling \cite{TETLOCK2007,Schumaker2009}.
 
 These factor implementations collectively address the multidimensional nature of equity return prediction while maintaining theoretical grounding in established academic research. The integration of traditional quantitative factors with news-based qualitative information represents a significant advancement in multi-factor modeling capabilities, particularly relevant for emerging markets where information asymmetries and sentiment effects may be more pronounced \cite{Harvey2016}.
 
 \subsection{{Risk Assessment Module}}
 
-Implements multi-dimensional risk framework addressing traditional variance-based limitations \cite{Jorion2001,Rockafellar2000}:
-
-\begin{itemize}
-\item \textbf{EGARCH Volatility:} Asymmetric volatility responses with 95\% VaR = 1.65$\sigma_t$
-
-\item \textbf{Maximum Drawdown:} $\text{MDD}_t = \max_{0 \leq s \leq t} [(P_s - P_t)/P_s]$
-
-\item \textbf{CVaR:} Tail risk assessment $E[R | R \leq -\text{VaR}_{95}]$
-\end{itemize}
-
-\textbf{Integrated Risk Score:} $0.5 \times \text{volatility} + 0.3 \times \text{drawdown} + 0.2 \times \text{return}$
-
-\textbf{Risk Classifications:}
-\begin{itemize}
-\item Substantial >7.5
-\item High >6.0  
-\item Moderate-High >4.5
-\item Moderate >3.0
-\item Low-Moderate >1.5
-\item Favorable $\leq 1.5$
-\end{itemize}
+Implements multi-dimensional risk framework addressing traditional variance-based limitations \cite{Jorion2001,Rockafellar2000}. The framework incorporates EGARCH modeling for asymmetric volatility responses \cite{Nelson1991}, maximum drawdown calculations following established portfolio risk metrics \cite{Calvo2009}, and Conditional Value at Risk (CVaR) for tail risk assessment \cite{Rockafellar2000}. Risk classifications range from favorable to substantial based on integrated scoring combining volatility, drawdown, and return components \cite{DeMiguel2009}.
 
 \subsection{{Factor Enhancement and Overall Trend Calculation}}
 
-Combines individual factor signals through multi-stage amplification and weighted aggregation addressing scale heterogeneity \cite{Harvey2016,FAMA1993}:
-
-\begin{equation}
-\textbf{W} = 
-\begin{bmatrix} 
-\text{market\_factor} & 0.15 \\ 
-\text{size\_factor} & 0.15 \\ 
-\text{valuation\_factor} & 0.10 \\ 
-\text{profitability\_factor} & 0.15 \\ 
-\text{investment\_factor} & 0.20 \\ 
-\text{news\_effect\_factor} & 0.10 \\ 
-\text{event\_factor} & 0.25
-\end{bmatrix}
-\end{equation}
-
-Event factor receives highest weight (0.25) due to strong short-term predictive power \cite{Ding2015,Daniel1998}, Investment factor (0.20) for medium-term impact, Market/Size/Profitability factors (0.15) for balanced weighting \cite{FAMA1993,Carhart1997}.
+Combines individual factor signals through multi-stage amplification and weighted aggregation addressing scale heterogeneity \cite{Harvey2016,FAMA1993}. The weighting scheme assigns highest priority to event factors (0.25) due to strong short-term predictive power \cite{Ding2015,Daniel1998}, followed by investment factors (0.20) for medium-term impact, with balanced weighting for market, size, and profitability factors following established multi-factor model conventions \cite{FAMA1993,Carhart1997}.
 
 \subsubsection{{Enhancement Process}}
 
-Base amplification: $\textbf{enhanced\_factor}_i = \textbf{factor}_i \times 2.5$
-Trend-based enhancement: $1.3\times$ when factor aligns with dominant trend \cite{Lo2004}
-Final bounded processing: $\tilde{f}_i = \text{clamp}(\text{factor} \times \text{multiplier} \times \text{random}(0.9,1.1), -5.0, 5.0)$
+The enhancement methodology employs multiplicative amplification with trend-based adjustments when factors align with dominant market trends \cite{Lo2004}. Final processing includes bounded clamping and stochastic variation to ensure robustness while maintaining signal integrity \cite{Mandelbrot1963}.
 
 \subsubsection{{Weighted Aggregation}}
 
-\begin{equation}
-\text{Trend\_Score} = \sum_{i=1}^{7} \left(\tilde{f}_i \times w_i\right) + 0.15
-\end{equation}
-
-Positive bias (+0.15) reflects long-term equity market upward drift \cite{Fama1965}. Classification: Strongly Positive >+1.2, Positive +0.4 to +1.2, Neutral -0.4 to +0.4, Negative -1.2 to -0.4, Strongly Negative <-1.2.
+The trend score computation follows established factor model aggregation with positive bias reflecting long-term equity market upward drift \cite{Fama1965}. Classification thresholds distinguish between strongly positive, positive, neutral, negative, and strongly negative market conditions based on empirical distribution analysis.
 
 \subsection{Dynamic Report Generation Module}
 

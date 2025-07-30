@@ -158,6 +158,14 @@ N.~Jegadeesh, S.~Titman, Returns to buying winners and selling losers:
   Implications for stock market efficiency, The Journal of Finance 48~(1)
   (1993) 65--91.
 
+\bibitem{Bollerslev1986}
+T.~Bollerslev, Generalized autoregressive conditional heteroskedasticity,
+  Journal of Econometrics 31~(3) (1986) 307--327.
+
+\bibitem{French1987}
+K.~R. French, G.~W. Schwert, R.~F. Stambaugh, Expected stock returns and
+  volatility, Journal of Financial Economics 19~(1) (1987) 3--29.
+
 \bibitem{Zhang2006}
 X.-J. Zhang, Information uncertainty and stock returns, The Journal of Finance
   61~(1) (2006) 105--137.
@@ -165,6 +173,10 @@ X.-J. Zhang, Information uncertainty and stock returns, The Journal of Finance
 \bibitem{Kothari2009}
 S.~P. Kothari, J.~B. Warner, Econometrics of event studies, Handbook of
   Empirical Corporate Finance (2009) 3--36.
+
+\bibitem{Ball1968}
+R.~Ball, P.~Brown, An empirical evaluation of accounting income numbers,
+  Journal of Accounting Research 6~(2) (1968) 159--178.
 
 \bibitem{Loria2019}
 S.~Loria, textblob documentation, Release 0.15.2 (2019).
@@ -177,13 +189,23 @@ P.~Jorion, Value at Risk: The New Benchmark for Managing Financial Risk,
 R.~T. Rockafellar, S.~Uryasev, Optimization of conditional value-at-risk,
   Journal of Risk 2 (2000) 21--42.
 
+\bibitem{Calvo2009}
+M.~Calvo, P.~Grau-Carles, Multifractal analysis of financial time series,
+  Physica A: Statistical Mechanics and its Applications 388~(15-16) (2009)
+  2912--2922.
+
+\bibitem{DeMiguel2009}
+V.~DeMiguel, L.~Garlappi, R.~Uppal, Optimal versus naive diversification: How
+  inefficient is the 1/n portfolio strategy?, The Review of Financial Studies
+  22~(5) (2009) 1915--1953.
+
+\bibitem{Mandelbrot1963}
+B.~Mandelbrot, The variation of certain speculative prices, The Journal of
+  Business 36~(4) (1963) 394--419.
+
 \bibitem{Fama1965}
 E.~F. Fama, The behavior of stock-market prices, The Journal of Business 38~(1)
   (1965) 34--105.
-
-\bibitem{Ball1968}
-R.~Ball, P.~Brown, An empirical evaluation of accounting income numbers,
-  Journal of Accounting Research 6~(2) (1968) 159--178.
 
 \bibitem{Fama1995}
 E.~F. Fama, K.~R. French, Size and book-to-market factors in earnings and
