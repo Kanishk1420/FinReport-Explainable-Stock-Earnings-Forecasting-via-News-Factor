@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  30 JUL 2025 22:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  30 JUL 2025 22:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1949,8 +1949,7 @@ Package pdftex.def Info: flowchart.jpg  used on input line 322.
 (pdftex.def)             Requested size: 458.638pt x 166.45103pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 323--323
- []\T1/ptm/m/n/8 Figure 1: |Pro-posed Fin-Re-port Sys-tem Ar-chi-tec-ture (adap
-ted from [[]])| 
+ []\T1/ptm/m/n/8 Figure 1: |Pro-posed Fin-Re-port Sys-tem Ar-chi-tec-ture| 
  []
 
 [2 <./flowchart.jpg>] [3] [4]
@@ -1971,7 +1970,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 479--480
  event
  []
 
-<Picture2.png, id=200, 867.24pt x 578.16pt>
+<Picture2.png, id=163, 867.24pt x 578.16pt>
 File: Picture2.png Graphic file (type png)
 <use Picture2.png>
 Package pdftex.def Info: Picture2.png  used on input line 513.
@@ -2058,7 +2057,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 552--563
 Underfull \vbox (badness 3058) has occurred while \output is active []
 
  [7 <./Picture2.png>]
-<Picture3.png, id=222, 457.929pt x 356.094pt>
+<Picture3.png, id=184, 457.929pt x 356.094pt>
 File: Picture3.png Graphic file (type png)
 <use Picture3.png>
 Package pdftex.def Info: Picture3.png  used on input line 569.
@@ -2111,20 +2110,20 @@ Underfull \hbox (badness 1776) in paragraph at lines 675--676
  [][] 
  []
 
-[9] (PROCS_ ICMLDE 2025.bbl [10]) [11] (PROCS_ ICMLDE 2025.aux)
+[9] (PROCS_ ICMLDE 2025.bbl) [10] (PROCS_ ICMLDE 2025.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 34049 strings out of 474486
- 630826 string characters out of 5744227
+ 33972 strings out of 474486
+ 629524 string characters out of 5744227
  1946542 words of memory out of 5000000
- 55524 multiletter control sequences out of 15000+600000
+ 55467 multiletter control sequences out of 15000+600000
  684113 words of font info for 250 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,117p,1696b,660s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,14n,117p,1626b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxb.
 pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtx
 mi.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/
@@ -2136,9 +2135,9 @@ vetic/uhvr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/t
 imes/utmb8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ti
 mes/utmr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on "PROCS_ ICMLDE 2025.pdf" (11 pages, 1976082 bytes).
+Output written on "PROCS_ ICMLDE 2025.pdf" (10 pages, 1966952 bytes).
 PDF statistics:
- 338 PDF objects out of 1000 (max. 8388607)
- 90 named destinations out of 1000 (max. 500000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 70 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

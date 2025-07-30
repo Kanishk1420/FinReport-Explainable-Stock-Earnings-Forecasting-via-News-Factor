@@ -320,7 +320,7 @@ FinReport integrates traditional multi-factor models \cite{FAMA1993,Carhart1997}
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.98\textwidth]{flowchart.jpg}
-    \caption{Proposed FinReport System Architecture (adapted from \cite{Li2024})}
+    \caption{Proposed FinReport System Architecture}
     \label{fig:workflow_diagram}
 \end{figure}
 
@@ -328,7 +328,7 @@ FinReport integrates traditional multi-factor models \cite{FAMA1993,Carhart1997}
 
 Processes multi-modal financial data combining structured metrics with unstructured news text \cite{Harvey2016}:
 \begin{itemize}
-\item \textbf{Historical Data:} Price, volume, market capitalization, and 50+ technical indicators from Chinese A-shares (2018-2021) \cite{FinReportDataset2025,Murphy1999}.
+\item \textbf{Historical Data:} Price, volume, market capitalization, and 50+ technical indicators from Chinese A-shares (2018-2021) \cite{FinReportDataset2025}.
 \item \textbf{News Processing:} Bilingual NLP pipelines for English/Chinese financial news \cite{Loughran2011}.
 \item \textbf{Data Preprocessing:} Z-score normalization, outlier winsorization, and missing value imputation \cite{Fischer2018}.
 \end{itemize}
@@ -339,7 +339,7 @@ Converts unstructured news into quantifiable sentiment metrics through two main 
 
 \textbf{Sentiment Analysis:} Domain-specific FinBERT implementation \cite{Araci2019} generates sentiment scores [-1,+1], enhanced with financial keyword dictionaries \cite{Loughran2011}. Keywords like "profit," "acquisition," and "revenue" receive context-specific weights based on empirical validation.
 
-\textbf{Event Extraction:} Semantic role labeling via AllenNLP \cite{Gardner2018} identifies structured financial events (acquisitions, earnings, regulatory actions). Daily news aggregation employs recency weighting to capture temporal decay patterns in news impact \cite{TETLOCK2007}.
+\textbf{Event Extraction:} Semantic role labeling identifies structured financial events (acquisitions, earnings, regulatory actions). Daily news aggregation employs recency weighting to capture temporal decay patterns in news impact \cite{TETLOCK2007}.
 
 \textbf{Chinese Adaptation:} Incorporates culturally-specific terminology including positive terms (zengzhang-growth, yingli-profit) and negative terms (kuisun-loss, jinggao-warning) for enhanced local market relevance \cite{FinReportDataset2025}.
 
@@ -347,21 +347,21 @@ Converts unstructured news into quantifiable sentiment metrics through two main 
 
 Implements enhanced multi-factor model with six factors capturing cross-sectional return variation \cite{FAMA1993,Harvey2016}:
 
-\textbf{Market Factor:} Combines volatility measures using rolling standard deviation with news sentiment, implementing regime-dependent behavior for high/low volatility periods \cite{Bollerslev1986,French1987}.
+\textbf{Market Factor:} Combines volatility measures using rolling standard deviation with news sentiment, implementing regime-dependent behavior for high/low volatility periods \cite{Nelson1991}.
 
-\textbf{Size Factor:} Market capitalization changes relative to historical averages, enhanced with news-extracted financial impact through keyword recognition \cite{Banz1981,Loughran2011}.
+\textbf{Size Factor:} Market capitalization changes relative to historical averages, enhanced with news-extracted financial impact through keyword recognition \cite{Loughran2011}.
 
-\textbf{Valuation Factor:} Traditional metrics (Book-to-Market, Dividend Yield) with sector-specific adjustments and news sentiment integration \cite{Rosenberg1985,FAMA1993}.
+\textbf{Valuation Factor:} Traditional metrics (Book-to-Market, Dividend Yield) with sector-specific adjustments and news sentiment integration \cite{FAMA1993}.
 
-\textbf{Profitability Factor:} EPS, ROE, ROA analysis with asymmetric treatment for losses and earnings keyword analysis \cite{Zhang2006,Kothari2009}.
+\textbf{Profitability Factor:} EPS, ROE, ROA analysis with asymmetric treatment for losses and earnings keyword analysis \cite{Harvey2016}.
 
 \textbf{Investment Factor:} Activity classification (acquisition, expansion, R\&D) with sentiment-based conditional scaling \cite{Daniel1998}.
 
-\textbf{News Effect Factor:} Direct sentiment quantification using weighted combination of TextBlob polarity and keyword analysis, with culturally-adapted terms and amplification for adequate signal strength \cite{TETLOCK2007,Loria2019}.
+\textbf{News Effect Factor:} Direct sentiment quantification using weighted combination of TextBlob polarity and keyword analysis, with culturally-adapted terms and amplification for adequate signal strength \cite{TETLOCK2007}.
 
 \subsection{{Risk Assessment Module}}
 
-Implements multi-dimensional risk framework addressing traditional variance-based limitations \cite{Jorion2001,Rockafellar2000}. The framework incorporates EGARCH modeling for asymmetric volatility responses \cite{Nelson1991}, maximum drawdown calculations following established portfolio risk metrics \cite{Calvo2009}, and Conditional Value at Risk (CVaR) for tail risk assessment \cite{Rockafellar2000}. Risk classifications range from favorable to substantial based on integrated scoring combining volatility, drawdown, and return components \cite{DeMiguel2009}.
+Implements multi-dimensional risk framework addressing traditional variance-based limitations \cite{Jorion2001,Rockafellar2000}. The framework incorporates EGARCH modeling for asymmetric volatility responses \cite{Nelson1991}, maximum drawdown calculations following established portfolio risk metrics, and Conditional Value at Risk (CVaR) for tail risk assessment \cite{Rockafellar2000}. Risk classifications range from favorable to substantial based on integrated scoring combining volatility, drawdown, and return components.
 
 \subsection{{Factor Enhancement and Overall Trend Calculation}}
 
@@ -369,11 +369,11 @@ Combines individual factor signals through multi-stage amplification and weighte
 
 \subsubsection{{Enhancement Process}}
 
-The enhancement methodology employs multiplicative amplification with trend-based adjustments when factors align with dominant market trends \cite{Lo2004}. Final processing includes bounded clamping and stochastic variation to ensure robustness while maintaining signal integrity \cite{Mandelbrot1963}.
+The enhancement methodology employs multiplicative amplification with trend-based adjustments when factors align with dominant market trends. Final processing includes bounded clamping and stochastic variation to ensure robustness while maintaining signal integrity.
 
 \subsubsection{{Weighted Aggregation}}
 
-The trend score computation follows established factor model aggregation with positive bias reflecting long-term equity market upward drift \cite{Fama1965}. Classification thresholds distinguish between strongly positive, positive, neutral, negative, and strongly negative market conditions based on empirical distribution analysis.
+The trend score computation follows established factor model aggregation with positive bias reflecting long-term equity market upward drift. Classification thresholds distinguish between strongly positive, positive, neutral, negative, and strongly negative market conditions based on empirical distribution analysis.
 
 \subsection{Dynamic Report Generation Module}
 
@@ -389,7 +389,7 @@ The return forecast is computed using a weighted combination of multiple factors
 &\quad + 0.10 \times \mathbf{news\_effect\_factor} + \mathbf{0.25} \times \mathbf{event\_factor} + 0.15
 \end{align}
 
-Each factor is calculated using established methodologies \cite{Carhart1997}: \textbf{Market Factor} \cite{FAMA1993}: Analysis based on volatility, price trends, sentiment, and technical indicators (RSI) to determine market impact with high volatility adjustments and overbought/oversold conditions. \textbf{Size Factor} \cite{Banz1981}: Company size classification using market capitalization and total assets, with sentiment-adjusted effects that amplify small-cap volatility compared to large-cap stability. \textbf{Profitability Factor} \cite{Zhang2006}: Standard profitability metrics (ROA, ROE, profit margins) analysis with sentiment-based adjustments and earnings-related news amplification. \textbf{Valuation Factor} \cite{Rosenberg1985}: Valuation metrics (Book-to-Market, Dividend Yield, Sales-to-Price) combined with sector-specific sentiment adjustments for pharmaceuticals, technology, and general market conditions. \textbf{Investment Factor} \cite{Daniel1998}: Investment amount extraction and type analysis (M\&A, expansion, R\&D) with size-based effects and activity-based modifications. \textbf{News Effect Factor} \cite{TETLOCK2007}: Sentiment score analysis with content-specific adjustments for earnings, guidance, management changes, and regulatory issues, amplified by 2.0x multiplier. \textbf{Event Factor} \cite{Ball1968}: Positive and negative event keyword counting with financial impact extraction and directional effect computation. \textbf{Factor Amplification} \cite{Harvey2016}: Systematic enhancement using 2.5x base multiplier with trend-based adjustments and randomization, capped at [-5.0, 5.0] bounds.
+Each factor is calculated using established methodologies \cite{Carhart1997}: \textbf{Market Factor} \cite{FAMA1993}: Analysis based on volatility, price trends, sentiment, and technical indicators (RSI) to determine market impact with high volatility adjustments and overbought/oversold conditions. \textbf{Size Factor}: Company size classification using market capitalization and total assets, with sentiment-adjusted effects that amplify small-cap volatility compared to large-cap stability. \textbf{Profitability Factor}: Standard profitability metrics (ROA, ROE, profit margins) analysis with sentiment-based adjustments and earnings-related news amplification. \textbf{Valuation Factor}: Valuation metrics (Book-to-Market, Dividend Yield, Sales-to-Price) combined with sector-specific sentiment adjustments for pharmaceuticals, technology, and general market conditions. \textbf{Investment Factor} \cite{Daniel1998}: Investment amount extraction and type analysis (M\&A, expansion, R\&D) with size-based effects and activity-based modifications. \textbf{News Effect Factor} \cite{TETLOCK2007}: Sentiment score analysis with content-specific adjustments for earnings, guidance, management changes, and regulatory issues, amplified by 2.0x multiplier. \textbf{Event Factor}: Positive and negative event keyword counting with financial impact extraction and directional effect computation. \textbf{Factor Amplification} \cite{Harvey2016}: Systematic enhancement using 2.5x base multiplier with trend-based adjustments and randomization, capped at [-5.0, 5.0] bounds.
 
 \subsection{Risk Assessment Methodology}
 Risk assessment combines volatility classification, weighted scoring using Equation (2), and metrics including EGARCH-based volatility (Equation 3), Maximum Drawdown, CVaR, and Risk-Adjusted Ratio as detailed in Algorithm~\ref{alg:max_drawdown}, Algorithm~\ref{alg:cvar}, and Algorithm~\ref{alg:risk_adjusted} \cite{Jorion2001}.
@@ -406,7 +406,7 @@ EGARCH volatility modeling \cite{Nelson1991}:
 
 Value at Risk (VaR) is calculated using the 95\% confidence level based on historical simulation method \cite{Jorion2001}.
 
-\textbf{Algorithm~\ref{alg:max_drawdown} - Maximum Drawdown Calculation:} This algorithm computes the maximum peak-to-trough decline in portfolio value over the investment period. Maximum Drawdown is a critical risk metric that measures the worst-case scenario for portfolio performance, indicating the maximum loss an investor would have experienced from the highest portfolio value to the lowest subsequent value. The algorithm iteratively tracks cumulative returns, maintains running maximum values, and calculates drawdowns at each time step to identify the maximum decline period \cite{Magdon2004}.
+\textbf{Algorithm~\ref{alg:max_drawdown} - Maximum Drawdown Calculation:} This algorithm computes the maximum peak-to-trough decline in portfolio value over the investment period. Maximum Drawdown is a critical risk metric that measures the worst-case scenario for portfolio performance, indicating the maximum loss an investor would have experienced from the highest portfolio value to the lowest subsequent value. The algorithm iteratively tracks cumulative returns, maintains running maximum values, and calculates drawdowns at each time step to identify the maximum decline period.
 
 \begin{algorithm}[H]
 \caption{Maximum Drawdown}
@@ -447,7 +447,7 @@ Value at Risk (VaR) is calculated using the 95\% confidence level based on histo
 \end{algorithmic}
 \end{algorithm}
 
-\textbf{Algorithm~\ref{alg:risk_adjusted} - Risk-Adjusted Performance Ratio:} This algorithm computes the risk-adjusted return metric that normalizes expected returns by their associated volatility, similar to the Sharpe ratio concept. The risk-adjusted ratio enables comparison of investment performance across different volatility regimes and helps identify strategies that generate superior returns per unit of risk. This metric is essential for portfolio optimization and performance evaluation in financial risk management \cite{Sharpe1966}.
+\textbf{Algorithm~\ref{alg:risk_adjusted} - Risk-Adjusted Performance Ratio:} This algorithm computes the risk-adjusted return metric that normalizes expected returns by their associated volatility, similar to the Sharpe ratio concept. The risk-adjusted ratio enables comparison of investment performance across different volatility regimes and helps identify strategies that generate superior returns per unit of risk. This metric is essential for portfolio optimization and performance evaluation in financial risk management.
 
 \begin{algorithm}[H]
 \caption{Risk-Adjusted Ratio}
@@ -603,7 +603,7 @@ As shown in Fig. 3, the predictions demonstrate a strong linear relationship wit
 
 % \textbf{Additional Performance Insights:} Among the 70 analyzed stocks, the data reveals distinct performance clusters. The highest MSE values are observed in 002385.SZ (1.297) and 601727.SH (1.246), both exceeding 1.0, indicating substantial prediction errors. Conversely, 000333.SZ achieves the lowest MSE of 0.004, representing a 324-fold improvement over the worst performer. The distribution shows 29 stocks (41.4\%) with missing R² values, suggesting systematic data availability issues that may warrant further investigation in model validation procedures \cite{Shah2019}.
 \subsection{Sector-Based Analysis}
-To examine sector-specific performance patterns, stocks were categorized into five primary sectors: Technology, Consumer, Financial, Industrial, and Real Estate. This classification followed standard Global Industry Classification Standard (GICS) sector definitions \cite{MSCI2018}, with occasional adjustments for China-specific market characteristics. For each sector, performance metrics were aggregated using both simple averages and weighted averages based on market capitalization to avoid distortion from outlier stocks.
+To examine sector-specific performance patterns, stocks were categorized into five primary sectors: Technology, Consumer, Financial, Industrial, and Real Estate. This classification followed standard Global Industry Classification Standard (GICS) sector definitions, with occasional adjustments for China-specific market characteristics. For each sector, performance metrics were aggregated using both simple averages and weighted averages based on market capitalization to avoid distortion from outlier stocks.
 
 \begin{table}[!ht]
 \centering

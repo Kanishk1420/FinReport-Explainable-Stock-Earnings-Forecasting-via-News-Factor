@@ -62,52 +62,9 @@ K.~Daniel, D.~Hirshleifer, A.~Subrahmanyam, Investor psychology and security
   market under‐and overreactions, The Journal of Finance 53~(6) (1998)
   1839--1885.
 
-\bibitem{Li2024}
-J.~Li, Y.~Matsui, T.~Shinohara, A novel financial trading system architecture
-  for multi-modal financial data, Financial Engineering and Data Analytics
-  8~(2) (2024) 142--158.
-
 \bibitem{Harvey2016}
 C.~R. Harvey, Y.~Liu, H.~Zhu, ... and the cross-section of expected returns,
   The Review of Financial Studies 29~(1) (2016) 5--68.
-
-\bibitem{Murphy1999}
-J.~J. Murphy, Technical Analysis of the Financial Markets: A Comprehensive
-  Guide to Trading Methods and Applications, New York Institute of Finance,
-  1999.
-
-\bibitem{Gardner2018}
-M.~Gardner, J.~Grus, M.~Neumann, O.~Tafjord, P.~Dasigi, N.~F. Liu, M.~Peters,
-  M.~Schmitz, L.~S. Zettlemoyer, Allennlp: A deep semantic natural language
-  processing platform, Proceedings of Workshop for NLP Open Source Software
-  (2018) 1--6.
-
-\bibitem{Bollerslev1986}
-T.~Bollerslev, Generalized autoregressive conditional heteroskedasticity,
-  Journal of Econometrics 31~(3) (1986) 307--327.
-
-\bibitem{French1987}
-K.~R. French, G.~W. Schwert, R.~F. Stambaugh, Expected stock returns and
-  volatility, Journal of Financial Economics 19~(1) (1987) 3--29.
-
-\bibitem{Banz1981}
-R.~W. Banz, The relationship between return and market value of common stocks,
-  Journal of Financial Economics 9~(1) (1981) 3--18.
-
-\bibitem{Rosenberg1985}
-B.~Rosenberg, K.~Reid, R.~Lanstein, Persuasive evidence of market inefficiency,
-  Journal of Portfolio Management 11~(3) (1985) 9--16.
-
-\bibitem{Zhang2006}
-L.~Zhang, The value premium, The Journal of Finance 60~(1) (2005) 67--103.
-
-\bibitem{Kothari2009}
-S.~P. Kothari, J.~B. Warner, Econometrics of event studies, Handbook of
-  Empirical Corporate Finance (2007) 3--36.
-
-\bibitem{Loria2019}
-E.~Loria, G.~Pirri, Sentiment analysis in financial news: A cohort study,
-  Journal of Financial Data Science 1~(4) (2019) 85--99.
 
 \bibitem{Jorion2001}
 P.~Jorion, Value at Risk: The New Benchmark for Managing Financial Risk,
@@ -116,45 +73,6 @@ P.~Jorion, Value at Risk: The New Benchmark for Managing Financial Risk,
 \bibitem{Rockafellar2000}
 R.~T. Rockafellar, S.~Uryasev, Optimization of conditional value-at-risk,
   Journal of Risk 2 (2000) 21--42.
-
-\bibitem{Calvo2009}
-G.~A. Calvo, F.~Coricelli, P.~Ottonello, Labor market, financial crisis and
-  inflation: Jobless and wageless recoveries, NBER Working Paper 15671,
-  National Bureau of Economic Research (2009).
-
-\bibitem{DeMiguel2009}
-V.~DeMiguel, L.~Garlappi, R.~Uppal, Optimal versus naive diversification: How
-  inefficient is the 1/n portfolio strategy?, The Review of Financial Studies
-  22~(5) (2009) 1915--1953.
-
-\bibitem{Lo2004}
-A.~W. Lo, The adaptive markets hypothesis: Market efficiency from an
-  evolutionary perspective, Journal of Portfolio Management 30~(5) (2004)
-  15--29.
-
-\bibitem{Mandelbrot1963}
-B.~Mandelbrot, The variation of certain speculative prices, The Journal of
-  Business 36~(4) (1963) 394--419.
-
-\bibitem{Fama1965}
-E.~F. Fama, The behavior of stock-market prices, The Journal of Business 38~(1)
-  (1965) 34--105.
-
-\bibitem{Ball1968}
-R.~Ball, P.~Brown, An empirical evaluation of accounting income numbers,
-  Journal of Accounting Research 6~(2) (1968) 159--178.
-
-\bibitem{Magdon2004}
-M.~Magdon-Ismail, A.~F. Atiya, Maximum drawdown, Risk Magazine 17~(10) (2004)
-  99--102.
-
-\bibitem{Sharpe1966}
-W.~F. Sharpe, Mutual fund performance, The Journal of Business 39~(1) (1966)
-  119--138.
-
-\bibitem{MSCI2018}
-M.~Inc., Global industry classification standard (gics) methodology, Available
-  at: \url{https://www.msci.com/gics} (2018).
 
 \bibitem{Tukey1949}
 J.~W. Tukey, Comparing individual means in the analysis of variance, Biometrics
