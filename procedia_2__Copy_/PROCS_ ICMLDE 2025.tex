@@ -379,391 +379,45 @@ The trend score computation follows established factor model aggregation with po
 
 Translates quantitative analyses into actionable insights using hierarchical information architecture, cultural adaptation (red=prosperity, green=decline for Chinese markets), precision control (one decimal), natural language generation with template-based explanations, and multi-stakeholder accessibility \cite{Ribeiro2016,Harvey2016}.
 
-\vspace{0.10cm}
 \section{Algorithm}
 
 \subsection{Return Forecast Calculation}
-
-The return forecast is computed using a weighted \allowbreak combination of multiple factors \cite{FAMA1993}, where the \textbf{event factor receives the highest weight (0.25)} due to its immediate impact on market sentiment and price movements \cite{Ball1968}.
+The return forecast is computed using a weighted combination of multiple factors \cite{FAMA1993}, where the \textbf{event factor receives the highest weight (0.25)} due to its immediate impact on market sentiment and price movements \cite{Ball1968}.
 \begin{align}
 \mathbf{predicted\_return} &= 0.10 \times \mathbf{market\_factor} + 0.15 \times \mathbf{size\_factor} + 0.10 \times \mathbf{valuation\_factor} \nonumber \\
 &\quad + 0.10 \times \mathbf{profitability\_factor} + 0.20 \times \mathbf{investment\_factor} \nonumber \\
 &\quad + 0.10 \times \mathbf{news\_effect\_factor} + \mathbf{0.25} \times \mathbf{event\_factor} + 0.15
 \end{align}
 
-
-Each factor is calculated as follows \cite{Carhart1997}:
-
-\vspace{0.10cm}
-\text{I) Market Factor}
-\begin{enumerate}
-    \item \text{Extract Recent Volatility:}
-    \begin{itemize}
-        \item Compute standard deviation of \texttt{pct\_chg} over the last 5 days \cite{Engle1982}.
-        \item Multiply by 100 to get volatility.
-    \end{itemize}
-    \vspace{0.40cm}
-    \item \text{Analyze Recent Trends:}
-    \begin{itemize}
-        \item Count the number of positive and negative days.
-    \end{itemize}
-
-    \item \text{Perform Sentiment Analysis:}
-    \begin{itemize}
-        \item Compute sentiment score from \texttt{news\_text} \cite{TETLOCK2007}.
-    \end{itemize}
-
-    \item \text{Determine Base Impact:}
-    \begin{itemize}
-        \item If volatility $> 4.0$, assign a strong negative impact.
-        \item If $2.5 < \text{volatility} \leq 4.0$, assign moderate negative impact.
-        \item If positive days $>$ negative days, adjust positively using sentiment.
-        \item Otherwise, adjust slightly negatively.
-    \end{itemize}
-
-    \item \text{Enhance with Technical Indicators (RSI):}
-    \begin{itemize}
-        \item If RSI $> 70$, reduce impact (overbought condition) \cite{Wilder1978}.
-        \item If RSI $< 30$, increase impact (oversold condition) \cite{Wilder1978}.
-    \end{itemize}
-
-    \item \text{Return Final Market Factor:}
-    \begin{itemize}
-        \item Multiply final impact by $1.5$ for amplification.
-    \end{itemize}
-\end{enumerate}
-\text{II) Size Factor} \cite{Banz1981}
-\begin{enumerate}
-    \item \text{Compute Size Change Percentage:}
-    \begin{itemize}
-        \item Extract the latest market value.
-        \item Compute the average market value.
-        \item Calculate the percentage difference:
-       \begin{equation}
-\bm{\textbf{diff\_ratio} = \frac{\textbf{latest\_val} - \textbf{avg\_val}}{\textbf{avg\_val}}}
-\end{equation}
-
-    \end{itemize}
-
-    \item \text{Extract Financial Impact from News:}
-    \begin{itemize}
-        \item Analyze \texttt{news\_text} for financial figures \cite{Loughran2011}.
-    \end{itemize}
-
-\item \text{Determine Base Effect Based on Market Value Change:}
-    \begin{itemize}
-        \item If $\text{diff\_ratio} > 0.25$, apply strong positive impact.
-        \item If $0.10 < \text{diff\_ratio} \leq 0.25$, apply moderate positive impact.
-        \item If $0.05 < \text{diff\_ratio} \leq 0.10$, apply slight positive impact.
-        \item If $-0.05 \leq \text{diff\_ratio} \leq 0.05$, apply neutral impact with minor variations.
-        \item If $-0.10 < \text{diff\_ratio} \leq -0.05$, apply slight negative impact.
-        \item If $-0.25 < \text{diff\_ratio} \leq -0.10$, apply moderate negative impact.
-        \item If $\text{diff\_ratio} \leq -0.25$, apply strong negative impact.
-    \end{itemize}
-
-    \item \text{Return Final Size Factor}
-    \begin{itemize}
-        \item Multiply the computed effect by $1.5$ for amplification.
-    \end{itemize}
-\end{enumerate}
-\text{III) Profitability Factor} \cite{Zhang2006}
-\begin{enumerate}
-    \item \text{Identify Profitability Metrics:}
-    \begin{itemize}
-        \item Define key financial metrics: 
-        \{EPS, Net Profit Margin, ROE, ROA, Gross Profit, Net Profit\} \cite{Fama1995}.
-        \item Identify available metrics in the dataset.
-    \end{itemize}
-
-    \item \text{Extract Profit-Related Information from News:}
-    \begin{itemize}
-        \item Extract \text{profit increases} from \texttt{news\_text}.
-        \item Extract \text{profit decreases} from \texttt{news\_text}.
-    \end{itemize}
-
-
-    \item \text{Determine Base Effect:}
-    \begin{itemize}
-        \item If at least \text{one profitability metric} is available:
-        \begin{itemize}
-            \item Compute percentage change between the most recent and previous values.
-            \item Scale down the impact.
-        \end{itemize}
-        \item If \texttt{news\_text} contains \text{"net loss"} or \text{"loss"}, set a strong negative effect.
-        \item If \text{profit increases} are found, apply a positive adjustment.
-        \item If \text{profit decreases} are found, apply a negative adjustment.
-        \item Otherwise, adjust based on sentiment analysis.
-    \end{itemize}
-
-    \item \text{Return Final Profitability Factor:}
-    \begin{itemize}
-        \item Multiply the computed effect by $1.5$ for amplification.
-    \end{itemize}
-\end{enumerate}
-\text{IV) Valuation Factor} \cite{Rosenberg1985}
-\begin{enumerate}
-    \item \text{Identify Valuation Metrics:}
-    \begin{itemize}
-        \item Define key valuation metrics: 
-        \{Book-to-Market Equity, Dividend Yield, Sales-to-Price Ratio\}.
-        \item Identify available metrics in the dataset.
-    \end{itemize}
-
-    \item \text{Analyze News Sentiment and Sector:}
-    \begin{itemize}
-        \item Perform \text{sentiment analysis} on \texttt{news\_text} \cite{TETLOCK2007}.
-        \item Identify the \text{sector} associated with the company.
-    \end{itemize}
-
-    \item \text{Determine Base Effect:}
-    \begin{itemize}
-        \item If at least one \text{valuation metric} is available:
-        \begin{itemize}
-            \item Compute the \text{difference ratio} between the latest value and its benchmark.
-            \item Scale the impact using a factor of $0.25$.
-        \end{itemize}
-        \item Otherwise, apply \text{sector-specific adjustments}:
-        \begin{itemize}
-            \item \text{Pharmaceuticals:} $+0.2$ (positive sentiment), $-0.3$ (negative sentiment).
-            \item \text{Technology:} $+0.3$ (positive sentiment), $-0.2$ (negative sentiment).
-            \item \text{General market:} $+0.15$ (positive sentiment), $-0.2$ (negative sentiment).
-            \item \text{Default adjustment:} $+0.1$ (positive sentiment), $-0.1$ (negative sentiment).
-        \end{itemize}
-    \end{itemize}
-
-    \item \text{Return Final Valuation Factor.}
-\end{enumerate}
-\text{V) Investment Factor} \cite{Daniel1998}
-\begin{enumerate}
-    \item \text{Extract Investment Amount from News:}
-    \begin{itemize}
-        \item Identify mentions of investments in \text{billion yuan} using a regex pattern.
-        \item Convert extracted values to numerical amounts.
-    \end{itemize}
-
-    \item \text{Analyze Investment Types in News:}
-    \begin{itemize}
-        \item Count occurrences of acquisitions and mergers (M\&A).
-        \item Count mentions of \text{business expansion} (new facilities, capacity increase).
-        \item Count references to research and development (R\&D) activities.
-    \end{itemize}
-
-    \item \text{Determine Base Effect:}
-    \begin{itemize}
-        \item If investment amounts are found:
-        \begin{itemize}
-            \item Assign a \text{base effect} based on investment size:
-            \begin{itemize}
-                \item $> 50$ billion yuan $\rightarrow 2.5$
-                \item $> 20$ billion yuan $\rightarrow 2.0$
-                \item $> 10$ billion yuan $\rightarrow 1.5$
-                \item $> 5$ billion yuan $\rightarrow 1.0$
-                \item $> 1$ billion yuan $\rightarrow 0.7$
-                \item Otherwise $\rightarrow 0.4$
-            \end{itemize}
-        \end{itemize}
-        \item If no investment amount is found:
-        \begin{itemize}
-            \item Adjust based on \text{sentiment analysis}: $+0.5$ for positive, $-0.5$ for negative.
-        \end{itemize}
-    \end{itemize}
-
-    \item \text{Modify Effect Based on Investment Types:}
-    \begin{itemize}
-        \item Acquisitions $\rightarrow +0.6$ per mention.
-        \item Expansions $\rightarrow +0.5$ per mention.
-        \item R\&D mentions $\rightarrow +0.7$ per mention.
-    \end{itemize}
-
-    \item \text{Return Final Investment Factor.}
-
-\end{enumerate}
-\text{VI) News Effect Factor} \cite{TETLOCK2007}
-\begin{enumerate}
-    \item \text{Determine Base Effect from Sentiment Score:}
-    \begin{itemize}
-    \item If \textit{sentiment score} $\geq 0.5$ $\rightarrow$ assign a random positive effect between $0.7$ and $1.2$.
-    \item If $0 <$ \textit{sentiment score} $< 0.5$ $\rightarrow$ assign a random positive effect between $0.3$ and $0.7$.
-    \item If $-0.5 <$ \textit{sentiment score} $\leq 0$ $\rightarrow$ assign a random negative effect between $-0.7$ and $-0.3$.
-    \item If \textit{sentiment score} $\leq -0.5$ $\rightarrow$ assign a random negative effect between $-1.2$ and $-0.7$.
+Each factor is calculated using established methodologies \cite{Carhart1997}:
+\begin{itemize}
+\item \textbf{Market Factor} \cite{FAMA1993}: Analysis based on volatility, price trends, sentiment, and technical indicators (RSI) to determine market impact with high volatility adjustments and overbought/oversold conditions.
+\item \textbf{Size Factor} \cite{Banz1981}: Company size classification using market capitalization and total assets, with sentiment-adjusted effects that amplify small-cap volatility compared to large-cap stability.
+\item \textbf{Profitability Factor} \cite{Zhang2006}: Standard profitability metrics (ROA, ROE, profit margins) analysis with sentiment-based adjustments and earnings-related news amplification.
+\item \textbf{Valuation Factor} \cite{Rosenberg1985}: Valuation metrics (Book-to-Market, Dividend Yield, Sales-to-Price) combined with sector-specific sentiment adjustments for pharmaceuticals, technology, and general market conditions.
+\item \textbf{Investment Factor} \cite{Daniel1998}: Investment amount extraction and type analysis (M\&A, expansion, R\&D) with size-based effects and activity-based modifications.
+\item \textbf{News Effect Factor} \cite{TETLOCK2007}: Sentiment score analysis with content-specific adjustments for earnings, guidance, management changes, and regulatory issues, amplified by 2.0x multiplier.
+\item \textbf{Event Factor} \cite{Ball1968}: Positive and negative event keyword counting with financial impact extraction and directional effect computation.
+\item \textbf{Factor Amplification} \cite{Harvey2016}: Systematic enhancement using 2.5x base multiplier with trend-based adjustments and randomization, capped at [-5.0, 5.0] bounds.
 \end{itemize}
 
-
-    \item \text{Analyze Specific News Content:}
-    \begin{itemize}
-        \item Check for keywords related to \text{earnings \& financials} (e.g., ``profit'', ``revenue'').
-        \item Check for mentions of \text{forecast \& guidance} (e.g., ``outlook'', ``expectations'').
-        \item Detect \text{management changes} (e.g., ``CEO'', ``executive'').
-        \item Identify \text{regulatory/legal issues} (e.g., ``compliance'', ``litigation'').
-    \end{itemize}
-
-    \item \text{Adjust Base Effect Based on Content:}
-    \begin{itemize}
-        \item \text{Earnings-related news:} 
-        \begin{itemize}
-            \item Add $+0.3$ if sentiment is positive.
-            \item Subtract $-0.3$ if sentiment is negative.
-        \end{itemize}
-        \item \text{Guidance-related news:}
-        \begin{itemize}
-            \item Add $+0.2$ if sentiment is positive.
-            \item Subtract $-0.2$ if sentiment is negative.
-        \end{itemize}
-        \item \text{Management changes:}
-        \begin{itemize}
-            \item Add $+0.2$ if sentiment is positive.
-            \item Subtract $-0.2$ if sentiment is negative.
-        \end{itemize}
-        \item \text{Regulatory news:}
-        \begin{itemize}
-            \item Always subtract $-0.3$, as it is usually negative.
-        \end{itemize}
-    \end{itemize}
-
-    \item \text{Apply Final Amplification Factor:}
-    \begin{itemize}
-        \item Multiply the computed effect by $2.0$ to enhance the impact.
-    \end{itemize}
-\end{enumerate}
-\text{VII) Event Factor} \cite{Ball1968}
-\begin{enumerate}
-    \item \text{Define Event Keywords:}
-    \begin{itemize}
-        \item Create a list of \text{positive market events} (e.g., ``acquisition'', ``partnership'', ``approval'').
-        \item Create a list of \text{negative market events} (e.g., \allowbreak``lawsuit'', ``litigation'', ``investigation'').
-    \end{itemize}
-
-    \item \text{Count Event Occurrences:}
-    \begin{itemize}
-        \item Convert \texttt{news\_text} to \text{lowercase} for case-insensitive comparison.
-        \item Count how many \text{positive events} appear in the text.
-        \item Count how many \text{negative events} appear in the text.
-    \end{itemize}
-
-    \item \text{Extract Financial Impact (if any):}
-    \begin{itemize}
-        \item Use \textit{extract\_financial\_figures(news\_text)} to determine any financial impact.
-    \end{itemize}
-
-    \item \text{Compute Base Effect:}
-    \begin{itemize}
-        \item If \text{positive event count $>$ negative event count}, assign a \text{positive effect} (capped at $2.0$).
-        \item If \text{negative event count $>$ positive event count}, assign a \text{negative effect} (capped at $-2.0$).
-        \item If counts are \text{equal}, set base effect to \text{0.0}.
-    \end{itemize}
-
-    \item \text{Adjust Based on Financial Impact:}
-    \begin{itemize}
-        \item Scale financial impact (max value $1.0$).
-        \item If base effect is \text{positive}, increase it by the scaled financial impact.
-        \item If base effect is \text{negative}, increase it by \text{half} of the scaled financial impact (to reduce negativity).
-    \end{itemize}
-
-\end{enumerate}
-All factors are enhanced using a straightforward amplification algorithm \cite{Harvey2016} that increases each factor's impact while maintaining directional consistency:
-
-\text{VIII) Factor Amplification} \cite{Harvey2016}
-\begin{enumerate}
-    \item \text{Extract Factor Values:}
-    \begin{itemize}
-        \item Retrieve values from each input factor dictionary.
-        \item Use \texttt{get('value', 0.0)} to ensure safe access.
-    \end{itemize}
-
-    \item \text{Define Base Amplification:}
-    \begin{itemize}
-        \item Set base multiplier: $2.5$.
-    \end{itemize}
-
-    \item \text{Count Dominant Factors:}
-    \begin{itemize}
-        \item Count \text{positive factors} (values $> 0.5$).
-        \item Count \text{negative factors} (values $< -0.5$).
-    \end{itemize}
-
-    \item \text{Determine Market Trend:}
-    \begin{itemize}
-        \item If $\text{positive count} \geq 3$ and exceeds negative count $\Rightarrow$ \text{Upward trend}.
-        \item If $\text{negative count} \geq 3$ and exceeds positive count $\Rightarrow$ \text{Downward trend}.
-        \item Otherwise, trend is \text{Mixed}.
-    \end{itemize}
-
-    \item \text{Apply Simple Enhancement:}
-    \begin{itemize}
-        \item Apply trend multiplier: $1.3$ if factor aligns with dominant trend.
-        \item Add randomization: multiply by random value between $0.9$ and $1.1$.
-        \item Compute enhanced value: 
-        \begin{equation}
-\bm{\textbf{enhanced\_value} = \textbf{original\_value} \times 2.5 \times \textbf{trend\_multiplier} \times \textbf{random\_factor}}
-\end{equation}
-
-        \item Cap final values between $[-5.0, 5.0]$ to ensure reasonable bounds.
-    \end{itemize}
-
-    \item \text{Return Enhanced Factors:}
-    \begin{itemize}
-        \item Store all updated values in a structured dictionary.
-    \end{itemize}
-
-\end{enumerate}
 \subsection{Risk Assessment Methodology}
-The risk assessment uses a sophisticated approach combining multiple risk metrics \cite{Jorion2001}.
-\begin{enumerate}
-    \item \text{Extract Risk Metrics:}
-    \begin{itemize}
-        \item Volatility, Max Drawdown, VaR (95\%), Conditional VaR, Risk-Adjusted Ratio.
-    \end{itemize}
+Risk assessment combines volatility classification, weighted scoring using Equation (2), and metrics including EGARCH-based volatility (Equation 3), Maximum Drawdown, CVaR, and Risk-Adjusted Ratio as detailed in Algorithm~\ref{alg:max_drawdown}, Algorithm~\ref{alg:cvar}, and Algorithm~\ref{alg:risk_adjusted} \cite{Jorion2001}.
 
-    \item \text{Classify Volatility:}
-    \begin{itemize}
-        \item Extreme: $volatility > 0.15$  $\Rightarrow$ Cap decline at $25\%$.
-        \item High: $volatility > 0.10$  $\Rightarrow$ Cap decline at $20\%$.
-        \item Elevated: $volatility > 0.07$.
-        \item Moderate: $volatility > 0.04$.
-        \item Low: $volatility \leq 0.04$ $\Rightarrow$ At least $2\%$.
-    \end{itemize}
-
-    \item \text{Compute Weighted Risk Score:}
 \begin{align}
 \textbf{risk\_score} =\ & (0.4 \times \textbf{vol\_score}) + (0.25 \times \textbf{drawdown\_score}) \nonumber \\
 & + (0.15 \times \textbf{var\_score}) + (0.2 \times \textbf{return\_risk})
 \end{align}
 
-    \item \text{Assign Risk Level Based on Score:}
-    \begin{itemize}
-        \item Substantial risk: $risk\_score > 7.5$.
-        \item High risk: $risk\_score > 6.0$.
-        \item Moderate-High risk: $risk\_score > 4.5$.
-        \item Moderate risk: $risk\_score > 3.0$.
-        \item Low-Moderate risk: $risk\_score > 1.5$.
-        \item Favorable risk: $risk\_score \leq 1.5$.
-    \end{itemize}
-
-    \item \text{Generate Risk Assessment Summary:}
-    \begin{itemize}
-        \item Output: Maximum expected decline, Volatility class, Risk level.
-    \end{itemize}
-
-\end{enumerate}
-
-Individual risk metrics are calculated as follows:
-
-\text{1) Volatility (EGARCH-based):} \cite{Nelson1991}
+EGARCH volatility modeling \cite{Nelson1991}:
 \begin{equation}
 \ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \alpha \frac{|r_{t-1}|}{\sigma_{t-1}} + \gamma \frac{r_{t-1}}{\sigma_{t-1}}
 \end{equation}
-\vspace{-0.1cm}
-where:
-\begin{itemize}
-    \item $\sigma_t^2$ is the conditional variance at time $t$.
-    \item $\omega, \beta, \alpha, \gamma$ are model parameters.
-    \item $r_{t-1}$ is the previous return.
-\end{itemize}
 
-\text{Value at Risk (VaR) is calculated using the 95\% confidence level based on historical simulation method} \cite{Jorion2001}.
+Value at Risk (VaR) is calculated using the 95\% confidence level based on historical simulation method \cite{Jorion2001}.
 
-\text{2) Maximum Drawdown:}
-\vspace{-0.3cm}
+\textbf{Algorithm~\ref{alg:max_drawdown} - Maximum Drawdown Calculation:} This algorithm computes the maximum peak-to-trough decline in portfolio value over the investment period. Maximum Drawdown is a critical risk metric that measures the worst-case scenario for portfolio performance, indicating the maximum loss an investor would have experienced from the highest portfolio value to the lowest subsequent value. The algorithm iteratively tracks cumulative returns, maintains running maximum values, and calculates drawdowns at each time step to identify the maximum decline period \cite{Magdon2004}.
+
 \begin{algorithm}[H]
 \caption{Maximum Drawdown}
 \label{alg:max_drawdown}
@@ -778,7 +432,7 @@ where:
     \For{\( t = 1 \) to \( n \)}
         \State \( C \gets C \times (1 + R_t) \) \Comment{Update cumulative return}
         \State \( M \gets \max(M, C) \) \Comment{Update running maximum}
-        \State \( D_t \gets \frac{C - M}{M} \) \Comment{Compute drawdown}
+        \State \( D_t \gets \frac{C - M}{M} \) \Comment{Compute drawdown at time t}
         \State \( D \gets \min(D, D_t) \) \Comment{Update maximum drawdown}
     \EndFor
 
@@ -786,27 +440,28 @@ where:
 \end{algorithmic}
 \end{algorithm}
 
-\vspace{-0.3cm}
-\text{3) Conditional Value at Risk:}
+\textbf{Algorithm~\ref{alg:cvar} - Conditional Value at Risk (CVaR):} This algorithm calculates the expected loss in the worst-case scenarios beyond the Value at Risk threshold. CVaR, also known as Expected Shortfall, provides a more comprehensive risk measure than VaR by considering the magnitude of extreme losses rather than just their probability. The algorithm sorts historical returns, identifies the VaR threshold at the specified confidence level, and computes the expected value of all losses exceeding this threshold, providing insights into tail risk exposure \cite{Rockafellar2000}.
+
 \begin{algorithm}[H]
 \caption{Conditional Value at Risk (CVaR)}
 \label{alg:cvar}
 \begin{algorithmic}[1]
     \Require Returns series $R$ of length $n$, confidence level $\alpha$
     \Ensure Conditional Value at Risk (CVaR)
+    
     \State \textbf{Sort} $R$ in ascending order 
-    \State \textbf{Compute} Value at Risk (VaR): $V \gets$ percentile of $R$ at $100\alpha$
+    \State \textbf{Compute} Value at Risk (VaR): $V \gets$ percentile of $R$ at $100\alpha$\%
     \State \textbf{Select} all losses where $R_t \leq V$
     \State \textbf{Compute} CVaR as the mean of selected losses
     \State \Return CVaR
 \end{algorithmic}
 \end{algorithm}
 
-\vspace{-0.5cm}
-\text{4) Risk-Adjusted Ratio:}
+\textbf{Algorithm~\ref{alg:risk_adjusted} - Risk-Adjusted Performance Ratio:} This algorithm computes the risk-adjusted return metric that normalizes expected returns by their associated volatility, similar to the Sharpe ratio concept. The risk-adjusted ratio enables comparison of investment performance across different volatility regimes and helps identify strategies that generate superior returns per unit of risk. This metric is essential for portfolio optimization and performance evaluation in financial risk management \cite{Sharpe1966}.
+
 \begin{algorithm}[H]
 \caption{Risk-Adjusted Ratio}
-\label{alg:integrated_risk}
+\label{alg:risk_adjusted}
 \begin{algorithmic}[1]
     \Require Expected return $E_R$, volatility $\sigma$
     \Ensure Risk-adjusted return ratio
@@ -820,22 +475,19 @@ where:
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Overall Trend Classification \& Summary Text Generation}
-The overall trend is determined using a weighted function of all factor values \cite{Carhart1997}.
+\subsection{Overall Trend Classification}
+Overall trend determination uses weighted factor aggregation as shown in Algorithm~\ref{alg:market_trend} \cite{Carhart1997}. This algorithm integrates all computed factors with their respective weights to determine the overall market sentiment and trend direction. The trend classification provides a comprehensive market outlook by combining fundamental, technical, and sentiment-based factors into a single interpretable metric.
 
-\text{5) Overall Market Trend Determination:}
-\vspace{0.2cm}
 \begin{algorithm}[H]
 \caption{Overall Market Trend}
 \label{alg:market_trend}
 \begin{algorithmic}[1]
     \Require Factor values dictionary $F$
-    \Ensure Overall market trend
+    \Ensure Overall market trend classification
     
-    \State Define weights for each factor:
-    \State \hspace{5mm} $W = \{ \text{market}: 0.15, \text{size}: 0.15, \text{valuation}: 0.10, $
-    \State \hspace{10mm} $\text{profitability}: 0.15, \text{investment}: 0.20, $
-    \State \hspace{10mm} $\text{news effect}: 0.10, \text{event}: 0.15 \}$
+    \State Define weights: $W = \{$market: 0.15, size: 0.15, valuation: 0.10,
+    \State \hspace{15mm} profitability: 0.15, investment: 0.20,
+    \State \hspace{15mm} news\_effect: 0.10, event: 0.15$\}$
 
     \State Initialize $S_{\text{weighted}} \gets 0$, $S_{\text{weights}} \gets 0$
     
@@ -850,12 +502,12 @@ The overall trend is determined using a weighted function of all factor values \
         \State Normalize: $S_{\text{weighted}} \gets S_{\text{weighted}} / S_{\text{weights}}$
     \EndIf
     
-    \State Add slight positive bias: $S_{\text{weighted}} \gets S_{\text{weighted}} + 0.15$
+    \State Add positive bias: $S_{\text{weighted}} \gets S_{\text{weighted}} + 0.15$
 
     \If{$S_{\text{weighted}} \geq 0.6$}
         \State \Return "Strongly Positive"
     \ElsIf{$S_{\text{weighted}} \geq 0.15$}
-        \State \Return "Positive"
+        \State \Return "Positive"  
     \ElsIf{$S_{\text{weighted}} \geq -0.15$}
         \State \Return "Neutral"
     \ElsIf{$S_{\text{weighted}} \geq -0.6$}
@@ -863,13 +515,10 @@ The overall trend is determined using a weighted function of all factor values \
     \Else
         \State \Return "Strongly Negative"
     \EndIf
-
 \end{algorithmic}
 \end{algorithm}
-\vspace{0.5cm}
-\section{Result Analysis}
 
-%\subsection{Dataset and Configuration}
+\section{Result Analysis}
 This section deals with analysis of results.
 The evaluation utilized a comprehensive Chinese A-share dataset \cite{FinReportDataset2025} covering 75 stocks from Shanghai and Shenzhen exchanges (January 2018 - December 2021). 
 
@@ -1056,9 +705,6 @@ FinReport successfully integrates multi-factor models \cite{FAMA1993,Carhart1997
 % Add space to prevent vbox issues
 \vspace*{-3pt} 
 
-\bibliographystyle{elsarticle-num}
-\bibliography{REFERENCES}
-
 % \section*{Acknowledgements}
 
 % Acknowledgements and Reference heading should be left justified, bold, with the first letter capitalized but have no numbers. Text below continues as normal.
@@ -1087,8 +733,8 @@ FinReport successfully integrates multi-factor models \cite{FAMA1993,Carhart1997
 %The citation must be used in following style: \cite{article-minimal} \cite{article-full} \cite{article-crossref} \cite{whole-journal}.
 %% References with BibTeX database:
 
-%\bibliography{xampl}
-%\bibliographystyle{elsarticle-harv}
+\bibliographystyle{elsarticle-num}
+\bibliography{References}
 
 
 %% Authors are advised to use a BibTeX database file for their reference list.
