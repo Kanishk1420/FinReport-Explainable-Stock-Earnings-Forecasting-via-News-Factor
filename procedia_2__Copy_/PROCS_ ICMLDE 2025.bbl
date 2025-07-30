@@ -1,0 +1,200 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Poon2003}
+S.-H. Poon, C.~W.~J. Granger, Forecasting volatility in financial markets: A
+  review, Journal of Economic Literature 41~(2) (2003) 478--539.
+
+\bibitem{Chen2015}
+K.~Chen, L.-A. Zhou, Y.~Wang, Stock return predictability and the adaptive
+  markets hypothesis: Evidence from century-long us data, Journal of Empirical
+  Finance 31 (2015) 94--108.
+
+\bibitem{Box1970}
+G.~E.~P. Box, G.~M. Jenkins, Time series analysis: Forecasting and control, San
+  Francisco: Holden-Day (1970).
+
+\bibitem{FAMA1993}
+E.~F. Fama, K.~R. French, Common risk factors in the returns on stocks and
+  bonds, Journal of Financial Economics 33~(1) (1993) 3--56.
+
+\bibitem{Malkiel2003}
+B.~G. Malkiel, The efficient market hypothesis and its critics, Journal of
+  Economic Perspectives 17~(1) (2003) 59--82.
+
+\bibitem{Sharpe1964}
+W.~F. Sharpe, Capital asset prices: A theory of market equilibrium under
+  conditions of risk, The Journal of Finance 19~(3) (1964) 425--442.
+
+\bibitem{hochreiter1997lstm}
+S.~Hochreiter, J.~Schmidhuber, Long short-term memory, Neural Computation 9~(8)
+  (1997) 1735--1780.
+
+\bibitem{Bao2017}
+W.~Bao, J.~Yue, Y.~Rao, A deep learning framework for financial time series
+  using stacked autoencoders and long-short term memory, PLoS ONE 12~(7) (2017)
+  e0180944.
+
+\bibitem{Schumaker2009}
+R.~P. Schumaker, H.~Chen, Textual analysis of stock market prediction using
+  breaking financial news: The azfin text system, ACM Transactions on
+  Information Systems 27~(2) (2009) 1--19.
+
+\bibitem{Xing2018}
+F.~Z. Xing, E.~Cambria, R.~E. Welsch, Natural language based financial
+  forecasting: a survey, Artificial Intelligence Review 50~(1) (2018) 49--73.
+
+\bibitem{Nelson1991}
+D.~B. Nelson, Conditional heteroskedasticity in asset returns: A new approach,
+  Econometrica 59~(2) (1991) 347--370.
+
+\bibitem{Engle1982}
+R.~F. Engle, Autoregressive conditional heteroscedasticity with estimates of
+  the variance of united kingdom inflation, Econometrica 50~(4) (1982)
+  987--1007.
+
+\bibitem{FinReportDataset2025}
+Kanishk1420, Finreport: Explainable stock earnings forecasting via news factor
+  - chinese a-share stock dataset, Available at:
+  \url{https://github.com/Kanishk1420/FinReport-Explainable-Stock-Earnings-Forecasting-via-News-Factor},
+  dataset contains historical stock data (2018-2021), financial news, and
+  pre-computed technical indicators for Chinese A-share stocks. Primary dataset
+  file: \texttt{src/stock\_data.csv} (2025).
+
+\bibitem{Fischer2018}
+T.~Fischer, C.~Krauss, Deep learning with long short-term memory networks for
+  financial market predictions, European Journal of Operational Research
+  270~(2) (2018) 654--669.
+
+\bibitem{TETLOCK2007}
+P.~C. Tetlock, Giving content to investor sentiment: The role of media in the
+  stock market, The Journal of Finance 62~(3) (2007) 1139--1168.
+
+\bibitem{Ribeiro2016}
+M.~T. Ribeiro, S.~Singh, C.~Guestrin, Why should i trust you?: Explaining the
+  predictions of any classifier, Proceedings of the 22nd ACM SIGKDD
+  International Conference on Knowledge Discovery and Data Mining (2016)
+  1135--1144.
+
+\bibitem{Wilder1978}
+J.~W.~W. Jr., New Concepts in Technical Trading Systems, Trend Research, 1978.
+
+\bibitem{Araci2019}
+D.~Araci, Finbert: Financial sentiment analysis with pre-trained language
+  models, CoRR abs/1908.10063 (2019).
+
+\bibitem{Loughran2011}
+T.~Loughran, B.~McDonald, When is a liability not a liability? textual
+  analysis, dictionaries, and 10-ks, The Journal of Finance 66~(1) (2011)
+  35--65.
+
+\bibitem{Ding2015}
+X.~Ding, Y.~Zhang, T.~Liu, J.~Duan, Deep learning for event-driven stock
+  prediction, Proceedings of the 24th International Conference on Artificial
+  Intelligence (2015) 2327--2333.
+
+\bibitem{Carhart1997}
+M.~M. Carhart, On persistence in mutual fund performance, The Journal of
+  Finance 52~(1) (1997) 57--82.
+
+\bibitem{Banz1981}
+R.~W. Banz, The relationship between return and market value of common stocks,
+  Journal of Financial Economics 9~(1) (1981) 3--18.
+
+\bibitem{Rosenberg1985}
+B.~Rosenberg, K.~Reid, R.~Lanstein, Persuasive evidence of market inefficiency,
+  Journal of Portfolio Management 11~(3) (1985) 9--16.
+
+\bibitem{Daniel1998}
+K.~Daniel, D.~Hirshleifer, A.~Subrahmanyam, Investor psychology and security
+  market under‐and overreactions, The Journal of Finance 53~(6) (1998)
+  1839--1885.
+
+\bibitem{Campbell2001}
+J.~Y. Campbell, M.~Lettau, B.~G. Malkiel, Y.~Xu, Have individual stocks become
+  more volatile? an empirical exploration of idiosyncratic risk, The Journal of
+  Finance 56~(1) (2001) 1--43.
+
+\bibitem{Murphy1999}
+J.~J. Murphy, Technical Analysis of the Financial Markets: A Comprehensive
+  Guide to Trading Methods and Applications, New York Institute of Finance,
+  1999.
+
+\bibitem{Lo2004}
+A.~W. Lo, The adaptive markets hypothesis, The Journal of Portfolio Management
+  30~(5) (2004) 15--29.
+
+\bibitem{Li2024}
+X.~Li, X.~Shen, Y.~Zeng, X.~Xing, J.~Xu, Finreport: Explainable stock earnings
+  forecasting via news factor analyzing model, arXiv preprint
+  arXiv:2403.02647Accepted by WWW 2024 (2024).
+
+\bibitem{Harvey2016}
+C.~R. Harvey, Y.~Liu, H.~Zhu, ... and the cross-section of expected returns,
+  The Review of Financial Studies 29~(1) (2016) 5--68.
+
+\bibitem{Devlin2019}
+J.~Devlin, M.-W. Chang, K.~Lee, K.~Toutanova, Bert: Pre-training of deep
+  bidirectional transformers for language understanding, Proceedings of the
+  2019 Conference of the North American Chapter of the Association for
+  Computational Linguistics: Human Language Technologies (2019) 4171--4186.
+
+\bibitem{Gardner2018}
+M.~W. Gardner, S.~R. Dorling, Artificial neural networks (the multilayer
+  perceptron) -- a review of applications in the atmospheric sciences,
+  Atmospheric Environment 32~(14-15) (2018) 2627--2636.
+
+\bibitem{Shi2017}
+X.~Shi, Z.~Chen, H.~Wang, D.~Y. Yeung, W.~K. Wong, W.~C. Woo, Convolutional
+  lstm network: A machine learning approach for precipitation nowcasting,
+  Advances in Neural Information Processing Systems (2017) 802--810.
+
+\bibitem{Jegadeesh1993}
+N.~Jegadeesh, S.~Titman, Returns to buying winners and selling losers:
+  Implications for stock market efficiency, The Journal of Finance 48~(1)
+  (1993) 65--91.
+
+\bibitem{Zhang2006}
+X.-J. Zhang, Information uncertainty and stock returns, The Journal of Finance
+  61~(1) (2006) 105--137.
+
+\bibitem{Kothari2009}
+S.~P. Kothari, J.~B. Warner, Econometrics of event studies, Handbook of
+  Empirical Corporate Finance (2009) 3--36.
+
+\bibitem{Loria2019}
+S.~Loria, textblob documentation, Release 0.15.2 (2019).
+
+\bibitem{Jorion2001}
+P.~Jorion, Value at Risk: The New Benchmark for Managing Financial Risk,
+  McGraw-Hill, 2001.
+
+\bibitem{Rockafellar2000}
+R.~T. Rockafellar, S.~Uryasev, Optimization of conditional value-at-risk,
+  Journal of Risk 2 (2000) 21--42.
+
+\bibitem{Fama1965}
+E.~F. Fama, The behavior of stock-market prices, The Journal of Business 38~(1)
+  (1965) 34--105.
+
+\bibitem{Ball1968}
+R.~Ball, P.~Brown, An empirical evaluation of accounting income numbers,
+  Journal of Accounting Research 6~(2) (1968) 159--178.
+
+\bibitem{Fama1995}
+E.~F. Fama, K.~R. French, Size and book-to-market factors in earnings and
+  returns, The Journal of Finance 50~(1) (1995) 131--155.
+
+\bibitem{MSCI2018}
+M.~Inc., The global industry classification standard (gics),
+  \url{https://www.msci.com/gics} (2018).
+
+\bibitem{Tukey1949}
+J.~W. Tukey, Comparing individual means in the analysis of variance, Biometrics
+  5~(2) (1949) 99--114.
+
+\end{thebibliography}
