@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  28 SEP 2025 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  28 SEP 2025 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1985,157 +1985,157 @@ Underfull \hbox (badness 10000) in paragraph at lines 490--491
 <Picture2.png, id=186, 867.24pt x 578.16pt>
 File: Picture2.png Graphic file (type png)
 <use Picture2.png>
-Package pdftex.def Info: Picture2.png  used on input line 526.
+Package pdftex.def Info: Picture2.png  used on input line 528.
 (pdftex.def)             Requested size: 374.40143pt x 249.60083pt.
 
-Underfull \hbox (badness 1275) in paragraph at lines 526--527
+Underfull \hbox (badness 1275) in paragraph at lines 528--529
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--527
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
  []\T1/ptm/m/n/8 Figure 2: |Rapid Ini-tial Learn-ing| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 539--539
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./Picture2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 543--543
  []\T1/ptm/m/n/8 Table 1: |\T1/ptm/b/n/8 Model Per-for-mance Met-rics and In-te
 r-pre-ta-tions| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--544
+Underfull \hbox (badness 10000) in paragraph at lines 548--548
 []\T1/ptm/m/n/10 Relatively low mean squared er-ror in-di-cates lim-ited
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--544
+Underfull \hbox (badness 10000) in paragraph at lines 548--548
 \T1/ptm/m/n/10 de-vi-a-tion be-tween pre-dicted and ac-tual val-ues, re-flect-i
 ng
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 545--545
+Underfull \hbox (badness 10000) in paragraph at lines 549--549
 []\T1/ptm/m/n/10 Root mean squared er-ror sug-gests that pre-dic-tions vary
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 545--545
+Underfull \hbox (badness 10000) in paragraph at lines 549--549
 \T1/ptm/m/n/10 by ap-prox-i-mately 25% from ac-tual val-ues on av-er-age,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 546--546
+Underfull \hbox (badness 10000) in paragraph at lines 550--550
 []\T1/ptm/m/n/10 A low mean ab-so-lute er-ror con-firms con-sis-tent and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--547
+Underfull \hbox (badness 10000) in paragraph at lines 551--551
 []\T1/ptm/m/n/10 The model ex-plains 55.15% of the vari-ance in ac-tual
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--547
+Underfull \hbox (badness 10000) in paragraph at lines 551--551
 \T1/ptm/m/n/10 stock re-turns, re-flect-ing mod-er-ately strong ex-plana-tory
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--548
+Underfull \hbox (badness 10000) in paragraph at lines 552--552
 []\T1/ptm/m/n/10 A very high cor-re-la-tion be-tween pre-dicted and ac-tual
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--548
+Underfull \hbox (badness 10000) in paragraph at lines 552--552
 \T1/ptm/m/n/10 re-turns con-firms strong lin-ear align-ment and model
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 540--551
+Underfull \hbox (badness 3407) in paragraph at lines 544--555
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
  []\T1/ptm/m/n/8 Table 2: |\T1/ptm/b/n/8 Top Per-form-ing Stocks (R$[]$ > 0.98)
 | 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--577
+Underfull \hbox (badness 10000) in paragraph at lines 570--581
  [][] 
  []
 
-[8 <./Picture2.png>]
-<Picture3.png, id=197, 457.929pt x 356.094pt>
+[9]
+<Picture3.png, id=205, 457.929pt x 356.094pt>
 File: Picture3.png Graphic file (type png)
 <use Picture3.png>
-Package pdftex.def Info: Picture3.png  used on input line 585.
+Package pdftex.def Info: Picture3.png  used on input line 591.
 (pdftex.def)             Requested size: 374.40143pt x 291.15132pt.
 
-Underfull \hbox (badness 1275) in paragraph at lines 585--589
+Underfull \hbox (badness 1275) in paragraph at lines 591--595
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 590--590
+Underfull \hbox (badness 10000) in paragraph at lines 596--596
  []\T1/ptm/m/n/8 Figure 3: |Over-all Statis-tics| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 606--606
+Underfull \hbox (badness 10000) in paragraph at lines 612--612
  []\T1/ptm/m/n/8 Table 3: |\T1/ptm/b/n/8 Poorly Per-form-ing Pre-dic-tion Sam-p
 les| 
  []
 
 
-Underfull \hbox (badness 6741) in paragraph at lines 607--616
+Underfull \hbox (badness 6741) in paragraph at lines 613--622
  [][] 
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 626--626
+
+Underfull \hbox (badness 10000) in paragraph at lines 632--632
  []\T1/ptm/m/n/8 Table 4: |\T1/ptm/b/n/8 Sector-wise Av-er-age Per-for-mance Me
 t-rics| 
  []
 
-
-Underfull \vbox (badness 1895) has occurred while \output is active []
-
- [10 <./Picture3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 652--652
+[10 <./Picture3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
  []\T1/ptm/m/n/8 Table 5: |\T1/ptm/b/n/8 Mar-ket Cap-i-tal-iza-tion Im-pact on 
 Pre-dic-tion Ac-cu-racy| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 665--666
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 676--676
+Underfull \hbox (badness 10000) in paragraph at lines 686--686
  []\T1/ptm/m/n/8 Table 6: |\T1/ptm/b/n/8 Fac-tor In-flu-ence Anal-y-sis| 
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 691--692
+Underfull \hbox (badness 1776) in paragraph at lines 701--702
  [][] 
  []
 
-(PROCS_ ICMLDE 2025.bbl [11]) [12] (PROCS_ ICMLDE 2025.aux)
+[11] (PROCS_ ICMLDE 2025.bbl [12]) [13] (PROCS_ ICMLDE 2025.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 33979 strings out of 474486
- 629606 string characters out of 5744227
- 1943542 words of memory out of 5000000
+ 33980 strings out of 474486
+ 629613 string characters out of 5744227
+ 1947542 words of memory out of 5000000
  55469 multiletter control sequences out of 15000+600000
  680721 words of font info for 248 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,117p,1626b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,14n,117p,1626b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxb.
 pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtx
 mi.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/
@@ -2148,9 +2148,9 @@ elvetic/uhvr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw
 /times/utmb8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/
 times/utmr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on "PROCS_ ICMLDE 2025.pdf" (12 pages, 1980946 bytes).
+Output written on "PROCS_ ICMLDE 2025.pdf" (13 pages, 1985097 bytes).
 PDF statistics:
- 313 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
