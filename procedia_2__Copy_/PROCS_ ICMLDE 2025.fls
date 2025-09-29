@@ -658,6 +658,9 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxpt
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txr.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxptmr.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxr.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txr.vf
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxptmr.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\rtxr.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmri8t.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
@@ -714,6 +717,8 @@ INPUT .\Picture2.png
 INPUT .\Picture2.png
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
+INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT .\Picture3.png
 INPUT .\Picture3.png
 INPUT .\Picture3.png
@@ -736,8 +741,6 @@ INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbmi
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbsy.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\txbex.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
-INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Users\KIIT\AppData\Local\Programs\MiKTeX\fonts\vf\public\txfonts\txb.vf
