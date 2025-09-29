@@ -364,7 +364,7 @@ Implements deep learning-enhanced multi-factor model using LSTM architecture wit
 \item \textbf{News Effect Factor:} FinBERT sentiment scores with 2.0x amplification factor, content-specific adjustments for earnings announcements, management changes, and regulatory issues \cite{TETLOCK2007}.
 \end{itemize}
 
-\textbf{Uncertainty Quantification:} Monte Carlo dropout sampling (10 iterations) during inference provides prediction confidence intervals. Mean prediction $\mu = \frac{1}{N}\sum_{i=1}^{N} \hat{y}_i$ and standard deviation $\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N} (\hat{y}_i - \mu)^2}$ quantify prediction uncertainty for risk assessment integration.
+\textbf{Uncertainty Quantification:} Monte Carlo dropout (10 iterations) provides prediction confidence intervals with $\mu = \frac{1}{N}\sum_{i=1}^{N} \hat{y}_i$ and $\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N} (\hat{y}_i - \mu)^2}$.
 
 \subsection{{Risk Assessment Module}}
 
@@ -584,7 +584,7 @@ Performance varied significantly across 70 stocks, with exceptional performers a
 
 \textbf{Economic Significance Analysis:} Risk-adjusted performance demonstrates 20\% Sharpe ratio improvement (0.342 vs 0.285). EGARCH volatility modeling with CVaR of -8.47\% and Maximum Drawdown of -12.47\% indicates superior portfolio protection \cite{Rockafellar2000,Jorion2001}.
 
-\textbf{Performance Confidence Assessment:} Model uncertainty quantification employs Monte Carlo dropout sampling (10 iterations) providing prediction confidence intervals. Cross-stock performance analysis reveals 5 exceptional performers (R² > 0.98, 7.1\% of sample) and systematic performance correlation with market capitalization (Pearson r=0.78, p<0.001), validating model reliability across different market segments.
+\textbf{Confidence Assessment:} Monte Carlo dropout (10 iterations) provides uncertainty quantification. Cross-stock analysis shows 5 exceptional performers (R² > 0.98, 7.1\%) and market cap correlation (r=0.78, p<0.001).
 
 The analysis reveals 5 stocks achieving exceptional performance with R² > 0.98, representing 7.1\% of the total sample. These top performers demonstrate remarkably low prediction errors, with MSE values below 0.02 and RMSE below 0.14 \cite{Bao2017}. The standout performer 000333.SZ (Midea Group) achieved near-perfect prediction accuracy with R² = 0.994 and MSE = 0.004, indicating the model captures 99.4\% of the stock's return variance through effective factor combination and sentiment integration.
 \begin{figure}[!ht] % Better placement options
@@ -647,7 +647,7 @@ Real Estate & 0.106 & 0.316 & 0.297 & 0.591 & 600340.SH, 000002.SZ \\
 }
 \end{table}
 
-\textbf{Statistical Validation:} Sector-wise performance differences undergo rigorous statistical testing using one-way ANOVA (F-statistic significant at p $<$ 0.01) followed by post-hoc Tukey HSD tests for pairwise sector comparisons \cite{Box1970,Tukey1949}. The analysis confirms statistically significant performance variations across Technology, Consumer, Financial, Industrial, and Real Estate sectors, with Consumer and Technology sectors demonstrating superior predictability.
+\textbf{Statistical Validation:} ANOVA testing (p < 0.01) with Tukey HSD post-hoc analysis confirms significant sector performance differences, with Consumer and Technology sectors showing superior predictability \cite{Box1970,Tukey1949}.
 
 \textbf{Data Leakage Prevention:} Chronological splitting with training (2018-2020) and testing (2021) periods. Normalization parameters ($\mu$, $\sigma$) computed only on training data \cite{Fischer2018}.
 
