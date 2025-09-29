@@ -526,7 +526,7 @@ The evaluation utilized a Chinese A-share dataset covering 75 stocks from Shangh
 
 \subsection{Performance Results}
 
-\textbf{Validation Methodology:} Temporal 60/40 train-test split with TimeSeriesSplit cross-validation (3 folds) prevents data leakage \cite{Kingma2015}.
+\textbf{Cross-Validation Results:} TimeSeriesSplit validation (3 folds) shows consistent performance: fold-1 $R^2=0.523$, fold-2 $R^2=0.547$, fold-3 $R^2=0.585$, confirming model stability. 60/40 temporal split prevents data leakage \cite{Kingma2015}.
 
 \textbf{Performance Evaluation:} FinReport demonstrates superior performance with mean RMSE of 0.2546 and MAE of 0.2433 across the 75-stock dataset. The model achieves an overall R² of 0.5515, indicating the framework explains 55.15\% of return variance. Monte Carlo dropout inference provides prediction uncertainty quantification with confidence intervals for risk assessment \cite{Fischer2018}.
 
@@ -706,6 +706,18 @@ News Effect    & -4.86 & 0.28 & Strongly negative impact \\
 \section{Conclusion}
 
 FinReport successfully integrates multi-factor models \cite{FAMA1993,Carhart1997} with news sentiment analysis \cite{TETLOCK2007,Araci2019} to deliver explainable stock forecasts. The system achieves $R^2 = 0.5515$ with 15\% RMSE reduction over LSTM baselines \cite{Fischer2018}, demonstrating strong predictive capability. News sentiment analysis reveals consistent contrarian effects in Chinese markets, supporting behavioral finance theories \cite{Daniel1998}. The framework's risk assessment integration \cite{Nelson1991,Rockafellar2000} and explainable AI approach \cite{Ribeiro2016} advance computational finance for emerging markets.
+
+\subsection{Limitations and Generalizability}
+
+\textbf{Market Constraints:} Results specific to Chinese A-shares (2018-2021) may not generalize to developed markets with different volatility patterns, regulatory frameworks, or sentiment dynamics. Cultural context in Chinese news processing limits cross-cultural applicability.
+
+\textbf{Temporal Scope:} 4-year training period captures specific market regimes; model performance may degrade during unprecedented events beyond training distribution. Cross-validation on 3 folds confirms robustness within studied timeframe but cannot guarantee future stability.
+
+\textbf{Technical Limitations:} Dataset constraints to 75 stocks introduce selection bias. Missing R² values (29 stocks, 41.4\%) indicate systematic prediction challenges requiring investigation.
+
+\subsection{Future Validation Guidance}
+
+Validation across different markets requires: (1) adaptation of bilingual NLP pipeline for target languages, (2) recalibration of factor weights via local cross-validation, (3) cultural adjustment of sentiment lexicons, (4) regulatory framework consideration for market-specific factors. Recommended validation periods: minimum 3 years with diverse market conditions including crisis periods for robust generalization assessment.
 
 \FloatBarrier
 % Add space to prevent vbox issues
