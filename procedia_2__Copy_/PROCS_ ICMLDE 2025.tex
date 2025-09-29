@@ -338,31 +338,23 @@ Processes multi-modal financial data combining structured metrics with unstructu
 
 Converts unstructured news into quantifiable sentiment metrics through three integrated components \cite{TETLOCK2007}:
 
-\textbf{FinBERT Configuration:} Pre-trained \texttt{yiyanghkust/finbert-tone} model with 128-token maximum sequence length and truncation handling. Sentiment scores undergo tanh transformation with scale factor 2.0 for range compression, computing final scores as $(p_{\text{positive}} - p_{\text{negative}}) \times \tanh(2.0)$ where $p$ represents class probabilities \cite{Araci2019}.
+\textbf{FinBERT Configuration:} Pre-trained \texttt{yiyanghkust/finbert-tone} with 128-token max length, sentiment scores computed as $(p_{pos} - p_{neg}) \times \tanh(2.0)$ \cite{Araci2019}.
 
-\textbf{Bilingual NLP Pipeline:} Integrated English-Chinese processing with culturally-adapted financial lexicons. Positive keywords include "profit," "acquisition," "revenue" (English) and "growth," "gain," "cooperation" (Chinese transliterated). Negative keywords encompass "lawsuit," "loss," "decline" (English) and "loss," "reduction," "debt" (Chinese transliterated). Keyword matching employs case-insensitive search with 3x weight multiplier per occurrence \cite{Loughran2011}.
+\textbf{Bilingual NLP Pipeline:} English-Chinese processing with financial lexicons (40+ positive, 35+ negative terms), 3x keyword weight multiplier \cite{Loughran2011}.
 
-\textbf{Event Extraction:} Semantic Role Labeling using AllenNLP's structured-prediction-srl-bert model identifies financial events through predicate-argument structure analysis. Event factor computation combines keyword counting, percentage extraction via regex pattern (\textbackslash d+(?:\textbackslash.\textbackslash d+)?\%), and monetary amount detection using Chinese billion yuan patterns (yiyuan). Final event values are bounded within [-2.0, +2.0] range with stochastic template generation for explanatory text \cite{TETLOCK2007}.
+\textbf{Event Extraction:} AllenNLP SRL model for financial events, bounded values [-2.0, +2.0] with template generation \cite{TETLOCK2007}.
 
-\textbf{Chinese Market Adaptation:} Specialized processing for Chinese financial terminology with cultural context awareness. Positive terms include Chinese characters for growth (zengzhang), acquisition (huode), cooperation (hezuo), revenue (shouru), and net profit (jingliru). Negative terms encompass Chinese characters for loss (kuisun), share reduction (jianchi), debt (zhaiwu), default (weiyue), and bankruptcy (pochan). Implements dual-language sentiment analysis with cross-validation against Chinese financial news corpus achieving 83.2\% accuracy on domain-specific sentiment classification \cite{FinReportDataset2025}.
+\textbf{Chinese Market Adaptation:} Dual-language sentiment analysis with Chinese financial lexicons, 83.2\% accuracy \cite{FinReportDataset2025}.
 
 \subsection{{Return Forecasting Module}}
 
 Implements deep learning-enhanced multi-factor model using LSTM architecture with six factors capturing cross-sectional return variation \cite{FAMA1993,Harvey2016}:
 
-\textbf{LSTM Architecture:} Three-layer LSTM network with 128 hidden units per layer, 0.2 dropout rate, and sequence length 10. Architecture includes batch normalization for training stability, gradient clipping (max norm 1.0) for exploding gradient prevention, and Monte Carlo dropout inference for uncertainty quantification. Forward pass processes sequences $(x_t, x_{t-1}, \ldots, x_{t-9})$ to predict return $\hat{y}_t$ \cite{Fischer2018}.
+\textbf{LSTM Architecture:} 3-layer network, 128 hidden units, 0.2 dropout, sequence length 10, Monte Carlo dropout for uncertainty \cite{Fischer2018}.
 
-\textbf{Hyperparameter Optimization:} Comprehensive grid search using TimeSeriesSplit cross-validation (3 folds) across parameter space: learning rates [0.001, 0.0005, 0.0001], hidden sizes [64, 128, 256], layer counts [1, 2, 3], sequence lengths [5, 10, 15], dropout rates [0.0, 0.2, 0.4]. Optimal configuration: lr=0.001, hidden=128, layers=3, seq\_len=10, dropout=0.2 selected via minimum validation loss with early stopping (patience=7) \cite{Kingma2015}.
+\textbf{Hyperparameter Optimization:} TimeSeriesSplit grid search (243 combinations), optimal: lr=0.001, hidden=128, 3 layers \cite{Kingma2015}.
 
-\textbf{Multi-Factor Integration:} Six-factor computation with technical indicator integration:
-\begin{itemize}
-\item \textbf{Market Factor:} Volatility-based calculation using rolling standard deviation (20-day window) combined with RSI overbought/oversold conditions. High volatility ($\sigma > 0.02$) triggers amplification factor 1.5 \cite{Nelson1991}.
-\item \textbf{Size Factor:} Market capitalization quartile classification with logarithmic transformation and sentiment-adjusted effects. Small-cap volatility receives 2.0x amplification versus large-cap baseline \cite{FAMA1993}.
-\item \textbf{Valuation Factor:} Book-to-Market, Price-to-Earnings, Dividend Yield analysis with sector-specific normalization (Technology, Consumer, Financial, Industrial, Real Estate) and news sentiment integration \cite{Harvey2016}.
-\item \textbf{Profitability Factor:} ROA, ROE, net profit margin computation with asymmetric loss treatment (negative earnings receive 1.5x penalty) and earnings-related keyword amplification \cite{Daniel1998}.
-\item \textbf{Investment Factor:} M\&A activity detection, capital expenditure analysis, and R\&D investment classification with sentiment-conditional scaling based on investment amount extraction from news text \cite{Carhart1997}.
-\item \textbf{News Effect Factor:} FinBERT sentiment scores with 2.0x amplification factor, content-specific adjustments for earnings announcements, management changes, and regulatory issues \cite{TETLOCK2007}.
-\end{itemize}
+\textbf{Multi-Factor Integration:} Six factors with technical indicators: Market (volatility-based, 1.5x amplification), Size (cap-quartiles, 2.0x small-cap), Valuation (B/M, P/E ratios), Profitability (ROA/ROE, 1.5x loss penalty), Investment (M\&A detection), News Effect (FinBERT, 2.0x amplification) \cite{FAMA1993,Harvey2016,TETLOCK2007}.
 
 \textbf{Uncertainty Quantification:} Monte Carlo dropout (10 iterations) provides prediction confidence intervals with $\mu = \frac{1}{N}\sum_{i=1}^{N} \hat{y}_i$ and $\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N} (\hat{y}_i - \mu)^2}$.
 
@@ -517,11 +509,11 @@ Overall trend determination uses weighted factor aggregation as shown in Algorit
 
 The evaluation utilized a Chinese A-share dataset covering 75 stocks from Shanghai and Shenzhen exchanges (January 2018 - December 2021). The dataset included 59 feature columns encompassing price data, technical indicators (RSI, BIAS, MFI, CCI), and fundamental factors, complemented by 42,000+ financial news items from 7 major Chinese sources. After preprocessing, 23,567 samples were used for modeling. \textbf{Dataset Scope:} The 4-year timeframe captures diverse market conditions including COVID-19 impacts, providing sufficient temporal variation for robust model validation across different market regimes.
 
-\textbf{Technical Implementation:} LSTM network implemented in PyTorch with optimized hyperparameters discovered through systematic grid search: 128 hidden units, 3 layers, 0.2 dropout rate, sequence length 10, Adam optimizer with 0.001 learning rate, batch size 32, and MSE loss function. Training employed early stopping (patience=7), learning rate scheduling (ReduceLROnPlateau with factor=0.5, patience=3), and gradient clipping (max norm=1.0). The model achieved convergence after average 23 epochs with validation loss monitoring \cite{Kingma2015}.
+\textbf{Technical Implementation:} PyTorch LSTM (128 units, 3 layers, 0.2 dropout), Adam optimizer (lr=0.001), early stopping (23 epochs average) \cite{Kingma2015}.
 
-\textbf{FinBERT Implementation:} Pre-trained \texttt{yiyanghkust/finbert-tone} model achieved 83.2\% sentiment classification accuracy on Chinese financial texts. Configuration includes 128-token maximum length with truncation, softmax probability extraction, and tanh transformation for sentiment score normalization. Bilingual processing handles English-Chinese mixed content with culturally-adapted keyword dictionaries containing 40+ positive and 35+ negative financial terms \cite{Araci2019}.
+\textbf{FinBERT Implementation:} \texttt{yiyanghkust/finbert-tone}, 83.2\% accuracy, 128-token max length, bilingual processing \cite{Araci2019}.
 
-\textbf{Risk Model Configuration:} EGARCH(1,1) model for asymmetric volatility modeling with empirically estimated parameters: $\omega = -0.012$ (long-term volatility), $\alpha = 0.149$ (ARCH effect), $\gamma = -0.087$ (asymmetry parameter), $\beta = 0.987$ (persistence parameter). Maximum Drawdown calculation employs cumulative return tracking with running maximum maintenance. CVaR computation uses 5\% significance level with historical simulation method \cite{Nelson1991}.
+\textbf{Risk Model Configuration:} EGARCH(1,1) with parameters $\omega=-0.012$, $\alpha=0.149$, $\gamma=-0.087$, $\beta=0.987$. CVaR at 5\% level \cite{Nelson1991}.
 
 \begin{figure}[!ht]
     \centering
