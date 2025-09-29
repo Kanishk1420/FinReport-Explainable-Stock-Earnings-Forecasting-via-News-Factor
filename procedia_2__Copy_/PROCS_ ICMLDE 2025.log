@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  29 SEP 2025 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  29 SEP 2025 18:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -855,7 +855,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip88
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 68.
+Package hyperref Info: Option `colorlinks' set `true' on input line 75.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2024-01-04 L3 programming layer (loader) 
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -1384,52 +1384,52 @@ File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
 Package: listings 2023/02/27 1.9 (Carsten Heinz)
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 189.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 196.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (PROCS_ ICMLDE 2025.aux)
 \openout1 = `"PROCS_ ICMLDE 2025.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 189.
-LaTeX Font Info:    Trying to load font information for OML+txmi on input line 189.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 196.
+LaTeX Font Info:    Trying to load font information for OML+txmi on input line 196.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 189.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 189.
-LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 189.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 196.
+LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 196.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 189.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 189.
-LaTeX Font Info:    ... okay on input line 189.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 189.
-LaTeX Font Info:    ... okay on input line 189.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 189.
-LaTeX Font Info:    ... okay on input line 189.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 189.
-LaTeX Font Info:    Trying to load font information for OMX+txex on input line 189.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 196.
+LaTeX Font Info:    Trying to load font information for OMX+txex on input line 196.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 189.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 189.
-LaTeX Font Info:    Trying to load font information for U+txexa on input line 189.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 196.
+LaTeX Font Info:    Trying to load font information for U+txexa on input line 196.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 189.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 189.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 189.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 196.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 196.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/tipa\t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 189.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 189.
-LaTeX Font Info:    ... okay on input line 189.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 189.
-LaTeX Font Info:    ... okay on input line 189.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 196.
+LaTeX Font Info:    ... okay on input line 196.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count403
@@ -1500,60 +1500,60 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 189.
+Package hyperref Info: Link coloring ON on input line 196.
 \c@lstlisting=\count409
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 243.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 250.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 243.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 250.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 243.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 250.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 243.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 250.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 244.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 251.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 6428) in paragraph at lines 258--258
+Underfull \hbox (badness 6428) in paragraph at lines 265--265
  []|\T1/ptm/m/n/17 FinReport: Ex-plain-able Stock Earn-ings Fore- 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--258
+Underfull \hbox (badness 10000) in paragraph at lines 265--265
  \T1/ptm/m/n/17 cast-ing via News Fac-tor An-a-lyz-ing Model| 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 258.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 265.
 
-Underfull \hbox (badness 3118) in paragraph at lines 258--258
+Underfull \hbox (badness 3118) in paragraph at lines 265--265
  []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing, Kalinga In-sti-tute of In-dus-trial Tech-nol-ogy, Bhubaneswar-751024, In-dia 
  []
 
 
-Underfull \hbox (badness 3118) in paragraph at lines 258--258
+Underfull \hbox (badness 3118) in paragraph at lines 265--265
  []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing, Kalinga In-sti-tute of In-dus-trial Tech-nol-ogy, Bhubaneswar-751024, In-dia 
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 258--258
+Underfull \hbox (badness 3148) in paragraph at lines 265--265
  []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing, Kalinga In-sti-tute of In-dus-trial Tech-nol-ogy, Bhubaneswar-751024, In-dia 
  []
 
 
-Underfull \hbox (badness 3118) in paragraph at lines 258--258
+Underfull \hbox (badness 3118) in paragraph at lines 265--265
  []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing, Kalinga In-sti-tute of In-dus-trial Tech-nol-ogy, Bhubaneswar-751024, In-dia 
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 258--258
+Underfull \hbox (badness 3148) in paragraph at lines 265--265
  []$[]$\T1/ptm/m/it/8 School of Com-puter En-gi-neer-ing, Kalinga In-sti-tute of In-dus-trial Tech-nol-ogy, Bhubaneswar-751024, In-dia 
  []
 
@@ -1563,29 +1563,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <elsevier-logo-3p.pdf, id=7, 54.08205pt x 59.7432pt>
 File: elsevier-logo-3p.pdf Graphic file (type pdf)
 <use elsevier-logo-3p.pdf>
-Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 281.
+Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 288.
 (pdftex.def)             Requested size: 54.0819pt x 59.74303pt.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 281.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 288.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 <SDlogo-3p.pdf, id=8, 96.36pt x 13.04875pt>
 File: SDlogo-3p.pdf Graphic file (type pdf)
 <use SDlogo-3p.pdf>
-Package pdftex.def Info: SDlogo-3p.pdf  used on input line 281.
+Package pdftex.def Info: SDlogo-3p.pdf  used on input line 288.
 (pdftex.def)             Requested size: 96.35974pt x 13.0487pt.
 <Procs.pdf, id=9, 112.42pt x 62.2325pt>
 File: Procs.pdf Graphic file (type pdf)
 <use Procs.pdf>
-Package pdftex.def Info: Procs.pdf  used on input line 281.
+Package pdftex.def Info: Procs.pdf  used on input line 288.
 (pdftex.def)             Requested size: 112.41972pt x 62.23235pt.
 File: elsevier-logo-3p.pdf Graphic file (type pdf)
 <use elsevier-logo-3p.pdf>
-Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 281.
+Package pdftex.def Info: elsevier-logo-3p.pdf  used on input line 288.
 (pdftex.def)             Requested size: 54.0819pt x 59.74303pt.
 File: SDlogo-3p.pdf Graphic file (type pdf)
 <use SDlogo-3p.pdf>
-Package pdftex.def Info: SDlogo-3p.pdf  used on input line 281.
+Package pdftex.def Info: SDlogo-3p.pdf  used on input line 288.
 (pdftex.def)             Requested size: 96.35974pt x 13.0487pt.
 
 Underfull \hbox (badness 3557) has occurred while \output is active
@@ -1594,7 +1594,7 @@ Underfull \hbox (badness 3557) has occurred while \output is active
 
 File: Procs.pdf Graphic file (type pdf)
 <use Procs.pdf>
-Package pdftex.def Info: Procs.pdf  used on input line 281.
+Package pdftex.def Info: Procs.pdf  used on input line 288.
 (pdftex.def)             Requested size: 112.41972pt x 62.23235pt.
 
 Overfull \vbox (53.55399pt too high) has occurred while \output is active []
@@ -1608,175 +1608,178 @@ Overfull \vbox (35.42392pt too high) has occurred while \output is active []
 <flowchart.jpg, id=65, 4336.2pt x 1573.88pt>
 File: flowchart.jpg Graphic file (type jpg)
 <use flowchart.jpg>
-Package pdftex.def Info: flowchart.jpg  used on input line 310.
+Package pdftex.def Info: flowchart.jpg  used on input line 316.
 (pdftex.def)             Requested size: 458.638pt x 166.45103pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--311
+Underfull \hbox (badness 10000) in paragraph at lines 317--317
 []\T1/ptm/m/n/8 Figure 1: |Pro-posed Fin-Re-port Sys-tem Ar-chi-tec-ture: Multi-modal data in-te-gra-tion frame-work com-bin-ing his-tor-i-cal stock data, tech-ni-cal in-di-ca-tors,
  []
 
 [2]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 328.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 335.
  (C:\Users\KIIT\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
+) [3 <./flowchart.jpg>] [4]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 425.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3 <./flowchart.jpg>] [4]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 417.
- [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
-<Picture2.png, id=180, 867.24pt x 578.16pt>
+ [5] [6]
+<Picture2.png, id=182, 867.24pt x 578.16pt>
 File: Picture2.png Graphic file (type png)
 <use Picture2.png>
-Package pdftex.def Info: Picture2.png  used on input line 507.
+Package pdftex.def Info: Picture2.png  used on input line 516.
 (pdftex.def)             Requested size: 374.40143pt x 249.60083pt.
 
-Underfull \hbox (badness 1275) in paragraph at lines 507--508
+Underfull \hbox (badness 1275) in paragraph at lines 516--517
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--508
+Underfull \hbox (badness 10000) in paragraph at lines 517--517
 []\T1/ptm/m/n/8 Figure 2: |LSTM Train-ing Con-ver-gence: Rapid ini-tial learn-ing with val-i-da-tion loss sta-bi-liza-tion af-ter 23 epochs av-er-age, demon-strat-ing ef-fec-tive
- []
-
-[7 <./Picture2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 524--524
- []\T1/ptm/m/n/8 Table 1: |\T1/ptm/b/n/8 Model Per-for-mance Met-rics and In-ter-pre-ta-tions| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 529--529
-[]\T1/ptm/m/n/8 Relatively low mean squared er-ror in-di-cates lim-ited de-vi-a-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 529--529
-\T1/ptm/m/n/8 be-tween pre-dicted and ac-tual val-ues, re-flect-ing pre-cise over-all
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 530--530
-[]\T1/ptm/m/n/8 Root mean squared er-ror sug-gests pre-dic-tions vary by  25% from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 530--530
-\T1/ptm/m/n/8 ac-tual val-ues on av-er-age, within ac-cept-able range for fi-nan-cial
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 531--531
-[]\T1/ptm/m/n/8 Low mean ab-so-lute er-ror con-firms con-sis-tent and mod-er-ate pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\T1/ptm/m/n/8 Model ex-plains 55.15% of vari-ance in ac-tual stock re-turns, re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-\T1/ptm/m/n/8 flect-ing mod-er-ately strong ex-plana-tory power in noisy fi-nan-cial
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 533--533
+ []\T1/ptm/m/n/8 Table 1: |\T1/ptm/b/n/8 Model Per-for-mance Met-rics and In-ter-pre-ta-tions| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--538
+[]\T1/ptm/m/n/8 Relatively low mean squared er-ror in-di-cates lim-ited de-vi-a-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--538
+\T1/ptm/m/n/8 be-tween pre-dicted and ac-tual val-ues, re-flect-ing pre-cise over-all
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--539
+[]\T1/ptm/m/n/8 Root mean squared er-ror sug-gests pre-dic-tions vary by  25% from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--539
+\T1/ptm/m/n/8 ac-tual val-ues on av-er-age, within ac-cept-able range for fi-nan-cial
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--540
+[]\T1/ptm/m/n/8 Low mean ab-so-lute er-ror con-firms con-sis-tent and mod-er-ate pre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--541
+[]\T1/ptm/m/n/8 Model ex-plains 55.15% of vari-ance in ac-tual stock re-turns, re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--541
+\T1/ptm/m/n/8 flect-ing mod-er-ately strong ex-plana-tory power in noisy fi-nan-cial
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--542
 []\T1/ptm/m/n/8 Very high cor-re-la-tion be-tween pre-dicted and ac-tual re-turns con-
  []
 
 
-Underfull \hbox (badness 6220) in paragraph at lines 525--536
+Underfull \hbox (badness 6220) in paragraph at lines 534--545
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--548
+Underfull \hbox (badness 10000) in paragraph at lines 558--558
  []\T1/ptm/m/n/8 Table 2: |\T1/ptm/b/n/8 Top Per-form-ing Stocks (R$[]$ > 0.98)| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--562
+Underfull \hbox (badness 10000) in paragraph at lines 561--572
  [][] 
  []
 
-[8]
-<Picture3.png, id=204, 457.929pt x 356.094pt>
+
+Underfull \vbox (badness 2913) has occurred while \output is active []
+
+ [7 <./Picture2.png>]
+<Picture3.png, id=197, 457.929pt x 356.094pt>
 File: Picture3.png Graphic file (type png)
 <use Picture3.png>
-Package pdftex.def Info: Picture3.png  used on input line 576.
+Package pdftex.def Info: Picture3.png  used on input line 586.
 (pdftex.def)             Requested size: 374.40143pt x 291.15132pt.
 
-Underfull \hbox (badness 1275) in paragraph at lines 576--577
+Underfull \hbox (badness 1275) in paragraph at lines 586--587
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 577--577
+Underfull \hbox (badness 10000) in paragraph at lines 587--587
 []\T1/ptm/m/n/8 Figure 3: |Model Per-for-mance Vi-su-al-iza-tion: (Top) Pre-dicted vs Ac-tual re-turns scat-ter plot show-ing strong lin-ear cor-re-la-tion (r=0.948); (Bot-tom)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 590--590
+Underfull \hbox (badness 10000) in paragraph at lines 600--600
  []\T1/ptm/m/n/8 Table 3: |\T1/ptm/b/n/8 Poorly Per-form-ing Pre-dic-tion Sam-ples| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 591--600
+Underfull \hbox (badness 10000) in paragraph at lines 601--610
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 610--610
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 621--621
  []\T1/ptm/m/n/8 Table 4: |\T1/ptm/b/n/8 Sector-wise Av-er-age Per-for-mance Met-rics| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--622
+Underfull \hbox (badness 10000) in paragraph at lines 622--633
  [][] 
  []
 
-[9 <./Picture3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 634--634
+
+Underfull \hbox (badness 10000) in paragraph at lines 645--645
  []\T1/ptm/m/n/8 Table 5: |\T1/ptm/b/n/8 Mar-ket Cap-i-tal-iza-tion Im-pact on Pre-dic-tion Ac-cu-racy| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 635--646
+Underfull \hbox (badness 10000) in paragraph at lines 646--657
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 655--655
+Underfull \hbox (badness 10000) in paragraph at lines 667--667
  []\T1/ptm/m/n/8 Table 6: |\T1/ptm/b/n/8 Fac-tor In-flu-ence Anal-y-sis| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--669
+Underfull \hbox (badness 10000) in paragraph at lines 669--681
  [][] 
  []
 
-[10] (PROCS_ ICMLDE 2025.bbl [11]) [12] (PROCS_ ICMLDE 2025.aux)
+
+Underfull \vbox (badness 1436) has occurred while \output is active []
+
+ [9 <./Picture3.png>] [10] (PROCS_ ICMLDE 2025.bbl) [11] (PROCS_ ICMLDE 2025.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 33974 strings out of 474486
- 629757 string characters out of 5744227
- 1947542 words of memory out of 5000000
+ 33973 strings out of 474486
+ 629750 string characters out of 5744227
+ 1946542 words of memory out of 5000000
  55455 multiletter control sequences out of 15000+600000
  678422 words of font info for 240 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,117p,1290b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,14n,117p,1290b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxb.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "PROCS_ ICMLDE 2025.pdf" (12 pages, 1980098 bytes).
+Output written on "PROCS_ ICMLDE 2025.pdf" (11 pages, 1979453 bytes).
 PDF statistics:
- 321 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
+ 317 PDF objects out of 1000 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

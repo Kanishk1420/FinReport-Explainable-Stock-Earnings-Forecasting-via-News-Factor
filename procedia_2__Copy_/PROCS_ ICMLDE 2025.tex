@@ -35,12 +35,19 @@
 \documentclass[3p,times,procedia]{elsarticle}
 \flushbottom
 
-% Space optimization commands
-\setlength{\parskip}{3pt}
-\setlength{\baselineskip}{11pt}
-\addtolength{\textfloatsep}{-4pt}
-\addtolength{\floatsep}{-3pt}
-\addtolength{\intextsep}{-3pt}
+% Enhanced space optimization commands
+\setlength{\parskip}{0.5pt}
+\setlength{\baselineskip}{9.5pt}
+\addtolength{\textfloatsep}{-10pt}
+\addtolength{\floatsep}{-8pt}
+\addtolength{\intextsep}{-8pt}
+\addtolength{\abovecaptionskip}{-5pt}
+\addtolength{\belowcaptionskip}{-5pt}
+\setlength{\itemsep}{-1pt}
+\setlength{\parsep}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{6pt}
 
 %% The `ecrc' package must be called to make the CRC functionality available
 \usepackage{ecrc}
@@ -268,33 +275,32 @@ Financial forecasting, stock market prediction, multi-factor analysis, technical
 %% main text
 
 % Copyright and publication information
-\vspace{8pt}
+\vspace{2pt}
 \noindent\textbf{Mukesh Kumar}\\
 E-mail address: mukesh.kumarfcs@kiit.ac.in
 
-\vspace{4pt}
+\vspace{2pt}
 \noindent 1877-0509 \copyright\ 2025 The Authors. Published by Elsevier B.V.\\
 This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)\\
 Peer-review under responsibility of the scientific committee of the International Conference on Machine Learning and Data Engineering.
 
-\vspace{6pt}
+\vspace{3pt}
 
 \section{Introduction}
 \label{main}
-
+\vspace{-3pt}
 Financial markets exhibit unprecedented volatility, with emerging markets like the Shanghai Stock Exchange showing daily volatility of 1.7\% versus 0.8-1.2\% for developed markets. Traditional econometric models such as ARIMA \cite{Box1970} struggle to capture sentiment-driven price movements and complex market interdependencies \cite{FAMA1993}. The efficient market hypothesis faces challenges from documented predictable patterns and behavioral factors.
 
 We propose FinReport, a multi-factor framework integrating historical stock data with financial news via machine learning and NLP techniques \cite{Bao2017}. Unlike traditional quantitative approaches, FinReport leverages structured numerical and unstructured textual data for enhanced prediction accuracy. The framework computes six factors (market, size, valuation, profitability, investment, and news effect) for explainable predictions with EGARCH-based risk assessment \cite{Nelson1991}.
 
 Experimental results on Chinese A-share stocks (2018-2021) \cite{FinReportDataset2025} demonstrate 15\% RMSE reduction, 12\% MAE reduction versus LSTM baselines \cite{Fischer2018}, and 20\% Sharpe ratio improvement. This work bridges traditional econometric methods with explainable AI \cite{TETLOCK2007,Ribeiro2016}, advancing computational finance through interpretable sentiment-quantitative integration.
 
-\textbf{Paper Organization:} Section 2 reviews related literature. Section 3 presents the FinReport system architecture. Section 4 details algorithmic implementations. Section 5 provides experimental results. Section 6 concludes with limitations and future guidance.
-
-
+\vspace{1pt}
+\noindent\textbf{Paper Organization:} Section 2 reviews related literature. Section 3 presents the FinReport system architecture. Section 4 details algorithmic implementations. Section 5 provides experimental results. Section 6 concludes with limitations and future guidance.
 
 
 \section{Literature Review}
-
+\vspace{-3pt}
 Early forecasting methods like ARIMA \cite{Box1970} underperformed with RMSE exceeding 0.05 during volatile periods. Multi-factor models by Fama and French \cite{FAMA1993} improved performance but ignored qualitative inputs. LSTM networks \cite{Fischer2018} capture long-term dependencies achieving $R^2 \approx 0.45$ on financial datasets. Recent work integrates financial news sentiment using FinBERT \cite{Araci2019} and NLP frameworks \cite{Loughran2011}, showing 12\% prediction improvement.
 
 \textbf{Comparative Performance:} Bao et al. \cite{Bao2017} reported $R^2 = 0.42$ using stacked autoencoders. Nelson's EGARCH \cite{Nelson1991} achieved volatility prediction accuracy of 78\%. Tetlock's sentiment analysis \cite{TETLOCK2007} demonstrated 15\% return predictability. Our FinReport framework achieves superior $R^2 = 0.5515$, representing 31\% improvement over LSTM baselines and 15\% over recent sentiment-enhanced models.
@@ -302,7 +308,7 @@ Early forecasting methods like ARIMA \cite{Box1970} underperformed with RMSE exc
 However, traditional approaches lack interpretability \cite{Ribeiro2016}, motivating explainable AI frameworks combining structured numerical with unstructured text analysis. The literature increasingly advocates for explainable models that combine structured numerical data with unstructured text analysis, setting the stage for FinReport's factor-based approach to transparent and robust financial forecasting.
 
 \section{System Model And Proposed Mechanism}
-
+\vspace{-3pt}
 FinReport integrates traditional multi-factor models \cite{FAMA1993,Carhart1997} with real-time news sentiment analysis \cite{TETLOCK2007}, extending established financial theory to capture behavioral market dynamics \cite{Daniel1998}. The system employs a modular design with five interconnected components: (1) Data Integration, (2) News Factor Extraction, (3) Return Forecasting, (4) Risk Assessment, and (5) Dynamic Report Generation \cite{Fischer2018}.
 
 \begin{figure}[!ht]
@@ -313,6 +319,7 @@ FinReport integrates traditional multi-factor models \cite{FAMA1993,Carhart1997}
 \end{figure}
 
 \subsection{{Data Integration Module}}
+\vspace{-2pt}
 Processes multi-modal financial data combining structured metrics with unstructured news text \cite{Harvey2016}:
 \begin{itemize}\setlength{\itemsep}{0pt}
 \item \textbf{Historical Data:} Price, volume, market capitalization, and 50+ technical indicators from Chinese A-shares (2018-2021) \cite{FinReportDataset2025}.
@@ -321,7 +328,7 @@ Processes multi-modal financial data combining structured metrics with unstructu
 \end{itemize}
 
 \subsection{{News Factor Extraction Module}}
-
+\vspace{-2pt}
 Converts unstructured news into quantifiable sentiment metrics through three integrated components \cite{TETLOCK2007}:
 
 \begin{itemize}\setlength{\itemsep}{2pt}
@@ -335,7 +342,7 @@ Converts unstructured news into quantifiable sentiment metrics through three int
 \end{itemize}
 
 \subsection{{Return Forecasting Module}}
-
+\vspace{-2pt}
 Implements deep learning-enhanced multi-factor model using LSTM architecture with six factors capturing cross-sectional return variation \cite{FAMA1993,Harvey2016}:
 
 \begin{itemize}\setlength{\itemsep}{2pt}
@@ -349,11 +356,11 @@ Implements deep learning-enhanced multi-factor model using LSTM architecture wit
 \end{itemize}
 
 \subsection{{Risk Assessment Module}}
-
+\vspace{-2pt}
 Implements multi-dimensional risk framework addressing traditional variance-based limitations \cite{Jorion2001,Rockafellar2000}. The framework incorporates EGARCH modeling for asymmetric volatility responses \cite{Nelson1991}, maximum drawdown calculations following established portfolio risk metrics, and Conditional Value at Risk (CVaR) for tail risk assessment \cite{Rockafellar2000}. Risk classifications range from favorable to substantial based on integrated scoring combining volatility, drawdown, and return components.
 
 \subsection{{Factor Enhancement and Overall Trend Calculation}}
-
+\vspace{-2pt}
 Combines individual factor signals through multi-stage amplification and weighted aggregation addressing scale heterogeneity \cite{Harvey2016,FAMA1993}. The weighting scheme assigns highest priority to event factors (0.25) due to strong short-term predictive power \cite{Daniel1998}, followed by investment factors (0.20) for medium-term impact, with balanced weighting for market, size, and profitability factors following established multi-factor model conventions \cite{FAMA1993,Carhart1997}.
 
 \begin{itemize}\setlength{\itemsep}{2pt}
@@ -363,11 +370,11 @@ Combines individual factor signals through multi-stage amplification and weighte
 \end{itemize}
 
 \subsection{Dynamic Report Generation Module}
-
+\vspace{-2pt}
 Translates quantitative analyses into actionable insights using hierarchical information architecture, cultural adaptation (red=prosperity, green=decline for Chinese markets), precision control (one decimal), natural language generation with template-based explanations, and multi-stakeholder accessibility \cite{Ribeiro2016,Harvey2016}.
 
 \section{Algorithm}
-
+\vspace{-3pt}
 \subsection{Return Forecast Calculation}
 The return forecast is computed using a weighted combination of multiple factors \cite{FAMA1993}.
 
@@ -391,6 +398,7 @@ Each factor employs regime-adaptive amplification \cite{Carhart1997}:
 \end{itemize}
 
 \subsection{Risk Assessment Methodology}
+\vspace{-2pt}
 Risk assessment combines volatility classification, weighted scoring using Equation (2), and metrics including EGARCH-based volatility (Equation 3), Maximum Drawdown, CVaR, and Risk-Adjusted Ratio as detailed in Algorithm~\ref{alg:max_drawdown}, Algorithm~\ref{alg:cvar}, and Algorithm~\ref{alg:risk_adjusted} \cite{Jorion2001,Rockafellar2000}.
 
 \begin{align}
@@ -413,7 +421,7 @@ Value at Risk (VaR) is calculated using the 95\% confidence level based on histo
 
 \textbf{Algorithm~\ref{alg:max_drawdown} - Maximum Drawdown Calculation:} This algorithm computes the maximum peak-to-trough decline in portfolio value over the investment period. Maximum Drawdown is a critical risk metric that measures the worst-case scenario for portfolio performance, indicating the maximum loss an investor would have experienced from the highest portfolio value to the lowest subsequent value. The algorithm iteratively tracks cumulative returns, maintains running maximum values, and calculates drawdowns at each time step to identify the maximum decline period.
 
-\begin{algorithm}[H]\footnotesize
+\begin{algorithm}[H]\footnotesize\setlength{\abovecaptionskip}{-2pt}
 \caption{Maximum Drawdown}
 \label{alg:max_drawdown}
 \begin{algorithmic}[1]
@@ -432,7 +440,7 @@ Value at Risk (VaR) is calculated using the 95\% confidence level based on histo
 
 \textbf{Algorithm~\ref{alg:cvar} - Conditional Value at Risk (CVaR):} This algorithm calculates the expected loss in the worst-case scenarios beyond the Value at Risk threshold. CVaR, also known as Expected Shortfall, provides a more comprehensive risk measure than VaR by considering the magnitude of extreme losses rather than just their probability. The algorithm sorts historical returns, identifies the VaR threshold at the specified confidence level, and computes the expected value of all losses exceeding this threshold, providing insights into tail risk exposure \cite{Rockafellar2000}.
 
-\begin{algorithm}[H]\footnotesize
+\begin{algorithm}[H]\footnotesize\setlength{\abovecaptionskip}{-2pt}
 \caption{Conditional Value at Risk (CVaR)}
 \label{alg:cvar}
 \begin{algorithmic}[1]
@@ -447,7 +455,7 @@ Value at Risk (VaR) is calculated using the 95\% confidence level based on histo
 
 \textbf{Algorithm~\ref{alg:risk_adjusted} - Risk-Adjusted Performance Ratio:} This algorithm computes the risk-adjusted return metric that normalizes expected returns by their associated volatility, similar to the Sharpe ratio concept. The risk-adjusted ratio enables comparison of investment performance across different volatility regimes and helps identify strategies that generate superior returns per unit of risk. This metric is essential for portfolio optimization and performance evaluation in financial risk management.
 
-\begin{algorithm}[H]\footnotesize
+\begin{algorithm}[H]\footnotesize\setlength{\abovecaptionskip}{-2pt}
 \caption{Risk-Adjusted Ratio}
 \label{alg:risk_adjusted}
 \begin{algorithmic}[1]
@@ -463,9 +471,10 @@ Value at Risk (VaR) is calculated using the 95\% confidence level based on histo
 \end{algorithm}
 
 \subsection{Overall Trend Classification}
+\vspace{-2pt}
 Overall trend determination uses weighted factor aggregation as shown in Algorithm~\ref{alg:market_trend} \cite{Carhart1997}. This algorithm integrates all computed factors with their respective weights to determine the overall market sentiment and trend direction. The trend classification provides a comprehensive market outlook by combining fundamental, technical, and sentiment-based factors into a single interpretable metric.
 
-\begin{algorithm}[H]\footnotesize
+\begin{algorithm}[H]\footnotesize\setlength{\abovecaptionskip}{-2pt}
 \caption{Overall Market Trend}
 \label{alg:market_trend}
 \begin{algorithmic}[1]
@@ -485,7 +494,7 @@ Overall trend determination uses weighted factor aggregation as shown in Algorit
 \end{algorithm}
 
 \section{Result Analysis}
-
+\vspace{-3pt}
 \subsection{Dataset and Implementation Configuration}
 
 \textbf{Stock Selection Methodology:} All 75 available stocks used to avoid selection bias, with only minimum data requirement filter (>10 observations) for LSTM compatibility \cite{FinReportDataset2025}.
@@ -510,7 +519,7 @@ The evaluation utilized a Chinese A-share dataset covering 75 stocks from Shangh
 \end{figure}
 
 \subsection{Performance Results}
-
+\vspace{-2pt}
 \begin{itemize}\setlength{\itemsep}{1pt}
 \item \textbf{Cross-Validation Results:} TimeSeriesSplit validation (3 folds) shows consistent performance: fold-1 $R^2=0.523$, fold-2 $R^2=0.547$, fold-3 $R^2=0.585$, confirming model stability. 60/40 temporal split prevents data leakage \cite{Kingma2015}.
 
@@ -541,13 +550,14 @@ In practical terms, these results demonstrate the model’s utility for real-wor
 
 
 \subsection{Stock-Specific Analysis}
+\vspace{-2pt}
 Performance varied significantly across 70 stocks, with exceptional performers achieving R² > 0.98:
 
 \begin{table}[!ht]
 \centering
 \caption{\textbf{Top Performing Stocks (R\textsuperscript{2} > 0.98)}}
-\renewcommand{\arraystretch}{1.4}
-\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{8pt}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
 \textbf{Stock} & \textbf{MSE} & \textbf{RMSE} & \textbf{MAE} & \textbf{$\mathbf{R^2}$} \\
@@ -585,7 +595,7 @@ As shown in Fig. 3, the predictions demonstrate a strong linear relationship wit
 %\textbf{Challenging Prediction Cases:}
 
 \begin{table}[!ht]\footnotesize
-\renewcommand{\arraystretch}{1.2}
+\renewcommand{\arraystretch}{1.1}
 \centering
 \caption{\textbf{Poorly Performing Prediction Samples}}
 \begin{tabular}{|l|c|c|c|c|l|}
@@ -603,6 +613,7 @@ As shown in Fig. 3, the predictions demonstrate a strong linear relationship wit
 
 % \textbf{Additional Performance Insights:} Among the 70 analyzed stocks, the data reveals distinct performance clusters. The highest MSE values are observed in 002385.SZ (1.297) and 601727.SH (1.246), both exceeding 1.0, indicating substantial prediction errors. Conversely, 000333.SZ achieves the lowest MSE of 0.004, representing a 324-fold improvement over the worst performer. The distribution shows 29 stocks (41.4\%) with missing R² values, suggesting systematic data availability issues that may warrant further investigation in model validation procedures \cite{Shah2019}.
 \subsection{Sector-Based Analysis}
+\vspace{-2pt}
 To examine sector-specific performance patterns, stocks were categorized into five primary sectors: Technology, Consumer, Financial, Industrial, and Real Estate. This classification followed standard Global Industry Classification Standard (GICS) sector definitions, with occasional adjustments for China-specific market characteristics. For each sector, performance metrics were aggregated using both simple averages and weighted averages based on market capitalization to avoid distortion from outlier stocks.
 
 \begin{table}[!ht]\footnotesize
@@ -648,6 +659,7 @@ Micro       & 0.238 & 0.459 & 0.421 & 0.298 \\
 % Strong correlations confirmed the market cap-accuracy relationship (Pearson r=0.78, Spearman $\rho$=0.81, p<0.001). Hierarchical regression controlling for sector, volume, and volatility retained market cap significance ($\Delta$R²=0.23, p<0.001). Ultra-large-cap stocks like 000333.SZ (R²=0.994) and 600519.SH (R²=0.992) demonstrated exceptional predictability versus smaller-cap stocks like 002385.SZ (MSE=1.297).
 
 \subsection{Factor Influence Analysis}
+\vspace{-2pt}
 Standardized regression analysis quantified relative factor impacts across all stocks:
 
 \begin{table}[H]\footnotesize
@@ -681,11 +693,11 @@ News Effect    & -4.86 & 0.28 & Strongly negative impact \\
 \end{itemize}
 
 \section{Conclusion}
-
+\vspace{-3pt}
 FinReport successfully integrates multi-factor models \cite{FAMA1993,Carhart1997} with news sentiment analysis \cite{TETLOCK2007,Araci2019} to deliver explainable stock forecasts. The system achieves $R^2 = 0.5515$ with 15\% RMSE reduction over LSTM baselines \cite{Fischer2018}, demonstrating strong predictive capability. News sentiment analysis reveals consistent contrarian effects in Chinese markets, supporting behavioral finance theories \cite{Daniel1998}. The framework's risk assessment integration \cite{Nelson1991,Rockafellar2000} and explainable AI approach \cite{Ribeiro2016} advance computational finance for emerging markets.
 
 \subsection{Limitations and Generalizability}
-
+\vspace{-2pt}
 \begin{itemize}\setlength{\itemsep}{1pt}
 \item \textbf{Market Constraints:} Results specific to Chinese A-shares (2018-2021) may not generalize to developed markets with different volatility patterns, regulatory frameworks, or sentiment dynamics. Cultural context in Chinese news processing limits cross-cultural applicability.
 
@@ -695,7 +707,7 @@ FinReport successfully integrates multi-factor models \cite{FAMA1993,Carhart1997
 \end{itemize}
 
 \subsection{Future Validation Guidance}
-
+\vspace{-2pt}
 Validation across different markets requires: (1) adaptation of bilingual NLP pipeline for target languages, (2) recalibration of factor weights via local cross-validation, (3) cultural adjustment of sentiment lexicons, (4) regulatory framework consideration for market-specific factors. Recommended validation periods: minimum 3 years with diverse market conditions including crisis periods for robust generalization assessment. 
 
 % \section*{Acknowledgements}
