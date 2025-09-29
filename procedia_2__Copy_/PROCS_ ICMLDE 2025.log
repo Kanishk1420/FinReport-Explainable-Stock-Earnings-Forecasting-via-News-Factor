@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  29 SEP 2025 12:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.19)  29 SEP 2025 13:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1621,13 +1621,16 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [2]
 Underfull \vbox (badness 1546) has occurred while \output is active []
 
- [3 <./flowchart.jpg>] [4] [5]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 423.
+ [3 <./flowchart.jpg>] [4]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 421.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [6]
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
 []  \T1/pcr/m/n/10 profitability (0.15), investment (0.20), news_effect (0.10), event
  []
 
@@ -1635,158 +1638,158 @@ Underfull \hbox (badness 10000) in paragraph at lines 492--493
 <Picture2.png, id=186, 867.24pt x 578.16pt>
 File: Picture2.png Graphic file (type png)
 <use Picture2.png>
-Package pdftex.def Info: Picture2.png  used on input line 530.
+Package pdftex.def Info: Picture2.png  used on input line 528.
 (pdftex.def)             Requested size: 374.40143pt x 249.60083pt.
 
-Underfull \hbox (badness 1275) in paragraph at lines 530--531
+Underfull \hbox (badness 1275) in paragraph at lines 528--529
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 531--531
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
  []\T1/ptm/m/n/8 Figure 2: |Rapid Ini-tial Learn-ing| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--543
+ []\T1/ptm/m/n/8 Table 1: |\T1/ptm/b/n/8 Model Per-for-mance Met-rics and In-ter-pre-ta-tions| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--548
+[]\T1/ptm/m/n/10 Relatively low mean squared er-ror in-di-cates lim-ited
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--548
+\T1/ptm/m/n/10 de-vi-a-tion be-tween pre-dicted and ac-tual val-ues, re-flect-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--549
+[]\T1/ptm/m/n/10 Root mean squared er-ror sug-gests that pre-dic-tions vary
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--549
+\T1/ptm/m/n/10 by ap-prox-i-mately 25% from ac-tual val-ues on av-er-age,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 550--550
+[]\T1/ptm/m/n/10 A low mean ab-so-lute er-ror con-firms con-sis-tent and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 551--551
+[]\T1/ptm/m/n/10 The model ex-plains 55.15% of the vari-ance in ac-tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 551--551
+\T1/ptm/m/n/10 stock re-turns, re-flect-ing mod-er-ately strong ex-plana-tory
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--552
+[]\T1/ptm/m/n/10 A very high cor-re-la-tion be-tween pre-dicted and ac-tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--552
+\T1/ptm/m/n/10 re-turns con-firms strong lin-ear align-ment and model
+ []
+
+
+Underfull \hbox (badness 3407) in paragraph at lines 544--555
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
+ []\T1/ptm/m/n/8 Table 2: |\T1/ptm/b/n/8 Top Per-form-ing Stocks (R$[]$ > 0.98)| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--581
+ [][] 
+ []
+
+[8 <./Picture2.png>]
+<Picture3.png, id=201, 457.929pt x 356.094pt>
+File: Picture3.png Graphic file (type png)
+<use Picture3.png>
+Package pdftex.def Info: Picture3.png  used on input line 593.
+(pdftex.def)             Requested size: 374.40143pt x 291.15132pt.
+
+Underfull \hbox (badness 1275) in paragraph at lines 593--597
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--598
+ []\T1/ptm/m/n/8 Figure 3: |Over-all Statis-tics| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--614
+ []\T1/ptm/m/n/8 Table 3: |\T1/ptm/b/n/8 Poorly Per-form-ing Pre-dic-tion Sam-ples| 
+ []
+
+
+Underfull \hbox (badness 6741) in paragraph at lines 615--624
+ [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./Picture2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 545--545
- []\T1/ptm/m/n/8 Table 1: |\T1/ptm/b/n/8 Model Per-for-mance Met-rics and In-ter-pre-ta-tions| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
-[]\T1/ptm/m/n/10 Relatively low mean squared er-ror in-di-cates lim-ited
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 550--550
-\T1/ptm/m/n/10 de-vi-a-tion be-tween pre-dicted and ac-tual val-ues, re-flect-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 551--551
-[]\T1/ptm/m/n/10 Root mean squared er-ror sug-gests that pre-dic-tions vary
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 551--551
-\T1/ptm/m/n/10 by ap-prox-i-mately 25% from ac-tual val-ues on av-er-age,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--552
-[]\T1/ptm/m/n/10 A low mean ab-so-lute er-ror con-firms con-sis-tent and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 553--553
-[]\T1/ptm/m/n/10 The model ex-plains 55.15% of the vari-ance in ac-tual
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 553--553
-\T1/ptm/m/n/10 stock re-turns, re-flect-ing mod-er-ately strong ex-plana-tory
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--554
-[]\T1/ptm/m/n/10 A very high cor-re-la-tion be-tween pre-dicted and ac-tual
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--554
-\T1/ptm/m/n/10 re-turns con-firms strong lin-ear align-ment and model
- []
-
-
-Underfull \hbox (badness 3407) in paragraph at lines 546--557
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
- []\T1/ptm/m/n/8 Table 2: |\T1/ptm/b/n/8 Top Per-form-ing Stocks (R$[]$ > 0.98)| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--583
- [][] 
- []
-
-[9]
-<Picture3.png, id=207, 457.929pt x 356.094pt>
-File: Picture3.png Graphic file (type png)
-<use Picture3.png>
-Package pdftex.def Info: Picture3.png  used on input line 597.
-(pdftex.def)             Requested size: 374.40143pt x 291.15132pt.
-
-Underfull \hbox (badness 1275) in paragraph at lines 597--601
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 602--602
- []\T1/ptm/m/n/8 Figure 3: |Over-all Statis-tics| 
+ [9]
+Underfull \hbox (badness 10000) in paragraph at lines 634--634
+ []\T1/ptm/m/n/8 Table 4: |\T1/ptm/b/n/8 Sector-wise Av-er-age Per-for-mance Met-rics| 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10 <./Picture3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 618--618
- []\T1/ptm/m/n/8 Table 3: |\T1/ptm/b/n/8 Poorly Per-form-ing Pre-dic-tion Sam-ples| 
- []
-
-
-Underfull \hbox (badness 6741) in paragraph at lines 619--628
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 638--638
- []\T1/ptm/m/n/8 Table 4: |\T1/ptm/b/n/8 Sector-wise Av-er-age Per-for-mance Met-rics| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 668--668
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
  []\T1/ptm/m/n/8 Table 5: |\T1/ptm/b/n/8 Mar-ket Cap-i-tal-iza-tion Im-pact on Pre-dic-tion Ac-cu-racy| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 681--682
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
  [][] 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 692--692
+
+Underfull \hbox (badness 10000) in paragraph at lines 686--686
  []\T1/ptm/m/n/8 Table 6: |\T1/ptm/b/n/8 Fac-tor In-flu-ence Anal-y-sis| 
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 707--708
+Underfull \hbox (badness 1776) in paragraph at lines 701--702
  [][] 
  []
 
-[12] (PROCS_ ICMLDE 2025.bbl) [13] (PROCS_ ICMLDE 2025.aux)
+[11] (PROCS_ ICMLDE 2025.bbl) [12] (PROCS_ ICMLDE 2025.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 33982 strings out of 474486
- 629941 string characters out of 5744227
- 1944542 words of memory out of 5000000
+ 33981 strings out of 474486
+ 629934 string characters out of 5744227
+ 1945542 words of memory out of 5000000
  55469 multiletter control sequences out of 15000+600000
  680721 words of font info for 248 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,117p,1269b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxb.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsyc.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/KIIT/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "PROCS_ ICMLDE 2025.pdf" (13 pages, 1989431 bytes).
+Output written on "PROCS_ ICMLDE 2025.pdf" (12 pages, 1982802 bytes).
 PDF statistics:
- 324 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
+ 318 PDF objects out of 1000 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
