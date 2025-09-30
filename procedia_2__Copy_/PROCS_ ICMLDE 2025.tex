@@ -249,7 +249,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \begin{abstract}
 %% Text of abstract
-Financial market forecasting has become increasingly challenging, as traditional technical analysis does not capture rapid volatility and sentiment-driven price movements. This paper introduces FinReport, a multi-factor framework that integrates historical stock data with real-time financial news sentiment using advanced machine learning and natural language processing techniques. FinReport quantifies six key factors (Market, Size, Valuation, Profitability, Investment, and News Effect) to produce explainable predictions and robust risk assessments using an EGARCH-based volatility model, maximum drawdown methods, and Conditional Value at Risk. Empirical results on 75 Chinese A-share stocks (2018-2021) demonstrate superior performance: mean RMSE 0.2546, MAE 0.2433, $R^2 = 0.5515$ with 15\% RMSE and 12\% MAE reduction versus LSTM baselines. Top performers achieve $R^2 > 0.98$ (7.1\% of stocks), with \hl{20\% Sharpe ratio improvement} and prediction-actual correlation $\rho = 0.948$. Cross-validation confirms model stability across temporal folds ($R^2$: 0.523-0.585).
+Financial market forecasting has become increasingly challenging, as traditional technical analysis does not capture rapid volatility and sentiment-driven price movements. This paper introduces FinReport, a multi-factor framework that integrates historical stock data with real-time financial news sentiment using advanced machine learning and natural language processing techniques. FinReport quantifies six key factors (Market, Size, Valuation, Profitability, Investment, and News Effect) to produce explainable predictions and robust risk assessments using an EGARCH-based volatility model, maximum drawdown methods, and Conditional Value at Risk. Empirical results on 75 Chinese A-share stocks (2018-2021) demonstrate superior performance: mean RMSE 0.2546, MAE 0.2433, $R^2 = 0.5515$ with \hl{15\% RMSE and 12\% MAE reduction versus LSTM baselines}. Top performers achieve $R^2 > 0.98$ (7.1\% of stocks), with \hl{20\% Sharpe ratio improvement} and prediction-actual correlation $\rho = 0.948$. \hl{Cross-validation confirms model stability across temporal folds} ($R^2$: 0.523-0.585).
 \end{abstract}
 
 \begin{keyword}
@@ -298,14 +298,14 @@ We propose FinReport, a multi-factor framework integrating historical stock data
 Experimental results on Chinese A-share stocks (2018-2021) \cite{FinReportDataset2025} demonstrate 15\% RMSE reduction, 12\% MAE reduction versus LSTM baselines \cite{Fischer2018}, and 20\% Sharpe ratio improvement. This work bridges traditional econometric methods with explainable AI \cite{TETLOCK2007,Ribeiro2016}, advancing computational finance through interpretable sentiment-quantitative integration.
 
 \vspace{1pt}
-\noindent\textbf{Paper Organization:} Section 2 reviews related literature. Section 3 presents the FinReport system architecture. Section 4 details algorithmic implementations. Section 5 provides experimental results. Section 6 concludes with limitations and future guidance.
+\noindent\textbf{Paper Organization:} \hl{Section 2 reviews related literature. Section 3 presents the FinReport system architecture. Section 4 details algorithmic implementations. Section 5 provides experimental results. Section 6 concludes with limitations and future guidance.}
 
 
 \section{Literature Review}
 \vspace{-3pt}
-Early forecasting methods like ARIMA \cite{Box1970} underperformed with RMSE exceeding 0.05 during volatile periods. Multi-factor models by Fama and French \cite{FAMA1993} improved performance but ignored qualitative inputs. LSTM networks \cite{Fischer2018} capture long-term dependencies achieving $R^2 \approx 0.45$ on financial datasets. Recent work integrates financial news sentiment using FinBERT \cite{Araci2019} and NLP frameworks \cite{Loughran2011}, showing 12\% prediction improvement.
+\hl{Early forecasting methods like ARIMA} \cite{Box1970} \hl{underperformed with RMSE exceeding 0.05 during volatile periods}. Multi-factor models by Fama and French \cite{FAMA1993} improved performance but ignored qualitative inputs. LSTM networks \cite{Fischer2018} capture long-term dependencies achieving $R^2 \approx 0.45$ on financial datasets. \hl{Recent work integrates financial news sentiment using FinBERT} \cite{Araci2019} \hl{and NLP frameworks} \cite{Loughran2011}\hl{, showing 12\% prediction improvement}.
 
-\textbf{Comparative Performance:} Bao et al. \cite{Bao2017} reported $R^2 = 0.42$ using stacked autoencoders. Nelson's EGARCH \cite{Nelson1991} achieved volatility prediction accuracy of 78\%. Tetlock's sentiment analysis \cite{TETLOCK2007} demonstrated 15\% return predictability. Our FinReport framework achieves superior $R^2 = 0.5515$, representing 31\% improvement over LSTM baselines and 15\% over recent sentiment-enhanced models.
+\textbf{Comparative Performance:} \hl{Bao et al.} \cite{Bao2017} \hl{reported $R^2 = 0.42$ using stacked autoencoders}. Nelson's EGARCH \cite{Nelson1991} achieved volatility prediction accuracy of 78\%. Tetlock's sentiment analysis \cite{TETLOCK2007} demonstrated 15\% return predictability. \hl{Our FinReport framework achieves superior $R^2 = 0.5515$, representing 31\% improvement over LSTM baselines and 15\% over recent sentiment-enhanced models}.
 
 However, traditional approaches lack interpretability \cite{Ribeiro2016}, motivating explainable AI frameworks combining structured numerical with unstructured text analysis. The literature increasingly advocates for explainable models that combine structured numerical data with unstructured text analysis, setting the stage for FinReport's factor-based approach to transparent and robust financial forecasting.
 
@@ -701,16 +701,16 @@ FinReport successfully integrates multi-factor models \cite{FAMA1993,Carhart1997
 \subsection{Limitations and Generalizability}
 \vspace{-2pt}
 \begin{itemize}\setlength{\itemsep}{1pt}
-\item \textbf{Market Constraints:} Results specific to Chinese A-shares (2018-2021) may not generalize to developed markets with different volatility patterns, regulatory frameworks, or sentiment dynamics. Cultural context in Chinese news processing limits cross-cultural applicability.
+\item \textbf{Market Constraints:} \hl{Results specific to Chinese A-shares (2018-2021) may not generalize to developed markets with different volatility patterns, regulatory frameworks, or sentiment dynamics. Cultural context in Chinese news processing limits cross-cultural applicability.}
 
-\item \textbf{Temporal Scope:} 4-year training period captures specific market regimes; model performance may degrade during unprecedented events beyond training distribution. Cross-validation on 3 folds confirms robustness within studied timeframe but cannot guarantee future stability.
+\item \textbf{Temporal Scope:} \hl{4-year training period captures specific market regimes; model performance may degrade during unprecedented events beyond training distribution. Cross-validation on 3 folds confirms robustness within studied timeframe but cannot guarantee future stability.}
 
 \item \textbf{Technical Limitations:} Dataset constraints to 75 stocks introduce selection bias. \hl{Missing R² values (29 stocks, 41.4\%) indicate systematic prediction challenges requiring investigation.}
 \end{itemize}
 
 \subsection{Future Validation Guidance}
 \vspace{-2pt}
-Validation across different markets requires: (1) adaptation of bilingual NLP pipeline for target languages, (2) recalibration of factor weights via local cross-validation, (3) cultural adjustment of sentiment lexicons, (4) regulatory framework consideration for market-specific factors. Recommended validation periods: minimum 3 years with diverse market conditions including crisis periods for robust generalization assessment. 
+\hl{Validation across different markets requires: (1) adaptation of bilingual NLP pipeline for target languages, (2) recalibration of factor weights via local cross-validation, (3) cultural adjustment of sentiment lexicons, (4) regulatory framework consideration for market-specific factors. Recommended validation periods: minimum 3 years with diverse market conditions including crisis periods for robust generalization assessment.} 
 
 % \section*{Acknowledgements}
 
