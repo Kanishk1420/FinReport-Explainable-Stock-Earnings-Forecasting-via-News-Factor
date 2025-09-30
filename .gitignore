@@ -3,17 +3,4 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Research paper and LaTeX files - keep private
-procedia_2__Copy_/
-*.tex
-*.pdf
-*.aux
-*.log
-*.bbl
-*.blg
-*.synctex.gz
-*.fdb_latexmk
-*.fls
-*.spl
-
 # ... existing content ...
