@@ -107,6 +107,8 @@
 \usepackage{adjustbox}
 \usepackage{verbatim}
 \usepackage{listings}
+\usepackage{soul}  % For text highlighting
+\sethlcolor{yellow}  % Set highlight color to yellow
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
 T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
@@ -247,7 +249,7 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \begin{abstract}
 %% Text of abstract
-Financial market forecasting has become increasingly challenging, as traditional technical analysis does not capture rapid volatility and sentiment-driven price movements. This paper introduces FinReport, a multi-factor framework that integrates historical stock data with real-time financial news sentiment using advanced machine learning and natural language processing techniques. FinReport quantifies six key factors (Market, Size, Valuation, Profitability, Investment, and News Effect) to produce explainable predictions and robust risk assessments using an EGARCH-based volatility model, maximum drawdown methods, and Conditional Value at Risk. Empirical results on 75 Chinese A-share stocks (2018-2021) demonstrate superior performance: mean RMSE 0.2546, MAE 0.2433, $R^2 = 0.5515$ with 15\% RMSE and 12\% MAE reduction versus LSTM baselines. Top performers achieve $R^2 > 0.98$ (7.1\% of stocks), with 20\% Sharpe ratio improvement and prediction-actual correlation $\rho = 0.948$. Cross-validation confirms model stability across temporal folds ($R^2$: 0.523-0.585).
+Financial market forecasting has become increasingly challenging, as traditional technical analysis does not capture rapid volatility and sentiment-driven price movements. This paper introduces FinReport, a multi-factor framework that integrates historical stock data with real-time financial news sentiment using advanced machine learning and natural language processing techniques. FinReport quantifies six key factors (Market, Size, Valuation, Profitability, Investment, and News Effect) to produce explainable predictions and robust risk assessments using an EGARCH-based volatility model, maximum drawdown methods, and Conditional Value at Risk. Empirical results on 75 Chinese A-share stocks (2018-2021) demonstrate superior performance: mean RMSE 0.2546, MAE 0.2433, $R^2 = 0.5515$ with 15\% RMSE and 12\% MAE reduction versus LSTM baselines. Top performers achieve $R^2 > 0.98$ (7.1\% of stocks), with \hl{20\% Sharpe ratio improvement} and prediction-actual correlation $\rho = 0.948$. Cross-validation confirms model stability across temporal folds ($R^2$: 0.523-0.585).
 \end{abstract}
 
 \begin{keyword}
@@ -314,7 +316,7 @@ FinReport integrates traditional multi-factor models \cite{FAMA1993,Carhart1997}
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.98\textwidth]{flowchart.jpg}
-    \caption{Proposed FinReport System Architecture: Multi-modal data integration framework combining historical stock data, technical indicators, and real-time news sentiment through LSTM-based forecasting with EGARCH risk assessment}
+    \caption{\hl{Proposed FinReport System Architecture: Multi-modal data integration framework combining historical stock data, technical indicators, and real-time news sentiment through LSTM-based forecasting with EGARCH risk assessment}}
     \label{fig:workflow_diagram}
 \end{figure}
 
@@ -323,7 +325,7 @@ FinReport integrates traditional multi-factor models \cite{FAMA1993,Carhart1997}
 Processes multi-modal financial data combining structured metrics with unstructured news text \cite{Harvey2016}:
 \begin{itemize}\setlength{\itemsep}{0pt}
 \item \textbf{Historical Data:} Price, volume, market capitalization, and 50+ technical indicators from Chinese A-shares (2018-2021) \cite{FinReportDataset2025}.
-\item \textbf{News Processing:} Bilingual NLP pipelines for English/Chinese financial news \cite{Loughran2011}.
+\item \textbf{News Processing:} \hl{Bilingual NLP pipelines for English/Chinese financial news} \cite{Loughran2011}.
 \item \textbf{Data Preprocessing:} Z-score normalization, outlier winsorization, and missing value imputation \cite{Fischer2018}.
 \end{itemize}
 
@@ -332,13 +334,13 @@ Processes multi-modal financial data combining structured metrics with unstructu
 Converts unstructured news into quantifiable sentiment metrics through three integrated components \cite{TETLOCK2007}:
 
 \begin{itemize}\setlength{\itemsep}{2pt}
-\item \textbf{FinBERT Configuration:} Pre-trained \texttt{yiyanghkust/finbert-tone} with 128-token max length, sentiment scores computed as $(p_{pos} - p_{neg}) \times \tanh(2.0)$ \cite{Araci2019}.
+\item \textbf{FinBERT Configuration:} \hl{Pre-trained \texttt{yiyanghkust/finbert-tone} with 128-token max length, sentiment scores computed as $(p_{pos} - p_{neg}) \times \tanh(2.0)$} \cite{Araci2019}.
 
-\item \textbf{Bilingual NLP Pipeline:} English-Chinese processing with financial lexicons (40+ positive, 35+ negative terms), 3x keyword weight multiplier \cite{Loughran2011}.
+\item \textbf{Bilingual NLP Pipeline:} \hl{English-Chinese processing with financial lexicons (40+ positive, 35+ negative terms), 3x keyword weight multiplier} \cite{Loughran2011}.
 
-\item \textbf{Event Extraction:} AllenNLP SRL model for financial events, bounded values [-2.0, +2.0] with template generation \cite{TETLOCK2007}.
+\item \textbf{Event Extraction:} \hl{AllenNLP SRL model for financial events, bounded values [-2.0, +2.0] with template generation} \cite{TETLOCK2007}.
 
-\item \textbf{Chinese Market Adaptation:} Dual-language sentiment analysis with Chinese financial lexicons, 83.2\% accuracy \cite{FinReportDataset2025}.
+\item \textbf{Chinese Market Adaptation:} \hl{Dual-language sentiment analysis with Chinese financial lexicons, 83.2\% accuracy} \cite{FinReportDataset2025}.
 \end{itemize}
 
 \subsection{{Return Forecasting Module}}
@@ -348,11 +350,11 @@ Implements deep learning-enhanced multi-factor model using LSTM architecture wit
 \begin{itemize}\setlength{\itemsep}{2pt}
 \item \textbf{LSTM Architecture:} 3-layer network, 128 hidden units, 0.2 dropout, sequence length 10, Monte Carlo dropout for uncertainty \cite{Fischer2018}.
 
-\item \textbf{Hyperparameter Optimization:} TimeSeriesSplit grid search (243 combinations), optimal: lr=0.001, hidden=128, 3 layers \cite{Kingma2015}.
+\item \textbf{Hyperparameter Optimization:} \hl{TimeSeriesSplit grid search (243 combinations), optimal: lr=0.001, hidden=128, 3 layers} \cite{Kingma2015}.
 
 \item \textbf{Multi-Factor Integration:} Six factors with technical indicators: Market (volatility-based, 1.5x amplification), Size (cap-quartiles, 2.0x small-cap), Valuation (B/M, P/E ratios), Profitability (ROA/ROE, 1.5x loss penalty), Investment (M\&A detection), News Effect (FinBERT, 2.0x amplification) \cite{FAMA1993,Harvey2016,TETLOCK2007}.
 
-\item \textbf{Uncertainty Quantification:} Monte Carlo dropout (10 iterations) provides prediction confidence intervals with $\mu = \frac{1}{N}\sum_{i=1}^{N} \hat{y}_i$ and $\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N} (\hat{y}_i - \mu)^2}$ \cite{Kingma2015}.
+\item \textbf{Uncertainty Quantification:} \hl{Monte Carlo dropout (10 iterations) provides prediction confidence intervals with $\mu = \frac{1}{N}\sum_{i=1}^{N} \hat{y}_i$ and $\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N} (\hat{y}_i - \mu)^2}$} \cite{Kingma2015}.
 \end{itemize}
 
 \subsection{{Risk Assessment Module}}
@@ -378,7 +380,7 @@ Translates quantitative analyses into actionable insights using hierarchical inf
 \subsection{Return Forecast Calculation}
 The return forecast is computed using a weighted combination of multiple factors \cite{FAMA1993}.
 
-\textbf{Factor Weight Rationale:} Event factor (0.25) receives highest weight due to immediate market impact; Investment factor (0.20) for medium-term effects; Market/Size/Profitability factors (0.15 each) for balanced exposure; Valuation/News factors (0.10 each) for supplementary signals. Weights empirically optimized via cross-validation performance.
+\textbf{Factor Weight Rationale:} \hl{Event factor (0.25) receives highest weight due to immediate market impact; Investment factor (0.20) for medium-term effects; Market/Size/Profitability factors (0.15 each) for balanced exposure; Valuation/News factors (0.10 each) for supplementary signals. Weights empirically optimized via cross-validation performance.}
 \begin{align}
 \mathbf{predicted\_return} &= 0.10 \times \mathbf{market\_factor} + 0.15 \times \mathbf{size\_factor} + 0.10 \times \mathbf{valuation\_factor} \nonumber \\
 &\quad + 0.10 \times \mathbf{profitability\_factor} + 0.20 \times \mathbf{investment\_factor} \nonumber \\
@@ -388,13 +390,13 @@ The return forecast is computed using a weighted combination of multiple factors
 Each factor employs regime-adaptive amplification \cite{Carhart1997}:
 
 \begin{itemize}\setlength{\itemsep}{2pt}
-\item \textbf{Market Factor} \cite{FAMA1993}: Volatility thresholds $\sigma > 4.0\%$ (high), $2.5-4.0\%$ (moderate), $<2.5\%$ (low) with impact ranges $[-3.0, -0.5]$, $[-1.5, 0.0]$, $[0.2, 1.8]$ \cite{Nelson1991}.
+\item \textbf{Market Factor} \cite{FAMA1993}: \hl{Volatility thresholds $\sigma > 4.0\%$ (high), $2.5-4.0\%$ (moderate), $<2.5\%$ (low) with impact ranges $[-3.0, -0.5]$, $[-1.5, 0.0]$, $[0.2, 1.8]$} \cite{Nelson1991}.
 
-\item \textbf{Size Factor}: Small-cap amplification 2.0x (high volatility) vs 1.0x (low volatility).
+\item \textbf{Size Factor}: \hl{Small-cap amplification 2.0x (high volatility) vs 1.0x (low volatility).}
 
-\item \textbf{News Effect Factor} \cite{TETLOCK2007}: Base 2.0x amplification with regime modulation (1.2x high, 1.8x low volatility).
+\item \textbf{News Effect Factor} \cite{TETLOCK2007}: \hl{Base 2.0x amplification with regime modulation (1.2x high, 1.8x low volatility).}
 
-\item \textbf{Investment Factor} \cite{Daniel1998}: Large deals (>1B yuan) receive 1.5x (low volatility) vs 0.8x (high volatility) amplification.
+\item \textbf{Investment Factor} \cite{Daniel1998}: \hl{Large deals (>1B yuan) receive 1.5x (low volatility) vs 0.8x (high volatility) amplification.}
 \end{itemize}
 
 \subsection{Risk Assessment Methodology}
@@ -411,12 +413,12 @@ EGARCH volatility modeling \cite{Nelson1991}:
 \ln(\sigma_t^2) = \omega + \beta \ln(\sigma_{t-1}^2) + \alpha \frac{|r_{t-1}|}{\sigma_{t-1}} + \gamma \frac{r_{t-1}}{\sigma_{t-1}}
 \end{equation}
 
-Value at Risk (VaR) is calculated using the 95\% confidence level based on historical simulation method \cite{Jorion2001}.
+\hl{Value at Risk (VaR) is calculated using the 95\% confidence level based on historical simulation method} \cite{Jorion2001}.
 
 \begin{itemize}\setlength{\itemsep}{2pt}
-\item \textbf{Implementation Details:} All algorithms implemented in Python using NumPy for numerical computation and PyTorch for deep learning components. The system processes data in batch format with configurable sequence windows, employing efficient tensor operations for GPU acceleration when available.
+\item \textbf{Implementation Details:} \hl{All algorithms implemented in Python using NumPy for numerical computation and PyTorch for deep learning components. The system processes data in batch format with configurable sequence windows, employing efficient tensor operations for GPU acceleration when available.}
 
-\item \textbf{Computational Complexity:} LSTM forward pass: $O(T \cdot B \cdot H^2)$ where $T$ is sequence length, $B$ is batch size, $H$ is hidden units. Factor computation: $O(N \cdot F)$ for $N$ stocks and $F$ factors. Overall training complexity: $O(E \cdot T \cdot B \cdot H^2)$ for $E$ epochs.
+\item \textbf{Computational Complexity:} \hl{LSTM forward pass: $O(T \cdot B \cdot H^2)$ where $T$ is sequence length, $B$ is batch size, $H$ is hidden units. Factor computation: $O(N \cdot F)$ for $N$ stocks and $F$ factors. Overall training complexity: $O(E \cdot T \cdot B \cdot H^2)$ for $E$ epochs.}
 \end{itemize}
 
 \textbf{Algorithm~\ref{alg:max_drawdown} - Maximum Drawdown Calculation:} This algorithm computes the maximum peak-to-trough decline in portfolio value over the investment period. Maximum Drawdown is a critical risk metric that measures the worst-case scenario for portfolio performance, indicating the maximum loss an investor would have experienced from the highest portfolio value to the lowest subsequent value. The algorithm iteratively tracks cumulative returns, maintains running maximum values, and calculates drawdowns at each time step to identify the maximum decline period.
@@ -436,7 +438,7 @@ Value at Risk (VaR) is calculated using the 95\% confidence level based on histo
 \end{algorithmic}
 \end{algorithm}
 
-\textbf{Data Preprocessing:} Z-score normalization, forward-fill imputation, technical indicators (RSI-14, BIAS-6,12,24), 3-sigma outlier winsorization at 1st/99th percentiles \cite{Fischer2018}.
+\textbf{Data Preprocessing:} \hl{Z-score normalization, forward-fill imputation, technical indicators (RSI-14, BIAS-6,12,24), 3-sigma outlier winsorization at 1st/99th percentiles} \cite{Fischer2018}.
 
 \textbf{Algorithm~\ref{alg:cvar} - Conditional Value at Risk (CVaR):} This algorithm calculates the expected loss in the worst-case scenarios beyond the Value at Risk threshold. CVaR, also known as Expected Shortfall, provides a more comprehensive risk measure than VaR by considering the magnitude of extreme losses rather than just their probability. The algorithm sorts historical returns, identifies the VaR threshold at the specified confidence level, and computes the expected value of all losses exceeding this threshold, providing insights into tail risk exposure \cite{Rockafellar2000}.
 
@@ -497,33 +499,33 @@ Overall trend determination uses weighted factor aggregation as shown in Algorit
 \vspace{-3pt}
 \subsection{Dataset and Implementation Configuration}
 
-\textbf{Stock Selection Methodology:} All 75 available stocks used to avoid selection bias, with only minimum data requirement filter (>10 observations) for LSTM compatibility \cite{FinReportDataset2025}.
+\textbf{Stock Selection Methodology:} \hl{All 75 available stocks used to avoid selection bias, with only minimum data requirement filter (>10 observations) for LSTM compatibility} \cite{FinReportDataset2025}.
 
-The evaluation utilized a Chinese A-share dataset covering 75 stocks from Shanghai and Shenzhen exchanges (January 2018 - December 2021). The dataset included 59 feature columns encompassing price data, technical indicators (RSI, BIAS, MFI, CCI), and fundamental factors, complemented by 42,000+ financial news items from 7 major Chinese sources. After preprocessing, 23,567 samples were used for modeling.
+\hl{The evaluation utilized a Chinese A-share dataset covering 75 stocks from Shanghai and Shenzhen exchanges (January 2018 - December 2021). The dataset included 59 feature columns encompassing price data, technical indicators (RSI, BIAS, MFI, CCI), and fundamental factors, complemented by 42,000+ financial news items from 7 major Chinese sources. After preprocessing, 23,567 samples were used for modeling.}
 
 \begin{itemize}\setlength{\itemsep}{1pt}
-\item \textbf{Dataset Scope:} 4-year timeframe captures diverse market conditions including COVID-19 impacts, providing sufficient temporal variation for robust model validation.
+\item \textbf{Dataset Scope:} \hl{4-year timeframe captures diverse market conditions including COVID-19 impacts, providing sufficient temporal variation for robust model validation.}
 
-\item \textbf{Technical Implementation:} PyTorch LSTM (128 units, 3 layers, 0.2 dropout), Adam optimizer (lr=0.001), early stopping (23 epochs average) \cite{Kingma2015}.
+\item \textbf{Technical Implementation:} \hl{PyTorch LSTM (128 units, 3 layers, 0.2 dropout), Adam optimizer (lr=0.001), early stopping (23 epochs average)} \cite{Kingma2015}.
 
-\item \textbf{FinBERT Implementation:} \texttt{yiyanghkust/finbert-tone}, 83.2\% accuracy, 128-token max length, bilingual processing \cite{Araci2019}.
+\item \textbf{FinBERT Implementation:} \hl{\texttt{yiyanghkust/finbert-tone}, 83.2\% accuracy, 128-token max length, bilingual processing} \cite{Araci2019}.
 
-\item \textbf{Risk Model Configuration:} EGARCH(1,1) with parameters $\omega=-0.012$, $\alpha=0.149$, $\gamma=-0.087$, $\beta=0.987$. CVaR at 5\% level \cite{Nelson1991}.
+\item \textbf{Risk Model Configuration:} \hl{EGARCH(1,1) with parameters $\omega=-0.012$, $\alpha=0.149$, $\gamma=-0.087$, $\beta=0.987$. CVaR at 5\% level} \cite{Nelson1991}.
 \end{itemize}
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.80\textwidth]{Picture2.png}
-    \caption{LSTM Training Convergence: Rapid initial learning with validation loss stabilization after 23 epochs average, demonstrating effective hyperparameter configuration and early stopping mechanism}
+    \caption{\hl{LSTM Training Convergence: Rapid initial learning with validation loss stabilization after 23 epochs average, demonstrating effective hyperparameter configuration and early stopping mechanism}}
     \label{fig:learning_curve}
 \end{figure}
 
 \subsection{Performance Results}
 \vspace{-2pt}
 \begin{itemize}\setlength{\itemsep}{1pt}
-\item \textbf{Cross-Validation Results:} TimeSeriesSplit validation (3 folds) shows consistent performance: fold-1 $R^2=0.523$, fold-2 $R^2=0.547$, fold-3 $R^2=0.585$, confirming model stability. 60/40 temporal split prevents data leakage \cite{Kingma2015}.
+\item \textbf{Cross-Validation Results:} \hl{TimeSeriesSplit validation (3 folds) shows consistent performance: fold-1 $R^2=0.523$, fold-2 $R^2=0.547$, fold-3 $R^2=0.585$, confirming model stability. 60/40 temporal split prevents data leakage} \cite{Kingma2015}.
 
-\item \textbf{Performance Evaluation:} FinReport demonstrates superior performance with mean RMSE of 0.2546 and MAE of 0.2433 across the 75-stock dataset. The model achieves an overall R² of 0.5515, indicating the framework explains 55.15\% of return variance. Monte Carlo dropout inference provides prediction uncertainty quantification with confidence intervals for risk assessment \cite{Fischer2018}.
+\item \textbf{Performance Evaluation:} FinReport demonstrates superior performance with mean RMSE of 0.2546 and MAE of 0.2433 across the 75-stock dataset. The model achieves an overall R² of 0.5515, indicating the framework explains 55.15\% of return variance. \hl{Monte Carlo dropout inference provides prediction uncertainty quantification with confidence intervals for risk assessment} \cite{Fischer2018}.
 \end{itemize}
 
 \definecolor{lightgreen}{RGB}{220, 235, 210} 
@@ -546,7 +548,7 @@ Correlation & 0.948  & \begin{minipage}[t]{7.5cm}Very high correlation between p
 
 The error distribution analysis reveals a slight positive bias, with the mean prediction error recorded at 0.109. This suggests a minor tendency to slightly overestimate returns. Notably, approximately 76\% of prediction errors fall within the +/-0.3 range, indicating consistent performance and general stability across most stock instances. 
 
-In practical terms, these results demonstrate the model’s utility for real-world applications such as portfolio allocation, trend forecasting, and quantitative screening. Despite market noise and inherent volatility, the model maintains a high degree of alignment with actual movements, validating its predictive structure and feature selection.
+\hl{In practical terms, these results demonstrate the model's utility for real-world applications such as portfolio allocation, trend forecasting, and quantitative screening.} Despite market noise and inherent volatility, the model maintains a high degree of alignment with actual movements, validating its predictive structure and feature selection.
 
 
 \subsection{Stock-Specific Analysis}
@@ -572,11 +574,11 @@ Performance varied significantly across 70 stocks, with exceptional performers a
 \end{table}
 
 \begin{itemize}\setlength{\itemsep}{1pt}
-\item \textbf{Hyperparameter Optimization Results:} Systematic grid search across 243 parameter combinations using TimeSeriesSplit validation (3 folds) identified optimal configuration through 15.6 hours computation on RTX 4080 GPU. Learning rate sensitivity analysis revealed optimal range [0.0005, 0.001] with performance degradation beyond 0.002. Hidden size scaling showed diminishing returns above 128 units. Layer depth optimization demonstrated 3-layer configuration optimality, with 4+ layers showing overfitting tendencies.
+\item \textbf{Hyperparameter Optimization Results:} \hl{Systematic grid search across 243 parameter combinations using TimeSeriesSplit validation (3 folds) identified optimal configuration through 15.6 hours computation on RTX 4080 GPU. Learning rate sensitivity analysis revealed optimal range [0.0005, 0.001] with performance degradation beyond 0.002. Hidden size scaling showed diminishing returns above 128 units. Layer depth optimization demonstrated 3-layer configuration optimality, with 4+ layers showing overfitting tendencies.}
 
-\item \textbf{Economic Significance Analysis:} Risk-adjusted performance demonstrates 20\% Sharpe ratio improvement (0.342 vs 0.285). EGARCH volatility modeling with CVaR of -8.47\% and Maximum Drawdown of -12.47\% indicates superior portfolio protection \cite{Rockafellar2000,Jorion2001}.
+\item \textbf{Economic Significance Analysis:} \hl{Risk-adjusted performance demonstrates 20\% Sharpe ratio improvement (0.342 vs 0.285). EGARCH volatility modeling with CVaR of -8.47\% and Maximum Drawdown of -12.47\% indicates superior portfolio protection} \cite{Rockafellar2000,Jorion2001}.
 
-\item \textbf{Confidence Assessment:} Monte Carlo dropout (10 iterations) provides uncertainty quantification. Cross-stock analysis shows 5 exceptional performers (R² > 0.98, 7.1\%) and market cap correlation (r=0.78, p<0.001).
+\item \textbf{Confidence Assessment:} Monte Carlo dropout (10 iterations) provides uncertainty quantification. Cross-stock analysis shows 5 exceptional performers (R² > 0.98, 7.1\%) and \hl{market cap correlation (r=0.78, p<0.001)}.
 \end{itemize}
 
 The analysis reveals 5 stocks achieving exceptional performance with R² > 0.98, representing 7.1\% of the total sample. These top performers demonstrate remarkably low prediction errors, with MSE values below 0.02 and RMSE below 0.14 \cite{Bao2017}. The standout performer 000333.SZ (Midea Group) achieved near-perfect prediction accuracy with R² = 0.994 and MSE = 0.004, indicating the model captures 99.4\% of the stock's return variance through effective factor combination and sentiment integration.
@@ -584,7 +586,7 @@ The analysis reveals 5 stocks achieving exceptional performance with R² > 0.98,
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.80\textwidth]{Picture3.png}
-    \caption{Model Performance Visualization: (Top) Predicted vs Actual returns scatter plot showing strong linear correlation (r=0.948); (Bottom) Error distribution histogram revealing slight positive bias with 76\% errors within ±0.3 range}
+    \caption{\hl{Model Performance Visualization: (Top) Predicted vs Actual returns scatter plot showing strong linear correlation (r=0.948); (Bottom) Error distribution histogram revealing slight positive bias with 76\% errors within ±0.3 range}}
     \label{fig:Return Forecast Calculation}
 \end{figure}
 
@@ -602,9 +604,9 @@ As shown in Fig. 3, the predictions demonstrate a strong linear relationship wit
 \hline
 \textbf{Stock} & \textbf{MSE} & \textbf{RMSE} & \textbf{MAE} & \textbf{$\mathbf{R^2}$} & \textbf{Sector} \\
 \hline
-601727.SH & 1.246 & 1.116 & 1.052 & -3.985 & Industrial \\
-002385.SZ & 1.297 & 1.139 & 1.139 & N/A    & Agriculture \\
-600340.SH & 0.101 & 0.318 & 0.318 & N/A    & Real Estate \\
+\hl{601727.SH} & \hl{1.246} & \hl{1.116} & \hl{1.052} & \hl{-3.985} & \hl{Industrial} \\
+\hl{002385.SZ} & \hl{1.297} & \hl{1.139} & \hl{1.139} & \hl{N/A} & \hl{Agriculture} \\
+\hl{600340.SH} & \hl{0.101} & \hl{0.318} & \hl{0.318} & \hl{N/A} & \hl{Real Estate} \\
 \hline
 \end{tabular}
 \end{table}
@@ -633,9 +635,9 @@ Real Estate & 0.106 & 0.316 & 0.297 & 0.591 & 600340.SH, 000002.SZ \\
 \end{table}
 
 \begin{itemize}\setlength{\itemsep}{1pt}
-\item \textbf{Statistical Validation:} ANOVA testing (p < 0.01) with Tukey HSD post-hoc analysis confirms significant sector performance differences, with Consumer and Technology sectors showing superior predictability \cite{Box1970,Tukey1949}.
+\item \textbf{Statistical Validation:} \hl{ANOVA testing (p < 0.01) with Tukey HSD post-hoc analysis confirms significant sector performance differences}, with Consumer and Technology sectors showing superior predictability \cite{Box1970,Tukey1949}.
 
-\item \textbf{Data Leakage Prevention:} Chronological splitting with training (2018-2020) and testing (2021) periods. Normalization parameters ($\mu$, $\sigma$) computed only on training data \cite{Fischer2018}.
+\item \textbf{Data Leakage Prevention:} \hl{Chronological splitting with training (2018-2020) and testing (2021) periods. Normalization parameters ($\mu$, $\sigma$) computed only on training data} \cite{Fischer2018}.
 \end{itemize}
 
 This sector analysis reveals that Consumer and Technology sectors demonstrate superior predictability, likely due to more stable demand and clearer growth trajectories. As evident from the distribution of colored points in Fig. 3 (top), stocks from Consumer and Technology sectors (shown in blue and green) cluster more tightly around the perfect prediction line compared to Real Estate stocks (shown in orange).
@@ -683,7 +685,7 @@ News Effect    & -4.86 & 0.28 & Strongly negative impact \\
 \begin{itemize}\setlength{\itemsep}{1pt}
 \item \textbf{Factor Influence Validation:} Standardized factor analysis across all stocks reveals consistent patterns: Investment Factor demonstrates strongest positive influence (+3.64±1.87), while News Effect Factor shows remarkable consistency (-4.86±0.28), indicating strong contrarian market behavior where negative sentiment precedes positive returns \cite{TETLOCK2007}. Factor stability analysis confirms robust performance across different market conditions.
 
-\item \textbf{Market Regime Performance Analysis:} Performance varies across volatility regimes: high (>4.0\%, 23\% days) RMSE 0.387/R² 0.421, moderate (2.5-4.0\%, 41\% days) RMSE 0.289/R² 0.634, low (<2.5\%, 36\% days) RMSE 0.182/R² 0.742. Adaptive amplification ranges from 1.5x defensive to 1.8x aggressive positioning \cite{Nelson1991}.
+\item \textbf{Market Regime Performance Analysis:} \hl{Performance varies across volatility regimes: high (>4.0\%, 23\% days) RMSE 0.387/R² 0.421, moderate (2.5-4.0\%, 41\% days) RMSE 0.289/R² 0.634, low (<2.5\%, 36\% days) RMSE 0.182/R² 0.742. Adaptive amplification ranges from 1.5x defensive to 1.8x aggressive positioning} \cite{Nelson1991}.
 \end{itemize}
 
 \begin{itemize}\setlength{\itemsep}{1pt}
@@ -703,7 +705,7 @@ FinReport successfully integrates multi-factor models \cite{FAMA1993,Carhart1997
 
 \item \textbf{Temporal Scope:} 4-year training period captures specific market regimes; model performance may degrade during unprecedented events beyond training distribution. Cross-validation on 3 folds confirms robustness within studied timeframe but cannot guarantee future stability.
 
-\item \textbf{Technical Limitations:} Dataset constraints to 75 stocks introduce selection bias. Missing R² values (29 stocks, 41.4\%) indicate systematic prediction challenges requiring investigation.
+\item \textbf{Technical Limitations:} Dataset constraints to 75 stocks introduce selection bias. \hl{Missing R² values (29 stocks, 41.4\%) indicate systematic prediction challenges requiring investigation.}
 \end{itemize}
 
 \subsection{Future Validation Guidance}
